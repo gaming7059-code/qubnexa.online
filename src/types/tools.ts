@@ -1,6 +1,18 @@
+export type PrimaryCategoryId =
+  | 'calculators'
+  | 'daily-utilities'
+  | 'pdf-documents'
+  | 'image-media'
+  | 'text-developer'
+  | 'voice-audio'
+  | 'ai-creator'
+  | 'games'
+
 export type CategoryId =
   | 'all'
-  | 'calculators'
+  | PrimaryCategoryId
+  // Aliases and legacy category IDs preserved for backward compatibility
+  | 'daily-utility'
   | 'finance'
   | 'math'
   | 'converters'
@@ -9,7 +21,6 @@ export type CategoryId =
   | 'creator-tools'
   | 'seo-tools'
   | 'pdf-tools'
-  | 'games'
 
 export interface Category {
   id: CategoryId
@@ -22,6 +33,7 @@ export interface Category {
   path?: string
   itemLabel?: string
   accentGradient?: string
+  badgeColor?: string
 }
 
 export interface Tool {
@@ -35,6 +47,7 @@ export interface Tool {
   categoryName: string
   icon: string
   isPopular?: boolean
+  isNew?: boolean
   isFunctional?: boolean
   badge?: string
   keywords: string[]

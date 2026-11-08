@@ -7,18 +7,25 @@ export const UnitConverterPage: React.FC = () => {
   const tool = ALL_TOOLS.find((t) => t.slug === 'unit-converter')!
 
   const howToUseSteps = [
-    'Choose a measurement category from the top buttons: Length, Weight / Mass, Temperature, Area, Volume, Time, or Digital Storage.',
+    'Choose a measurement category from the 8 top buttons: Length, Weight / Mass, Temperature, Area, Volume, Speed, Time, or Digital Storage.',
     'Select your source unit in the "From" dropdown, and your target unit in the "To" dropdown.',
-    'Enter your number in the value input. Decimal numbers and scientific exponential representations are supported.',
+    'Enter your number in the value input. Decimal numbers, negatives, and large numbers are supported.',
     'The converted quantity updates immediately with exact precision and zero rounding lag.',
-    'Click the swap button between the units to invert the conversion instantly.',
+    'Click the swap button (⇄) between the units to invert the conversion instantly.',
+    'Use the decimal precision toolbar (Auto, 2, 4, 6 dp) to control rounding, or click "Copy" to copy the formatted result.',
+    'Explore the multi-unit comparison grid below to see your value converted into all available category units at once.',
   ]
 
   const formulas = [
     {
       title: 'Linear Multiplier Conversion',
       formula: 'Result = Value × (From Ratio / To Ratio)',
-      explanation: 'For proportional dimensions like length, weight, area, and digital storage, conversion scales through an international SI base unit.',
+      explanation: 'For proportional dimensions like length, weight, area, speed, volume, and digital storage, conversion scales through an international SI base unit.',
+    },
+    {
+      title: 'Speed Conversion (km/h to m/s)',
+      formula: '1 km/h = 1,000 m / 3,600 s = 5/18 m/s ≈ 0.2778 m/s',
+      explanation: 'Converts terrestrial vehicular speeds into standard physics velocity units.',
     },
     {
       title: 'Celsius to Fahrenheit',
@@ -33,11 +40,17 @@ export const UnitConverterPage: React.FC = () => {
     {
       title: 'Celsius to Kelvin',
       formula: 'K = °C + 273.15',
-      explanation: 'Translates Celsius temperature to absolute thermodynamic scale where 0 K represents absolute zero.',
+      explanation: 'Translates Celsius temperature to the absolute thermodynamic scale where 0 K represents absolute zero.',
     },
   ]
 
   const examples = [
+    {
+      title: 'Highway Speed (km/h to mph)',
+      description: 'Converting expressway speed limit (120 km/h) into US/UK imperial miles per hour.',
+      input: '120 km/h → mph',
+      output: '74.5645 mph',
+    },
     {
       title: 'Distance Measurement (Kilometer to Mile)',
       description: 'Converting Indian highway distance (100 km) to international imperial miles.',
@@ -66,6 +79,10 @@ export const UnitConverterPage: React.FC = () => {
 
   const faqs = [
     {
+      question: 'Which 8 unit categories are supported?',
+      answer: 'SmartTools India supports Length (mm, cm, m, km, in, ft, yd, mi, nmi), Weight / Mass (mg, g, kg, t, oz, lb, st), Temperature (°C, °F, K), Area (m², km², cm², ft², yd², mi², ac, ha), Volume (mL, L, m³, cm³, ft³, in³, gal US, imp gal, fl oz), Speed (m/s, km/h, mph, kn, ft/s), Time (ms, s, min, h, d, wk, mo, yr), and Digital Storage (bit, B, KB, MB, GB, TB, PB).',
+    },
+    {
       question: 'Why does temperature conversion require a formula instead of a ratio?',
       answer: 'Unlike length or mass, temperature scales do not share a common zero point. Water freezes at 0°C but 32°F, meaning temperature conversion requires both a multiplicative scaling factor (9/5 or 5/9) and an additive baseline shift (±32).',
     },
@@ -74,26 +91,21 @@ export const UnitConverterPage: React.FC = () => {
       answer: 'This utility adheres to standard binary computer memory conventions where 1 KB = 1,024 Bytes, 1 MB = 1,024 KB, and 1 GB = 1,024 MB.',
     },
     {
-      question: 'How many decimal places are displayed?',
-      answer: 'Our converter displays accurate figures up to 8 decimal places and strips unnecessary trailing zeroes to keep results clean and easily legible.',
-    },
-    {
-      question: 'Can I convert units offline?',
-      answer: 'Yes! All unit conversion tables and logic operate directly in your web browser. Once loaded, no internet request is needed.',
+      question: 'Can I copy the conversion result?',
+      answer: 'Yes! Simply click the "Copy" link next to the converted value to copy the complete equation to your clipboard.',
     },
   ]
 
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Unit Converter — Length, Weight, Area, Volume & Temperature | SmartTools India"
-      seoDescription="Convert measurements across length, weight, area, temperature, volume, and digital storage instantly. Accurate online metric and imperial conversion utility."
-      keywords="unit converter, convert length, kg to lbs, celsius to fahrenheit, area converter, meters to feet, digital storage converter, smarttools india"
+      seoTitle="Free Online Unit Converter — 8 Categories with Instant Conversions | SmartTools India"
+      seoDescription="Convert units across 8 categories: Length, Weight, Temperature, Area, Volume, Speed, Time, and Digital Storage with instant calculation and live comparison."
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['percentage-calculator', 'discount-calculator', 'word-counter']}
+      relatedSlugs={['percentage-calculator', 'date-difference-calculator', 'emi-calculator', 'discount-calculator']}
     >
       <UnitConverter />
     </ToolPageLayout>

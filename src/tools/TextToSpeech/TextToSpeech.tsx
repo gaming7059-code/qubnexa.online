@@ -106,27 +106,20 @@ export const TextToSpeech: React.FC = () => {
     return detectLanguageFromText(text)
   }, [text])
 
-  // Probe companion server
-  const checkCompanion = useCallback(async () => {
+  // Explicit user-triggered companion server probe (zero auto-probing on initial page load)
+  const checkCompanion = useCallback(async (explicit = true) => {
     setIsCheckingCompanion(true)
     try {
-      const status = await ttsManager.checkCompanionStatus()
+      const status = await ttsManager.checkCompanionStatus(explicit)
       setCompanionStatus(status)
-      if (status.isAvailable && activeEngine === 'browser') {
+      if (status.isAvailable) {
         setActiveEngine('companion')
         ttsManager.setActiveProvider('companion')
       }
     } finally {
       setIsCheckingCompanion(false)
     }
-  }, [ttsManager, activeEngine])
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      checkCompanion()
-    }, 0)
-    return () => clearTimeout(timer)
-  }, [checkCompanion])
+  }, [ttsManager])
 
   // Load voices whenever active engine or browser voices change
   const refreshVoices = useCallback(() => {
@@ -169,6 +162,9 @@ export const TextToSpeech: React.FC = () => {
     handleStop()
     setActiveEngine(engineId)
     ttsManager.setActiveProvider(engineId)
+    if (engineId === 'companion') {
+      checkCompanion(true)
+    }
     // If switching to local-neural, reset language filter if current language is not supported
     if (engineId === 'local-neural') {
       if (selectedLanguage !== 'all' && !selectedLanguage.startsWith('en') && !selectedLanguage.startsWith('hi')) {
@@ -681,7 +677,7 @@ export const TextToSpeech: React.FC = () => {
               </div>
               <button
                 type="button"
-                onClick={checkCompanion}
+                onClick={() => checkCompanion(true)}
                 disabled={isCheckingCompanion}
                 className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-semibold transition-colors shadow-2xs"
               >
@@ -1118,7 +1114,7 @@ export const TextToSpeech: React.FC = () => {
                 step="0.05"
                 value={rate}
                 onChange={(e) => setRate(parseFloat(e.target.value))}
-                className="w-full accent-blue-600 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
+                className="w-full accent-blue-600 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer touch-manipulation py-1"
                 aria-label="Speech speed"
               />
               <div className="flex justify-between gap-1">
@@ -1127,10 +1123,10 @@ export const TextToSpeech: React.FC = () => {
                     key={val}
                     type="button"
                     onClick={() => setRate(val)}
-                    className={`text-[10px] px-1.5 py-0.5 rounded ${
+                    className={`min-h-[30px] text-xs px-2 py-1 rounded-md transition-colors active:scale-95 inline-flex items-center justify-center flex-1 ${
                       rate === val
                         ? 'bg-blue-600 text-white font-semibold'
-                        : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700'
+                        : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-100'
                     }`}
                   >
                     {val.toFixed(1)}x
@@ -1152,7 +1148,7 @@ export const TextToSpeech: React.FC = () => {
                 step="0.05"
                 value={pitch}
                 onChange={(e) => setPitch(parseFloat(e.target.value))}
-                className="w-full accent-blue-600 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
+                className="w-full accent-blue-600 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer touch-manipulation py-1"
                 aria-label="Speech pitch"
               />
               <div className="flex justify-between gap-1">
@@ -1165,10 +1161,10 @@ export const TextToSpeech: React.FC = () => {
                     key={item.label}
                     type="button"
                     onClick={() => setPitch(item.val)}
-                    className={`text-[10px] px-2 py-0.5 rounded flex-1 ${
+                    className={`min-h-[30px] text-xs px-2 py-1 rounded-md flex-1 transition-colors active:scale-95 inline-flex items-center justify-center ${
                       pitch === item.val
                         ? 'bg-blue-600 text-white font-semibold'
-                        : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700'
+                        : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-100'
                     }`}
                   >
                     {item.label}
@@ -1193,28 +1189,28 @@ export const TextToSpeech: React.FC = () => {
                 step="0.05"
                 value={volume}
                 onChange={(e) => setVolume(parseFloat(e.target.value))}
-                className="w-full accent-blue-600 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
+                className="w-full accent-blue-600 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer touch-manipulation py-1"
                 aria-label="Speech volume"
               />
               <div className="flex justify-between gap-1">
                 <button
                   type="button"
                   onClick={() => setVolume(volume === 0 ? 1.0 : 0)}
-                  className="text-[10px] px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1"
+                  className="min-h-[30px] text-xs px-2 py-1 rounded-md bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1 transition-colors active:scale-95 inline-flex items-center justify-center hover:bg-slate-100"
                 >
                   {volume === 0 ? 'Unmute' : 'Mute'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setVolume(0.5)}
-                  className="text-[10px] px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1"
+                  className="min-h-[30px] text-xs px-2 py-1 rounded-md bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1 transition-colors active:scale-95 inline-flex items-center justify-center hover:bg-slate-100"
                 >
                   50%
                 </button>
                 <button
                   type="button"
                   onClick={() => setVolume(1.0)}
-                  className="text-[10px] px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1"
+                  className="min-h-[30px] text-xs px-2 py-1 rounded-md bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1 transition-colors active:scale-95 inline-flex items-center justify-center hover:bg-slate-100"
                 >
                   100%
                 </button>

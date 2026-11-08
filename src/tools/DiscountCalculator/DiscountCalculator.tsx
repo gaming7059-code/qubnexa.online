@@ -118,14 +118,14 @@ export const DiscountCalculator: React.FC = () => {
 
           {/* Quick Preset Buttons */}
           <div>
-            <span className="text-xs font-medium text-slate-400 dark:text-slate-500 mr-2">Quick Discounts:</span>
+            <span className="text-xs font-medium text-slate-500 dark:text-slate-400 mr-2">Quick Discounts:</span>
             <div className="inline-flex flex-wrap gap-1.5 mt-1 sm:mt-0">
               {discountPills.map((pct) => (
                 <button
                   key={pct}
                   type="button"
                   onClick={() => setDiscountPercent1(pct.toString())}
-                  className={`rounded-lg border px-2.5 py-1 text-xs font-semibold transition-colors ${
+                  className={`min-h-[36px] sm:min-h-[30px] rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors inline-flex items-center justify-center active:scale-95 ${
                     discountPercent1 === pct.toString()
                       ? 'border-blue-600 dark:border-blue-500 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300'
                       : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'

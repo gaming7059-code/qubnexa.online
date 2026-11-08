@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
                 </span>
               </Link>
               <p className="text-sm text-slate-500 dark:text-slate-400 max-w-md leading-relaxed">
-                Free online calculators and useful tools for everyday life. Built for students, professionals, small business owners, and everyday internet users in India.
+                Free online calculators, client-side PDF tools, audio studio, AI prompt builders, and browser games for everyday life. Built for students, professionals, and creators across India.
               </p>
               <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 pt-1">
                 <ShieldCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
@@ -45,28 +45,38 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-sm">
                 <li>
+                  <Link to="/tools?category=daily-utilities" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                    Daily Utilities
+                  </Link>
+                </li>
+                <li>
                   <Link to="/tools?category=calculators" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
                     Calculators
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=finance" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
-                    Finance Tools
+                  <Link to="/tools?category=pdf-documents" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                    PDF &amp; Documents
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=math" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
-                    Math Tools
+                  <Link to="/tools?category=image-media" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                    Image &amp; Media
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tools?category=voice-audio" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                    Voice &amp; Audio
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tools?category=ai-creator" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                    AI &amp; Creator
                   </Link>
                 </li>
                 <li>
                   <Link to="/games" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
                     Games
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/tools?category=converters" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
-                    Converters
                   </Link>
                 </li>
                 <li>
@@ -85,12 +95,17 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link to="/tools" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
-                    Tools
+                    All Tools
                   </Link>
                 </li>
                 <li>
                   <Link to="/games" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
-                    Free Games
+                    Games Arena
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/games/hex-drift" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                    HEX DRIFT
                   </Link>
                 </li>
                 <li>
@@ -100,7 +115,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/about" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
-                    About
+                    About Us
                   </Link>
                 </li>
               </ul>
@@ -119,12 +134,12 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/privacy" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
-                    Privacy
+                    Privacy Policy
                   </Link>
                 </li>
                 <li>
                   <Link to="/terms" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
-                    Terms
+                    Terms of Service
                   </Link>
                 </li>
               </ul>

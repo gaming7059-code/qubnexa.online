@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { Search, X, ArrowRight } from 'lucide-react'
-import { POPULAR_TOOLS } from '../../data/toolsData'
+import { ALL_TOOLS, POPULAR_TOOLS } from '../../data/toolsData'
 import type { Tool } from '../../types/tools'
 import { DynamicIcon } from './DynamicIcon'
 
@@ -49,7 +49,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
     const cleanQuery = query.trim().toLowerCase()
     if (!cleanQuery) return POPULAR_TOOLS.slice(0, 6)
 
-    return POPULAR_TOOLS.filter((tool) => {
+    return ALL_TOOLS.filter((tool) => {
       const matchName = tool.name.toLowerCase().includes(cleanQuery)
       const matchDesc = tool.description.toLowerCase().includes(cleanQuery)
       const matchCategory = tool.categoryName.toLowerCase().includes(cleanQuery)
@@ -103,7 +103,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
         {/* Results List */}
         <div className="max-h-96 overflow-y-auto p-2 divide-y divide-slate-100 dark:divide-slate-800">
-          <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+          <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
             {query.trim() ? `Search Results (${filteredTools.length})` : 'Popular Tools'}
           </div>
 
@@ -147,7 +147,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
         </div>
 
         {/* Modal Footer */}
-        <div className="border-t border-slate-100 dark:border-slate-800 px-4 py-2.5 bg-slate-50/50 dark:bg-slate-900/50 flex items-center justify-between text-xs text-slate-400">
+        <div className="border-t border-slate-100 dark:border-slate-800 px-4 py-2.5 bg-slate-50/50 dark:bg-slate-900/50 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
           <span>Navigate with mouse or keyboard</span>
           <div className="flex items-center gap-1 text-[11px]">
             <span>Press</span>

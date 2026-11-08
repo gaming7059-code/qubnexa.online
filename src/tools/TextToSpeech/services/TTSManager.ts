@@ -39,8 +39,8 @@ export class TTSManager {
     this.providers.set('cloud-neural', cloudProvider)
   }
 
-  async checkCompanionStatus(): Promise<CompanionServerStatus> {
-    await this.companionProvider.isAvailable()
+  async checkCompanionStatus(explicitUserTrigger = true): Promise<CompanionServerStatus> {
+    await this.companionProvider.isAvailable(explicitUserTrigger)
     return this.companionProvider.getStatus()
   }
 

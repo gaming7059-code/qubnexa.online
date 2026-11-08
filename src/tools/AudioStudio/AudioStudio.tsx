@@ -540,7 +540,7 @@ export const AudioStudio: React.FC = () => {
               step={0.1}
               value={currentTime}
               onChange={handleSeek}
-              className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg accent-blue-600 cursor-pointer"
+              className="w-full h-2.5 bg-slate-200 dark:bg-slate-700 rounded-lg accent-blue-600 cursor-pointer touch-manipulation py-1"
               aria-label="Seek audio track"
             />
 
@@ -659,10 +659,10 @@ export const AudioStudio: React.FC = () => {
                     playFromOffset(currentTime)
                   }
                 }}
-                className="w-full accent-blue-600 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
+                className="w-full accent-blue-600 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer touch-manipulation py-1"
                 aria-label="Audio playback speed"
               />
-              <div className="flex justify-between gap-1 text-[10px]">
+              <div className="flex justify-between gap-1 text-xs">
                 {[0.75, 1.0, 1.25, 1.5, 2.0].map((s) => (
                   <button
                     key={s}
@@ -671,7 +671,11 @@ export const AudioStudio: React.FC = () => {
                       setSpeed(s)
                       if (isPlaying) playFromOffset(currentTime)
                     }}
-                    className={`px-2 py-0.5 rounded ${speed === s ? 'bg-blue-600 text-white font-bold' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'}`}
+                    className={`min-h-[30px] px-2 py-1 rounded-md transition-colors active:scale-95 inline-flex items-center justify-center flex-1 ${
+                      speed === s
+                        ? 'bg-blue-600 text-white font-bold'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200'
+                    }`}
                   >
                     {s}×
                   </button>
@@ -701,10 +705,10 @@ export const AudioStudio: React.FC = () => {
                     gainNodeRef.current.gain.value = val
                   }
                 }}
-                className="w-full accent-emerald-600 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
+                className="w-full accent-emerald-600 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer touch-manipulation py-1"
                 aria-label="Audio gain level"
               />
-              <div className="flex justify-between gap-1 text-[10px]">
+              <div className="flex justify-between gap-1 text-xs">
                 {[
                   { label: '50%', v: 0.5 },
                   { label: '100%', v: 1.0 },
@@ -719,7 +723,11 @@ export const AudioStudio: React.FC = () => {
                       setGainLevel(item.v)
                       if (gainNodeRef.current) gainNodeRef.current.gain.value = item.v
                     }}
-                    className={`px-2 py-0.5 rounded ${gainLevel === item.v ? 'bg-emerald-600 text-white font-bold' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'}`}
+                    className={`min-h-[30px] px-1.5 py-1 rounded-md transition-colors active:scale-95 inline-flex items-center justify-center flex-1 ${
+                      gainLevel === item.v
+                        ? 'bg-emerald-600 text-white font-bold'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200'
+                    }`}
                   >
                     {item.label}
                   </button>

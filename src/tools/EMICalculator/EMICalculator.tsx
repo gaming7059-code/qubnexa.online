@@ -40,19 +40,19 @@ export const EMICalculator: React.FC = () => {
       <div className="space-y-5">
         {/* Loan Amount Input & Presets */}
         <div>
-          <div className="flex items-center justify-between mb-1.5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-1.5">
             <label htmlFor="loanAmount" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
               Loan Amount (₹)
             </label>
-            <div className="flex gap-1">
+            <div className="flex gap-1.5 flex-wrap">
               {amountPresets.map((preset) => (
                 <button
                   key={preset.value}
                   type="button"
                   onClick={() => setLoanAmount(preset.value)}
-                  className={`px-2 py-0.5 text-xs font-medium rounded transition-colors ${
+                  className={`min-h-[36px] sm:min-h-[30px] px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors inline-flex items-center justify-center active:scale-95 ${
                     loanAmount === preset.value
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-blue-600 text-white shadow-2xs'
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
                   }`}
                 >

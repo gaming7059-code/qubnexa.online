@@ -285,14 +285,14 @@ export const DateDifferenceCalculator: React.FC = () => {
           </div>
 
           {/* Quick Preset Buttons */}
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-medium text-slate-400 dark:text-slate-500">Quick Days:</span>
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-xs font-medium text-slate-500 dark:text-slate-400">Quick Days:</span>
             {['7', '15', '30', '45', '60', '90', '180', '365'].map((d) => (
               <button
                 key={d}
                 type="button"
                 onClick={() => setDaysCount(d)}
-                className={`px-2.5 py-1 text-xs font-medium rounded-lg border transition-colors ${
+                className={`min-h-[36px] sm:min-h-[30px] px-3 py-1.5 text-xs font-semibold rounded-lg border transition-colors inline-flex items-center justify-center active:scale-95 ${
                   daysCount === d
                     ? 'border-blue-600 dark:border-blue-500 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300'
                     : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'

@@ -32,8 +32,18 @@ export class LocalCompanionTTSProvider implements TTSProvider {
     url: COMPANION_URL,
     lastChecked: 0,
   }
+  private hasUserRequested = false
 
-  async isAvailable(): Promise<boolean> {
+  async isAvailable(explicitUserTrigger = false): Promise<boolean> {
+    if (explicitUserTrigger) {
+      this.hasUserRequested = true
+    }
+
+    // Do NOT probe the network automatically unless the user explicitly requested to connect/test the local companion
+    if (!this.hasUserRequested && !this.serverStatus.isAvailable) {
+      return false
+    }
+
     const now = Date.now()
     // Cache check status for 2 seconds to avoid excessive network polls
     if (now - this.serverStatus.lastChecked < 2000 && this.serverStatus.isAvailable) {
@@ -46,10 +56,10 @@ export class LocalCompanionTTSProvider implements TTSProvider {
 
       const resp = await fetch(`${COMPANION_URL}/api/health`, {
         signal: controller.signal,
-      })
+      }).catch(() => null)
       clearTimeout(timeoutId)
 
-      if (resp.ok) {
+      if (resp && resp.ok) {
         const data = await resp.json()
         this.serverStatus = {
           isAvailable: true,
@@ -62,7 +72,7 @@ export class LocalCompanionTTSProvider implements TTSProvider {
         return true
       }
     } catch {
-      // Server not running or blocked
+      // Server not running or blocked - silently handle without unhandled rejections
     }
 
     this.serverStatus = {

@@ -1506,7 +1506,7 @@ function spawnScoreToast(x, y, text, color) {
 function updateLivesHUD() {
   const container = document.getElementById('hud-lives');
   if (!container) return;
-  container.innerHTML = '';
+  container.textContent = '';
   for (let i = 0; i < state.maxLives; i++) {
     const life = document.createElement('div');
     life.className = 'life-icon' + (i >= state.lives ? ' lost' : '');
@@ -1610,7 +1610,7 @@ function updateMissionProgress(type, amount) {
 function renderMissionsUI() {
   const list = document.getElementById('daily-missions-list');
   if (!list || !state.missions) return;
-  list.innerHTML = '';
+  list.textContent = '';
 
   for (const m of state.missions.items) {
     const isReady = m.progress >= m.target && !m.claimed;
@@ -1619,25 +1619,51 @@ function renderMissionsUI() {
 
     const pct = Math.min(100, Math.floor((m.progress / m.target) * 100));
 
-    card.innerHTML = `
-      <div class="mission-left">
-        <div class="mission-title">${m.title}</div>
-        <div class="mission-progress-track">
-          <div class="mission-progress-fill" style="width: ${pct}%"></div>
-        </div>
-        <div class="mission-meta-text">${m.progress}/${m.target} · +${m.reward} ◈ Reward</div>
-      </div>
-      <div class="mission-right">
-        ${
-          m.claimed
-            ? '<span class="stat-pill">CLAIMED</span>'
-            : isReady
-            ? `<button class="btn-card-action btn-buy" data-mission-id="${m.id}">CLAIM</button>`
-            : '<span class="stat-pill">IN PROGRESS</span>'
-        }
-      </div>
-    `;
+    const left = document.createElement('div');
+    left.className = 'mission-left';
 
+    const title = document.createElement('div');
+    title.className = 'mission-title';
+    title.textContent = m.title;
+
+    const track = document.createElement('div');
+    track.className = 'mission-progress-track';
+    const fill = document.createElement('div');
+    fill.className = 'mission-progress-fill';
+    fill.style.width = `${pct}%`;
+    track.appendChild(fill);
+
+    const meta = document.createElement('div');
+    meta.className = 'mission-meta-text';
+    meta.textContent = `${m.progress}/${m.target} · +${m.reward} ◈ Reward`;
+
+    left.appendChild(title);
+    left.appendChild(track);
+    left.appendChild(meta);
+
+    const right = document.createElement('div');
+    right.className = 'mission-right';
+
+    if (m.claimed) {
+      const pill = document.createElement('span');
+      pill.className = 'stat-pill';
+      pill.textContent = 'CLAIMED';
+      right.appendChild(pill);
+    } else if (isReady) {
+      const btn = document.createElement('button');
+      btn.className = 'btn-card-action btn-buy';
+      btn.setAttribute('data-mission-id', m.id);
+      btn.textContent = 'CLAIM';
+      right.appendChild(btn);
+    } else {
+      const pill = document.createElement('span');
+      pill.className = 'stat-pill';
+      pill.textContent = 'IN PROGRESS';
+      right.appendChild(pill);
+    }
+
+    card.appendChild(left);
+    card.appendChild(right);
     list.appendChild(card);
   }
 
@@ -1702,14 +1728,32 @@ function showAchievementToast(ach) {
 
   const toast = document.createElement('div');
   toast.className = 'achievement-toast';
-  toast.innerHTML = `
-    <div class="toast-trophy">${ach.icon}</div>
-    <div class="toast-body">
-      <span class="toast-tag">ACHIEVEMENT UNLOCKED</span>
-      <span class="toast-title">${ach.name}</span>
-    </div>
-    <div class="toast-reward">+${ach.reward} ◈</div>
-  `;
+
+  const trophy = document.createElement('div');
+  trophy.className = 'toast-trophy';
+  trophy.textContent = ach.icon || '🏆';
+
+  const body = document.createElement('div');
+  body.className = 'toast-body';
+
+  const tag = document.createElement('span');
+  tag.className = 'toast-tag';
+  tag.textContent = 'ACHIEVEMENT UNLOCKED';
+
+  const title = document.createElement('span');
+  title.className = 'toast-title';
+  title.textContent = ach.name;
+
+  body.appendChild(tag);
+  body.appendChild(title);
+
+  const reward = document.createElement('div');
+  reward.className = 'toast-reward';
+  reward.textContent = `+${ach.reward} ◈`;
+
+  toast.appendChild(trophy);
+  toast.appendChild(body);
+  toast.appendChild(reward);
 
   container.appendChild(toast);
   setTimeout(() => toast.remove(), 3600);
@@ -1719,7 +1763,7 @@ function renderAchievementsUI() {
   const container = document.getElementById('achievements-list');
   const countEl = document.getElementById('achievements-progress-text');
   if (!container) return;
-  container.innerHTML = '';
+  container.textContent = '';
 
   const unlockedCount = Object.keys(state.achievements).length;
   if (countEl) countEl.textContent = `${unlockedCount}/${ACHIEVEMENTS_LIST.length} ACHIEVEMENTS UNLOCKED`;
@@ -1729,14 +1773,31 @@ function renderAchievementsUI() {
     const card = document.createElement('div');
     card.className = `achievement-card ${isUnlocked ? 'unlocked' : ''}`;
 
-    card.innerHTML = `
-      <div class="achievement-icon-box">${ach.icon}</div>
-      <div class="achievement-details">
-        <span class="achievement-name">${ach.name}</span>
-        <span class="achievement-desc">${ach.desc}</span>
-      </div>
-      <div class="achievement-reward-tag">${isUnlocked ? '✓ UNLOCKED' : `+${ach.reward} ◈`}</div>
-    `;
+    const iconBox = document.createElement('div');
+    iconBox.className = 'achievement-icon-box';
+    iconBox.textContent = ach.icon || '🎖️';
+
+    const details = document.createElement('div');
+    details.className = 'achievement-details';
+
+    const name = document.createElement('span');
+    name.className = 'achievement-name';
+    name.textContent = ach.name;
+
+    const desc = document.createElement('span');
+    desc.className = 'achievement-desc';
+    desc.textContent = ach.desc;
+
+    details.appendChild(name);
+    details.appendChild(desc);
+
+    const reward = document.createElement('div');
+    reward.className = 'achievement-reward-tag';
+    reward.textContent = isUnlocked ? '✓ UNLOCKED' : `+${ach.reward} ◈`;
+
+    card.appendChild(iconBox);
+    card.appendChild(details);
+    card.appendChild(reward);
 
     container.appendChild(card);
   }
@@ -1748,7 +1809,7 @@ function renderAchievementsUI() {
 function renderHangarUI() {
   const container = document.getElementById('ships-grid');
   if (!container) return;
-  container.innerHTML = '';
+  container.textContent = '';
 
   const equippedShip = state.equippedShip;
 
@@ -1760,34 +1821,84 @@ function renderHangarUI() {
     const card = document.createElement('div');
     card.className = `ship-card ${isEquipped ? 'equipped' : ''}`;
 
-    card.innerHTML = `
-      <div class="ship-card-left">
-        <div class="ship-preview-box" style="border-color: ${s.color}">
-          <svg viewBox="0 0 32 32" style="width: 26px; height: 26px; stroke: ${s.color}; fill: none; stroke-width: 2;">
-            <polygon points="16,3 27,24 16,18 5,24" />
-          </svg>
-        </div>
-        <div class="ship-details">
-          <span class="ship-name">${s.name}</span>
-          <span class="ship-trait">${s.trait}</span>
-          <div class="ship-stats-pills">
-            <span class="stat-pill">SPEED ×${s.speedMul}</span>
-            <span class="stat-pill">DMG ×${s.damageMul}</span>
-            ${s.hullBonus ? `<span class="stat-pill">+${s.hullBonus} HULL</span>` : ''}
-          </div>
-        </div>
-      </div>
-      <div class="ship-action">
-        ${
-          isEquipped
-            ? '<button class="btn-card-action btn-equipped">EQUIPPED</button>'
-            : isUnlocked
-            ? `<button class="btn-card-action btn-equip" data-equip-ship="${s.id}">EQUIP</button>`
-            : `<button class="btn-card-action btn-buy" data-buy-ship="${s.id}">BUY ${s.price} ◈</button>`
-        }
-      </div>
-    `;
+    const left = document.createElement('div');
+    left.className = 'ship-card-left';
 
+    const preview = document.createElement('div');
+    preview.className = 'ship-preview-box';
+    preview.style.borderColor = s.color;
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 32 32');
+    svg.style.width = '26px';
+    svg.style.height = '26px';
+    svg.style.stroke = s.color;
+    svg.style.fill = 'none';
+    svg.style.strokeWidth = '2';
+
+    const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    polygon.setAttribute('points', '16,3 27,24 16,18 5,24');
+    svg.appendChild(polygon);
+    preview.appendChild(svg);
+
+    const details = document.createElement('div');
+    details.className = 'ship-details';
+
+    const name = document.createElement('span');
+    name.className = 'ship-name';
+    name.textContent = s.name;
+
+    const trait = document.createElement('span');
+    trait.className = 'ship-trait';
+    trait.textContent = s.trait;
+
+    const pills = document.createElement('div');
+    pills.className = 'ship-stats-pills';
+
+    const speedPill = document.createElement('span');
+    speedPill.className = 'stat-pill';
+    speedPill.textContent = `SPEED ×${s.speedMul}`;
+    pills.appendChild(speedPill);
+
+    const dmgPill = document.createElement('span');
+    dmgPill.className = 'stat-pill';
+    dmgPill.textContent = `DMG ×${s.damageMul}`;
+    pills.appendChild(dmgPill);
+
+    if (s.hullBonus) {
+      const hullPill = document.createElement('span');
+      hullPill.className = 'stat-pill';
+      hullPill.textContent = `+${s.hullBonus} HULL`;
+      pills.appendChild(hullPill);
+    }
+
+    details.appendChild(name);
+    details.appendChild(trait);
+    details.appendChild(pills);
+
+    left.appendChild(preview);
+    left.appendChild(details);
+
+    const action = document.createElement('div');
+    action.className = 'ship-action';
+
+    const actionBtn = document.createElement('button');
+    if (isEquipped) {
+      actionBtn.className = 'btn-card-action btn-equipped';
+      actionBtn.textContent = 'EQUIPPED';
+    } else if (isUnlocked) {
+      actionBtn.className = 'btn-card-action btn-equip';
+      actionBtn.setAttribute('data-equip-ship', s.id);
+      actionBtn.textContent = 'EQUIP';
+    } else {
+      actionBtn.className = 'btn-card-action btn-buy';
+      actionBtn.setAttribute('data-buy-ship', s.id);
+      actionBtn.textContent = `BUY ${s.price} ◈`;
+    }
+    action.appendChild(actionBtn);
+
+    card.appendChild(left);
+    card.appendChild(action);
     container.appendChild(card);
   }
 
@@ -1853,7 +1964,7 @@ function updateEquippedShipBadge() {
 function renderUpgradesUI() {
   const container = document.getElementById('upgrades-grid');
   if (!container) return;
-  container.innerHTML = '';
+  container.textContent = '';
 
   for (const upKey of Object.keys(UPGRADE_TIERS)) {
     const up = UPGRADE_TIERS[upKey];
@@ -1864,26 +1975,45 @@ function renderUpgradesUI() {
     const card = document.createElement('div');
     card.className = 'upgrade-card';
 
-    let pipsHtml = '';
+    const info = document.createElement('div');
+    info.className = 'upgrade-info';
+
+    const title = document.createElement('span');
+    title.className = 'upgrade-title';
+    title.textContent = `${up.title} (Tier ${curLevel}/5)`;
+
+    const desc = document.createElement('span');
+    desc.className = 'upgrade-desc';
+    desc.textContent = up.desc;
+
+    const tiers = document.createElement('div');
+    tiers.className = 'upgrade-tiers';
     for (let i = 1; i <= 5; i++) {
-      pipsHtml += `<div class="tier-pip ${i <= curLevel ? 'filled' : ''}"></div>`;
+      const pip = document.createElement('div');
+      pip.className = `tier-pip ${i <= curLevel ? 'filled' : ''}`;
+      tiers.appendChild(pip);
     }
 
-    card.innerHTML = `
-      <div class="upgrade-info">
-        <span class="upgrade-title">${up.title} (Tier ${curLevel}/5)</span>
-        <span class="upgrade-desc">${up.desc}</span>
-        <div class="upgrade-tiers">${pipsHtml}</div>
-      </div>
-      <div class="upgrade-action">
-        ${
-          isMax
-            ? '<button class="btn-card-action btn-equipped">MAX TIER</button>'
-            : `<button class="btn-card-action btn-buy" data-upgrade-key="${upKey}">UPGRADE ${nextPrice} ◈</button>`
-        }
-      </div>
-    `;
+    info.appendChild(title);
+    info.appendChild(desc);
+    info.appendChild(tiers);
 
+    const action = document.createElement('div');
+    action.className = 'upgrade-action';
+
+    const actionBtn = document.createElement('button');
+    if (isMax) {
+      actionBtn.className = 'btn-card-action btn-equipped';
+      actionBtn.textContent = 'MAX TIER';
+    } else {
+      actionBtn.className = 'btn-card-action btn-buy';
+      actionBtn.setAttribute('data-upgrade-key', upKey);
+      actionBtn.textContent = `UPGRADE ${nextPrice} ◈`;
+    }
+    action.appendChild(actionBtn);
+
+    card.appendChild(info);
+    card.appendChild(action);
     container.appendChild(card);
   }
 

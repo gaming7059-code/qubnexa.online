@@ -177,39 +177,39 @@ export const VideoPromptGenerator: React.FC = () => {
 
           {/* Quick Presets */}
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-[11px] font-medium text-slate-400 dark:text-slate-500 mr-1">Presets:</span>
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 mr-1">Presets:</span>
             <button
               type="button"
               onClick={() => handleApplyPreset('tiger')}
-              className="text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-600 dark:text-slate-300 font-medium"
+              className="min-h-[36px] sm:min-h-[30px] text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-600 dark:text-slate-300 font-semibold inline-flex items-center justify-center active:scale-95"
             >
               Wildlife
             </button>
             <button
               type="button"
               onClick={() => handleApplyPreset('cyberpunk')}
-              className="text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-600 dark:text-slate-300 font-medium"
+              className="min-h-[36px] sm:min-h-[30px] text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-600 dark:text-slate-300 font-semibold inline-flex items-center justify-center active:scale-95"
             >
               Cyberpunk
             </button>
             <button
               type="button"
               onClick={() => handleApplyPreset('monsoon')}
-              className="text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-600 dark:text-slate-300 font-medium"
+              className="min-h-[36px] sm:min-h-[30px] text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-600 dark:text-slate-300 font-semibold inline-flex items-center justify-center active:scale-95"
             >
               Handicraft
             </button>
             <button
               type="button"
               onClick={() => handleApplyPreset('commercial')}
-              className="text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-600 dark:text-slate-300 font-medium"
+              className="min-h-[36px] sm:min-h-[30px] text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-600 dark:text-slate-300 font-semibold inline-flex items-center justify-center active:scale-95"
             >
               Product Reel
             </button>
             <button
               type="button"
               onClick={() => handleApplyPreset('space')}
-              className="text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-600 dark:text-slate-300 font-medium hidden sm:inline-block"
+              className="min-h-[36px] sm:min-h-[30px] text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-600 dark:text-slate-300 font-semibold hidden sm:inline-flex items-center justify-center active:scale-95"
             >
               Sci-Fi
             </button>
