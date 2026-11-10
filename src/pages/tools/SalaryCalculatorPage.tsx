@@ -81,9 +81,9 @@ export const SalaryCalculatorPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Salary Calculator — In-Hand Take-Home Pay from CTC Package | SmartTools India"
+      seoTitle="Salary Calculator — In-Hand Take-Home Pay from CTC Package | Xenova-World"
       seoDescription="Calculate your monthly in-hand take-home salary from your annual CTC package with EPF, Professional Tax, and standard deduction breakdowns for Indian professionals."
-      keywords="salary calculator india, ctc to in hand salary, take home pay calculator, epf deduction, professional tax, monthly salary from ctc, smarttools india"
+      keywords="salary calculator india, ctc to in hand salary, take home pay calculator, epf deduction, professional tax, monthly salary from ctc, xenova-world"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

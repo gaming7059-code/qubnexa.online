@@ -155,7 +155,7 @@ export const VideoPromptGenerator: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Workspace Header Card */}
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-7 shadow-xs space-y-6">
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-5 sm:p-7 shadow-xs space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800/80 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-100 dark:border-purple-900/40">
@@ -217,7 +217,7 @@ export const VideoPromptGenerator: React.FC = () => {
         </div>
 
         {/* AI Engine Selector Tabs */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50 dark:bg-slate-950/40 p-3 rounded-xl border border-slate-200/80 dark:border-slate-800">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50 dark:bg-[#050814]/40 p-3 rounded-xl border border-slate-200/80 dark:border-slate-800">
           <div className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
             <Wand2 className="h-4 w-4 text-purple-600 dark:text-purple-400" />
             <span>Target AI Generator:</span>
@@ -237,7 +237,7 @@ export const VideoPromptGenerator: React.FC = () => {
                 className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
                   config.aiTarget === engine.id
                     ? 'bg-purple-600 text-white shadow-xs'
-                    : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-purple-300'
+                    : 'bg-white dark:bg-[#0B1020] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-purple-300'
                 }`}
               >
                 {engine.label}
@@ -259,7 +259,7 @@ export const VideoPromptGenerator: React.FC = () => {
               value={config.subject}
               onChange={(e) => setConfig((prev) => ({ ...prev, subject: e.target.value }))}
               placeholder="e.g. A young robotic inventor in copper goggles"
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
             />
           </div>
 
@@ -274,7 +274,7 @@ export const VideoPromptGenerator: React.FC = () => {
               value={config.action}
               onChange={(e) => setConfig((prev) => ({ ...prev, action: e.target.value }))}
               placeholder="e.g. adjusting a glowing crystal engine as sparks scatter"
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
             />
           </div>
 
@@ -289,7 +289,7 @@ export const VideoPromptGenerator: React.FC = () => {
               value={config.environment}
               onChange={(e) => setConfig((prev) => ({ ...prev, environment: e.target.value }))}
               placeholder="e.g. A cluttered Victorian steampunk airship workshop over clouds"
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
             />
           </div>
 
@@ -309,14 +309,14 @@ export const VideoPromptGenerator: React.FC = () => {
                 value={config.cameraMotion}
                 onChange={(e) => setConfig((prev) => ({ ...prev, cameraMotion: e.target.value }))}
                 placeholder="e.g. Slow orbital 360 camera arc tracking the character"
-                className="flex-1 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                className="flex-1 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
               />
               <select
                 aria-label="Preset Camera Motion"
                 onChange={(e) => {
                   if (e.target.value) setConfig((prev) => ({ ...prev, cameraMotion: e.target.value }))
                 }}
-                className="w-28 text-xs rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 px-2 text-slate-700 dark:text-slate-300"
+                className="w-28 text-xs rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D] px-2 text-slate-700 dark:text-slate-300"
               >
                 <option value="">Presets...</option>
                 <option value="Dolly push-in slow cinematic zoom">Dolly In</option>
@@ -345,14 +345,14 @@ export const VideoPromptGenerator: React.FC = () => {
                 value={config.lighting}
                 onChange={(e) => setConfig((prev) => ({ ...prev, lighting: e.target.value }))}
                 placeholder="e.g. Golden hour warm sunset with volumetric god-rays"
-                className="flex-1 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                className="flex-1 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
               />
               <select
                 aria-label="Preset Lighting"
                 onChange={(e) => {
                   if (e.target.value) setConfig((prev) => ({ ...prev, lighting: e.target.value }))
                 }}
-                className="w-28 text-xs rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 px-2 text-slate-700 dark:text-slate-300"
+                className="w-28 text-xs rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D] px-2 text-slate-700 dark:text-slate-300"
               >
                 <option value="">Presets...</option>
                 <option value="Golden hour warm amber sunlight">Golden Hour</option>
@@ -380,14 +380,14 @@ export const VideoPromptGenerator: React.FC = () => {
                 value={config.visualStyle}
                 onChange={(e) => setConfig((prev) => ({ ...prev, visualStyle: e.target.value }))}
                 placeholder="e.g. 35mm vintage film, Kodak Portra color grading, photorealistic"
-                className="flex-1 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                className="flex-1 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
               />
               <select
                 aria-label="Preset Visual Style"
                 onChange={(e) => {
                   if (e.target.value) setConfig((prev) => ({ ...prev, visualStyle: e.target.value }))
                 }}
-                className="w-28 text-xs rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 px-2 text-slate-700 dark:text-slate-300"
+                className="w-28 text-xs rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D] px-2 text-slate-700 dark:text-slate-300"
               >
                 <option value="">Presets...</option>
                 <option value="Cinematic 35mm film grain, 8K photorealism">Cinematic 35mm</option>
@@ -416,7 +416,7 @@ export const VideoPromptGenerator: React.FC = () => {
                   className={`py-1 text-xs font-semibold rounded-lg border transition-all ${
                     config.aspectRatio === ar
                       ? 'bg-purple-600 text-white border-purple-600 shadow-2xs'
-                      : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800'
+                      : 'bg-white dark:bg-[#0B1020] text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800'
                   }`}
                 >
                   {ar}
@@ -439,7 +439,7 @@ export const VideoPromptGenerator: React.FC = () => {
                   className={`py-1 text-xs font-semibold rounded-lg border transition-all ${
                     config.fps === fpsVal
                       ? 'bg-purple-600 text-white border-purple-600 shadow-2xs'
-                      : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800'
+                      : 'bg-white dark:bg-[#0B1020] text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800'
                   }`}
                 >
                   {fpsVal}
@@ -462,7 +462,7 @@ export const VideoPromptGenerator: React.FC = () => {
                   className={`py-1 text-xs font-semibold rounded-lg border transition-all ${
                     config.resolution === res
                       ? 'bg-purple-600 text-white border-purple-600 shadow-2xs'
-                      : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800'
+                      : 'bg-white dark:bg-[#0B1020] text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800'
                   }`}
                 >
                   {res}
@@ -507,7 +507,7 @@ export const VideoPromptGenerator: React.FC = () => {
         </div>
 
         {/* Negative Prompt Callout */}
-        <div className="space-y-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/40 p-4">
+        <div className="space-y-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-[#050814]/40 p-4">
           <div className="flex items-center justify-between text-xs">
             <span className="font-semibold text-slate-700 dark:text-slate-300">
               Recommended Negative Prompt (prevents deformities and artifacts)
@@ -521,7 +521,7 @@ export const VideoPromptGenerator: React.FC = () => {
               <span>{copiedNegative ? 'Copied' : 'Copy Negative'}</span>
             </button>
           </div>
-          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/60 dark:border-slate-800 select-all">
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono bg-white dark:bg-[#0B1020] p-2.5 rounded-lg border border-slate-200/60 dark:border-slate-800 select-all">
             {negativePrompt}
           </p>
         </div>

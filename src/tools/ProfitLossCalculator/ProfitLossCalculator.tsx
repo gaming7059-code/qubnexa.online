@@ -37,7 +37,7 @@ export const ProfitLossCalculator: React.FC = () => {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
       {/* Mode Selector Tabs */}
       <div className="flex flex-wrap gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
         <button
@@ -46,7 +46,7 @@ export const ProfitLossCalculator: React.FC = () => {
           className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'calculateResult'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           Calculate Profit or Loss
@@ -57,7 +57,7 @@ export const ProfitLossCalculator: React.FC = () => {
           className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'calculateTargetPrice'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           Find Selling Price for Target Profit %
@@ -83,7 +83,7 @@ export const ProfitLossCalculator: React.FC = () => {
                   value={costPrice1}
                   onChange={(e) => setCostPrice1(e.target.value)}
                   placeholder="e.g. 5000"
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
               </div>
             </div>
@@ -103,7 +103,7 @@ export const ProfitLossCalculator: React.FC = () => {
                   value={sellingPrice1}
                   onChange={(e) => setSellingPrice1(e.target.value)}
                   placeholder="e.g. 6500"
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
               </div>
             </div>
@@ -127,7 +127,7 @@ export const ProfitLossCalculator: React.FC = () => {
                 ? 'bg-emerald-50/70 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-900/40'
                 : result1.data.status === 'loss'
                 ? 'bg-rose-50/70 dark:bg-rose-950/20 border-rose-200 dark:border-rose-900/40'
-                : 'bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-800'
+                : 'bg-slate-50 dark:bg-[#11182D]/40 border-slate-200 dark:border-slate-800'
             }`}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -181,14 +181,14 @@ export const ProfitLossCalculator: React.FC = () => {
 
               {/* Breakdown cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-slate-200/80 dark:border-slate-800">
-                <div className="rounded-xl bg-white dark:bg-slate-900/80 p-4 border border-slate-200/90 dark:border-slate-800 shadow-2xs">
+                <div className="rounded-xl bg-white dark:bg-[#0B1020]/80 p-4 border border-slate-200/90 dark:border-slate-800 shadow-2xs">
                   <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Cost Price (CP)</span>
                   <div className="text-lg font-bold text-slate-900 dark:text-white mt-1">
                     {formatINR(result1.data.costPrice, { showDecimals: true })}
                   </div>
                 </div>
 
-                <div className="rounded-xl bg-white dark:bg-slate-900/80 p-4 border border-slate-200/90 dark:border-slate-800 shadow-2xs">
+                <div className="rounded-xl bg-white dark:bg-[#0B1020]/80 p-4 border border-slate-200/90 dark:border-slate-800 shadow-2xs">
                   <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Selling Price (SP)</span>
                   <div className="text-lg font-bold text-slate-900 dark:text-white mt-1">
                     {formatINR(result1.data.sellingPrice, { showDecimals: true })}
@@ -227,7 +227,7 @@ export const ProfitLossCalculator: React.FC = () => {
                   value={costPrice2}
                   onChange={(e) => setCostPrice2(e.target.value)}
                   placeholder="e.g. 5000"
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
               </div>
             </div>
@@ -245,7 +245,7 @@ export const ProfitLossCalculator: React.FC = () => {
                   value={targetProfitPercent}
                   onChange={(e) => setTargetProfitPercent(e.target.value)}
                   placeholder="e.g. 25"
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
                 <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-semibold text-sm">%</span>
               </div>
@@ -265,7 +265,7 @@ export const ProfitLossCalculator: React.FC = () => {
 
           {/* Result Card 2 */}
           {result2?.success && result2.data ? (
-            <div className="rounded-2xl bg-gradient-to-br from-emerald-50/90 via-slate-50 to-blue-50/40 dark:from-emerald-950/25 dark:via-slate-900/40 dark:to-blue-950/20 border border-emerald-200 dark:border-emerald-900/40 p-6 sm:p-8 space-y-6 animate-result-in">
+            <div className="rounded-2xl bg-gradient-to-br from-emerald-50/90 via-slate-50 to-blue-50/40 dark:from-emerald-950/25 dark:via-[#0B1020]/40 dark:to-blue-950/20 border border-emerald-200 dark:border-emerald-900/40 p-6 sm:p-8 space-y-6 animate-result-in">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 dark:text-emerald-400">
                   Target Selling Price (SP)
@@ -278,7 +278,7 @@ export const ProfitLossCalculator: React.FC = () => {
                 </p>
               </div>
 
-              <div className="rounded-xl bg-white dark:bg-slate-900/80 p-4 border border-slate-200 dark:border-slate-800 shadow-2xs">
+              <div className="rounded-xl bg-white dark:bg-[#0B1020]/80 p-4 border border-slate-200 dark:border-slate-800 shadow-2xs">
                 <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                   Expected Net Profit
                 </span>

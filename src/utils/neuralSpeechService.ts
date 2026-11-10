@@ -488,7 +488,7 @@ export async function generateNeuralSpeech(
   const blob = encodeWavBlob(mergedSamples, sampleRate)
   const url = URL.createObjectURL(blob)
   const timestamp = Date.now()
-  const filename = `smarttools-neural-${language}-${timestamp}.wav`
+  const filename = `xenova-world-neural-${language}-${timestamp}.wav`
   const durationSeconds = mergedSamples.length / sampleRate
 
   onProgress?.({

@@ -81,7 +81,7 @@ export const ImageQualityIncreaserPage: React.FC = () => {
     {
       question: 'Is this an AI deep-learning model?',
       answer:
-        'No. In compliance with SmartTools India standards, we clearly label this as a transparent, high-precision browser-based algorithmic processor rather than AI. It does not require downloading hundreds of megabytes of heavy AI models or sending data to third-party cloud APIs.',
+        'No. In compliance with Xenova-World transparency standards, we clearly label this as a high-precision browser-based algorithmic processor rather than AI. It does not require downloading hundreds of megabytes of heavy AI models or sending data to third-party cloud APIs.',
     },
     {
       question: 'Are my pictures stored or sent to the cloud?',
@@ -100,9 +100,9 @@ export const ImageQualityIncreaserPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free Image Quality Increaser — Enhance Photo Clarity & Resolution Online | SmartTools India"
+      seoTitle="Free Image Quality Increaser — Enhance Photo Clarity & Resolution Online | Xenova-World"
       seoDescription="Enhance image clarity, sharpness, contrast, and upscale resolution up to 4x directly in your browser. 100% private, free, and hardware-accelerated with zero server uploads."
-      keywords="image quality increaser, enhance image quality, increase photo resolution, image sharpener, upscale image online, free photo enhancer, smarttools india"
+      keywords="image quality increaser, enhance image quality, increase photo resolution, image sharpener, upscale image online, free photo enhancer, xenova-world"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

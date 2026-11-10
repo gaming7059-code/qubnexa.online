@@ -402,7 +402,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
       aria-labelledby="signature-modal-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs animate-in fade-in duration-200"
     >
-      <div className="flex flex-col w-full max-w-xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in zoom-in-95 duration-200">
+      <div className="flex flex-col w-full max-w-xl bg-white dark:bg-[#0B1020] rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in zoom-in-95 duration-200">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
           <div className="flex items-center gap-2">
@@ -421,20 +421,20 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            className="p-1.5 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors cursor-pointer"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center gap-1 px-6 pt-3 border-b border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/30">
+        <div className="flex items-center gap-1 px-6 pt-3 border-b border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-[#050814]/30">
           <button
             type="button"
             onClick={() => setActiveTab('draw')}
             className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-t-xl border-b-2 transition-all cursor-pointer ${
               activeTab === 'draw'
-                ? 'border-blue-600 text-blue-600 dark:text-blue-400 bg-white dark:bg-slate-900'
+                ? 'border-blue-600 text-blue-600 dark:text-blue-400 bg-white dark:bg-[#0B1020]'
                 : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
@@ -447,7 +447,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
             onClick={() => setActiveTab('type')}
             className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-t-xl border-b-2 transition-all cursor-pointer ${
               activeTab === 'type'
-                ? 'border-blue-600 text-blue-600 dark:text-blue-400 bg-white dark:bg-slate-900'
+                ? 'border-blue-600 text-blue-600 dark:text-blue-400 bg-white dark:bg-[#0B1020]'
                 : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
@@ -460,7 +460,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
             onClick={() => setActiveTab('upload')}
             className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-t-xl border-b-2 transition-all cursor-pointer ${
               activeTab === 'upload'
-                ? 'border-blue-600 text-blue-600 dark:text-blue-400 bg-white dark:bg-slate-900'
+                ? 'border-blue-600 text-blue-600 dark:text-blue-400 bg-white dark:bg-[#0B1020]'
                 : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
@@ -473,7 +473,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
             onClick={() => setActiveTab('saved')}
             className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-t-xl border-b-2 transition-all cursor-pointer ${
               activeTab === 'saved'
-                ? 'border-blue-600 text-blue-600 dark:text-blue-400 bg-white dark:bg-slate-900'
+                ? 'border-blue-600 text-blue-600 dark:text-blue-400 bg-white dark:bg-[#0B1020]'
                 : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
@@ -548,7 +548,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
               </div>
 
               {/* Drawing Pad Canvas */}
-              <div className="relative w-full h-52 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 overflow-hidden cursor-crosshair shadow-inner">
+              <div className="relative w-full h-52 bg-slate-50 dark:bg-[#050814]/50 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 overflow-hidden cursor-crosshair shadow-inner">
                 <canvas
                   ref={canvasRef}
                   onPointerDown={handlePointerDownDraw}
@@ -602,7 +602,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
                   value={typedName}
                   onChange={(e) => setTypedName(e.target.value)}
                   placeholder="e.g. Alexander Hamilton"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-[#11182D] text-slate-900 dark:text-white text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -661,7 +661,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
               {!uploadedDataUrl ? (
                 <div
                   onClick={() => uploadInputRef.current?.click()}
-                  className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 rounded-2xl bg-slate-50 dark:bg-slate-950/40 cursor-pointer transition-colors text-center"
+                  className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 rounded-2xl bg-slate-50 dark:bg-[#050814]/40 cursor-pointer transition-colors text-center"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 dark:bg-blue-950/40 dark:text-blue-400 mb-3 shadow-xs">
                     <Upload className="h-6 w-6" />
@@ -675,7 +675,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
                 </div>
               ) : (
                 <div className="space-y-3">
-                  <div className="relative flex items-center justify-center p-4 bg-slate-100 dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800 min-h-[160px]">
+                  <div className="relative flex items-center justify-center p-4 bg-slate-100 dark:bg-[#050814] rounded-2xl border border-slate-200 dark:border-slate-800 min-h-[160px]">
                     <img
                       src={uploadedDataUrl}
                       alt="Uploaded Signature Preview"
@@ -684,7 +684,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setUploadedDataUrl(null)}
-                      className="absolute top-2 right-2 p-1.5 rounded-lg bg-white/80 dark:bg-slate-800/80 text-slate-500 hover:text-red-600 transition-colors shadow-xs cursor-pointer"
+                      className="absolute top-2 right-2 p-1.5 rounded-lg bg-white/80 dark:bg-[#11182D]/80 text-slate-500 hover:text-red-600 transition-colors shadow-xs cursor-pointer"
                       title="Remove and upload different image"
                     >
                       <RotateCcw className="h-3.5 w-3.5" />
@@ -728,7 +728,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
                     <div
                       key={sig.id}
                       onClick={() => handleApplySavedSignature(sig)}
-                      className="group relative flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/30 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50/30 dark:hover:bg-blue-950/20 transition-all cursor-pointer text-center"
+                      className="group relative flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/30 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50/30 dark:hover:bg-blue-950/20 transition-all cursor-pointer text-center"
                     >
                       <div className="h-16 w-full flex items-center justify-center p-1">
                         <img
@@ -759,7 +759,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
         </div>
 
         {/* Footer Actions */}
-        <div className="flex items-center justify-between px-6 py-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/30">
+        <div className="flex items-center justify-between px-6 py-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-[#050814]/30">
           {activeTab !== 'saved' ? (
             <label className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400 cursor-pointer select-none">
               <input
@@ -779,7 +779,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors cursor-pointer"
+              className="px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-[#16203B] rounded-xl transition-colors cursor-pointer"
             >
               Cancel
             </button>

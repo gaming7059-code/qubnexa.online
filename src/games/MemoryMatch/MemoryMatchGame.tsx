@@ -190,9 +190,9 @@ export const MemoryMatchGame: React.FC = () => {
   return (
     <div className="mx-auto max-w-xl space-y-5">
       {/* Top Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 sm:p-4 shadow-xs">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-3 sm:p-4 shadow-xs">
         {/* Difficulty Pill Selector */}
-        <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+        <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-[#11182D] p-1 rounded-xl">
           {(['easy', 'medium', 'hard'] as Difficulty[]).map((diff) => (
             <button
               key={diff}
@@ -212,7 +212,7 @@ export const MemoryMatchGame: React.FC = () => {
         <button
           type="button"
           onClick={toggleMute}
-          className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
           title={isMuted ? 'Unmute sounds' : 'Mute sounds'}
           aria-label={isMuted ? 'Unmute' : 'Mute'}
         >
@@ -243,7 +243,7 @@ export const MemoryMatchGame: React.FC = () => {
       </div>
 
       {/* Cards Arena */}
-      <div className="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 p-4 sm:p-6 shadow-md min-h-[340px] flex items-center justify-center">
+      <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B1020]/90 p-4 sm:p-6 shadow-md min-h-[340px] flex items-center justify-center">
         {isCompleted ? (
           <div className="w-full text-center py-6 space-y-4 animate-fade-in">
             <div className="flex justify-center gap-1">
@@ -260,7 +260,7 @@ export const MemoryMatchGame: React.FC = () => {
             </div>
 
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-              Outstanding Memory! 🎉
+              Outstanding Memory!
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-300 max-w-sm mx-auto">
               Completed in <span className="font-bold text-purple-600 dark:text-purple-400">{moves} moves</span> and{' '}
@@ -299,7 +299,7 @@ export const MemoryMatchGame: React.FC = () => {
                     card.isMatched
                       ? 'bg-emerald-100 dark:bg-emerald-950/70 border-2 border-emerald-400 dark:border-emerald-600 scale-[0.98] opacity-80'
                       : isShowing
-                      ? 'bg-white dark:bg-slate-800 border-2 border-purple-400 dark:border-purple-500 shadow-md rotate-y-180'
+                      ? 'bg-white dark:bg-[#11182D] border-2 border-purple-400 dark:border-purple-500 shadow-md rotate-y-180'
                       : 'bg-gradient-to-br from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 cursor-pointer text-transparent border border-white/20 hover:shadow-lg hover:scale-105'
                   }`}
                 >
@@ -320,7 +320,7 @@ export const MemoryMatchGame: React.FC = () => {
         <button
           type="button"
           onClick={restartCurrentGame}
-          className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-2xs"
+          className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-4 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#16203B] transition-colors shadow-2xs"
         >
           <RotateCcw className="h-3.5 w-3.5" />
           Restart Game
@@ -333,7 +333,7 @@ export const MemoryMatchGame: React.FC = () => {
               setBestMoves(null)
               localStorage.removeItem('smarttools_memory_best_moves')
             }}
-            className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3 py-2.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3 py-2.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors"
           >
             <Sparkles className="h-3 w-3" />
             Reset Best

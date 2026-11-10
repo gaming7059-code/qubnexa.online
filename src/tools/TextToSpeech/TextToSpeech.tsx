@@ -52,7 +52,7 @@ import { revokeSpeechAudioUrl } from '../../utils/wavAudioGenerator'
 
 export const TextToSpeech: React.FC = () => {
   const [text, setText] = useState<string>(
-    'Welcome to SmartTools India! This advanced text-to-speech studio turns your typed or pasted text into clear, natural spoken audio directly inside your web browser. Try adjusting the voice, playback speed, pitch, and volume controls below.'
+    'Welcome to Xenova-World! This advanced text-to-speech studio turns your typed or pasted text into clear, natural spoken audio directly inside your web browser. Try adjusting the voice, playback speed, pitch, and volume controls below.'
   )
 
   const isBrowserTtsSupported =
@@ -463,7 +463,7 @@ export const TextToSpeech: React.FC = () => {
       const match = voices.find((v) => v.lang.toLowerCase().startsWith('hi'))
       if (match) setSelectedVoiceId(match.id)
     } else if (type === 'en') {
-      setText('Hello! Welcome to SmartTools India. I hope you are having a wonderful day.')
+      setText('Hello! Welcome to Xenova-World. I hope you are having a wonderful day.')
       setIsUrduRtl(false)
       setSelectedLanguage('en')
       const match = voices.find((v) => v.lang.toLowerCase().startsWith('en'))
@@ -481,7 +481,7 @@ export const TextToSpeech: React.FC = () => {
       if (match) setSelectedVoiceId(match.id)
     } else {
       setText(
-        'Once upon a time in ancient India, scholars invented the decimal numbering system and the concept of zero. Today, digital technology allows us to calculate, create, and communicate faster than ever before. Enjoy learning and exploring everyday tools on SmartTools India!'
+        'Once upon a time in ancient India, scholars invented the decimal numbering system and the concept of zero. Today, digital technology allows us to calculate, create, and communicate faster than ever before. Enjoy learning and exploring everyday tools on Xenova-World!'
       )
       setIsUrduRtl(false)
     }
@@ -576,14 +576,14 @@ export const TextToSpeech: React.FC = () => {
           <div className="text-sm">
             <h3 className="font-semibold text-rose-900 dark:text-rose-100">Speech Synthesis Not Supported</h3>
             <p className="mt-1 text-rose-700 dark:text-rose-300">
-              Your web browser does not support the Web Speech API. For the best natural voices, please open SmartTools India in Google Chrome, Microsoft Edge, Apple Safari, or Mozilla Firefox.
+              Your web browser does not support the Web Speech API. For the best natural voices, please open Xenova-World in Google Chrome, Microsoft Edge, Apple Safari, or Mozilla Firefox.
             </p>
           </div>
         </div>
       )}
 
       {/* Main Workspace Card */}
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-7 shadow-xs space-y-6">
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-5 sm:p-7 shadow-xs space-y-6">
         {/* Status Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800/80 pb-4">
           <div className="flex items-center gap-2.5">
@@ -606,45 +606,49 @@ export const TextToSpeech: React.FC = () => {
             </div>
           </div>
 
-          {/* Benchmark Test Sample Buttons (Mandatory Section 10) */}
+          {/* Benchmark Test Sample Buttons */}
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-[11px] font-medium text-slate-400 dark:text-slate-500 mr-1">Benchmark Tests:</span>
+            <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-300 mr-1">Samples:</span>
             <button
               type="button"
               onClick={() => handleInsertSample('bn')}
-              className="text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors text-slate-700 dark:text-slate-300 font-medium"
+              className="inline-flex min-h-[34px] cursor-pointer items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors text-slate-700 dark:text-slate-200 font-medium"
               title="Bengali benchmark test sentence"
             >
-              🇧🇩 বাংলা
+              <span className="rounded bg-slate-100 dark:bg-[#11182D] px-1 py-0.5 text-[10px] font-bold">BN</span>
+              <span>বাংলা</span>
             </button>
             <button
               type="button"
               onClick={() => handleInsertSample('hi')}
-              className="text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors text-slate-700 dark:text-slate-300 font-medium"
+              className="inline-flex min-h-[34px] cursor-pointer items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors text-slate-700 dark:text-slate-200 font-medium"
               title="Hindi benchmark test sentence"
             >
-              🇮🇳 हिंदी
+              <span className="rounded bg-slate-100 dark:bg-[#11182D] px-1 py-0.5 text-[10px] font-bold">HI</span>
+              <span>हिंदी</span>
             </button>
             <button
               type="button"
               onClick={() => handleInsertSample('en')}
-              className="text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-slate-700 dark:text-slate-300 font-medium"
+              className="inline-flex min-h-[34px] cursor-pointer items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-[#00DFFF] hover:text-blue-600 dark:hover:text-[#00DFFF] transition-colors text-slate-700 dark:text-slate-200 font-medium"
               title="English benchmark test sentence"
             >
-              🇬🇧 English
+              <span className="rounded bg-slate-100 dark:bg-[#11182D] px-1 py-0.5 text-[10px] font-bold">EN</span>
+              <span>English</span>
             </button>
             <button
               type="button"
               onClick={() => handleInsertSample('ur')}
-              className="text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-green-600 hover:text-green-600 dark:hover:text-green-400 transition-colors text-slate-700 dark:text-slate-300 font-medium"
+              className="inline-flex min-h-[34px] cursor-pointer items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-green-600 hover:text-green-600 dark:hover:text-green-400 transition-colors text-slate-700 dark:text-slate-200 font-medium"
               title="Urdu benchmark test sentence"
             >
-              🇵🇰 اردو
+              <span className="rounded bg-slate-100 dark:bg-[#11182D] px-1 py-0.5 text-[10px] font-bold">UR</span>
+              <span>اردو</span>
             </button>
             <button
               type="button"
               onClick={() => handleInsertSample('story')}
-              className="text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-slate-600 dark:text-slate-300 font-medium hidden sm:inline-block"
+              className="min-h-[34px] cursor-pointer text-xs px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-[#00DFFF] hover:text-blue-600 dark:hover:text-[#00DFFF] transition-colors text-slate-700 dark:text-slate-200 font-medium hidden sm:inline-flex items-center"
             >
               Story
             </button>
@@ -732,7 +736,7 @@ export const TextToSpeech: React.FC = () => {
             </div>
           )}
 
-          <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/15 transition-all">
+          <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/40 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/15 transition-all">
             {/* Top Toolbar inside Text Area */}
             <div className="flex items-center justify-between px-3.5 py-2 border-b border-slate-200/60 dark:border-slate-800 text-xs">
               <div className="flex items-center gap-2">
@@ -740,7 +744,7 @@ export const TextToSpeech: React.FC = () => {
                   Enter text to read aloud
                 </span>
                 {detectedLang && (
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-200/70 dark:bg-[#11182D] text-slate-700 dark:text-slate-300">
                     <Globe className="h-2.5 w-2.5" />
                     {detectedLang.name} ({detectedLang.confidence}%)
                   </span>
@@ -754,7 +758,7 @@ export const TextToSpeech: React.FC = () => {
                   className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold transition-colors ${
                     isUrduRtl
                       ? 'bg-blue-600 text-white shadow-2xs'
-                      : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800'
+                      : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-[#16203B]'
                   }`}
                   title="Toggle Right-to-Left (RTL) script for Urdu"
                 >
@@ -764,7 +768,7 @@ export const TextToSpeech: React.FC = () => {
                 <button
                   type="button"
                   onClick={handlePaste}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-[#16203B] transition-colors"
                   title="Paste from clipboard"
                 >
                   <ClipboardPaste className="h-3.5 w-3.5" />
@@ -775,7 +779,7 @@ export const TextToSpeech: React.FC = () => {
                   type="button"
                   onClick={handleCopy}
                   disabled={!text}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800 disabled:opacity-40 transition-colors"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-[#16203B] disabled:opacity-40 transition-colors"
                   title="Copy text to clipboard"
                 >
                   {copied ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5" />}
@@ -814,7 +818,7 @@ export const TextToSpeech: React.FC = () => {
             />
 
             {/* Bottom Character, Word Counter & Duration */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 px-4 py-2 border-t border-slate-200/60 dark:border-slate-800/80 text-xs text-slate-500 dark:text-slate-400 bg-white/60 dark:bg-slate-900/40 rounded-b-2xl">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 px-4 py-2 border-t border-slate-200/60 dark:border-slate-800/80 text-xs text-slate-500 dark:text-slate-400 bg-white/60 dark:bg-[#0B1020]/40 rounded-b-2xl">
               <div className="flex items-center gap-3">
                 <span>{wordCount} words</span>
                 <span className="text-slate-300 dark:text-slate-700">•</span>
@@ -870,7 +874,7 @@ export const TextToSpeech: React.FC = () => {
         )}
 
         {/* Voice and Audio Controls Grid */}
-        <div className="rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/30 p-4 sm:p-5 space-y-5">
+        <div className="rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/30 p-4 sm:p-5 space-y-5">
           <div className="flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800 pb-3">
             <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">
               <Sliders className="h-4 w-4 text-blue-600 dark:text-blue-400" />
@@ -920,7 +924,7 @@ export const TextToSpeech: React.FC = () => {
                   className={`p-2.5 rounded-xl border text-left transition-all ${
                     selectedStyle === style.id
                       ? 'border-blue-600 bg-blue-50/80 dark:bg-blue-950/60 shadow-xs ring-2 ring-blue-500/20'
-                      : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700'
+                      : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                 >
                   <div className={`text-xs font-bold ${selectedStyle === style.id ? 'text-blue-700 dark:text-blue-400' : 'text-slate-800 dark:text-slate-200'}`}>
@@ -945,7 +949,7 @@ export const TextToSpeech: React.FC = () => {
                 id="tts-language-filter"
                 value={selectedLanguage}
                 onChange={(e) => setSelectedLanguage(e.target.value)}
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3 py-2 text-xs sm:text-sm text-slate-800 dark:text-slate-200 shadow-2xs focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3 py-2 text-xs sm:text-sm text-slate-800 dark:text-slate-200 shadow-2xs focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               >
                 <option value="all">All Available Languages ({voices.length} voices)</option>
                 {languageOptions.map((opt) => (
@@ -974,7 +978,7 @@ export const TextToSpeech: React.FC = () => {
                           ? 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300'
                           : selectedVoice.tier === 'cloud'
                           ? 'bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300'
-                          : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                          : 'bg-slate-100 dark:bg-[#11182D] text-slate-600 dark:text-slate-400'
                       }`}
                     >
                       {selectedVoice.tierLabel}
@@ -986,7 +990,7 @@ export const TextToSpeech: React.FC = () => {
                   <button
                     type="button"
                     onClick={refreshVoices}
-                    className="p-1 rounded-md text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                    className="p-1 rounded-md text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
                     title="Refresh available voices"
                   >
                     <RefreshCw className="h-3 w-3" />
@@ -1000,7 +1004,7 @@ export const TextToSpeech: React.FC = () => {
                   value={effectiveVoiceId}
                   onChange={(e) => setSelectedVoiceId(e.target.value)}
                   disabled={filteredVoices.length === 0}
-                  className="flex-1 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3 py-2 text-xs sm:text-sm text-slate-800 dark:text-slate-200 shadow-2xs focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:opacity-50 truncate"
+                  className="flex-1 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3 py-2 text-xs sm:text-sm text-slate-800 dark:text-slate-200 shadow-2xs focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20 disabled:opacity-50 truncate"
                 >
                   {filteredVoices.length === 0 ? (
                     <option value="">No voices available for selected filter</option>
@@ -1021,7 +1025,7 @@ export const TextToSpeech: React.FC = () => {
                   className={`px-3 py-2 rounded-xl text-xs font-semibold inline-flex items-center gap-1.5 transition-all shadow-2xs shrink-0 ${
                     isPreviewing
                       ? 'bg-emerald-600 text-white animate-pulse'
-                      : 'border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400'
+                      : 'border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] text-slate-700 dark:text-slate-300 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400'
                   }`}
                   title="Listen to a quick sample of this voice"
                 >
@@ -1126,7 +1130,7 @@ export const TextToSpeech: React.FC = () => {
                     className={`min-h-[30px] text-xs px-2 py-1 rounded-md transition-colors active:scale-95 inline-flex items-center justify-center flex-1 ${
                       rate === val
                         ? 'bg-blue-600 text-white font-semibold'
-                        : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-100'
+                        : 'bg-white dark:bg-[#11182D] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-100'
                     }`}
                   >
                     {val.toFixed(1)}x
@@ -1164,7 +1168,7 @@ export const TextToSpeech: React.FC = () => {
                     className={`min-h-[30px] text-xs px-2 py-1 rounded-md flex-1 transition-colors active:scale-95 inline-flex items-center justify-center ${
                       pitch === item.val
                         ? 'bg-blue-600 text-white font-semibold'
-                        : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-100'
+                        : 'bg-white dark:bg-[#11182D] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-100'
                     }`}
                   >
                     {item.label}
@@ -1196,21 +1200,21 @@ export const TextToSpeech: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setVolume(volume === 0 ? 1.0 : 0)}
-                  className="min-h-[30px] text-xs px-2 py-1 rounded-md bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1 transition-colors active:scale-95 inline-flex items-center justify-center hover:bg-slate-100"
+                  className="min-h-[30px] text-xs px-2 py-1 rounded-md bg-white dark:bg-[#11182D] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1 transition-colors active:scale-95 inline-flex items-center justify-center hover:bg-slate-100"
                 >
                   {volume === 0 ? 'Unmute' : 'Mute'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setVolume(0.5)}
-                  className="min-h-[30px] text-xs px-2 py-1 rounded-md bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1 transition-colors active:scale-95 inline-flex items-center justify-center hover:bg-slate-100"
+                  className="min-h-[30px] text-xs px-2 py-1 rounded-md bg-white dark:bg-[#11182D] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1 transition-colors active:scale-95 inline-flex items-center justify-center hover:bg-slate-100"
                 >
                   50%
                 </button>
                 <button
                   type="button"
                   onClick={() => setVolume(1.0)}
-                  className="min-h-[30px] text-xs px-2 py-1 rounded-md bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1 transition-colors active:scale-95 inline-flex items-center justify-center hover:bg-slate-100"
+                  className="min-h-[30px] text-xs px-2 py-1 rounded-md bg-white dark:bg-[#11182D] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex-1 transition-colors active:scale-95 inline-flex items-center justify-center hover:bg-slate-100"
                 >
                   100%
                 </button>
@@ -1270,7 +1274,7 @@ export const TextToSpeech: React.FC = () => {
               type="button"
               onClick={handleStop}
               disabled={!isSpeaking}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 px-5 py-3 text-sm sm:text-base font-semibold disabled:opacity-40 transition-colors shadow-2xs"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D] text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#1B2748] px-5 py-3 text-sm sm:text-base font-semibold disabled:opacity-40 transition-colors shadow-2xs"
             >
               <Square className="h-4 w-4 fill-current" />
               <span>Stop</span>
@@ -1392,14 +1396,14 @@ export const TextToSpeech: React.FC = () => {
       </div>
 
       {/* Voice Engine & Quality Transparency Section */}
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-7 shadow-xs space-y-4">
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-5 sm:p-7 shadow-xs space-y-4">
         <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-sm sm:text-base">
           <Wand2 className="h-5 w-5 text-blue-600 dark:text-blue-400" />
           <h3>Understanding Voice Engines &amp; Speech Quality</h3>
         </div>
 
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          SmartTools India maintains full transparency about audio generation technologies. We never falsely label standard browser speech as AI Neural speech. Here is how each engine operates:
+          Xenova-World maintains full transparency about audio generation technologies. We never falsely label standard browser speech as AI Neural speech. Here is how each engine operates:
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">

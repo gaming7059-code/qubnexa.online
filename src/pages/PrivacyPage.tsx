@@ -3,10 +3,10 @@ import { usePageSEO, createBreadcrumbSchema } from '../utils/seo'
 
 export const PrivacyPage: React.FC = () => {
   usePageSEO({
-    title: 'Privacy Policy — Client-Side Security & Data Protection | SmartTools India',
-    description: 'Read the SmartTools India privacy policy. Learn how our browser-first architecture safeguards your personal data without logins, tracking, or central databases.',
+    title: 'Privacy Policy — Client-Side Security & Data Protection | Xenova-World',
+    description: 'Read the Xenova-World privacy policy. Learn how our browser-first architecture safeguards your personal data without logins, tracking, or central databases.',
     canonicalPath: '/privacy',
-    keywords: 'privacy policy, smarttools privacy, client-side data protection, no login tools, private calculations',
+    keywords: 'privacy policy, xenova-world privacy, client-side data protection, no login tools, private calculations',
     schema: createBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Privacy Policy', path: '/privacy' },
@@ -15,24 +15,24 @@ export const PrivacyPage: React.FC = () => {
   return (
     <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 animate-fade-in-up">
       <div>
-        <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+        <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-[#00DFFF]">
           Legal &amp; Privacy
         </span>
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mt-1">
+        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1">
           Privacy Policy
         </h1>
-        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
           Last updated: September 2026
         </p>
       </div>
 
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-10 shadow-2xs space-y-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+      <div className="xw-panel p-6 sm:p-10 shadow-2xs space-y-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
         <section className="space-y-2">
           <h2 className="text-base font-bold text-slate-900 dark:text-white">
             1. Browser-First Architecture
           </h2>
           <p>
-            At SmartTools India, we believe in privacy by design. Our utilities, calculators, and converters are designed to execute directly within your web browser using client-side JavaScript. This means that numerical inputs, dates, financial figures, and texts you enter into calculators are computed directly on your local device.
+            At Xenova-World, we believe in privacy by design. Our utilities, calculators, and converters are designed to execute directly within your web browser using client-side JavaScript. This means that numerical inputs, dates, financial figures, and texts you enter into calculators are computed directly on your local device.
           </p>
         </section>
 
@@ -59,7 +59,7 @@ export const PrivacyPage: React.FC = () => {
             4. Local Storage
           </h2>
           <p>
-            Certain tools may offer local preferences (such as light/dark mode or remembering your last unit selection) utilizing standard browser <code className="text-xs bg-slate-100 dark:bg-slate-800 dark:text-slate-200 px-1 py-0.5 rounded">localStorage</code>. This data never leaves your device.
+            Certain tools may offer local preferences (such as light/dark mode or remembering your last unit selection) utilizing standard browser <code className="text-xs bg-slate-100 dark:bg-[#11182D] dark:text-slate-200 px-1.5 py-0.5 rounded">localStorage</code>. This data never leaves your device.
           </p>
         </section>
 

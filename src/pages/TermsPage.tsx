@@ -3,10 +3,10 @@ import { usePageSEO, createBreadcrumbSchema } from '../utils/seo'
 
 export const TermsPage: React.FC = () => {
   usePageSEO({
-    title: 'Terms of Service — Disclaimer & Usage Guidelines | SmartTools India',
-    description: 'Read the SmartTools India terms of service. Understand our educational utility guidelines, terms of use, and computational disclaimer.',
+    title: 'Terms of Service — Disclaimer & Usage Guidelines | Xenova-World',
+    description: 'Read the Xenova-World terms of service. Understand our educational utility guidelines, terms of use, and computational disclaimer.',
     canonicalPath: '/terms',
-    keywords: 'terms of service, smarttools terms, disclaimer, acceptable use, online tool guidelines',
+    keywords: 'terms of service, xenova-world terms, disclaimer, acceptable use, online tool guidelines',
     schema: createBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Terms of Service', path: '/terms' },
@@ -15,24 +15,24 @@ export const TermsPage: React.FC = () => {
   return (
     <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 animate-fade-in-up">
       <div>
-        <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+        <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-[#00DFFF]">
           Legal Agreement
         </span>
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mt-1">
+        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1">
           Terms of Service
         </h1>
-        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
           Last updated: September 2026
         </p>
       </div>
 
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-10 shadow-2xs space-y-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+      <div className="xw-panel p-6 sm:p-10 shadow-2xs space-y-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
         <section className="space-y-2">
           <h2 className="text-base font-bold text-slate-900 dark:text-white">
             1. Acceptance of Terms
           </h2>
           <p>
-            By accessing and utilizing SmartTools India (&ldquo;the Website&rdquo;), you agree to be bound by these Terms of Service. If you do not agree with any portion of these terms, please discontinue use of the tools.
+            By accessing and utilizing Xenova-World (&ldquo;the Website&rdquo;), you agree to be bound by these Terms of Service. If you do not agree with any portion of these terms, please discontinue use of the tools.
           </p>
         </section>
 
@@ -41,7 +41,7 @@ export const TermsPage: React.FC = () => {
             2. Nature of the Service
           </h2>
           <p>
-            SmartTools India provides free, browser-based calculation, conversion, and digital utilities. The service is provided &ldquo;as is&rdquo; without warranties of any kind.
+            Xenova-World provides free, browser-based calculation, conversion, and digital utilities. The service is provided &ldquo;as is&rdquo; without warranties of any kind.
           </p>
         </section>
 

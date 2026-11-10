@@ -77,7 +77,7 @@ export const DateTimeCalculatorPage: React.FC = () => {
     },
     {
       question: 'Why does timezone matter in date calculations?',
-      answer: 'Standard browser dates often parse ISO strings in UTC midnight, which causes off-by-one errors in positive timezones like Indian Standard Time (+05:30) or negative timezones like US Eastern (-05:00). SmartTools India parses local year, month, and day components at local noon, completely preventing timezone shifting.',
+      answer: 'Standard browser dates often parse ISO strings in UTC midnight, which causes off-by-one errors in positive timezones like Indian Standard Time (+05:30) or negative timezones like US Eastern (-05:00). Xenova-World parses local year, month, and day components at local noon, completely preventing timezone shifting.',
     },
     {
       question: 'What is the difference between calendar days and working days?',
@@ -92,7 +92,7 @@ export const DateTimeCalculatorPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free Date & Time Calculator — Days Between, Add Days, Working Days | SmartTools India"
+      seoTitle="Free Date & Time Calculator — Days Between, Add Days, Working Days | Xenova-World"
       seoDescription="Calculate exact days between two dates, add or subtract days, weeks and months, countdown to events, and compute Monday–Friday working days. 100% free and private."
       howToUseSteps={howToUseSteps}
       formulas={formulas}

@@ -335,10 +335,10 @@ export const FindAndReplaceModal: React.FC<FindAndReplaceModalProps> = ({
   if (!isOpen) return null
 
   return (
-    <div className="fixed top-20 right-6 z-50 w-84 sm:w-96 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-4 text-xs animate-in fade-in zoom-in-95 duration-150 backdrop-blur-md">
+    <div className="fixed top-20 right-6 z-50 w-84 sm:w-96 bg-white dark:bg-[#0B1020] rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-4 text-xs animate-in fade-in zoom-in-95 duration-150 backdrop-blur-md">
       {/* Header with Mode Tabs */}
       <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-100 dark:border-slate-800">
-        <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-0.5 rounded-xl">
+        <div className="flex items-center gap-1 bg-slate-100 dark:bg-[#11182D] p-0.5 rounded-xl">
           <button
             type="button"
             onClick={() => setActiveTab('find')}
@@ -370,7 +370,7 @@ export const FindAndReplaceModal: React.FC<FindAndReplaceModalProps> = ({
             onHighlightMatch(null)
             onClose()
           }}
-          className="p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors"
+          className="p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#16203B] cursor-pointer transition-colors"
           title="Close (Esc)"
         >
           <X className="h-4 w-4" />
@@ -422,7 +422,7 @@ export const FindAndReplaceModal: React.FC<FindAndReplaceModalProps> = ({
                 }
               }}
               placeholder="Search text in document (Press Enter)..."
-              className="w-full pl-2.5 pr-16 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 text-xs focus:outline-hidden focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-2.5 pr-16 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-[#11182D]/80 text-slate-800 dark:text-slate-100 text-xs focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             />
             {/* Inline Nav Arrows */}
             <div className="absolute right-1.5 flex items-center gap-0.5">
@@ -465,7 +465,7 @@ export const FindAndReplaceModal: React.FC<FindAndReplaceModalProps> = ({
                 }
               }}
               placeholder="New replacement text..."
-              className="w-full px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 text-xs focus:outline-hidden focus:ring-2 focus:ring-purple-500"
+              className="w-full px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-[#11182D]/80 text-slate-800 dark:text-slate-100 text-xs focus:outline-hidden focus:ring-2 focus:ring-purple-500"
             />
           </div>
         )}
@@ -480,7 +480,7 @@ export const FindAndReplaceModal: React.FC<FindAndReplaceModalProps> = ({
               className={`flex items-center gap-1 px-2 py-1 rounded-lg font-medium transition-colors cursor-pointer ${
                 matchCase
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-[#11182D] text-slate-600 dark:text-slate-300 hover:bg-slate-200'
               }`}
               title="Match Case"
             >
@@ -495,7 +495,7 @@ export const FindAndReplaceModal: React.FC<FindAndReplaceModalProps> = ({
               className={`flex items-center gap-1 px-2 py-1 rounded-lg font-medium transition-colors cursor-pointer ${
                 wholeWord
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-[#11182D] text-slate-600 dark:text-slate-300 hover:bg-slate-200'
               }`}
               title="Match Whole Word"
             >
@@ -505,7 +505,7 @@ export const FindAndReplaceModal: React.FC<FindAndReplaceModalProps> = ({
           </div>
 
           {/* Scope Selector */}
-          <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg text-[10px]">
+          <div className="flex items-center gap-1 bg-slate-100 dark:bg-[#11182D] p-0.5 rounded-lg text-[10px]">
             <button
               type="button"
               onClick={() => setScope('currentPage')}
@@ -538,7 +538,7 @@ export const FindAndReplaceModal: React.FC<FindAndReplaceModalProps> = ({
               type="button"
               onClick={handlePrevMatch}
               disabled={matches.length === 0}
-              className="flex-1 flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 active:scale-95 text-slate-700 dark:text-slate-200 font-semibold text-xs transition-all cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+              className="flex-1 flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-[#11182D] hover:bg-slate-200 dark:hover:bg-[#1B2748] active:scale-95 text-slate-700 dark:text-slate-200 font-semibold text-xs transition-all cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
               title="Previous Match (Shift+Enter / Shift+F3)"
             >
               <ChevronUp className="h-3.5 w-3.5" />

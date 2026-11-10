@@ -4,24 +4,96 @@
 
 :root {
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  /* Official Xenova-World Brand Palette */
+  --xw-obsidian: #050814;
+  --xw-navy: #0B1020;
+  --xw-navy-elevated: #11182D;
+  --xw-cyan: #00DFFF;
+  --xw-blue: #2563EB;
+  --xw-purple: #8B5CF6;
+  --xw-magenta: #D946EF;
+
+  /* Semantic Light Surface Tokens */
+  --xw-bg: #F8FAFC;
+  --xw-surface: #FFFFFF;
+  --xw-surface-muted: #F1F5F9;
+  --xw-text: #0F172A;
+  --xw-text-muted: #475569;
+  --xw-border: #E2E8F0;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-family: var(--font-sans);
+.dark {
+  --xw-bg: #050814;
+  --xw-surface: #0B1020;
+  --xw-surface-muted: #11182D;
+  --xw-text: #FFFFFF;
+  --xw-text-muted: #CBD5E1;
+  --xw-border: rgba(148, 163, 184, 0.16);
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: #f8fafc;
-  color: #0f172a;
-  transition: background-color 0.2s ease, color 0.2s ease;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--xw-bg);
+    color: var(--xw-text);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  select:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
 }
 
-.dark body {
-  background-color: #0b0f19;
-  color: #f1f5f9;
+@layer components {
+  .xw-surface {
+    @apply rounded-2xl border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-[#0B1020] shadow-xs transition-all duration-200;
+  }
+
+  .xw-surface-muted {
+    @apply rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-slate-50/90 dark:bg-[#11182D]/70 transition-colors duration-200;
+  }
+
+  .xw-panel {
+    @apply rounded-2xl border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-[#0B1020] p-5 sm:p-7 shadow-xs;
+  }
+
+  .xw-result-hero {
+    @apply rounded-2xl border border-cyan-200/80 dark:border-cyan-500/25 bg-gradient-to-br from-cyan-50/80 via-slate-50 to-blue-50/60 dark:from-[#0E1833] dark:via-[#0B1020] dark:to-[#13122B] p-5 sm:p-7;
+  }
+
+  .xw-input {
+    @apply w-full rounded-xl border border-slate-200 dark:border-slate-700/80 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-sm sm:text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-400 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-3 focus:ring-blue-500/15 dark:focus:ring-[#00DFFF]/20 transition-all duration-200;
+  }
+
+  .xw-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 px-5 py-2.5 min-h-[44px] text-sm font-semibold text-white shadow-xs hover:shadow-md hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-[#00DFFF] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#050814] disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .xw-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700/80 bg-white dark:bg-[#0B1020] hover:bg-slate-50 dark:hover:bg-[#11182D] hover:border-slate-300 dark:hover:border-cyan-500/40 px-5 py-2.5 min-h-[44px] text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-2xs active:scale-[0.98] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-[#00DFFF];
+  }
+
+  .xw-tab {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-xl px-3.5 py-2 min-h-[40px] text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-[#00DFFF];
+  }
+
+  .xw-tab-active {
+    @apply bg-blue-600 text-white shadow-xs;
+  }
+
+  .xw-tab-inactive {
+    @apply bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 border border-transparent dark:border-slate-800 hover:bg-slate-200/80 dark:hover:bg-slate-800/80;
+  }
 }
 
 /* ==========================================================================
@@ -233,9 +305,9 @@ body {
   will-change: transform;
 }
 
-/* Living liquid gradient typography */
+/* Living liquid gradient typography — Xenova-World cyan/blue/purple/magenta spectrum */
 .animate-gradient-text {
-  background-image: linear-gradient(135deg, #2563eb 0%, #7c3aed 25%, #ec4899 50%, #06b6d4 75%, #2563eb 100%) !important;
+  background-image: linear-gradient(135deg, #06b6d4 0%, #2563eb 25%, #7c3aed 50%, #ec4899 75%, #06b6d4 100%) !important;
   background-size: 300% 100% !important;
   background-clip: text !important;
   -webkit-background-clip: text !important;
@@ -245,7 +317,7 @@ body {
 }
 
 .dark .animate-gradient-text {
-  background-image: linear-gradient(135deg, #60a5fa 0%, #c084fc 25%, #f472b6 50%, #38bdf8 75%, #60a5fa 100%) !important;
+  background-image: linear-gradient(135deg, #22d3ee 0%, #60a5fa 25%, #a855f7 50%, #f472b6 75%, #22d3ee 100%) !important;
   background-size: 300% 100% !important;
   background-clip: text !important;
   -webkit-background-clip: text !important;
@@ -326,14 +398,13 @@ body {
    ========================================================================== */
 
 .card-lift {
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease;
-  will-change: transform;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
 }
 .card-lift:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
 }
 .card-lift:active {
-  transform: translateY(-2px) scale(0.985);
+  transform: translateY(-1px) scale(0.99);
 }
 
 /* Stagger delay classes */

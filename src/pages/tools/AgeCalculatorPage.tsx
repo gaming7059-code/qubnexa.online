@@ -73,16 +73,16 @@ export const AgeCalculatorPage: React.FC = () => {
     },
     {
       question: 'Is my birth date recorded or shared?',
-      answer: 'No. The calculation takes place purely in your local browser session. SmartTools India does not retain, track, or transmit your birth date.',
+      answer: 'No. The calculation takes place purely in your local browser session. Xenova-World does not retain, track, or transmit your birth date.',
     },
   ]
 
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Age Calculator — Calculate Exact Age in Years, Months & Days | SmartTools India"
+      seoTitle="Age Calculator — Calculate Exact Age in Years, Months & Days | Xenova-World"
       seoDescription="Find your exact chronological age in years, months, days, hours, and minutes. Check exam age eligibility, leap year milestones, and upcoming birthday countdowns accurately."
-      keywords="age calculator, calculate age from date of birth, exact age in days, chronological age calculator, birthday countdown, exam age eligibility, smarttools india"
+      keywords="age calculator, calculate age from date of birth, exact age in days, chronological age calculator, birthday countdown, exam age eligibility, xenova-world"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

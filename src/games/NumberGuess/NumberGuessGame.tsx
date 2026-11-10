@@ -167,9 +167,9 @@ export const NumberGuessGame: React.FC = () => {
   return (
     <div className="mx-auto max-w-xl space-y-5">
       {/* Top Header Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 sm:p-4 shadow-xs">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-3 sm:p-4 shadow-xs">
         {/* Range Selector */}
-        <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+        <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-[#11182D] p-1 rounded-xl">
           {(Object.keys(CONFIGS) as RangeMode[]).map((mode) => (
             <button
               key={mode}
@@ -189,7 +189,7 @@ export const NumberGuessGame: React.FC = () => {
         <button
           type="button"
           onClick={toggleMute}
-          className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
           title={isMuted ? 'Unmute sounds' : 'Mute sounds'}
           aria-label={isMuted ? 'Unmute' : 'Mute'}
         >
@@ -220,7 +220,7 @@ export const NumberGuessGame: React.FC = () => {
       </div>
 
       {/* Main Interactive Arena */}
-      <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 p-6 sm:p-8 shadow-md space-y-6">
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B1020]/90 p-6 sm:p-8 shadow-md space-y-6">
         {/* Range Bounds Visualizer Bar */}
         <div className="space-y-2">
           <div className="flex items-center justify-between text-xs font-bold text-slate-600 dark:text-slate-300">
@@ -230,7 +230,7 @@ export const NumberGuessGame: React.FC = () => {
             </span>
           </div>
 
-          <div className="relative h-4 w-full rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+          <div className="relative h-4 w-full rounded-full bg-slate-200 dark:bg-[#11182D] overflow-hidden">
             <div
               className="absolute top-0 bottom-0 bg-gradient-to-r from-rose-500 to-amber-500 rounded-full transition-all duration-300"
               style={{
@@ -250,7 +250,7 @@ export const NumberGuessGame: React.FC = () => {
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                  Bingo! You Guessed It! 🎉
+                  Bingo! You Guessed It!
                 </h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">
                   The secret number was <strong className="text-emerald-600 dark:text-emerald-400 text-lg">{targetNumber}</strong>. Solved in{' '}
@@ -296,7 +296,7 @@ export const NumberGuessGame: React.FC = () => {
                   if (errorMessage) setErrorMessage('')
                 }}
                 placeholder={`Guess between ${minBound} and ${maxBound}...`}
-                className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-lg font-bold text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-rose-500/20 focus:border-rose-500"
+                className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D] px-4 py-3 text-lg font-bold text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-rose-500/20 focus:border-rose-500"
               />
               <button
                 type="submit"
@@ -318,7 +318,7 @@ export const NumberGuessGame: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setInputValue(String(Math.floor((minBound + maxBound) / 2)))}
-                className="px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 hover:text-rose-600 transition-colors"
+                className="px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-200/80 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 hover:text-rose-600 transition-colors"
               >
                 Midpoint ({Math.floor((minBound + maxBound) / 2)})
               </button>
@@ -328,7 +328,7 @@ export const NumberGuessGame: React.FC = () => {
 
         {/* Latest Clue Indicator */}
         {history.length > 0 && !isGameOver && (
-          <div className="rounded-2xl bg-white dark:bg-slate-800 p-4 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+          <div className="rounded-2xl bg-white dark:bg-[#11182D] p-4 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold text-slate-500 uppercase">Latest Clue:</span>
               <span className="font-extrabold text-slate-900 dark:text-white text-base">
@@ -368,7 +368,7 @@ export const NumberGuessGame: React.FC = () => {
 
       {/* History Feed */}
       {history.length > 0 && (
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 space-y-2">
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-4 space-y-2">
           <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-2">
             Guess History ({history.length} {history.length === 1 ? 'try' : 'tries'})
           </span>
@@ -378,7 +378,7 @@ export const NumberGuessGame: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className="flex items-center justify-between text-xs py-1.5 px-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800"
+                  className="flex items-center justify-between text-xs py-1.5 px-3 rounded-xl bg-slate-50 dark:bg-[#11182D]/60 border border-slate-100 dark:border-slate-800"
                 >
                   <span className="font-medium text-slate-400">#{attemptNum}</span>
                   <span className="font-bold text-slate-800 dark:text-white text-sm">
@@ -413,7 +413,7 @@ export const NumberGuessGame: React.FC = () => {
         <button
           type="button"
           onClick={() => startNewRound(rangeMode)}
-          className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-2xs"
+          className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-4 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#16203B] transition-colors shadow-2xs"
         >
           <RotateCcw className="h-3.5 w-3.5" />
           New Round
@@ -426,7 +426,7 @@ export const NumberGuessGame: React.FC = () => {
             setStats(fresh)
             localStorage.setItem('smarttools_guess_stats', JSON.stringify(fresh))
           }}
-          className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3.5 py-2.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors"
         >
           <Sparkles className="h-3 w-3" />
           Reset Score

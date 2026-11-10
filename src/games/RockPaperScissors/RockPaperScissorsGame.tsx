@@ -132,9 +132,9 @@ export const RockPaperScissorsGame: React.FC = () => {
   return (
     <div className="mx-auto max-w-xl space-y-5">
       {/* Top Header Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 sm:p-4 shadow-xs">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-3 sm:p-4 shadow-xs">
         {/* Match Mode Selector */}
-        <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+        <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-[#11182D] p-1 rounded-xl">
           <button
             type="button"
             onClick={() => {
@@ -182,7 +182,7 @@ export const RockPaperScissorsGame: React.FC = () => {
         <button
           type="button"
           onClick={toggleMute}
-          className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
           title={isMuted ? 'Unmute sounds' : 'Mute sounds'}
           aria-label={isMuted ? 'Unmute' : 'Mute'}
         >
@@ -198,7 +198,7 @@ export const RockPaperScissorsGame: React.FC = () => {
             {playerScore}
           </div>
         </div>
-        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 p-2.5 text-center">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B1020]/80 p-2.5 text-center">
           <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">Ties</span>
           <div className="text-xl sm:text-2xl font-bold text-slate-700 dark:text-slate-200">{draws}</div>
         </div>
@@ -219,26 +219,26 @@ export const RockPaperScissorsGame: React.FC = () => {
       </div>
 
       {/* Battle Arena Viewport */}
-      <div className="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 p-6 sm:p-8 shadow-md">
+      <div className="relative xw-panel bg-slate-50/70 dark:bg-[#0B1020] p-6 sm:p-8 shadow-md">
         {tournamentWinner ? (
           <div className="text-center py-6 space-y-4 animate-scale-in">
             <div className="inline-flex p-4 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 mb-1">
               {tournamentWinner === 'player' ? <Trophy className="h-10 w-10 animate-bounce" /> : <Award className="h-10 w-10" />}
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-              {tournamentWinner === 'player' ? 'Match Champion! 🏆' : 'Computer Wins the Match!'}
+              {tournamentWinner === 'player' ? 'Match Champion!' : 'Computer Wins the Match!'}
             </h3>
-            <p className="text-sm text-slate-600 dark:text-slate-400">
+            <p className="text-sm text-slate-600 dark:text-slate-300">
               Final score: You {playerScore} – {computerScore} Computer
             </p>
             <div className="pt-2">
               <button
                 type="button"
                 onClick={resetMatch}
-                className="inline-flex items-center gap-2 rounded-xl bg-amber-600 hover:bg-amber-700 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-amber-600/30 transition-all hover:scale-105 active:scale-95"
+                className="inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-xl bg-amber-600 hover:bg-amber-700 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-amber-600/25 transition-colors"
               >
                 <RotateCcw className="h-4 w-4" />
-                Play Next Tournament
+                <span>Play Next Tournament</span>
               </button>
             </div>
           </div>
@@ -248,7 +248,7 @@ export const RockPaperScissorsGame: React.FC = () => {
             <div className="flex items-center justify-around w-full max-w-sm my-4">
               {/* Player Side */}
               <div className="flex flex-col items-center gap-2">
-                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
                   You
                 </span>
                 <div
@@ -257,28 +257,28 @@ export const RockPaperScissorsGame: React.FC = () => {
                       ? 'animate-bounce border-blue-400 bg-blue-50 dark:bg-blue-950/50'
                       : roundResult === 'win'
                       ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/60 scale-105 shadow-emerald-500/20'
-                      : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800'
+                      : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D]'
                   }`}
                 >
                   {playerChoice ? (
                     <GestureIcon gesture={playerChoice} className="w-14 h-14" />
                   ) : (
-                    <span className="text-3xl text-slate-300 dark:text-slate-600 font-bold">?</span>
+                    <span className="text-3xl text-slate-400 dark:text-slate-500 font-bold">?</span>
                   )}
                 </div>
-                <span className="text-sm font-bold text-slate-700 dark:text-slate-200 capitalize">
+                <span className="text-sm font-bold text-slate-800 dark:text-slate-200 capitalize">
                   {playerChoice || 'Ready'}
                 </span>
               </div>
 
               {/* VS Badge */}
               <div className="flex flex-col items-center px-2">
-                <span className="text-xl font-black text-slate-400 dark:text-slate-600 italic">VS</span>
+                <span className="text-xl font-black text-slate-500 dark:text-slate-500 italic">VS</span>
               </div>
 
               {/* Computer Side */}
               <div className="flex flex-col items-center gap-2">
-                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
                   Computer
                 </span>
                 <div
@@ -287,18 +287,18 @@ export const RockPaperScissorsGame: React.FC = () => {
                       ? 'animate-bounce border-rose-400 bg-rose-50 dark:bg-rose-950/50'
                       : roundResult === 'lose'
                       ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/60 scale-105 shadow-emerald-500/20'
-                      : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800'
+                      : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D]'
                   }`}
                 >
                   {isShaking ? (
-                    <span className="text-2xl animate-spin text-amber-500">⚡</span>
+                    <RotateCcw className="h-7 w-7 animate-spin text-amber-500" />
                   ) : computerChoice ? (
                     <GestureIcon gesture={computerChoice} className="w-14 h-14" />
                   ) : (
-                    <span className="text-3xl text-slate-300 dark:text-slate-600 font-bold">?</span>
+                    <span className="text-3xl text-slate-400 dark:text-slate-500 font-bold">?</span>
                   )}
                 </div>
-                <span className="text-sm font-bold text-slate-700 dark:text-slate-200 capitalize">
+                <span className="text-sm font-bold text-slate-800 dark:text-slate-200 capitalize">
                   {isShaking ? 'Choosing...' : computerChoice || 'Waiting'}
                 </span>
               </div>
@@ -307,27 +307,27 @@ export const RockPaperScissorsGame: React.FC = () => {
             {/* Round Result Banner */}
             <div className="h-10 flex items-center justify-center mt-2">
               {isShaking ? (
-                <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 animate-pulse">
-                  Rock, Paper, Scissors, Shoot! 💥
+                <span className="text-sm font-semibold text-slate-600 dark:text-slate-300 animate-pulse">
+                  Rock, Paper, Scissors, Shoot!
                 </span>
               ) : roundResult ? (
                 <span
-                  className={`text-base font-extrabold px-4 py-1 rounded-full shadow-2xs ${
+                  className={`text-sm sm:text-base font-extrabold px-4 py-1 rounded-full shadow-2xs ${
                     roundResult === 'win'
-                      ? 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700'
+                      ? 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700'
                       : roundResult === 'lose'
-                      ? 'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-700'
-                      : 'bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-700'
+                      ? 'bg-rose-100 dark:bg-rose-950/80 text-rose-800 dark:text-rose-300 border border-rose-300 dark:border-rose-700'
+                      : 'bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700'
                   }`}
                 >
                   {roundResult === 'win'
-                    ? '🎉 You Win this round!'
+                    ? 'You Win this round!'
                     : roundResult === 'lose'
-                    ? '💥 Computer Wins this round!'
-                    : '🤝 Both picked the same! It’s a Draw!'}
+                    ? 'Computer Wins this round!'
+                    : 'Both picked the same — Draw!'}
                 </span>
               ) : (
-                <span className="text-xs font-medium text-slate-400 dark:text-slate-500">
+                <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
                   Tap one of the gestures below to throw
                 </span>
               )}
@@ -344,7 +344,7 @@ export const RockPaperScissorsGame: React.FC = () => {
             type="button"
             onClick={() => handlePlayerChoose(option.id)}
             disabled={isShaking || Boolean(tournamentWinner)}
-            className={`group relative flex flex-col items-center justify-center p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs hover:border-amber-500 dark:hover:border-amber-500 hover:shadow-lg transition-all duration-200 active:scale-95 ${
+            className={`group relative flex flex-col items-center justify-center p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] shadow-xs hover:border-amber-500 dark:hover:border-amber-500 hover:shadow-lg transition-all duration-200 active:scale-95 ${
               isShaking ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
             }`}
           >

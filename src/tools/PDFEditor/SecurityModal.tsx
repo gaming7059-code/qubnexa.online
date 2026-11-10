@@ -115,9 +115,9 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col max-h-[90vh] overflow-hidden">
+      <div className="relative w-full max-w-2xl bg-white dark:bg-[#0B1020] rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col max-h-[90vh] overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/60">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-[#050814]/60">
           <div className="flex items-center gap-3">
             <div className="p-2.5 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400">
               <ShieldCheck className="h-6 w-6" />
@@ -140,7 +140,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
@@ -149,7 +149,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
         {/* Content Body */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
           {/* Master Enable Protection Toggle */}
-          <div className="flex items-center justify-between p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+          <div className="flex items-center justify-between p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#11182D]/40">
             <div className="flex items-center gap-3">
               <div
                 className={`p-2 rounded-xl ${
@@ -193,7 +193,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
               {/* Passwords Section */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* User / Open Password */}
-                <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3">
+                <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] space-y-3">
                   <div className="flex items-center justify-between">
                     <label className="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
                       <Lock className="h-3.5 w-3.5 text-blue-500" />
@@ -211,7 +211,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
                         setValidationError(null)
                       }}
                       placeholder="e.g. MySecretPass123"
-                      className="w-full pr-10 pl-3 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full pr-10 pl-3 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-[#11182D]/60 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <button
                       type="button"
@@ -246,7 +246,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
                 </div>
 
                 {/* Owner / Master Password */}
-                <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3">
+                <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] space-y-3">
                   <div className="flex items-center justify-between">
                     <label className="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
                       <KeyRound className="h-3.5 w-3.5 text-amber-500" />
@@ -264,7 +264,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
                         setValidationError(null)
                       }}
                       placeholder="e.g. AdminControl987"
-                      className="w-full pr-10 pl-3 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full pr-10 pl-3 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-[#11182D]/60 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <button
                       type="button"
@@ -283,7 +283,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
               </div>
 
               {/* Encryption Algorithm Selection */}
-              <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3">
+              <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] space-y-3">
                 <div className="flex items-center gap-2">
                   <Sliders className="h-4 w-4 text-blue-500" />
                   <span className="text-xs font-bold text-slate-900 dark:text-white">
@@ -355,7 +355,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
               </div>
 
               {/* Document Permission Settings */}
-              <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-4">
+              <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <FileEdit className="h-4 w-4 text-blue-500" />
@@ -368,7 +368,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                   {/* Printing Permission */}
-                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-[#11182D]/30">
                     <div className="flex items-center gap-2.5">
                       <Printer className="h-4 w-4 text-slate-600 dark:text-slate-400" />
                       <div>
@@ -387,7 +387,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
                   </div>
 
                   {/* High Quality Printing */}
-                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-[#11182D]/30">
                     <div className="flex items-center gap-2.5">
                       <Sparkles className="h-4 w-4 text-slate-600 dark:text-slate-400" />
                       <div>
@@ -407,7 +407,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
                   </div>
 
                   {/* Copying Permission */}
-                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-[#11182D]/30">
                     <div className="flex items-center gap-2.5">
                       <Copy className="h-4 w-4 text-slate-600 dark:text-slate-400" />
                       <div>
@@ -426,7 +426,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
                   </div>
 
                   {/* Modifying Permission */}
-                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-[#11182D]/30">
                     <div className="flex items-center gap-2.5">
                       <FileEdit className="h-4 w-4 text-slate-600 dark:text-slate-400" />
                       <div>
@@ -445,7 +445,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
                   </div>
 
                   {/* Annotations & Comments */}
-                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-[#11182D]/30">
                     <div className="flex items-center gap-2.5">
                       <Sliders className="h-4 w-4 text-slate-600 dark:text-slate-400" />
                       <div>
@@ -464,7 +464,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
                   </div>
 
                   {/* Form Filling */}
-                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-[#11182D]/30">
                     <div className="flex items-center gap-2.5">
                       <Check className="h-4 w-4 text-slate-600 dark:text-slate-400" />
                       <div>
@@ -483,7 +483,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
                   </div>
 
                   {/* Page Assembly */}
-                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+                  <div className="flex items-center justify-between p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-[#11182D]/30">
                     <div className="flex items-center gap-2.5">
                       <Sliders className="h-4 w-4 text-slate-600 dark:text-slate-400" />
                       <div>
@@ -526,7 +526,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
         </div>
 
         {/* Footer Actions */}
-        <div className="flex items-center justify-between gap-3 px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/60">
+        <div className="flex items-center justify-between gap-3 px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-[#050814]/60">
           <div>
             {currentSettings && (
               <button
@@ -543,7 +543,7 @@ export const SecurityModal: React.FC<SecurityModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#16203B] transition-colors cursor-pointer"
             >
               Cancel
             </button>

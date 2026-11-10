@@ -119,7 +119,7 @@ export const DateTimeCalculator: React.FC = () => {
               className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 select-none active:scale-95 ${
                 isActive
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25 scale-[1.02]'
-                  : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-400 dark:hover:border-blue-600 hover:bg-slate-50 dark:hover:bg-slate-800/60'
+                  : 'bg-white dark:bg-[#0B1020] border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-400 dark:hover:border-blue-600 hover:bg-slate-50 dark:hover:bg-[#16203B]/60'
               }`}
             >
               <Icon className="h-4 w-4" />
@@ -134,7 +134,7 @@ export const DateTimeCalculator: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Inputs Column */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-xs space-y-5">
+            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-xs space-y-5">
               <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <CalendarDays className="h-4 w-4 text-blue-500" />
                 <span>Select Calendar Dates</span>
@@ -158,7 +158,7 @@ export const DateTimeCalculator: React.FC = () => {
                     type="date"
                     value={diffStartDate}
                     onChange={(e) => setDiffStartDate(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
 
@@ -167,7 +167,7 @@ export const DateTimeCalculator: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleSwapDiffDates}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-950/60 shadow-2xs transition-all active:scale-95"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D] text-slate-600 dark:text-slate-300 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-950/60 shadow-2xs transition-all active:scale-95"
                     title="Swap Start and End Dates"
                   >
                     <ArrowLeftRight className="h-4 w-4" />
@@ -191,7 +191,7 @@ export const DateTimeCalculator: React.FC = () => {
                     type="date"
                     value={diffEndDate}
                     onChange={(e) => setDiffEndDate(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
 
@@ -219,7 +219,7 @@ export const DateTimeCalculator: React.FC = () => {
           {/* Results Column */}
           <div className="lg:col-span-6 space-y-6">
             {diffResult && (
-              <div className="rounded-3xl border border-blue-200 dark:border-blue-900/60 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-sm space-y-5">
+              <div className="rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-sm space-y-5">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     Calculated Date Interval
@@ -246,14 +246,14 @@ export const DateTimeCalculator: React.FC = () => {
 
                 {/* Grid of Metric Breakdown Cards */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
-                  <div className="p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60">
+                  <div className="p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/60">
                     <span className="text-[11px] text-slate-400">Total Calendar Days</span>
                     <div className="font-bold text-base text-slate-900 dark:text-white mt-0.5">
                       {diffResult.totalDays.toLocaleString('en-IN')}
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60">
+                  <div className="p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/60">
                     <span className="text-[11px] text-slate-400">Weeks &amp; Days</span>
                     <div className="font-bold text-base text-slate-900 dark:text-white mt-0.5">
                       {diffResult.totalWeeks}w {diffResult.remainingDaysAfterWeeks}d
@@ -267,21 +267,21 @@ export const DateTimeCalculator: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60">
+                  <div className="p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/60">
                     <span className="text-[11px] text-slate-400">Weekend Days</span>
                     <div className="font-bold text-base text-slate-900 dark:text-white mt-0.5">
                       {diffResult.weekendDays}
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60">
+                  <div className="p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/60">
                     <span className="text-[11px] text-slate-400">Total Hours</span>
                     <div className="font-bold text-base text-slate-900 dark:text-white mt-0.5">
                       {diffResult.totalHours.toLocaleString('en-IN')}
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60">
+                  <div className="p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/60">
                     <span className="text-[11px] text-slate-400">Total Minutes</span>
                     <div className="font-bold text-base text-slate-900 dark:text-white mt-0.5">
                       {diffResult.totalMinutes.toLocaleString('en-IN')}
@@ -298,7 +298,7 @@ export const DateTimeCalculator: React.FC = () => {
       {mode === 'addSubtract' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-6 space-y-6">
-            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-xs space-y-5">
+            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-xs space-y-5">
               <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <Plus className="h-4 w-4 text-blue-500" />
                 <span>Add or Subtract from Date</span>
@@ -322,7 +322,7 @@ export const DateTimeCalculator: React.FC = () => {
                     type="date"
                     value={baseDate}
                     onChange={(e) => setBaseDate(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
 
@@ -338,7 +338,7 @@ export const DateTimeCalculator: React.FC = () => {
                       className={`inline-flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold transition-all ${
                         addOperation === 'add'
                           ? 'bg-blue-600 text-white shadow-xs'
-                          : 'bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+                          : 'bg-slate-50 dark:bg-[#11182D] border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
                       }`}
                     >
                       <Plus className="h-4 w-4" />
@@ -350,7 +350,7 @@ export const DateTimeCalculator: React.FC = () => {
                       className={`inline-flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold transition-all ${
                         addOperation === 'subtract'
                           ? 'bg-blue-600 text-white shadow-xs'
-                          : 'bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+                          : 'bg-slate-50 dark:bg-[#11182D] border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
                       }`}
                     >
                       <Minus className="h-4 w-4" />
@@ -372,7 +372,7 @@ export const DateTimeCalculator: React.FC = () => {
                       max="10000"
                       value={addAmount}
                       onChange={(e) => setAddAmount(Math.max(1, parseInt(e.target.value, 10) || 1))}
-                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                     />
                   </div>
 
@@ -384,7 +384,7 @@ export const DateTimeCalculator: React.FC = () => {
                       id="addUnitSelect"
                       value={addUnit}
                       onChange={(e) => setAddUnit(e.target.value as 'days' | 'weeks' | 'months' | 'years')}
-                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                     >
                       <option value="days">Days</option>
                       <option value="weeks">Weeks</option>
@@ -413,7 +413,7 @@ export const DateTimeCalculator: React.FC = () => {
           {/* Result Column */}
           <div className="lg:col-span-6 space-y-6">
             {addResult && (
-              <div className="rounded-3xl border border-blue-200 dark:border-blue-900/60 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+              <div className="rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Target Resulting Date
                 </span>
@@ -431,14 +431,14 @@ export const DateTimeCalculator: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#050814] border border-slate-100 dark:border-slate-800">
                     <span className="text-slate-400">Relative Interval</span>
                     <div className="font-bold text-sm text-slate-900 dark:text-slate-100 mt-0.5">
                       {addResult.relativeDays > 0 ? `+${addResult.relativeDays} days ahead` : `${addResult.relativeDays} days ago`}
                     </div>
                   </div>
 
-                  <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#050814] border border-slate-100 dark:border-slate-800">
                     <span className="text-slate-400">Leap Year Status</span>
                     <div className="font-bold text-sm text-slate-900 dark:text-slate-100 mt-0.5">
                       {isLeapYear(parseInt(addResult.targetDate.slice(0, 4), 10)) ? 'Leap Year (366 days)' : 'Standard Year (365 days)'}
@@ -453,7 +453,7 @@ export const DateTimeCalculator: React.FC = () => {
 
       {/* 4. MODE 3: LIVE COUNTDOWN */}
       {mode === 'countdown' && (
-        <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 dark:border-slate-800">
             <div>
               <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
@@ -477,7 +477,7 @@ export const DateTimeCalculator: React.FC = () => {
                   key={preset.label}
                   type="button"
                   onClick={() => setCountdownTarget(preset.date)}
-                  className="min-h-[36px] sm:min-h-[30px] px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-slate-700 transition-colors inline-flex items-center justify-center active:scale-95"
+                  className="min-h-[36px] sm:min-h-[30px] px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-[#1B2748] transition-colors inline-flex items-center justify-center active:scale-95"
                 >
                   {preset.label}
                 </button>
@@ -494,41 +494,41 @@ export const DateTimeCalculator: React.FC = () => {
               type="date"
               value={countdownTarget}
               onChange={(e) => setCountdownTarget(e.target.value)}
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
             />
           </div>
 
           {/* Live Countdown Display */}
           {countdownResult && (
-            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-tr from-purple-50/70 via-indigo-50/50 to-blue-50/70 dark:from-purple-950/40 dark:via-indigo-950/30 dark:to-blue-950/40 border border-purple-200 dark:border-purple-900/50 text-center space-y-6">
+            <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-tr from-purple-50/70 via-indigo-50/50 to-blue-50/70 dark:from-purple-950/40 dark:via-indigo-950/30 dark:to-blue-950/40 border border-purple-200 dark:border-purple-900/50 text-center space-y-6">
               <span className="inline-block text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/80">
                 {countdownResult.isPast ? 'Milestone Date Has Passed' : `Time Remaining Until ${countdownResult.formattedTarget}`}
               </span>
 
               {/* Ticking Digit Cards */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl mx-auto">
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-md border border-slate-100 dark:border-slate-800">
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#0B1020] shadow-md border border-slate-100 dark:border-slate-800">
                   <div className="font-mono text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                     {countdownResult.days}
                   </div>
                   <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mt-1">Days</div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-md border border-slate-100 dark:border-slate-800">
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#0B1020] shadow-md border border-slate-100 dark:border-slate-800">
                   <div className="font-mono text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                     {countdownResult.hours}
                   </div>
                   <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mt-1">Hours</div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-md border border-slate-100 dark:border-slate-800">
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#0B1020] shadow-md border border-slate-100 dark:border-slate-800">
                   <div className="font-mono text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                     {countdownResult.minutes}
                   </div>
                   <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mt-1">Minutes</div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-md border border-slate-100 dark:border-slate-800">
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#0B1020] shadow-md border border-slate-100 dark:border-slate-800">
                   <div className="font-mono text-3xl sm:text-4xl font-extrabold text-blue-600 dark:text-blue-400 animate-pulse">
                     {countdownResult.seconds}
                   </div>
@@ -550,7 +550,7 @@ export const DateTimeCalculator: React.FC = () => {
       {mode === 'workingDays' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-6 space-y-6">
-            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-xs space-y-5">
+            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-xs space-y-5">
               <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <Briefcase className="h-4 w-4 text-emerald-500" />
                 <span>Working Days Calculator</span>
@@ -566,7 +566,7 @@ export const DateTimeCalculator: React.FC = () => {
                     type="date"
                     value={workStart}
                     onChange={(e) => setWorkStart(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
 
@@ -579,7 +579,7 @@ export const DateTimeCalculator: React.FC = () => {
                     type="date"
                     value={workEnd}
                     onChange={(e) => setWorkEnd(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
 
@@ -598,7 +598,7 @@ export const DateTimeCalculator: React.FC = () => {
 
           <div className="lg:col-span-6 space-y-6">
             {workResult && (
-              <div className="rounded-3xl border border-emerald-200 dark:border-emerald-900/60 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-sm space-y-5">
+              <div className="rounded-2xl border border-emerald-200 dark:border-emerald-900/60 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-sm space-y-5">
                 <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
                   Business Timeline Analysis
                 </span>
@@ -616,14 +616,14 @@ export const DateTimeCalculator: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#050814] border border-slate-100 dark:border-slate-800">
                     <span className="text-slate-400">Total Calendar Days</span>
                     <div className="font-bold text-base text-slate-900 dark:text-white mt-0.5">
                       {workResult.totalDays} Days
                     </div>
                   </div>
 
-                  <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#050814] border border-slate-100 dark:border-slate-800">
                     <span className="text-slate-400">Excluded Weekend Days</span>
                     <div className="font-bold text-base text-slate-900 dark:text-white mt-0.5">
                       {workResult.weekendDays} Days

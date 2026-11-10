@@ -30,15 +30,15 @@ export interface EnhancedVoiceInfo {
 
 // Native preview phrases designed for natural vocal inflection
 export const NATIVE_PREVIEWS: Record<string, string> = {
-  hi: 'नमस्ते! स्मार्टटूल्स इंडिया में आपका स्वागत है।',
-  bn: 'নমস্কার! স্মার্টটুলস ইন্ডিয়াতে আপনাকে স্বাগতম।',
-  ur: 'ہیلو! اسمارٹ ٹولز انڈیا میں خوش آمدید۔',
-  'en-in': 'Hello! Welcome to SmartTools India, your everyday utilities platform.',
+  hi: 'नमस्ते! ज़ेनोवा-वर्ल्ड में आपका स्वागत है।',
+  bn: 'নমস্কার! জেনোভা-ওয়ার্ল্ডে আপনাকে স্বাগতম।',
+  ur: 'ہیلو! زینووا-ورلڈ میں خوش آمدید۔',
+  'en-in': 'Hello! Welcome to Xenova-World, explore beyond limits.',
   en: 'Hello! This is a preview of my natural voice.',
-  ta: 'வணக்கம்! ஸ்மார்ட்டூல்ஸ் இந்தியாவுக்கு வரவேற்கிறோம்.',
-  te: 'నమస్కారం! స్మార్ట్ టూల్స్ ఇండియాకు స్వాగతం.',
-  mr: 'नमस्कार! स्मार्टटूल्स इंडिया मध्ये आपले स्वागत आहे.',
-  gu: 'નમસ્તે! સ્માર્ટટૂલ્સ ઇન્ડિયામાં આપનું સ્વાગત છે.',
+  ta: 'வணக்கம்! செனோவா-வேர்ல்டுக்கு வரவேற்கிறோம்.',
+  te: 'నమస్కారం! జెనోవా-వరల్డ్‌కు స్వాగతం.',
+  mr: 'नमस्कार! झेनोवा-वर्ल्ड मध्ये आपले स्वागत आहे.',
+  gu: 'નમસ્તે! ઝેનોવા-વર્લ્ડમાં આપનું સ્વાગત છે.',
 }
 
 /**

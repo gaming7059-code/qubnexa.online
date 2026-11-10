@@ -1,5 +1,5 @@
 /**
- * SmartTools India — Currency & Number Formatting Utilities
+ * Xenova-World — Currency & Number Formatting Utilities
  * Uses standard en-IN locale with Intl.NumberFormat
  */
 

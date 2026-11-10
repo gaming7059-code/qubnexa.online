@@ -240,7 +240,7 @@ export const AudioTranscriber: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Workspace Header Card */}
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-7 shadow-xs space-y-6">
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-5 sm:p-7 shadow-xs space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800/80 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400 border border-teal-100 dark:border-teal-900/40">
@@ -270,7 +270,7 @@ export const AudioTranscriber: React.FC = () => {
               value={selectedLanguage}
               onChange={(e) => setSelectedLanguage(e.target.value)}
               disabled={isListening}
-              className="text-xs rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 text-slate-800 dark:text-slate-200 font-medium"
+              className="text-xs rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D] px-3 py-1.5 text-slate-800 dark:text-slate-200 font-medium"
             >
               <option value="en-IN">English (India)</option>
               <option value="hi-IN">हिंदी (Hindi)</option>
@@ -283,7 +283,7 @@ export const AudioTranscriber: React.FC = () => {
         </div>
 
         {/* Live Mic Action Card */}
-        <div className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/30 p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/30 p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <button
               type="button"
@@ -335,14 +335,14 @@ export const AudioTranscriber: React.FC = () => {
         )}
 
         {/* Audio File Transcription Aid (Slow-down player) */}
-        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 space-y-3">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-4 space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-2.5">
             <span className="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
               <Upload className="h-4 w-4 text-blue-600" />
               <span>Transcribe an Existing Audio File (Slow-down player)</span>
             </span>
 
-            <label className="text-xs px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 hover:border-blue-400 text-slate-700 dark:text-slate-300 cursor-pointer font-medium">
+            <label className="text-xs px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D] hover:border-blue-400 text-slate-700 dark:text-slate-300 cursor-pointer font-medium">
               <span>{audioFileName ? 'Change Audio File' : 'Upload Audio File'}</span>
               <input type="file" accept="audio/*" onChange={handleAudioUpload} className="hidden" />
             </label>
@@ -383,7 +383,7 @@ export const AudioTranscriber: React.FC = () => {
                     className={`px-2 py-0.5 rounded text-[11px] font-semibold ${
                       audioPlaybackRate === spd
                         ? 'bg-blue-600 text-white'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'
+                        : 'bg-slate-100 dark:bg-[#11182D] text-slate-600 dark:text-slate-300'
                     }`}
                   >
                     {spd}×
@@ -396,7 +396,7 @@ export const AudioTranscriber: React.FC = () => {
 
         {/* Main Transcript Textarea */}
         <div className="space-y-2">
-          <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 focus-within:border-teal-500 focus-within:ring-4 focus-within:ring-teal-500/15 transition-all">
+          <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/40 focus-within:border-teal-500 focus-within:ring-4 focus-within:ring-teal-500/15 transition-all">
             {/* Toolbar */}
             <div className="flex items-center justify-between px-3.5 py-2 border-b border-slate-200/60 dark:border-slate-800 text-xs">
               <span className="font-semibold text-slate-600 dark:text-slate-300">
@@ -408,7 +408,7 @@ export const AudioTranscriber: React.FC = () => {
                   type="button"
                   onClick={handleCopy}
                   disabled={!transcript}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800 disabled:opacity-40 transition-colors"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-[#16203B] disabled:opacity-40 transition-colors"
                 >
                   {copied ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5" />}
                   <span>{copied ? 'Copied' : 'Copy'}</span>
@@ -435,7 +435,7 @@ export const AudioTranscriber: React.FC = () => {
             />
 
             {/* Bottom Counts */}
-            <div className="flex items-center justify-between px-4 py-2 border-t border-slate-200/60 dark:border-slate-800/80 text-xs text-slate-500 dark:text-slate-400 bg-white/60 dark:bg-slate-900/40 rounded-b-2xl">
+            <div className="flex items-center justify-between px-4 py-2 border-t border-slate-200/60 dark:border-slate-800/80 text-xs text-slate-500 dark:text-slate-400 bg-white/60 dark:bg-[#0B1020]/40 rounded-b-2xl">
               <div className="flex items-center gap-3">
                 <span>{wordCount} words</span>
                 <span className="text-slate-300 dark:text-slate-700">•</span>
@@ -462,7 +462,7 @@ export const AudioTranscriber: React.FC = () => {
               type="button"
               onClick={handleDownloadSrt}
               disabled={!transcript.trim()}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold shadow-2xs hover:bg-slate-50 disabled:opacity-40 transition-all"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#11182D] text-slate-800 dark:text-slate-200 text-xs font-bold shadow-2xs hover:bg-slate-50 disabled:opacity-40 transition-all"
             >
               <FileCode className="h-3.5 w-3.5 text-teal-600" />
               <span>Download .SRT Subtitles</span>

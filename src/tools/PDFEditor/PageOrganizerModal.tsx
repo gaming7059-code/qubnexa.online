@@ -554,9 +554,9 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/70 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative flex flex-col w-full max-w-6xl max-h-[92vh] rounded-3xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden text-slate-900 dark:text-slate-100">
+      <div className="relative flex flex-col w-full max-w-6xl max-h-[92vh] rounded-3xl bg-white dark:bg-[#0B1020] shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden text-slate-900 dark:text-slate-100">
         {/* Top Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/80">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-[#0B1020]/80">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400">
               <LayoutGrid className="h-5 w-5" />
@@ -577,14 +577,14 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
         {/* Global Action Toolbar */}
-        <div className="flex flex-wrap items-center justify-between gap-2 px-5 py-2.5 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs">
+        <div className="flex flex-wrap items-center justify-between gap-2 px-5 py-2.5 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] text-xs">
           {/* Main Action Buttons: Add Blank, Insert, Merge, Split, Extract */}
           <div className="flex items-center gap-1.5 flex-wrap">
             {/* Add Blank Page */}
@@ -657,7 +657,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
             <button
               type="button"
               onClick={handleSelectAll}
-              className="px-1.5 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-blue-600 dark:text-blue-400 font-medium"
+              className="px-1.5 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-[#16203B] text-blue-600 dark:text-blue-400 font-medium"
             >
               All
             </button>
@@ -665,7 +665,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
             <button
               type="button"
               onClick={handleDeselectAll}
-              className="px-1.5 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="px-1.5 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-[#16203B]"
             >
               None
             </button>
@@ -673,7 +673,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
             <button
               type="button"
               onClick={handleSelectOdd}
-              className="px-1.5 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="px-1.5 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-[#16203B]"
             >
               Odd
             </button>
@@ -681,7 +681,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
             <button
               type="button"
               onClick={handleSelectEven}
-              className="px-1.5 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="px-1.5 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-[#16203B]"
             >
               Even
             </button>
@@ -689,7 +689,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
             <button
               type="button"
               onClick={handleInvertSelection}
-              className="px-1.5 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="px-1.5 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-[#16203B]"
             >
               Invert
             </button>
@@ -708,7 +708,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                 type="button"
                 onClick={() => handleRotateSelected(-90)}
                 title="Rotate 90° CCW"
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#11182D] border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors"
               >
                 <RotateCcw className="h-3.5 w-3.5" />
                 <span>-90°</span>
@@ -717,7 +717,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                 type="button"
                 onClick={() => handleRotateSelected(90)}
                 title="Rotate 90° CW"
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#11182D] border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors"
               >
                 <RotateCw className="h-3.5 w-3.5" />
                 <span>+90°</span>
@@ -726,7 +726,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                 type="button"
                 onClick={handleDuplicateSelected}
                 title="Duplicate Selected"
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#11182D] border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors"
               >
                 <Copy className="h-3.5 w-3.5" />
                 <span>Duplicate</span>
@@ -736,7 +736,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                 onClick={handleDeleteSelected}
                 disabled={pages.length <= 1}
                 title="Delete Selected"
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-red-200 dark:border-red-900/60 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/40 disabled:opacity-40 transition-colors"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#11182D] border border-red-200 dark:border-red-900/60 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/40 disabled:opacity-40 transition-colors"
               >
                 <Trash2 className="h-3.5 w-3.5" />
                 <span>Delete</span>
@@ -754,7 +754,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
         )}
 
         {/* Main Grid Viewport */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-slate-100/60 dark:bg-slate-950/40">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-slate-100/60 dark:bg-[#050814]/40">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
             {pages.map((p, idx) => {
               const isSelected = selectedIndices.includes(idx)
@@ -764,14 +764,14 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                 <div
                   key={p.id}
                   onClick={(e) => toggleSelectPage(idx, e)}
-                  className={`group relative flex flex-col rounded-2xl border-2 transition-all cursor-pointer bg-white dark:bg-slate-900 overflow-hidden shadow-xs hover:shadow-md ${
+                  className={`group relative flex flex-col rounded-2xl border-2 transition-all cursor-pointer bg-white dark:bg-[#0B1020] overflow-hidden shadow-xs hover:shadow-md ${
                     isSelected
                       ? 'border-blue-600 ring-2 ring-blue-500/20 shadow-md'
                       : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                 >
                   {/* Top Bar on Thumbnail Card */}
-                  <div className="flex items-center justify-between px-2.5 py-1.5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-900/70">
+                  <div className="flex items-center justify-between px-2.5 py-1.5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-[#0B1020]/70">
                     <div className="flex items-center gap-1.5">
                       <button
                         type="button"
@@ -812,7 +812,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                   </div>
 
                   {/* Thumbnail Card Preview */}
-                  <div className="relative aspect-[3/4] p-3 flex items-center justify-center bg-slate-100/50 dark:bg-slate-950/50 overflow-hidden">
+                  <div className="relative aspect-[3/4] p-3 flex items-center justify-center bg-slate-100/50 dark:bg-[#050814]/50 overflow-hidden">
                     <PageThumbnail
                       page={p}
                       pageIndex={idx}
@@ -854,7 +854,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                   </div>
 
                   {/* Bottom Navigation & Actions */}
-                  <div className="flex items-center justify-between px-2 py-1.5 border-t border-slate-100 dark:border-slate-800 text-[11px] bg-white dark:bg-slate-900">
+                  <div className="flex items-center justify-between px-2 py-1.5 border-t border-slate-100 dark:border-slate-800 text-[11px] bg-white dark:bg-[#0B1020]">
                     <div className="flex items-center gap-0.5">
                       <button
                         type="button"
@@ -941,7 +941,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
         {/* SUB-MODAL 1: ADD BLANK PAGE */}
         {activeDialog === 'addBlank' && (
           <div className="absolute inset-0 z-20 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs animate-in fade-in">
-            <div className="w-full max-w-md p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+            <div className="w-full max-w-md p-6 rounded-2xl bg-white dark:bg-[#0B1020] border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
               <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
                 <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
                   <FilePlus className="h-5 w-5 text-emerald-600" />
@@ -968,7 +968,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                     className={`p-2.5 rounded-xl border text-left font-medium transition-all ${
                       blankPagePreset === 'a4-portrait'
                         ? 'border-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200'
-                        : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800'
+                        : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-[#16203B]'
                     }`}
                   >
                     <div className="font-bold">A4 Portrait</div>
@@ -980,7 +980,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                     className={`p-2.5 rounded-xl border text-left font-medium transition-all ${
                       blankPagePreset === 'a4-landscape'
                         ? 'border-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200'
-                        : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800'
+                        : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-[#16203B]'
                     }`}
                   >
                     <div className="font-bold">A4 Landscape</div>
@@ -992,7 +992,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                     className={`p-2.5 rounded-xl border text-left font-medium transition-all ${
                       blankPagePreset === 'letter-portrait'
                         ? 'border-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200'
-                        : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800'
+                        : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-[#16203B]'
                     }`}
                   >
                     <div className="font-bold">US Letter</div>
@@ -1004,7 +1004,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                     className={`p-2.5 rounded-xl border text-left font-medium transition-all ${
                       blankPagePreset === 'letter-landscape'
                         ? 'border-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200'
-                        : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800'
+                        : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-[#16203B]'
                     }`}
                   >
                     <div className="font-bold">Letter Landscape</div>
@@ -1021,7 +1021,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                 <select
                   value={blankInsertPos}
                   onChange={(e) => setBlankInsertPos(e.target.value as 'after' | 'before' | 'start' | 'end')}
-                  className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800"
+                  className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#11182D]"
                 >
                   <option value="after">After Selected Page (Page {(selectedIndices[0] ?? currentPageIndex) + 1})</option>
                   <option value="before">Before Selected Page (Page {(selectedIndices[0] ?? currentPageIndex) + 1})</option>
@@ -1034,7 +1034,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setActiveDialog('none')}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                  className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]"
                 >
                   Cancel
                 </button>
@@ -1053,7 +1053,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
         {/* SUB-MODAL 2: INSERT PDF PAGES */}
         {activeDialog === 'insertPdf' && (
           <div className="absolute inset-0 z-20 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs animate-in fade-in">
-            <div className="w-full max-w-md p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+            <div className="w-full max-w-md p-6 rounded-2xl bg-white dark:bg-[#0B1020] border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
               <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
                 <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
                   <FilePlus className="h-5 w-5 text-blue-600" />
@@ -1135,7 +1135,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                       value={insertPageRange}
                       onChange={(e) => setInsertPageRange(e.target.value)}
                       placeholder="all or 1-3"
-                      className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800"
+                      className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#11182D]"
                     />
                   </div>
 
@@ -1147,7 +1147,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                     <select
                       value={insertPdfPos}
                       onChange={(e) => setInsertPdfPos(e.target.value as 'after' | 'before' | 'start' | 'end')}
-                      className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800"
+                      className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#11182D]"
                     >
                       <option value="after">After Selected Page (Page {(selectedIndices[0] ?? currentPageIndex) + 1})</option>
                       <option value="before">Before Selected Page (Page {(selectedIndices[0] ?? currentPageIndex) + 1})</option>
@@ -1165,7 +1165,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                     setActiveDialog('none')
                     setInsertedFile(null)
                   }}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                  className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]"
                 >
                   Cancel
                 </button>
@@ -1185,7 +1185,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
         {/* SUB-MODAL 3: MERGE PDFs */}
         {activeDialog === 'mergePdf' && (
           <div className="absolute inset-0 z-20 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs animate-in fade-in">
-            <div className="w-full max-w-md p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+            <div className="w-full max-w-md p-6 rounded-2xl bg-white dark:bg-[#0B1020] border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
               <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
                 <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
                   <Files className="h-5 w-5 text-indigo-600" />
@@ -1234,7 +1234,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                   {mergeFiles.map((file, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-slate-800 text-xs"
+                      className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-[#11182D] text-xs"
                     >
                       <div className="flex items-center gap-2 min-w-0">
                         <span className="font-bold text-indigo-600">{idx + 1}.</span>
@@ -1263,7 +1263,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                     setActiveDialog('none')
                     setMergeFiles([])
                   }}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                  className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]"
                 >
                   Cancel
                 </button>
@@ -1283,7 +1283,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
         {/* SUB-MODAL 4: SPLIT PDF */}
         {activeDialog === 'splitPdf' && (
           <div className="absolute inset-0 z-20 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs animate-in fade-in">
-            <div className="w-full max-w-md p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+            <div className="w-full max-w-md p-6 rounded-2xl bg-white dark:bg-[#0B1020] border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
               <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
                 <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
                   <Split className="h-5 w-5 text-purple-600" />
@@ -1376,7 +1376,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                         value={customSplitRanges}
                         onChange={(e) => setCustomSplitRanges(e.target.value)}
                         placeholder="1-2, 3-5"
-                        className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800"
+                        className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#11182D]"
                       />
                     )}
                   </div>
@@ -1387,7 +1387,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setActiveDialog('none')}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                  className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]"
                 >
                   Cancel
                 </button>
@@ -1405,7 +1405,7 @@ export const PageOrganizerModal: React.FC<PageOrganizerModalProps> = ({
         )}
 
         {/* Footer */}
-        <div className="flex items-center justify-between px-5 py-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/80 text-xs">
+        <div className="flex items-center justify-between px-5 py-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-[#0B1020]/80 text-xs">
           <div className="text-slate-500 dark:text-slate-400">
             Total Pages: <strong>{pages.length}</strong> • Click any thumbnail to select • Drag or use arrows to reorder
           </div>
@@ -1486,7 +1486,7 @@ const PageThumbnail: React.FC<{
         className="max-w-full max-h-full object-contain shadow-xs bg-white rounded-xs"
       />
       {!rendered && !page.isBlank && (
-        <div className="absolute inset-0 flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+        <div className="absolute inset-0 flex items-center justify-center bg-slate-100 dark:bg-[#11182D]">
           <Loader2 className="h-4 w-4 animate-spin text-slate-400" />
         </div>
       )}

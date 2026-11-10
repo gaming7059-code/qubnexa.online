@@ -606,7 +606,7 @@ export async function generateSpeechWav(
   // Encode to 16-bit PCM RIFF WAV Blob
   const blob = encodeWavBlob(normalized, sampleRate)
   const url = URL.createObjectURL(blob)
-  const filename = `smarttools-speech-${Date.now()}.wav`
+  const filename = `xenova-world-speech-${Date.now()}.wav`
 
   return {
     blob,

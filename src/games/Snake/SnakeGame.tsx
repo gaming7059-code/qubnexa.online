@@ -343,9 +343,9 @@ export const SnakeGame: React.FC = () => {
   return (
     <div className="mx-auto max-w-xl space-y-5">
       {/* Top Header / Mode & Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 sm:p-4 shadow-xs">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-3 sm:p-4 shadow-xs">
         {/* Speed Selector */}
-        <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+        <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-[#11182D] p-1 rounded-xl">
           <button
             type="button"
             onClick={() => setSpeedMode('casual')}
@@ -388,7 +388,7 @@ export const SnakeGame: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsPaused((prev) => !prev)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-[#11182D] text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-colors"
             >
               {isPaused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}
               {isPaused ? 'Resume' : 'Pause'}
@@ -398,7 +398,7 @@ export const SnakeGame: React.FC = () => {
           <button
             type="button"
             onClick={toggleMute}
-            className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
             title={isMuted ? 'Unmute sounds' : 'Mute sounds'}
             aria-label={isMuted ? 'Unmute' : 'Mute'}
           >
@@ -419,7 +419,7 @@ export const SnakeGame: React.FC = () => {
           </span>
           <div className="text-2xl font-bold text-amber-700 dark:text-amber-300">{highScore}</div>
         </div>
-        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 p-3 text-center">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B1020]/80 p-3 text-center">
           <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
             {bonusFood ? `⭐ Star (${bonusTimer})` : 'Length'}
           </span>
@@ -445,7 +445,7 @@ export const SnakeGame: React.FC = () => {
           <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-xs flex flex-col items-center justify-center p-6 text-center text-white z-10 animate-fade-in">
             {gameOver ? (
               <div className="space-y-3">
-                <span className="text-3xl">💥</span>
+                <Flame className="h-8 w-8 mx-auto text-rose-400" />
                 <h3 className="text-2xl font-bold text-rose-400">Game Over!</h3>
                 <p className="text-sm text-slate-300">
                   You scored <span className="font-bold text-white text-base">{score}</span> points.
@@ -510,7 +510,7 @@ export const SnakeGame: React.FC = () => {
             type="button"
             onClick={() => changeDirection('UP')}
             aria-label="Up"
-            className="flex h-12 w-full items-center justify-center rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md text-slate-800 dark:text-white active:bg-blue-600 active:text-white active:scale-95 transition-transform"
+            className="flex h-12 w-full items-center justify-center rounded-2xl bg-white dark:bg-[#11182D] border border-slate-200 dark:border-slate-700 shadow-md text-slate-800 dark:text-white active:bg-blue-600 active:text-white active:scale-95 transition-transform"
           >
             <ArrowUp className="h-6 w-6" />
           </button>
@@ -520,7 +520,7 @@ export const SnakeGame: React.FC = () => {
             type="button"
             onClick={() => changeDirection('LEFT')}
             aria-label="Left"
-            className="flex h-12 w-full items-center justify-center rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md text-slate-800 dark:text-white active:bg-blue-600 active:text-white active:scale-95 transition-transform"
+            className="flex h-12 w-full items-center justify-center rounded-2xl bg-white dark:bg-[#11182D] border border-slate-200 dark:border-slate-700 shadow-md text-slate-800 dark:text-white active:bg-blue-600 active:text-white active:scale-95 transition-transform"
           >
             <ArrowLeft className="h-6 w-6" />
           </button>
@@ -538,7 +538,7 @@ export const SnakeGame: React.FC = () => {
             type="button"
             onClick={() => changeDirection('RIGHT')}
             aria-label="Right"
-            className="flex h-12 w-full items-center justify-center rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md text-slate-800 dark:text-white active:bg-blue-600 active:text-white active:scale-95 transition-transform"
+            className="flex h-12 w-full items-center justify-center rounded-2xl bg-white dark:bg-[#11182D] border border-slate-200 dark:border-slate-700 shadow-md text-slate-800 dark:text-white active:bg-blue-600 active:text-white active:scale-95 transition-transform"
           >
             <ArrowRight className="h-6 w-6" />
           </button>
@@ -548,7 +548,7 @@ export const SnakeGame: React.FC = () => {
             type="button"
             onClick={() => changeDirection('DOWN')}
             aria-label="Down"
-            className="flex h-12 w-full items-center justify-center rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md text-slate-800 dark:text-white active:bg-blue-600 active:text-white active:scale-95 transition-transform"
+            className="flex h-12 w-full items-center justify-center rounded-2xl bg-white dark:bg-[#11182D] border border-slate-200 dark:border-slate-700 shadow-md text-slate-800 dark:text-white active:bg-blue-600 active:text-white active:scale-95 transition-transform"
           >
             <ArrowDown className="h-6 w-6" />
           </button>

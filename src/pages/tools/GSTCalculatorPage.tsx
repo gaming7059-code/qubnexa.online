@@ -73,16 +73,16 @@ export const GSTCalculatorPage: React.FC = () => {
     },
     {
       question: 'Are calculations saved or sent to any tax authority?',
-      answer: 'Never. SmartTools India operates purely client-side. None of your business numbers, client invoice values, or tax estimates are stored or sent anywhere.',
+      answer: 'Never. Xenova-World operates purely client-side. None of your business numbers, client invoice values, or tax estimates are stored or sent anywhere.',
     },
   ]
 
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="GST Calculator — Calculate 5%, 12%, 18%, 28% GST & Reverse Tax | SmartTools India"
+      seoTitle="GST Calculator — Calculate 5%, 12%, 18%, 28% GST & Reverse Tax | Xenova-World"
       seoDescription="Add or remove GST with standard Indian tax slabs (5%, 12%, 18%, 28%). Calculate CGST, SGST, and IGST breakdowns and reverse inclusive tax instantly."
-      keywords="gst calculator india, calculate gst, reverse gst calculator, cgst sgst calculator, 18 percent gst, add gst, remove gst, smarttools india"
+      keywords="gst calculator india, calculate gst, reverse gst calculator, cgst sgst calculator, 18 percent gst, add gst, remove gst, xenova-world"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

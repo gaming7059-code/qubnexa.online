@@ -354,7 +354,7 @@ export const JpgToPdf: React.FC = () => {
 
       const outputName = images.length === 1
         ? `${images[0].name.replace(/\.[^/.]+$/, '')}.pdf`
-        : `SmartTools-India-${images.length}-images.pdf`
+        : `Xenova-World-${images.length}-images.pdf`
 
       setDownloadUrl(url)
       setDownloadFileName(outputName)
@@ -380,7 +380,7 @@ export const JpgToPdf: React.FC = () => {
         className={`relative border-2 border-dashed rounded-3xl p-8 sm:p-12 text-center cursor-pointer transition-all duration-300 ${
           isDragOver
             ? 'border-blue-500 bg-blue-50/70 dark:bg-blue-950/40 ring-4 ring-blue-500/20 scale-[1.01]'
-            : 'border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/60 hover:border-blue-400 dark:hover:border-blue-500 hover:bg-slate-50 dark:hover:bg-slate-800/40'
+            : 'border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0B1020]/60 hover:border-blue-400 dark:hover:border-blue-500 hover:bg-slate-50 dark:hover:bg-[#16203B]/40'
         }`}
       >
         <input
@@ -430,7 +430,7 @@ export const JpgToPdf: React.FC = () => {
       {images.length > 0 && (
         <div className="space-y-6">
           {/* Controls Bar */}
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm space-y-5">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 shadow-sm space-y-5">
             <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
               <div className="flex items-center gap-2.5">
                 <Settings2 className="h-5 w-5 text-blue-600 dark:text-blue-400" />
@@ -470,7 +470,7 @@ export const JpgToPdf: React.FC = () => {
                       className={`px-3 py-2 text-xs font-semibold rounded-xl border transition-all ${
                         pageSize === opt.id
                           ? 'border-blue-600 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300'
-                          : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
+                          : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#16203B]'
                       }`}
                     >
                       {opt.label}
@@ -499,7 +499,7 @@ export const JpgToPdf: React.FC = () => {
                       className={`px-2.5 py-2 text-xs font-semibold rounded-xl border transition-all ${
                         orientation === opt.id
                           ? 'border-blue-600 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300'
-                          : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
+                          : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#16203B]'
                       }`}
                     >
                       {opt.label}
@@ -529,7 +529,7 @@ export const JpgToPdf: React.FC = () => {
                       className={`px-2 py-2 text-xs font-semibold rounded-xl border transition-all ${
                         margin === opt.id
                           ? 'border-blue-600 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300'
-                          : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
+                          : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#16203B]'
                       }`}
                     >
                       {opt.label}
@@ -559,7 +559,7 @@ export const JpgToPdf: React.FC = () => {
                   onDragStart={(e) => handleCardDragStart(e, idx)}
                   onDragOver={(e) => handleCardDragOver(e, idx)}
                   onDragEnd={handleCardDragEnd}
-                  className={`group relative rounded-2xl border bg-white dark:bg-slate-900 p-2.5 shadow-xs transition-all duration-200 select-none ${
+                  className={`group relative rounded-2xl border bg-white dark:bg-[#0B1020] p-2.5 shadow-xs transition-all duration-200 select-none ${
                     draggedItemIndex === idx
                       ? 'border-blue-500 opacity-50 scale-95 ring-2 ring-blue-500/20'
                       : 'border-slate-200 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md'
@@ -581,7 +581,7 @@ export const JpgToPdf: React.FC = () => {
                   </button>
 
                   {/* Thumbnail */}
-                  <div className="relative aspect-3/4 w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+                  <div className="relative aspect-3/4 w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-[#11182D] flex items-center justify-center">
                     <img
                       src={item.previewUrl}
                       alt={item.name}
@@ -607,7 +607,7 @@ export const JpgToPdf: React.FC = () => {
                       disabled={idx === 0}
                       onClick={() => moveImage(idx, 'up')}
                       aria-label="Move left"
-                      className="p-1 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-30 disabled:hover:bg-transparent"
+                      className="p-1 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-[#16203B] disabled:opacity-30 disabled:hover:bg-transparent"
                     >
                       <ArrowUp className="h-3.5 w-3.5 rotate-[-90deg]" />
                     </button>
@@ -617,7 +617,7 @@ export const JpgToPdf: React.FC = () => {
                       disabled={idx === images.length - 1}
                       onClick={() => moveImage(idx, 'down')}
                       aria-label="Move right"
-                      className="p-1 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-30 disabled:hover:bg-transparent"
+                      className="p-1 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-[#16203B] disabled:opacity-30 disabled:hover:bg-transparent"
                     >
                       <ArrowDown className="h-3.5 w-3.5 rotate-[-90deg]" />
                     </button>
@@ -628,7 +628,7 @@ export const JpgToPdf: React.FC = () => {
           </div>
 
           {/* Action Convert Button */}
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 shadow-sm">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
                 <h4 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
@@ -663,7 +663,7 @@ export const JpgToPdf: React.FC = () => {
             {/* Progress bar */}
             {isConverting && (
               <div className="mt-4 space-y-2">
-                <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+                <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-[#11182D]">
                   <div
                     className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-300"
                     style={{ width: `${conversionProgress}%` }}

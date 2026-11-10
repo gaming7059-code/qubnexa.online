@@ -64,7 +64,7 @@ export const EngineSelector: React.FC<EngineSelectorProps> = ({
       badge: isCloudConfigured ? 'Ready' : 'BYOK',
       badgeColor: isCloudConfigured
         ? 'bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300'
-        : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400',
+        : 'bg-slate-200 dark:bg-[#11182D] text-slate-600 dark:text-slate-400',
       activeColor: 'border-purple-600 bg-purple-50/80 dark:bg-purple-950/60 ring-2 ring-purple-500/20 text-purple-700 dark:text-purple-400',
       tagline: 'Direct client calls with your private OpenAI or ElevenLabs key. 100% private in browser.',
       details: 'Enter your OpenAI or ElevenLabs API key for ultra-lifelike cloud synthesis. Your key is stored solely in local browser storage.',
@@ -74,7 +74,7 @@ export const EngineSelector: React.FC<EngineSelectorProps> = ({
   const activeEngineObj = engines.find((e) => e.id === activeEngine) || engines[0]
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3.5 sm:p-4 shadow-2xs space-y-3.5">
+    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-3.5 sm:p-4 shadow-2xs space-y-3.5">
       {/* Top Header: Title, Active Badge, Quick Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800/80 pb-3">
         <div className="flex items-center gap-2 flex-wrap">
@@ -102,7 +102,7 @@ export const EngineSelector: React.FC<EngineSelectorProps> = ({
               className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-colors border ${
                 isModelManagerOpen
                   ? 'bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 border-indigo-300 dark:border-indigo-800'
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-200'
               }`}
             >
               <HardDrive className="h-3.5 w-3.5" />
@@ -126,7 +126,7 @@ export const EngineSelector: React.FC<EngineSelectorProps> = ({
           <button
             type="button"
             onClick={() => setShowDetails(!showDetails)}
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-[#11182D] border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-[#1B2748] transition-colors"
             title="Toggle technical engine details"
           >
             <Info className="h-3.5 w-3.5 text-slate-400" />
@@ -149,7 +149,7 @@ export const EngineSelector: React.FC<EngineSelectorProps> = ({
               className={`p-2.5 sm:p-3 rounded-xl border text-left transition-all duration-200 select-none active:scale-[0.98] min-h-[52px] flex flex-col justify-between ${
                 isSelected
                   ? engine.activeColor
-                  : 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-900'
+                  : 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/40 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-900'
               }`}
             >
               <div className="flex items-center justify-between gap-1 mb-1">
@@ -188,7 +188,7 @@ export const EngineSelector: React.FC<EngineSelectorProps> = ({
                   className={`p-3 rounded-xl border text-xs space-y-1.5 transition-colors ${
                     isSelected
                       ? 'border-blue-300 dark:border-blue-900/60 bg-blue-50/30 dark:bg-blue-950/20'
-                      : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900'
+                      : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020]'
                   }`}
                 >
                   <div className="flex items-center justify-between">

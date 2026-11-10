@@ -52,7 +52,7 @@ export const ModelDownloadManager: React.FC<ModelDownloadManagerProps> = () => {
     .reduce((acc, cur) => acc + cur.sizeMb, 0)
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-2xs space-y-3">
+    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-4 shadow-2xs space-y-3">
       <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2.5">
         <div className="flex items-center gap-2">
           <HardDrive className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
@@ -68,7 +68,7 @@ export const ModelDownloadManager: React.FC<ModelDownloadManagerProps> = () => {
             type="button"
             onClick={refreshCache}
             disabled={isLoading}
-            className="p-1 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-1 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
             title="Refresh cache status"
           >
             <RefreshCw className={`h-3.5 w-3.5 ${isLoading ? 'animate-spin' : ''}`} />
@@ -85,7 +85,7 @@ export const ModelDownloadManager: React.FC<ModelDownloadManagerProps> = () => {
         {models.map((m) => (
           <div
             key={m.modelId}
-            className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 flex items-center justify-between"
+            className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/40 flex items-center justify-between"
           >
             <div>
               <div className="flex items-center gap-1.5">
@@ -108,7 +108,7 @@ export const ModelDownloadManager: React.FC<ModelDownloadManagerProps> = () => {
               <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
                 m.isCached
                   ? 'bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300'
-                  : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                  : 'bg-slate-200 dark:bg-[#11182D] text-slate-600 dark:text-slate-400'
               }`}>
                 {m.isCached ? 'Downloaded' : 'On-Demand'}
               </span>

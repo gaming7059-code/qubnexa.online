@@ -47,9 +47,9 @@ export const CloudConfigModal: React.FC<CloudConfigModalProps> = ({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 dark:bg-slate-950/80 backdrop-blur-xs animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 dark:bg-[#050814]/80 backdrop-blur-xs animate-fade-in">
       <div
-        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-xl border border-slate-200 dark:border-slate-800 space-y-5 animate-scale-in"
+        className="w-full max-w-md rounded-2xl bg-white dark:bg-[#0B1020] p-6 shadow-xl border border-slate-200 dark:border-slate-800 space-y-5 animate-scale-in"
         role="dialog"
         aria-modal="true"
         aria-labelledby="cloud-settings-title"
@@ -71,7 +71,7 @@ export const CloudConfigModal: React.FC<CloudConfigModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+            className="rounded-lg p-1 text-slate-400 hover:bg-slate-100 dark:hover:bg-[#16203B] hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
@@ -89,7 +89,7 @@ export const CloudConfigModal: React.FC<CloudConfigModalProps> = ({
                 className={`py-2 px-3 rounded-xl border text-xs font-semibold text-center transition-all ${
                   provider === 'openai'
                     ? 'border-indigo-600 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 ring-2 ring-indigo-500/20'
-                    : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400'
+                    : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] text-slate-600 dark:text-slate-400'
                 }`}
               >
                 OpenAI (tts-1)
@@ -115,11 +115,11 @@ export const CloudConfigModal: React.FC<CloudConfigModalProps> = ({
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
               placeholder="sk-proj-..."
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/50 px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/50 px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
               autoComplete="off"
             />
             <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
-              Your key is saved <strong>only in this browser&apos;s localStorage</strong>. It is never transmitted to or stored on SmartTools India servers.
+              Your key is saved <strong>only in this browser&apos;s localStorage</strong>. It is never transmitted to or stored on Xenova-World servers.
             </p>
           </div>
 
@@ -146,7 +146,7 @@ export const CloudConfigModal: React.FC<CloudConfigModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
               >
                 Cancel
               </button>

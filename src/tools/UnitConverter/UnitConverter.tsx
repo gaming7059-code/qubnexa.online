@@ -115,7 +115,7 @@ export const UnitConverter: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* 1. CATEGORY PILLS SELECTOR (8 CATEGORIES) */}
-      <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-xs space-y-3">
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-xs space-y-3">
         <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
           Select Measurement Category (8 Categories)
         </label>
@@ -130,7 +130,7 @@ export const UnitConverter: React.FC = () => {
                 className={`inline-flex items-center gap-2 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all select-none active:scale-95 ${
                   isSelected
                     ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20 scale-[1.02]'
-                    : 'bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 border border-slate-200/80 dark:border-slate-700/80'
+                    : 'bg-slate-50 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#1B2748]/60 border border-slate-200/80 dark:border-slate-700/80'
                 }`}
               >
                 {renderCategoryIcon(cat.id)}
@@ -142,7 +142,7 @@ export const UnitConverter: React.FC = () => {
       </div>
 
       {/* 2. CONVERTER WORKSPACE (INTERACTIVE CARD) */}
-      <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs space-y-6">
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-xs space-y-6">
         {/* Precision & Reset Options Toolbar */}
         <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800 text-xs">
           <div className="flex items-center gap-2">
@@ -156,7 +156,7 @@ export const UnitConverter: React.FC = () => {
                 className={`min-h-[30px] px-2.5 py-1 rounded-lg font-mono text-xs font-semibold transition-colors inline-flex items-center justify-center ${
                   precision === p
                     ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                    : 'bg-slate-100 dark:bg-[#11182D] text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
                 }`}
               >
                 {p === 'auto' ? 'Auto' : `${p} dp`}
@@ -167,9 +167,9 @@ export const UnitConverter: React.FC = () => {
           <button
             type="button"
             onClick={handleReset}
-            className="inline-flex items-center gap-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 font-medium transition-colors"
+            className="inline-flex min-h-[36px] cursor-pointer items-center gap-1 rounded-lg px-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white font-medium transition-colors"
           >
-            <RotateCcw className="h-3 w-3" />
+            <RotateCcw className="h-3.5 w-3.5" />
             <span>Reset Default</span>
           </button>
         </div>
@@ -190,7 +190,7 @@ export const UnitConverter: React.FC = () => {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Enter numeric value"
-                  className="w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 pl-4 pr-10 py-3 text-lg font-bold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] pl-4 pr-10 py-3 text-lg font-bold text-slate-900 dark:text-slate-100 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
                 {inputValue && (
                   <button
@@ -207,10 +207,10 @@ export const UnitConverter: React.FC = () => {
               <select
                 value={fromUnitId}
                 onChange={(e) => setFromUnitId(e.target.value)}
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-sm font-semibold text-slate-800 dark:text-slate-200 focus:border-blue-500 focus:outline-none"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-sm font-semibold text-slate-800 dark:text-slate-200 focus:border-blue-500 focus:outline-none"
               >
                 {currentCategory.units.map((unit) => (
-                  <option key={unit.id} value={unit.id} className="dark:bg-slate-900">
+                  <option key={unit.id} value={unit.id} className="dark:bg-[#0B1020]">
                     {unit.name} ({unit.symbol})
                   </option>
                 ))}
@@ -223,7 +223,7 @@ export const UnitConverter: React.FC = () => {
             <button
               type="button"
               onClick={handleSwapUnits}
-              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-950/60 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-800 transition-all shadow-xs hover:scale-105 active:scale-95"
+              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D] text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-950/60 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-800 transition-all shadow-xs hover:scale-105 active:scale-95"
               title="Swap From and To Units"
               aria-label="Swap units"
             >
@@ -274,10 +274,10 @@ export const UnitConverter: React.FC = () => {
                 id="toUnitDropdown"
                 value={toUnitId}
                 onChange={(e) => setToUnitId(e.target.value)}
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-sm font-semibold text-slate-800 dark:text-slate-200 focus:border-blue-500 focus:outline-none"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-sm font-semibold text-slate-800 dark:text-slate-200 focus:border-blue-500 focus:outline-none"
               >
                 {currentCategory.units.map((unit) => (
-                  <option key={unit.id} value={unit.id} className="dark:bg-slate-900">
+                  <option key={unit.id} value={unit.id} className="dark:bg-[#0B1020]">
                     {unit.name} ({unit.symbol})
                   </option>
                 ))}
@@ -288,7 +288,7 @@ export const UnitConverter: React.FC = () => {
 
         {/* Live Formula Callout */}
         {conversionResult?.formula && (
-          <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
+          <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#050814]/60 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
             <span className="font-semibold text-slate-700 dark:text-slate-300">Conversion Formula:</span>
             <span className="font-mono font-bold text-blue-700 dark:text-blue-300">{conversionResult.formula}</span>
           </div>
@@ -296,7 +296,7 @@ export const UnitConverter: React.FC = () => {
       </div>
 
       {/* 3. MULTI-UNIT LIVE CHEAT SHEET (QUICK REFERENCE TABLE) */}
-      <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-xs space-y-4">
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-xs space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
             <Layers className="h-4 w-4 text-blue-500" />
@@ -319,7 +319,7 @@ export const UnitConverter: React.FC = () => {
                     ? 'border-blue-400 bg-blue-50/70 dark:bg-blue-950/40'
                     : isSource
                     ? 'border-emerald-300 bg-emerald-50/50 dark:bg-emerald-950/30'
-                    : 'border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/40'
+                    : 'border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/40'
                 }`}
               >
                 <div className="flex items-center justify-between text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">

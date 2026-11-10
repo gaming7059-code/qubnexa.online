@@ -47,8 +47,9 @@ export const QrCodeGenerator: React.FC = () => {
   const [activeType, setActiveType] = useState<QrType>('url')
 
   // Form States
-  const [urlInput, setUrlInput] = useState('https://smarttools-india.com')
-  const [textInput, setTextInput] = useState('Welcome to SmartTools India!')
+  const defaultSampleUrl = typeof window !== 'undefined' && window.location.origin ? window.location.origin : 'https://example.com'
+  const [urlInput, setUrlInput] = useState(defaultSampleUrl)
+  const [textInput, setTextInput] = useState('Welcome to Xenova-World!')
   const [wifiConfig, setWifiConfig] = useState<WifiConfig>({
     ssid: 'Home_WiFi_5G',
     password: '',
@@ -58,7 +59,7 @@ export const QrCodeGenerator: React.FC = () => {
   const [emailConfig, setEmailConfig] = useState<EmailConfig>({
     email: 'contact@example.com',
     subject: 'Inquiry',
-    body: 'Hello from SmartTools India!',
+    body: 'Hello from Xenova-World!',
   })
   const [phoneInput, setPhoneInput] = useState('+91 98765 43210')
   const [vCardConfig, setVCardConfig] = useState<VCardConfig>({
@@ -68,7 +69,7 @@ export const QrCodeGenerator: React.FC = () => {
     email: 'rohan.sharma@example.com',
     company: 'Tech Solutions India',
     jobTitle: 'Software Architect',
-    website: 'https://smarttools-india.com',
+    website: defaultSampleUrl,
     address: 'Bengaluru, Karnataka, India',
   })
 
@@ -134,7 +135,7 @@ export const QrCodeGenerator: React.FC = () => {
   const handleDownloadPng = () => {
     if (!canvasRef.current || !currentPayload) return
     const link = document.createElement('a')
-    link.download = `smarttools-qr-${activeType}.png`
+    link.download = `xenova-world-qr-${activeType}.png`
     link.href = canvasRef.current.toDataURL('image/png')
     link.click()
   }
@@ -151,7 +152,7 @@ export const QrCodeGenerator: React.FC = () => {
       const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' })
       const url = URL.createObjectURL(blob)
       const link = document.createElement('a')
-      link.download = `smarttools-qr-${activeType}.svg`
+      link.download = `xenova-world-qr-${activeType}.svg`
       link.href = url
       link.click()
       URL.revokeObjectURL(url)
@@ -194,7 +195,7 @@ export const QrCodeGenerator: React.FC = () => {
               className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 select-none active:scale-95 ${
                 isActive
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25 scale-[1.02]'
-                  : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-400 dark:hover:border-blue-600 hover:bg-slate-50 dark:hover:bg-slate-800/60'
+                  : 'bg-white dark:bg-[#0B1020] border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-400 dark:hover:border-blue-600 hover:bg-slate-50 dark:hover:bg-[#16203B]/60'
               }`}
             >
               <Icon className="h-4 w-4" />
@@ -209,7 +210,7 @@ export const QrCodeGenerator: React.FC = () => {
         {/* LEFT COLUMN: INPUTS & CUSTOMIZATION (7 COLS) */}
         <div className="lg:col-span-7 space-y-6">
           {/* CONTENT CARD */}
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-xs space-y-5">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-xs space-y-5">
             <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-blue-600 dark:bg-blue-400" />
               <span>QR Content &amp; Details</span>
@@ -229,7 +230,7 @@ export const QrCodeGenerator: React.FC = () => {
                     value={urlInput}
                     onChange={(e) => setUrlInput(e.target.value)}
                     placeholder="https://yourwebsite.com"
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 pl-10 pr-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] pl-10 pr-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                   />
                 </div>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400">
@@ -255,7 +256,7 @@ export const QrCodeGenerator: React.FC = () => {
                   value={textInput}
                   onChange={(e) => setTextInput(e.target.value)}
                   placeholder="Enter any text, instructions, serial codes, or messages..."
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-3.5 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] p-3.5 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
               </div>
             )}
@@ -274,7 +275,7 @@ export const QrCodeGenerator: React.FC = () => {
                       value={wifiConfig.ssid}
                       onChange={(e) => setWifiConfig({ ...wifiConfig, ssid: e.target.value })}
                       placeholder="MyHome_WiFi"
-                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                     />
                   </div>
 
@@ -288,7 +289,7 @@ export const QrCodeGenerator: React.FC = () => {
                       onChange={(e) =>
                         setWifiConfig({ ...wifiConfig, encryption: e.target.value as 'WPA' | 'WEP' | 'nopass' })
                       }
-                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                     >
                       <option value="WPA">WPA / WPA2 / WPA3 (Default)</option>
                       <option value="WEP">WEP (Legacy)</option>
@@ -310,7 +311,7 @@ export const QrCodeGenerator: React.FC = () => {
                         value={wifiConfig.password || ''}
                         onChange={(e) => setWifiConfig({ ...wifiConfig, password: e.target.value })}
                         placeholder="Enter Wi-Fi password"
-                        className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 pl-10 pr-10 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                        className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] pl-10 pr-10 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                       />
                       <button
                         type="button"
@@ -349,7 +350,7 @@ export const QrCodeGenerator: React.FC = () => {
                     value={emailConfig.email}
                     onChange={(e) => setEmailConfig({ ...emailConfig, email: e.target.value })}
                     placeholder="name@company.com"
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -362,7 +363,7 @@ export const QrCodeGenerator: React.FC = () => {
                     value={emailConfig.subject || ''}
                     onChange={(e) => setEmailConfig({ ...emailConfig, subject: e.target.value })}
                     placeholder="Project Inquiry"
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -375,7 +376,7 @@ export const QrCodeGenerator: React.FC = () => {
                     value={emailConfig.body || ''}
                     onChange={(e) => setEmailConfig({ ...emailConfig, body: e.target.value })}
                     placeholder="Write default email message..."
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-3 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] p-3 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -395,7 +396,7 @@ export const QrCodeGenerator: React.FC = () => {
                     value={phoneInput}
                     onChange={(e) => setPhoneInput(e.target.value)}
                     placeholder="+91 98765 43210"
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 pl-10 pr-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] pl-10 pr-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400">
@@ -418,7 +419,7 @@ export const QrCodeGenerator: React.FC = () => {
                       value={vCardConfig.firstName}
                       onChange={(e) => setVCardConfig({ ...vCardConfig, firstName: e.target.value })}
                       placeholder="First Name"
-                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                     />
                   </div>
                   <div className="space-y-1">
@@ -431,7 +432,7 @@ export const QrCodeGenerator: React.FC = () => {
                       value={vCardConfig.lastName}
                       onChange={(e) => setVCardConfig({ ...vCardConfig, lastName: e.target.value })}
                       placeholder="Last Name"
-                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                     />
                   </div>
                 </div>
@@ -447,7 +448,7 @@ export const QrCodeGenerator: React.FC = () => {
                       value={vCardConfig.phone || ''}
                       onChange={(e) => setVCardConfig({ ...vCardConfig, phone: e.target.value })}
                       placeholder="+91 98765 43210"
-                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                     />
                   </div>
                   <div className="space-y-1">
@@ -460,7 +461,7 @@ export const QrCodeGenerator: React.FC = () => {
                       value={vCardConfig.email || ''}
                       onChange={(e) => setVCardConfig({ ...vCardConfig, email: e.target.value })}
                       placeholder="name@company.com"
-                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                     />
                   </div>
                 </div>
@@ -476,7 +477,7 @@ export const QrCodeGenerator: React.FC = () => {
                       value={vCardConfig.company || ''}
                       onChange={(e) => setVCardConfig({ ...vCardConfig, company: e.target.value })}
                       placeholder="Company Name"
-                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                     />
                   </div>
                   <div className="space-y-1">
@@ -489,7 +490,7 @@ export const QrCodeGenerator: React.FC = () => {
                       value={vCardConfig.jobTitle || ''}
                       onChange={(e) => setVCardConfig({ ...vCardConfig, jobTitle: e.target.value })}
                       placeholder="Director, Manager, Lead"
-                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                     />
                   </div>
                 </div>
@@ -504,7 +505,7 @@ export const QrCodeGenerator: React.FC = () => {
                     value={vCardConfig.address || ''}
                     onChange={(e) => setVCardConfig({ ...vCardConfig, address: e.target.value })}
                     placeholder="Street, City, State, Country"
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -512,7 +513,7 @@ export const QrCodeGenerator: React.FC = () => {
           </div>
 
           {/* CUSTOMIZATION & STYLING CARD */}
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-xs space-y-5">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-xs space-y-5">
             <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <Palette className="h-4 w-4 text-purple-500" />
               <span>QR Styling &amp; Colors</span>
@@ -535,7 +536,7 @@ export const QrCodeGenerator: React.FC = () => {
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all ${
                       darkColor === preset.dark && lightColor === preset.light
                         ? 'border-blue-500 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 shadow-2xs'
-                        : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 hover:border-slate-300'
+                        : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] text-slate-700 dark:text-slate-300 hover:border-slate-300'
                     }`}
                   >
                     <span
@@ -566,7 +567,7 @@ export const QrCodeGenerator: React.FC = () => {
                     type="text"
                     value={darkColor}
                     onChange={(e) => setDarkColor(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-xs font-mono text-slate-900 dark:text-slate-100 uppercase"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3 py-2 text-xs font-mono text-slate-900 dark:text-slate-100 uppercase"
                   />
                 </div>
               </div>
@@ -587,7 +588,7 @@ export const QrCodeGenerator: React.FC = () => {
                     type="text"
                     value={lightColor}
                     onChange={(e) => setLightColor(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-xs font-mono text-slate-900 dark:text-slate-100 uppercase"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3 py-2 text-xs font-mono text-slate-900 dark:text-slate-100 uppercase"
                   />
                 </div>
               </div>
@@ -620,7 +621,7 @@ export const QrCodeGenerator: React.FC = () => {
                   id="errorCorrectionSelect"
                   value={errorCorrection}
                   onChange={(e) => setErrorCorrection(e.target.value as QrErrorCorrection)}
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-xs font-medium text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-3 py-2 text-xs font-medium text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none"
                 >
                   <option value="L">Low (7% damaged recovery)</option>
                   <option value="M">Medium (15% - Recommended)</option>
@@ -634,7 +635,7 @@ export const QrCodeGenerator: React.FC = () => {
 
         {/* RIGHT COLUMN: LIVE PREVIEW & DOWNLOAD ACTIONS (5 COLS) */}
         <div className="lg:col-span-5 sticky top-20 space-y-6">
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-sm text-center space-y-6">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-sm text-center space-y-6">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Live High-Res Preview
@@ -646,7 +647,7 @@ export const QrCodeGenerator: React.FC = () => {
             </div>
 
             {/* QR Canvas Display */}
-            <div className="flex items-center justify-center p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 min-h-[300px]">
+            <div className="flex items-center justify-center p-4 rounded-2xl bg-slate-50 dark:bg-[#050814] border border-slate-100 dark:border-slate-800 min-h-[300px]">
               {currentPayload ? (
                 <div className="relative group">
                   <canvas
@@ -655,7 +656,7 @@ export const QrCodeGenerator: React.FC = () => {
                     style={{ width: '260px', height: '260px' }}
                   />
                   {isGenerating && (
-                    <div className="absolute inset-0 bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xs flex items-center justify-center rounded-xl">
+                    <div className="absolute inset-0 bg-white/70 dark:bg-[#0B1020]/70 backdrop-blur-2xs flex items-center justify-center rounded-xl">
                       <span className="text-xs font-semibold text-blue-600 animate-pulse">Rendering...</span>
                     </div>
                   )}
@@ -690,7 +691,7 @@ export const QrCodeGenerator: React.FC = () => {
                   type="button"
                   onClick={handleDownloadSvg}
                   disabled={!currentPayload}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-blue-400 bg-white dark:bg-slate-800 disabled:opacity-50 text-slate-800 dark:text-slate-200 px-4 py-3 text-xs sm:text-sm font-bold shadow-2xs transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-blue-400 bg-white dark:bg-[#11182D] disabled:opacity-50 text-slate-800 dark:text-slate-200 px-4 py-3 text-xs sm:text-sm font-bold shadow-2xs transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                 >
                   <Download className="h-4 w-4 text-purple-500" />
                   <span>Download SVG</span>
@@ -701,7 +702,7 @@ export const QrCodeGenerator: React.FC = () => {
                 type="button"
                 onClick={handleCopyImage}
                 disabled={!currentPayload}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50 text-slate-700 dark:text-slate-300 px-4 py-2.5 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-[#16203B] disabled:opacity-50 text-slate-700 dark:text-slate-300 px-4 py-2.5 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
               >
                 {copiedStatus === 'copied' ? (
                   <>

@@ -43,7 +43,7 @@ export const DiscountCalculator: React.FC = () => {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
       {/* Mode Selector Tabs */}
       <div className="flex flex-wrap gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
         <button
@@ -52,7 +52,7 @@ export const DiscountCalculator: React.FC = () => {
           className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'calculateSalePrice'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           Calculate Sale Price &amp; Savings
@@ -63,7 +63,7 @@ export const DiscountCalculator: React.FC = () => {
           className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'calculateDiscountPercent'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           Calculate Discount Percentage
@@ -89,7 +89,7 @@ export const DiscountCalculator: React.FC = () => {
                   value={originalPrice1}
                   onChange={(e) => setOriginalPrice1(e.target.value)}
                   placeholder="e.g. 1000"
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
               </div>
             </div>
@@ -109,7 +109,7 @@ export const DiscountCalculator: React.FC = () => {
                   value={discountPercent1}
                   onChange={(e) => setDiscountPercent1(e.target.value)}
                   placeholder="e.g. 20"
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
                 <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-semibold text-sm">%</span>
               </div>
@@ -128,7 +128,7 @@ export const DiscountCalculator: React.FC = () => {
                   className={`min-h-[36px] sm:min-h-[30px] rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors inline-flex items-center justify-center active:scale-95 ${
                     discountPercent1 === pct.toString()
                       ? 'border-blue-600 dark:border-blue-500 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300'
-                      : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
+                      : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/60 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-[#16203B]'
                   }`}
                 >
                   {pct}% off
@@ -150,7 +150,7 @@ export const DiscountCalculator: React.FC = () => {
 
           {/* Result Card 1 */}
           {result1?.success && result1.data ? (
-            <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-emerald-50/40 dark:from-blue-950/30 dark:via-slate-900/40 dark:to-emerald-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 space-y-6 animate-result-in">
+            <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-emerald-50/40 dark:from-blue-950/30 dark:via-[#0B1020]/40 dark:to-emerald-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 space-y-6 animate-result-in">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">
                   Final Discounted Price
@@ -161,21 +161,21 @@ export const DiscountCalculator: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 border-t border-slate-200/60 dark:border-slate-800">
-                <div className="rounded-xl bg-white dark:bg-slate-900/80 p-4 border border-slate-200/80 dark:border-slate-800 shadow-2xs">
+                <div className="rounded-xl bg-white dark:bg-[#0B1020]/80 p-4 border border-slate-200/80 dark:border-slate-800 shadow-2xs">
                   <div className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Discount Amount</div>
                   <div className="text-lg sm:text-xl font-bold text-rose-600 dark:text-rose-400 mt-1">
                     - {formatINR(result1.data.discountAmount, { showDecimals: true })}
                   </div>
                 </div>
 
-                <div className="rounded-xl bg-white dark:bg-slate-900/80 p-4 border border-emerald-200 dark:border-emerald-900/50 shadow-2xs">
+                <div className="rounded-xl bg-white dark:bg-[#0B1020]/80 p-4 border border-emerald-200 dark:border-emerald-900/50 shadow-2xs">
                   <div className="text-xs font-medium text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">You Save</div>
                   <div className="text-lg sm:text-xl font-bold text-emerald-700 dark:text-emerald-400 mt-1">
                     {formatINR(result1.data.youSave, { showDecimals: true })}
                   </div>
                 </div>
 
-                <div className="rounded-xl bg-white dark:bg-slate-900/80 p-4 border border-slate-200/80 dark:border-slate-800 shadow-2xs">
+                <div className="rounded-xl bg-white dark:bg-[#0B1020]/80 p-4 border border-slate-200/80 dark:border-slate-800 shadow-2xs">
                   <div className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Savings Percentage</div>
                   <div className="text-lg sm:text-xl font-bold text-blue-700 dark:text-blue-400 mt-1">
                     {result1.data.discountPercent}% Off
@@ -212,7 +212,7 @@ export const DiscountCalculator: React.FC = () => {
                   value={originalPrice2}
                   onChange={(e) => setOriginalPrice2(e.target.value)}
                   placeholder="e.g. 1000"
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
               </div>
             </div>
@@ -232,7 +232,7 @@ export const DiscountCalculator: React.FC = () => {
                   value={salePrice2}
                   onChange={(e) => setSalePrice2(e.target.value)}
                   placeholder="e.g. 800"
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
               </div>
             </div>
@@ -251,7 +251,7 @@ export const DiscountCalculator: React.FC = () => {
 
           {/* Result Card 2 */}
           {result2?.success && result2.data ? (
-            <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-emerald-50/40 dark:from-blue-950/30 dark:via-slate-900/40 dark:to-emerald-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 space-y-6 animate-result-in">
+            <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-emerald-50/40 dark:from-blue-950/30 dark:via-[#0B1020]/40 dark:to-emerald-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 space-y-6 animate-result-in">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">
                   Calculated Discount Rate
@@ -262,14 +262,14 @@ export const DiscountCalculator: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-200/60 dark:border-slate-800">
-                <div className="rounded-xl bg-white dark:bg-slate-900/80 p-4 border border-emerald-200 dark:border-emerald-900/50 shadow-2xs">
+                <div className="rounded-xl bg-white dark:bg-[#0B1020]/80 p-4 border border-emerald-200 dark:border-emerald-900/50 shadow-2xs">
                   <div className="text-xs font-medium text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">Total Amount Saved</div>
                   <div className="text-xl font-bold text-emerald-700 dark:text-emerald-400 mt-1">
                     {formatINR(result2.data.amountSaved, { showDecimals: true })}
                   </div>
                 </div>
 
-                <div className="rounded-xl bg-white dark:bg-slate-900/80 p-4 border border-slate-200/80 dark:border-slate-800 shadow-2xs">
+                <div className="rounded-xl bg-white dark:bg-[#0B1020]/80 p-4 border border-slate-200/80 dark:border-slate-800 shadow-2xs">
                   <div className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Final Price Paid</div>
                   <div className="text-xl font-bold text-slate-900 dark:text-white mt-1">
                     {formatINR(result2.data.salePrice, { showDecimals: true })}

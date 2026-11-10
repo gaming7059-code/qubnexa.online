@@ -45,7 +45,7 @@ export const PasswordPromptModal: React.FC<PasswordPromptModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative w-full max-w-md bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col space-y-4">
+      <div className="relative w-full max-w-md bg-white dark:bg-[#0B1020] rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col space-y-4">
         {/* Header */}
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
@@ -66,7 +66,7 @@ export const PasswordPromptModal: React.FC<PasswordPromptModalProps> = ({
             type="button"
             onClick={onCancel}
             disabled={isLoading}
-            className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
@@ -93,7 +93,7 @@ export const PasswordPromptModal: React.FC<PasswordPromptModalProps> = ({
               placeholder="Enter document password"
               autoFocus
               disabled={isLoading}
-              className="w-full pr-10 pl-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full pr-10 pl-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-[#11182D]/60 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <button
               type="button"
@@ -110,7 +110,7 @@ export const PasswordPromptModal: React.FC<PasswordPromptModalProps> = ({
               type="button"
               onClick={onCancel}
               disabled={isLoading}
-              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors cursor-pointer"
             >
               Cancel
             </button>

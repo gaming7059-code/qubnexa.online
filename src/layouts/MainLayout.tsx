@@ -42,7 +42,7 @@ export const MainLayout: React.FC = () => {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-blue-100 dark:selection:bg-blue-900/60 selection:text-blue-900 dark:selection:text-blue-200 transition-colors duration-200">
+    <div className="flex min-h-screen flex-col overflow-x-clip bg-slate-50 dark:bg-[#050814] text-slate-900 dark:text-slate-100 selection:bg-cyan-100 dark:selection:bg-cyan-900/50 selection:text-cyan-900 dark:selection:text-cyan-100 transition-colors duration-200">
       <Header onOpenSearch={handleOpenSearch} />
 
       <main key={location.pathname} className="flex-1 animate-page-enter">

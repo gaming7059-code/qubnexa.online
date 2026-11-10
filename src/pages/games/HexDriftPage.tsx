@@ -103,12 +103,12 @@ export const HexDriftPage: React.FC = () => {
   ]
 
   usePageSEO({
-    title: 'HEX DRIFT — Neon Void Runner Online | Boss Fights, Upgrades & Ships | SmartTools India',
+    title: 'HEX DRIFT — Neon Void Runner Online | Boss Fights, Upgrades & Ships | Xenova-World',
     description:
-      'Play HEX DRIFT: Neon Void Runner with Boss Battles, Level Progression, Star Hangar Spaceships, Weapon Upgrades, and Daily Missions. 100% free client-side browser arcade game.',
+      'Play HEX DRIFT: Neon Void Runner with Boss Battles, Level Progression, Star Hangar Spaceships, Weapon Upgrades, and Daily Missions on Xenova-World. 100% free client-side browser arcade game.',
     canonicalPath: '/games/hex-drift',
     keywords:
-      'hex drift, neon void runner, boss fight arcade game, spaceship shop game, browser shooter, space runner game, smarttools india games',
+      'hex drift, neon void runner, boss fight arcade game, spaceship shop game, browser shooter, space runner game, xenova-world games',
     schema: [
       createWebApplicationSchema(
         'HEX DRIFT — Neon Void Runner',
@@ -127,7 +127,7 @@ export const HexDriftPage: React.FC = () => {
   return (
     <div className="space-y-12 sm:space-y-16 pb-16">
       {/* 1. BREADCRUMBS & TOP BAR */}
-      <section className="border-b border-slate-200/70 dark:border-slate-800/80 bg-slate-50/80 dark:bg-slate-950/60 py-4">
+      <section className="border-b border-slate-200/70 dark:border-slate-800/80 bg-slate-50/80 dark:bg-[#050814]/60 py-4">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
             <Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
@@ -143,9 +143,9 @@ export const HexDriftPage: React.FC = () => {
 
           <Link
             to="/games"
-            className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-400 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 shadow-2xs transition-colors"
+            className="inline-flex min-h-[38px] items-center gap-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0B1020] px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-500/60 dark:hover:border-[#00DFFF]/60 hover:text-blue-600 dark:hover:text-[#00DFFF] shadow-2xs transition-colors"
           >
-            <ArrowLeft className="h-3 w-3" />
+            <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Browser Games</span>
           </Link>
         </div>
@@ -189,7 +189,7 @@ export const HexDriftPage: React.FC = () => {
                 type="button"
                 onClick={reloadGame}
                 title="Restart Game Frame"
-                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 shadow-2xs transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 shadow-2xs transition-colors"
               >
                 <RotateCcw className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">Reset</span>
@@ -281,7 +281,7 @@ export const HexDriftPage: React.FC = () => {
       {/* 3. FLIGHT MANUAL & CONTROLS GUIDE */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-10 shadow-sm space-y-8">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-10 shadow-sm space-y-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
@@ -305,7 +305,7 @@ export const HexDriftPage: React.FC = () => {
             {/* Controls Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Desktop Controls */}
-              <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/50 p-6 space-y-4">
+              <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/50 p-6 space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400">
                     <Keyboard className="h-5 w-5" />
@@ -317,27 +317,27 @@ export const HexDriftPage: React.FC = () => {
                 </div>
 
                 <div className="space-y-3 pt-2">
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#0B1020] border border-slate-200/80 dark:border-slate-800 text-xs">
                     <span className="font-semibold text-slate-700 dark:text-slate-300">Steer Ship (Up / Down / Left / Right)</span>
-                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 font-mono font-bold text-slate-900 dark:text-white text-[11px]">
+                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-[#11182D] font-mono font-bold text-slate-900 dark:text-white text-[11px]">
                       W A S D or ↑ ↓ ← →
                     </span>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#0B1020] border border-slate-200/80 dark:border-slate-800 text-xs">
                     <span className="font-semibold text-slate-700 dark:text-slate-300">Plasma Cannons</span>
                     <span className="px-2 py-1 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">
                       AUTO-FIRE ALWAYS ON
                     </span>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#0B1020] border border-slate-200/80 dark:border-slate-800 text-xs">
                     <span className="font-semibold text-slate-700 dark:text-slate-300">Pause / Resume Game</span>
-                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 font-mono font-bold text-slate-900 dark:text-white text-[11px]">
+                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-[#11182D] font-mono font-bold text-slate-900 dark:text-white text-[11px]">
                       P or ESC
                     </span>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#0B1020] border border-slate-200/80 dark:border-slate-800 text-xs">
                     <span className="font-semibold text-slate-700 dark:text-slate-300">Toggle Audio Mute</span>
-                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 font-mono font-bold text-slate-900 dark:text-white text-[11px]">
+                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-[#11182D] font-mono font-bold text-slate-900 dark:text-white text-[11px]">
                       M or Sound Icon
                     </span>
                   </div>
@@ -345,7 +345,7 @@ export const HexDriftPage: React.FC = () => {
               </div>
 
               {/* Mobile Touch Controls */}
-              <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/50 p-6 space-y-4">
+              <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/50 p-6 space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-100 dark:bg-cyan-950/70 text-cyan-600 dark:text-cyan-400">
                     <Smartphone className="h-5 w-5" />
@@ -357,27 +357,27 @@ export const HexDriftPage: React.FC = () => {
                 </div>
 
                 <div className="space-y-3 pt-2">
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#0B1020] border border-slate-200/80 dark:border-slate-800 text-xs">
                     <span className="font-semibold text-slate-700 dark:text-slate-300">Touch &amp; Drag Anywhere</span>
                     <span className="px-2 py-1 rounded bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 font-bold text-[11px]">
                       1:1 Finger Tracking
                     </span>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#0B1020] border border-slate-200/80 dark:border-slate-800 text-xs">
                     <span className="font-semibold text-slate-700 dark:text-slate-300">Scroll Lock Protection</span>
-                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 font-bold text-slate-900 dark:text-white text-[11px]">
+                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-[#11182D] font-bold text-slate-900 dark:text-white text-[11px]">
                       Zero Jitter / No Overscroll
                     </span>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#0B1020] border border-slate-200/80 dark:border-slate-800 text-xs">
                     <span className="font-semibold text-slate-700 dark:text-slate-300">Device Rotation</span>
-                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 font-bold text-slate-900 dark:text-white text-[11px]">
+                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-[#11182D] font-bold text-slate-900 dark:text-white text-[11px]">
                       Portrait or Landscape
                     </span>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#0B1020] border border-slate-200/80 dark:border-slate-800 text-xs">
                     <span className="font-semibold text-slate-700 dark:text-slate-300">Tap to Pause</span>
-                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 font-bold text-slate-900 dark:text-white text-[11px]">
+                    <span className="px-2 py-1 rounded bg-slate-100 dark:bg-[#11182D] font-bold text-slate-900 dark:text-white text-[11px]">
                       Top-Right Pause Icon
                     </span>
                   </div>
@@ -433,7 +433,7 @@ export const HexDriftPage: React.FC = () => {
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/30 space-y-3">
+                <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-[#050814]/30 space-y-3">
                   <div className="flex items-center gap-2 text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
                     <Rocket className="h-4 w-4" />
                     <span>5 UNLOCKABLE SPACESHIPS</span>
@@ -447,7 +447,7 @@ export const HexDriftPage: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/30 space-y-3">
+                <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-[#050814]/30 space-y-3">
                   <div className="flex items-center gap-2 text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
                     <Wrench className="h-4 w-4" />
                     <span>4 SYSTEM UPGRADE TIERS (LVL 1-5)</span>
@@ -463,7 +463,7 @@ export const HexDriftPage: React.FC = () => {
             </div>
 
             {/* DAILY MISSIONS & ACHIEVEMENTS */}
-            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-[#050814]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-start gap-3">
                 <div className="p-2 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400">
                   <Award className="h-5 w-5" />
@@ -492,7 +492,7 @@ export const HexDriftPage: React.FC = () => {
       {/* 4. FREQUENTLY ASKED QUESTIONS */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-10 shadow-sm space-y-6">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-10 shadow-sm space-y-6">
             <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
               Frequently Asked Questions
             </h2>
@@ -500,7 +500,7 @@ export const HexDriftPage: React.FC = () => {
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/60 dark:bg-slate-950/30 p-5 space-y-2"
+                  className="rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/60 dark:bg-[#050814]/30 p-5 space-y-2"
                 >
                   <h3 className="text-sm font-bold text-slate-900 dark:text-white">
                     {faq.question}

@@ -42,7 +42,7 @@ export const SalaryCalculator: React.FC = () => {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
       {/* Inputs Section */}
       <div className="space-y-5">
         {/* Annual CTC Input & Presets */}
@@ -60,7 +60,7 @@ export const SalaryCalculator: React.FC = () => {
                   className={`min-h-[36px] sm:min-h-[30px] px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors inline-flex items-center justify-center active:scale-95 ${
                     annualCTC === preset.value
                       ? 'bg-blue-600 text-white shadow-2xs'
-                      : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                      : 'bg-slate-100 dark:bg-[#11182D] text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
                   }`}
                 >
                   {preset.label}
@@ -78,7 +78,7 @@ export const SalaryCalculator: React.FC = () => {
               value={annualCTC}
               onChange={(e) => setAnnualCTC(e.target.value)}
               placeholder="e.g. 600000"
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
             />
           </div>
         </div>
@@ -100,7 +100,7 @@ export const SalaryCalculator: React.FC = () => {
                 value={basicPercent}
                 onChange={(e) => setBasicPercent(e.target.value)}
                 placeholder="50"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-semibold text-xs">%</span>
             </div>
@@ -121,7 +121,7 @@ export const SalaryCalculator: React.FC = () => {
                 value={hraPercent}
                 onChange={(e) => setHraPercent(e.target.value)}
                 placeholder="50"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-semibold text-xs">%</span>
             </div>
@@ -142,7 +142,7 @@ export const SalaryCalculator: React.FC = () => {
                 value={otherAllowances}
                 onChange={(e) => setOtherAllowances(e.target.value)}
                 placeholder="5000"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-7 pr-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-7 pr-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
           </div>
@@ -162,7 +162,7 @@ export const SalaryCalculator: React.FC = () => {
                 value={employeePFPercent}
                 onChange={(e) => setEmployeePFPercent(e.target.value)}
                 placeholder="12"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-semibold text-xs">%</span>
             </div>
@@ -183,7 +183,7 @@ export const SalaryCalculator: React.FC = () => {
                 value={professionalTax}
                 onChange={(e) => setProfessionalTax(e.target.value)}
                 placeholder="200"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-7 pr-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-7 pr-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
           </div>
@@ -205,7 +205,7 @@ export const SalaryCalculator: React.FC = () => {
       {salaryResult?.success && salaryResult.data ? (
         <div className="space-y-6 pt-2 animate-result-in">
           {/* Take-Home Pay Hero Card */}
-          <div className="rounded-2xl bg-gradient-to-br from-emerald-50/90 via-slate-50 to-blue-50/40 dark:from-emerald-950/25 dark:via-slate-900/40 dark:to-blue-950/20 border border-emerald-200 dark:border-emerald-900/40 p-6 sm:p-8">
+          <div className="rounded-2xl bg-gradient-to-br from-emerald-50/90 via-slate-50 to-blue-50/40 dark:from-emerald-950/25 dark:via-[#0B1020]/40 dark:to-blue-950/20 border border-emerald-200 dark:border-emerald-900/40 p-6 sm:p-8">
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 dark:text-emerald-400">
               Estimated Monthly In-Hand / Take-Home Pay
             </span>
@@ -220,9 +220,9 @@ export const SalaryCalculator: React.FC = () => {
           </div>
 
           {/* Breakdown Table */}
-          <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020]">
             <table className="w-full text-left text-xs sm:text-sm">
-              <thead className="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 font-semibold uppercase tracking-wider text-[11px]">
+              <thead className="bg-slate-50 dark:bg-[#11182D]/80 border-b border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 font-semibold uppercase tracking-wider text-[11px]">
                 <tr>
                   <th className="px-4 py-3">Salary Component</th>
                   <th className="px-4 py-3 text-right">Monthly (₹)</th>
@@ -231,7 +231,7 @@ export const SalaryCalculator: React.FC = () => {
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-slate-800 dark:text-slate-200">
                 {/* Earnings */}
-                <tr className="bg-slate-50/40 dark:bg-slate-800/40 font-semibold text-slate-900 dark:text-white">
+                <tr className="bg-slate-50/40 dark:bg-[#11182D]/40 font-semibold text-slate-900 dark:text-white">
                   <td colSpan={3} className="px-4 py-2 text-xs text-blue-700 dark:text-blue-400">Gross Earnings</td>
                 </tr>
                 <tr>
@@ -258,7 +258,7 @@ export const SalaryCalculator: React.FC = () => {
                 </tr>
 
                 {/* Deductions */}
-                <tr className="bg-slate-50/40 dark:bg-slate-800/40 font-semibold text-slate-900 dark:text-white">
+                <tr className="bg-slate-50/40 dark:bg-[#11182D]/40 font-semibold text-slate-900 dark:text-white">
                   <td colSpan={3} className="px-4 py-2 text-xs text-rose-700 dark:text-rose-400">Standard Deductions</td>
                 </tr>
                 <tr>

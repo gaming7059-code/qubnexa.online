@@ -68,13 +68,13 @@ export const SearchModal: React.FC<SearchModalProps> = ({
       }}
     >
       <div 
-        className="w-full max-w-2xl rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-scale-in"
+        className="xw-surface w-full max-w-2xl shadow-2xl overflow-hidden animate-scale-in"
         role="dialog"
         aria-modal="true"
       >
         {/* Search Input Bar */}
-        <div className="relative flex items-center border-b border-slate-200 dark:border-slate-800 px-4 py-3 focus-within:bg-blue-50/20 dark:focus-within:bg-blue-950/20 transition-colors duration-200">
-          <Search className="h-5 w-5 text-slate-400 mr-3 shrink-0" />
+        <div className="relative flex items-center border-b border-slate-200 dark:border-slate-800 px-4 py-3 focus-within:bg-blue-50/30 dark:focus-within:bg-[#11182D]/70 transition-colors duration-200">
+          <Search className="h-5 w-5 text-slate-500 dark:text-[#00DFFF] mr-3 shrink-0" />
           <input
             ref={inputRef}
             type="text"
@@ -87,7 +87,8 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             <button
               type="button"
               onClick={() => setQuery('')}
-              className="p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 mr-2 transition-colors"
+              aria-label="Clear search query"
+              className="inline-flex min-h-[36px] min-w-[36px] cursor-pointer items-center justify-center rounded-lg p-1.5 text-slate-500 hover:bg-slate-100 dark:hover:bg-[#11182D] hover:text-slate-700 dark:hover:text-white mr-1.5 transition-colors"
             >
               <X className="h-4 w-4" />
             </button>
@@ -95,20 +96,20 @@ export const SearchModal: React.FC<SearchModalProps> = ({
           <button
             type="button"
             onClick={handleClose}
-            className="rounded px-2 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="min-h-[36px] cursor-pointer rounded-lg border border-slate-200 dark:border-slate-700 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#11182D] transition-colors"
           >
             ESC
           </button>
         </div>
 
         {/* Results List */}
-        <div className="max-h-96 overflow-y-auto p-2 divide-y divide-slate-100 dark:divide-slate-800">
+        <div className="max-h-96 overflow-y-auto p-2.5 divide-y divide-slate-100 dark:divide-slate-800/80">
           <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
             {query.trim() ? `Search Results (${filteredTools.length})` : 'Popular Tools'}
           </div>
 
           {filteredTools.length === 0 ? (
-            <div className="py-12 text-center text-sm text-slate-500 dark:text-slate-400">
+            <div className="py-12 text-center text-sm text-slate-600 dark:text-slate-300">
               No tools matching &ldquo;{query}&rdquo; found.
             </div>
           ) : (
@@ -120,26 +121,26 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                   onSelectTool(tool)
                   onClose()
                 }}
-                className="w-full flex items-center justify-between p-3 rounded-xl text-left hover:bg-blue-50/50 dark:hover:bg-slate-800/80 transition-all duration-200 active:scale-[0.99] group"
+                className="w-full min-h-[56px] cursor-pointer flex items-center justify-between p-3 rounded-xl text-left hover:bg-blue-50/70 dark:hover:bg-[#11182D] transition-all duration-200 active:scale-[0.99] group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-200 group-hover:scale-105">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 dark:bg-[#11182D] border border-blue-100 dark:border-slate-800 text-blue-600 dark:text-[#00DFFF] group-hover:bg-blue-600 group-hover:text-white dark:group-hover:border-[#00DFFF]/50 transition-all duration-200">
                     <DynamicIcon name={tool.icon} className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <div className="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-[#00DFFF] transition-colors">
                       {tool.name}
                     </div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
+                    <div className="text-xs text-slate-600 dark:text-slate-400 line-clamp-1">
                       {tool.description}
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded transition-colors">
+                <div className="flex items-center gap-2 shrink-0 ml-2">
+                  <span className="hidden sm:inline-block text-[11px] font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-[#11182D] border border-slate-200/70 dark:border-slate-800 px-2 py-0.5 rounded-md transition-colors">
                     {tool.categoryName}
                   </span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-200" />
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-[#00DFFF] group-hover:translate-x-0.5 transition-all duration-200" />
                 </div>
               </button>
             ))
@@ -147,11 +148,11 @@ export const SearchModal: React.FC<SearchModalProps> = ({
         </div>
 
         {/* Modal Footer */}
-        <div className="border-t border-slate-100 dark:border-slate-800 px-4 py-2.5 bg-slate-50/50 dark:bg-slate-900/50 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+        <div className="border-t border-slate-100 dark:border-slate-800 px-4 py-2.5 bg-slate-50/70 dark:bg-[#050814]/80 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
           <span>Navigate with mouse or keyboard</span>
           <div className="flex items-center gap-1 text-[11px]">
             <span>Press</span>
-            <kbd className="rounded bg-white dark:bg-slate-800 px-1 border border-slate-200 dark:border-slate-700">Enter</kbd>
+            <kbd className="rounded bg-white dark:bg-[#11182D] px-1.5 py-0.5 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200">Enter</kbd>
             <span>to select</span>
           </div>
         </div>

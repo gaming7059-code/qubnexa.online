@@ -1,5 +1,5 @@
 /**
- * SmartTools India — Tools Module Registry
+ * Xenova-World — Tools Module Registry
  * 
  * Individual calculator components will be implemented and registered here
  * in Step 2.

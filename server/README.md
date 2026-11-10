@@ -1,6 +1,6 @@
-# SmartTools India — Local Companion Neural TTS Engine 2.0
+# Xenova-World — Local Companion Neural TTS Engine 2.0
 
-High-fidelity, zero-API-key neural speech synthesis companion service for SmartTools India.
+High-fidelity, zero-API-key neural speech synthesis companion service for Xenova-World.
 
 ## Features
 - **Authentic Studio-Grade Quality**: Generates 24kHz natural neural audio with human cadence, natural breathing pauses, and expressive prosody.
@@ -19,7 +19,7 @@ High-fidelity, zero-API-key neural speech synthesis companion service for SmartT
    pip install -r requirements.txt
    python tts_server.py
    ```
-2. Open SmartTools India (`/tools/text-to-speech`). The web interface automatically detects `http://127.0.0.1:8000` and displays:
+2. Open Xenova-World (`/tools/text-to-speech`). Click Connect / Check Status and the web interface detects `http://127.0.0.1:8000` and displays:
    `🟢 Companion Neural Engine Connected`.
 
 ## API Endpoints

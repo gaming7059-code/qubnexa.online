@@ -219,7 +219,7 @@ export const ImageCropModal: React.FC<ImageCropModalProps> = ({
       aria-labelledby="image-crop-modal-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs animate-in fade-in duration-200"
     >
-      <div className="flex flex-col w-full max-w-2xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in zoom-in-95 duration-200">
+      <div className="flex flex-col w-full max-w-2xl bg-white dark:bg-[#0B1020] rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in zoom-in-95 duration-200">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
           <div className="flex items-center gap-2">
@@ -236,14 +236,14 @@ export const ImageCropModal: React.FC<ImageCropModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
         {/* Aspect Ratio Toolbar */}
-        <div className="flex items-center justify-between gap-2 px-6 py-2.5 bg-slate-50/80 dark:bg-slate-950/40 border-b border-slate-100 dark:border-slate-800 text-xs">
+        <div className="flex items-center justify-between gap-2 px-6 py-2.5 bg-slate-50/80 dark:bg-[#050814]/40 border-b border-slate-100 dark:border-slate-800 text-xs">
           <div className="flex items-center gap-1.5 flex-wrap">
             <span className="font-semibold text-slate-600 dark:text-slate-400 mr-1">Aspect:</span>
             {(['free', '1:1', '4:3', '16:9', '3:2'] as AspectRatioOption[]).map((opt) => (
@@ -254,7 +254,7 @@ export const ImageCropModal: React.FC<ImageCropModalProps> = ({
                 className={`px-2.5 py-1 rounded-lg font-medium transition-all cursor-pointer ${
                   aspectRatio === opt
                     ? 'bg-blue-600 text-white shadow-xs'
-                    : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700'
+                    : 'bg-white dark:bg-[#11182D] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-[#1B2748]'
                 }`}
               >
                 {opt === 'free' ? 'Free' : opt}
@@ -265,7 +265,7 @@ export const ImageCropModal: React.FC<ImageCropModalProps> = ({
           <button
             type="button"
             onClick={handleResetCrop}
-            className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200/60 dark:hover:bg-[#16203B] transition-colors cursor-pointer"
             title="Reset crop to full image"
           >
             <RotateCcw className="h-3.5 w-3.5" />
@@ -363,7 +363,7 @@ export const ImageCropModal: React.FC<ImageCropModalProps> = ({
         </div>
 
         {/* Footer Actions */}
-        <div className="flex items-center justify-between px-6 py-4 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+        <div className="flex items-center justify-between px-6 py-4 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-[#0B1020]">
           <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
             <Maximize2 className="h-3.5 w-3.5" />
             <span>
@@ -375,7 +375,7 @@ export const ImageCropModal: React.FC<ImageCropModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors cursor-pointer"
             >
               Cancel
             </button>

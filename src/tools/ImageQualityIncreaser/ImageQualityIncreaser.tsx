@@ -342,7 +342,7 @@ export const ImageQualityIncreaser: React.FC = () => {
           className={`border-2 border-dashed rounded-3xl p-10 sm:p-14 text-center cursor-pointer transition-all duration-300 ${
             isDragOver
               ? 'border-indigo-500 bg-indigo-50/70 dark:bg-indigo-950/40 ring-4 ring-indigo-500/20 scale-[1.01]'
-              : 'border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/60 hover:border-indigo-400 dark:hover:border-indigo-500 hover:bg-slate-50 dark:hover:bg-slate-800/40'
+              : 'border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0B1020]/60 hover:border-indigo-400 dark:hover:border-indigo-500 hover:bg-slate-50 dark:hover:bg-[#16203B]/40'
           }`}
         >
           <input
@@ -392,7 +392,7 @@ export const ImageQualityIncreaser: React.FC = () => {
       {imageFile && originalUrl && (
         <div className="space-y-6">
           {/* Top Bar with Image Meta and Change Image button */}
-          <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-3.5 shadow-xs">
+          <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-5 py-3.5 shadow-xs">
             <div className="flex items-center gap-3 truncate">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 shrink-0">
                 <FileCheck className="h-5 w-5" />
@@ -411,7 +411,7 @@ export const ImageQualityIncreaser: React.FC = () => {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-[#11182D] px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#1B2748] transition-colors"
               >
                 Change Image
               </button>
@@ -431,7 +431,7 @@ export const ImageQualityIncreaser: React.FC = () => {
           </div>
 
           {/* Interactive Preview Canvas */}
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-950 p-4 shadow-lg overflow-hidden">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-950 p-4 shadow-lg overflow-hidden">
             {/* View Mode Toolbar */}
             <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-800">
               <div className="flex items-center gap-1.5">
@@ -578,7 +578,7 @@ export const ImageQualityIncreaser: React.FC = () => {
           {/* Controls & Adjustment Panel */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Column 1 & 2: Sliders & Adjustments */}
-            <div className="lg:col-span-2 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm space-y-6">
+            <div className="lg:col-span-2 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 shadow-sm space-y-6">
               <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
                 <div className="flex items-center gap-2">
                   <Sliders className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
@@ -694,7 +694,7 @@ export const ImageQualityIncreaser: React.FC = () => {
             </div>
 
             {/* Column 3: Resolution & Download Card */}
-            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm flex flex-col justify-between space-y-6">
+            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 shadow-sm flex flex-col justify-between space-y-6">
               <div className="space-y-5">
                 <div className="flex items-center gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
                   <Sparkles className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
@@ -723,7 +723,7 @@ export const ImageQualityIncreaser: React.FC = () => {
                         className={`p-2.5 rounded-xl border text-center transition-all ${
                           scaleFactor === item.scale
                             ? 'border-indigo-600 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 ring-2 ring-indigo-500/20'
-                            : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
+                            : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#16203B]'
                         }`}
                       >
                         <div className="text-xs font-bold">{item.label}</div>
@@ -745,7 +745,7 @@ export const ImageQualityIncreaser: React.FC = () => {
                       className={`py-2 px-3 rounded-xl border text-xs font-semibold transition-all ${
                         outputFormat === 'image/jpeg'
                           ? 'border-indigo-600 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300'
-                          : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
+                          : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#16203B]'
                       }`}
                     >
                       JPG (Compressed)
@@ -756,7 +756,7 @@ export const ImageQualityIncreaser: React.FC = () => {
                       className={`py-2 px-3 rounded-xl border text-xs font-semibold transition-all ${
                         outputFormat === 'image/png'
                           ? 'border-indigo-600 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300'
-                          : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
+                          : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#16203B]'
                       }`}
                     >
                       PNG (Lossless)
@@ -765,7 +765,7 @@ export const ImageQualityIncreaser: React.FC = () => {
                 </div>
 
                 {/* Dimensions breakdown */}
-                <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 p-4 border border-slate-100 dark:border-slate-800 space-y-2 text-xs">
+                <div className="rounded-2xl bg-slate-50 dark:bg-[#11182D]/60 p-4 border border-slate-100 dark:border-slate-800 space-y-2 text-xs">
                   <div className="flex items-center justify-between text-slate-500 dark:text-slate-400">
                     <span>Target Resolution:</span>
                     <span className="font-bold text-slate-900 dark:text-white font-mono">

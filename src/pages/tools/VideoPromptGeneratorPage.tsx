@@ -106,7 +106,7 @@ export const VideoPromptGeneratorPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free AI Video Prompt Generator — Sora, Runway Gen-3 & Kling Director Studio"
+      seoTitle="Free AI Video Prompt Generator — Sora, Runway Gen-3 & Kling Director Studio | Xenova-World"
       seoDescription="Generate director-level cinematographic video prompts for OpenAI Sora, Runway Gen-3, Kling AI, and Midjourney. Includes camera motion, lighting, and aspect ratios."
       keywords="ai video prompt generator, sora prompt generator, runway gen 3 prompt, kling ai prompt, video prompt reverse engineering, cinematography prompt maker, creator tools"
       howToUseSteps={howToUseSteps}

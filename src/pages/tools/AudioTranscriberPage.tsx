@@ -80,7 +80,7 @@ export const AudioTranscriberPage: React.FC = () => {
     {
       question: 'Is my microphone audio sent to external marketing servers?',
       answer:
-        'No. Speech recognition is processed natively by your browser interface. SmartTools India never records, stores, or sells your private voice conversations.',
+        'No. Speech recognition is processed natively by your browser interface. Xenova-World never records, stores, or sells your private voice conversations.',
     },
     {
       question: 'Can I generate subtitles for my videos?',

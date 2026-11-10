@@ -67,7 +67,7 @@ export const PercentageCalculator: React.FC = () => {
 
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
       {/* Mode Selector Tabs */}
       <div className="flex flex-wrap gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
         <button
@@ -76,7 +76,7 @@ export const PercentageCalculator: React.FC = () => {
           className={`rounded-xl px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'of'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           What is X% of Y?
@@ -87,7 +87,7 @@ export const PercentageCalculator: React.FC = () => {
           className={`rounded-xl px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'isWhat'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           X is what % of Y?
@@ -98,7 +98,7 @@ export const PercentageCalculator: React.FC = () => {
           className={`rounded-xl px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'change'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           % Increase / Decrease
@@ -109,7 +109,7 @@ export const PercentageCalculator: React.FC = () => {
           className={`rounded-xl px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'original'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           Find Original Value
@@ -132,7 +132,7 @@ export const PercentageCalculator: React.FC = () => {
                   value={percentA}
                   onChange={(e) => setPercentA(e.target.value)}
                   placeholder="e.g. 20"
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
                 <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-semibold text-sm">%</span>
               </div>
@@ -149,13 +149,13 @@ export const PercentageCalculator: React.FC = () => {
                 value={totalA}
                 onChange={(e) => setTotalA(e.target.value)}
                 placeholder="e.g. 500"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
           </div>
 
           {/* Result Card A */}
-          <div className="rounded-2xl bg-gradient-to-br from-blue-50/80 to-slate-50 dark:from-blue-950/30 dark:to-slate-900/60 border border-blue-100 dark:border-blue-900/40 p-5 sm:p-6 animate-result-in">
+          <div className="rounded-2xl bg-gradient-to-br from-blue-50/80 to-slate-50 dark:from-[#0B1020] dark:to-[#11182D] border border-cyan-200/70 dark:border-[#00DFFF]/25 p-5 sm:p-6 animate-result-in">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">Calculated Result</span>
               <button
@@ -200,7 +200,7 @@ export const PercentageCalculator: React.FC = () => {
                 value={valueB}
                 onChange={(e) => setValueB(e.target.value)}
                 placeholder="e.g. 100"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
 
@@ -215,13 +215,13 @@ export const PercentageCalculator: React.FC = () => {
                 value={totalB}
                 onChange={(e) => setTotalB(e.target.value)}
                 placeholder="e.g. 500"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
           </div>
 
           {/* Result Card B */}
-          <div className="rounded-2xl bg-gradient-to-br from-blue-50/80 to-slate-50 dark:from-blue-950/30 dark:to-slate-900/60 border border-blue-100 dark:border-blue-900/40 p-5 sm:p-6 animate-result-in">
+          <div className="rounded-2xl bg-gradient-to-br from-blue-50/80 to-slate-50 dark:from-[#0B1020] dark:to-[#11182D] border border-cyan-200/70 dark:border-[#00DFFF]/25 p-5 sm:p-6 animate-result-in">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">Calculated Percentage</span>
               <button
@@ -266,7 +266,7 @@ export const PercentageCalculator: React.FC = () => {
                 value={originalC}
                 onChange={(e) => setOriginalC(e.target.value)}
                 placeholder="e.g. 500"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
 
@@ -281,13 +281,13 @@ export const PercentageCalculator: React.FC = () => {
                 value={newC}
                 onChange={(e) => setNewC(e.target.value)}
                 placeholder="e.g. 600"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
           </div>
 
           {/* Result Card C */}
-          <div className="rounded-2xl bg-gradient-to-br from-blue-50/80 to-slate-50 dark:from-blue-950/30 dark:to-slate-900/60 border border-blue-100 dark:border-blue-900/40 p-5 sm:p-6 animate-result-in">
+          <div className="rounded-2xl bg-gradient-to-br from-blue-50/80 to-slate-50 dark:from-[#0B1020] dark:to-[#11182D] border border-cyan-200/70 dark:border-[#00DFFF]/25 p-5 sm:p-6 animate-result-in">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">Percentage Change</span>
               <button
@@ -343,7 +343,7 @@ export const PercentageCalculator: React.FC = () => {
                   value={percentD}
                   onChange={(e) => setPercentD(e.target.value)}
                   placeholder="e.g. 20"
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
                 />
                 <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-semibold text-sm">%</span>
               </div>
@@ -360,13 +360,13 @@ export const PercentageCalculator: React.FC = () => {
                 value={valueD}
                 onChange={(e) => setValueD(e.target.value)}
                 placeholder="e.g. 100"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
           </div>
 
           {/* Result Card D */}
-          <div className="rounded-2xl bg-gradient-to-br from-blue-50/80 to-slate-50 dark:from-blue-950/30 dark:to-slate-900/60 border border-blue-100 dark:border-blue-900/40 p-5 sm:p-6 animate-result-in">
+          <div className="rounded-2xl bg-gradient-to-br from-blue-50/80 to-slate-50 dark:from-[#0B1020] dark:to-[#11182D] border border-cyan-200/70 dark:border-[#00DFFF]/25 p-5 sm:p-6 animate-result-in">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">Original Total Value</span>
               <button

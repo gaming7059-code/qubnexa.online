@@ -87,7 +87,7 @@ export const PasswordGenerator: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* 1. PRIMARY PASSWORD DISPLAY HERO CARD */}
-      <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
         <div className="flex items-center justify-between">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
             <Lock className="h-4 w-4 text-blue-500" />
@@ -100,7 +100,7 @@ export const PasswordGenerator: React.FC = () => {
 
         {/* Big Password Output Box */}
         {hasValidPool && primaryPassword ? (
-          <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-4 sm:p-5">
+          <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 rounded-2xl bg-slate-50 dark:bg-[#050814] border border-slate-200 dark:border-slate-800 p-4 sm:p-5">
             <div className="font-mono text-lg sm:text-2xl font-bold tracking-wider text-slate-900 dark:text-slate-100 break-all select-all">
               {primaryPassword}
             </div>
@@ -132,7 +132,7 @@ export const PasswordGenerator: React.FC = () => {
               <button
                 type="button"
                 onClick={handleGenerate}
-                className="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:border-blue-400 dark:hover:border-blue-500 hover:text-blue-600 shadow-2xs transition-all active:scale-95"
+                className="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#11182D] text-slate-700 dark:text-slate-200 hover:border-blue-400 dark:hover:border-blue-500 hover:text-blue-600 shadow-2xs transition-all active:scale-95"
                 title="Regenerate New Password"
                 aria-label="Regenerate Password"
               >
@@ -175,7 +175,7 @@ export const PasswordGenerator: React.FC = () => {
                   <div
                     key={seg}
                     className={`h-full rounded-full transition-all duration-300 ${
-                      isActive ? strength.colorClass : 'bg-slate-200 dark:bg-slate-800'
+                      isActive ? strength.colorClass : 'bg-slate-200 dark:bg-[#11182D]'
                     }`}
                   />
                 )
@@ -189,7 +189,7 @@ export const PasswordGenerator: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* LEFT COLUMN: LENGTH & OPTIONS (7 COLS) */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-xs space-y-6">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-xs space-y-6">
             <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <Sliders className="h-4 w-4 text-blue-500" />
               <span>Password Length &amp; Rules</span>
@@ -213,7 +213,7 @@ export const PasswordGenerator: React.FC = () => {
                         setOptions({ ...options, length: Math.max(4, Math.min(128, val)) })
                       }
                     }}
-                    className="w-16 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-2 py-1 text-center font-mono text-sm font-bold text-blue-600 dark:text-blue-400"
+                    className="w-16 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] px-2 py-1 text-center font-mono text-sm font-bold text-blue-600 dark:text-blue-400"
                   />
                   <span className="text-xs text-slate-500">chars</span>
                 </div>
@@ -242,7 +242,7 @@ export const PasswordGenerator: React.FC = () => {
                     className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors ${
                       options.length === len
                         ? 'bg-blue-600 text-white'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                        : 'bg-slate-100 dark:bg-[#11182D] text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
                     }`}
                   >
                     {len}
@@ -258,7 +258,7 @@ export const PasswordGenerator: React.FC = () => {
               </span>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <label className="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 hover:bg-slate-50 dark:hover:bg-slate-950 cursor-pointer select-none transition-colors">
+                <label className="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/40 hover:bg-slate-50 dark:hover:bg-slate-950 cursor-pointer select-none transition-colors">
                   <input
                     type="checkbox"
                     checked={options.includeUppercase}
@@ -273,7 +273,7 @@ export const PasswordGenerator: React.FC = () => {
                   </div>
                 </label>
 
-                <label className="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 hover:bg-slate-50 dark:hover:bg-slate-950 cursor-pointer select-none transition-colors">
+                <label className="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/40 hover:bg-slate-50 dark:hover:bg-slate-950 cursor-pointer select-none transition-colors">
                   <input
                     type="checkbox"
                     checked={options.includeLowercase}
@@ -288,7 +288,7 @@ export const PasswordGenerator: React.FC = () => {
                   </div>
                 </label>
 
-                <label className="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 hover:bg-slate-50 dark:hover:bg-slate-950 cursor-pointer select-none transition-colors">
+                <label className="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/40 hover:bg-slate-50 dark:hover:bg-slate-950 cursor-pointer select-none transition-colors">
                   <input
                     type="checkbox"
                     checked={options.includeNumbers}
@@ -303,7 +303,7 @@ export const PasswordGenerator: React.FC = () => {
                   </div>
                 </label>
 
-                <label className="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 hover:bg-slate-50 dark:hover:bg-slate-950 cursor-pointer select-none transition-colors">
+                <label className="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/40 hover:bg-slate-50 dark:hover:bg-slate-950 cursor-pointer select-none transition-colors">
                   <input
                     type="checkbox"
                     checked={options.includeSymbols}
@@ -320,7 +320,7 @@ export const PasswordGenerator: React.FC = () => {
               </div>
 
               {/* Exclusion toggle */}
-              <label className="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 hover:bg-slate-50 dark:hover:bg-slate-950 cursor-pointer select-none transition-colors">
+              <label className="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#050814]/40 hover:bg-slate-50 dark:hover:bg-slate-950 cursor-pointer select-none transition-colors">
                 <input
                   type="checkbox"
                   checked={options.excludeAmbiguous}
@@ -345,7 +345,7 @@ export const PasswordGenerator: React.FC = () => {
         {/* RIGHT COLUMN: MULTIPLE GENERATION & SECURITY SPECS (5 COLS) */}
         <div className="lg:col-span-5 space-y-6">
           {/* Multiple Passwords Batch */}
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-xs space-y-4">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-xs space-y-4">
             <div className="flex items-center justify-between">
               <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <Sparkles className="h-4 w-4 text-amber-500" />
@@ -385,7 +385,7 @@ export const PasswordGenerator: React.FC = () => {
                 {passwords.map((pwd, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center justify-between p-2.5 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
+                    className="flex items-center justify-between p-2.5 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-[#050814] hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
                   >
                     <span className="font-mono text-xs font-semibold text-slate-800 dark:text-slate-200 truncate mr-2 select-all">
                       {pwd}
@@ -409,14 +409,14 @@ export const PasswordGenerator: React.FC = () => {
           </div>
 
           {/* Cryptographic Security Details */}
-          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-xs space-y-3.5">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-7 shadow-xs space-y-3.5">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
               <ShieldCheck className="h-4 w-4" />
               <span>CSPRNG Cryptographic Engine</span>
             </div>
 
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              This tool utilizes the browser&apos;s native hardware <code className="font-mono text-[11px] bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">window.crypto.getRandomValues()</code> implementation with rejection sampling to eliminate modulo bias.
+              This tool utilizes the browser&apos;s native hardware <code className="font-mono text-[11px] bg-slate-100 dark:bg-[#11182D] px-1 py-0.5 rounded">window.crypto.getRandomValues()</code> implementation with rejection sampling to eliminate modulo bias.
             </p>
 
             <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-400 list-disc list-inside">

@@ -28,7 +28,7 @@ export const GSTCalculator: React.FC = () => {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
       {/* Mode Selector Tabs */}
       <div className="flex flex-wrap gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
         <button
@@ -37,7 +37,7 @@ export const GSTCalculator: React.FC = () => {
           className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'add'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           Add GST (Exclusive Amount)
@@ -48,7 +48,7 @@ export const GSTCalculator: React.FC = () => {
           className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'remove'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           Remove GST (Inclusive Amount)
@@ -72,7 +72,7 @@ export const GSTCalculator: React.FC = () => {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="e.g. 10000"
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
             />
           </div>
         </div>
@@ -91,7 +91,7 @@ export const GSTCalculator: React.FC = () => {
                 className={`rounded-lg px-3.5 py-1.5 text-xs font-semibold border transition-colors ${
                   gstRate === rate
                     ? 'border-blue-600 dark:border-blue-500 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 shadow-2xs'
-                    : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                    : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/60 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
                 }`}
               >
                 {rate}% GST
@@ -109,7 +109,7 @@ export const GSTCalculator: React.FC = () => {
               value={gstRate}
               onChange={(e) => setGstRate(e.target.value)}
               placeholder="Custom rate %"
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2 text-sm font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
             />
             <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-semibold text-xs">%</span>
           </div>
@@ -131,7 +131,7 @@ export const GSTCalculator: React.FC = () => {
       {mode === 'add' && addResult?.success && addResult.data && (
         <div className="space-y-6 pt-2 animate-result-in">
           {/* Final Gross Amount Hero */}
-          <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/40 dark:from-blue-950/30 dark:via-slate-900/40 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8">
+          <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/40 dark:from-blue-950/30 dark:via-[#0B1020]/40 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8">
             <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">
               Total Final Amount (With GST)
             </span>
@@ -145,7 +145,7 @@ export const GSTCalculator: React.FC = () => {
 
           {/* Tax Breakdown Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/50 p-4">
               <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                 Total GST Amount
               </span>
@@ -154,7 +154,7 @@ export const GSTCalculator: React.FC = () => {
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 shadow-2xs">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020]/80 p-4 shadow-2xs">
               <span className="text-xs font-medium text-blue-700 dark:text-blue-400 uppercase tracking-wider">
                 CGST ({(addResult.data.gstRate / 2).toFixed(2)}%)
               </span>
@@ -164,7 +164,7 @@ export const GSTCalculator: React.FC = () => {
               <div className="text-[11px] text-slate-400 dark:text-slate-500 mt-0.5">Central GST</div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 shadow-2xs">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020]/80 p-4 shadow-2xs">
               <span className="text-xs font-medium text-blue-700 dark:text-blue-400 uppercase tracking-wider">
                 SGST ({(addResult.data.gstRate / 2).toFixed(2)}%)
               </span>
@@ -175,7 +175,7 @@ export const GSTCalculator: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-start gap-2 rounded-xl bg-slate-100/70 dark:bg-slate-800/60 p-3 text-xs text-slate-600 dark:text-slate-300">
+          <div className="flex items-start gap-2 rounded-xl bg-slate-100/70 dark:bg-[#11182D]/60 p-3 text-xs text-slate-600 dark:text-slate-300">
             <Info className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
             <p>
               CGST and SGST equal 50/50 splits apply to standard intra-state sales within the same Indian state or union territory. For inter-state supply, full {addResult.data.gstRate}% is levied as Integrated GST (IGST: {formatINR(addResult.data.gstAmount, { showDecimals: true })}).
@@ -188,7 +188,7 @@ export const GSTCalculator: React.FC = () => {
       {mode === 'remove' && removeResult?.success && removeResult.data && (
         <div className="space-y-6 pt-2 animate-result-in">
           {/* Base Net Amount Hero */}
-          <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/40 dark:from-blue-950/30 dark:via-slate-900/40 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8">
+          <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/40 dark:from-blue-950/30 dark:via-[#0B1020]/40 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8">
             <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">
               Original Base Amount (Excluding GST)
             </span>
@@ -202,7 +202,7 @@ export const GSTCalculator: React.FC = () => {
 
           {/* Tax Breakdown Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/50 p-4">
               <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                 Embedded GST Amount
               </span>
@@ -211,7 +211,7 @@ export const GSTCalculator: React.FC = () => {
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 shadow-2xs">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020]/80 p-4 shadow-2xs">
               <span className="text-xs font-medium text-blue-700 dark:text-blue-400 uppercase tracking-wider">
                 CGST ({(removeResult.data.gstRate / 2).toFixed(2)}%)
               </span>
@@ -221,7 +221,7 @@ export const GSTCalculator: React.FC = () => {
               <div className="text-[11px] text-slate-400 dark:text-slate-500 mt-0.5">Central GST portion</div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 shadow-2xs">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020]/80 p-4 shadow-2xs">
               <span className="text-xs font-medium text-blue-700 dark:text-blue-400 uppercase tracking-wider">
                 SGST ({(removeResult.data.gstRate / 2).toFixed(2)}%)
               </span>
@@ -232,7 +232,7 @@ export const GSTCalculator: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-start gap-2 rounded-xl bg-slate-100/70 dark:bg-slate-800/60 p-3 text-xs text-slate-600 dark:text-slate-300">
+          <div className="flex items-start gap-2 rounded-xl bg-slate-100/70 dark:bg-[#11182D]/60 p-3 text-xs text-slate-600 dark:text-slate-300">
             <Info className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
             <p>
               Calculated using the reverse tax formula: Base = Total / (1 + Rate / 100). Equal CGST/SGST split assumes intra-state transactions.

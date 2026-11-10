@@ -31,7 +31,7 @@ export const AgeCalculator: React.FC = () => {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
       {/* Inputs Form */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Date of Birth Input */}
@@ -46,7 +46,7 @@ export const AgeCalculator: React.FC = () => {
               value={dob}
               onChange={(e) => setDob(e.target.value)}
               max={targetDate || getTodayStr()}
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
             />
           </div>
           <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">Select your birth date from the picker.</p>
@@ -71,7 +71,7 @@ export const AgeCalculator: React.FC = () => {
             type="date"
             value={targetDate}
             onChange={(e) => setTargetDate(e.target.value)}
-            className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+            className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
           />
           <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">Defaults to today’s date.</p>
         </div>
@@ -82,7 +82,7 @@ export const AgeCalculator: React.FC = () => {
         <button
           type="button"
           onClick={handleReset}
-          className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-[#16203B] hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
         >
           <RotateCcw className="h-3.5 w-3.5" />
           <span>Reset Dates</span>
@@ -93,7 +93,7 @@ export const AgeCalculator: React.FC = () => {
       {ageResult.success && ageResult.data ? (
         <div className="space-y-6 pt-2 animate-result-in">
           {/* Primary Age Display */}
-          <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-blue-50/40 dark:from-blue-950/30 dark:via-slate-900/40 dark:to-blue-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 text-center">
+          <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-blue-50/40 dark:from-blue-950/30 dark:via-[#0B1020]/40 dark:to-blue-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 text-center">
             <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">
               Your Exact Age
             </span>
@@ -134,13 +134,13 @@ export const AgeCalculator: React.FC = () => {
               Total Lifetime Breakdown
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-4 text-center">
+              <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#11182D]/40 p-4 text-center">
                 <div className="text-lg sm:text-2xl font-bold text-slate-900 dark:text-white">
                   {formatNumberIN(ageResult.data.totalMonths)}
                 </div>
                 <div className="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">Total Months</div>
               </div>
-              <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-4 text-center">
+              <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#11182D]/40 p-4 text-center">
                 <div className="text-lg sm:text-2xl font-bold text-slate-900 dark:text-white">
                   {formatNumberIN(ageResult.data.totalWeeks)}
                 </div>
@@ -148,13 +148,13 @@ export const AgeCalculator: React.FC = () => {
                   Total Weeks {ageResult.data.remainingDaysInWeek > 0 ? `+ ${ageResult.data.remainingDaysInWeek}d` : ''}
                 </div>
               </div>
-              <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-4 text-center">
+              <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#11182D]/40 p-4 text-center">
                 <div className="text-lg sm:text-2xl font-bold text-slate-900 dark:text-white">
                   {formatNumberIN(ageResult.data.totalDays)}
                 </div>
                 <div className="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">Total Days</div>
               </div>
-              <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-4 text-center">
+              <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#11182D]/40 p-4 text-center">
                 <div className="text-lg sm:text-2xl font-bold text-slate-900 dark:text-white">
                   {formatNumberIN(ageResult.data.totalHours)}
                 </div>

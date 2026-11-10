@@ -80,9 +80,9 @@ export const DiscountCalculatorPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Discount Calculator — Sale Price, Savings & Stacked Offers | SmartTools India"
+      seoTitle="Discount Calculator — Sale Price, Savings & Stacked Offers | Xenova-World"
       seoDescription="Calculate final sale prices, money saved, and shopping discounts instantly. Compare double discounts and festival offers with clear step-by-step calculations."
-      keywords="discount calculator, calculate sale price, shopping discount, double discount calculator, percentage off, festive sale savings, smarttools india"
+      keywords="discount calculator, calculate sale price, shopping discount, double discount calculator, percentage off, festive sale savings, xenova-world"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

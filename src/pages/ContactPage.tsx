@@ -4,10 +4,10 @@ import { usePageSEO, createBreadcrumbSchema } from '../utils/seo'
 
 export const ContactPage: React.FC = () => {
   usePageSEO({
-    title: 'Contact Us — Support, Suggestions & Feedback | SmartTools India',
-    description: 'Contact the SmartTools India team to suggest new calculators, report issues, or provide feedback on our suite of free online utilities.',
+    title: 'Contact Us — Support, Suggestions & Feedback | Xenova-World',
+    description: 'Contact the Xenova-World team to suggest new calculators, report issues, or provide feedback on our suite of free online utilities.',
     canonicalPath: '/contact',
-    keywords: 'contact smarttools india, suggest calculator, report bug, tool feedback, smarttools support',
+    keywords: 'contact xenova-world, suggest calculator, report bug, tool feedback, xenova-world support',
     schema: createBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Contact', path: '/contact' },
@@ -25,20 +25,20 @@ export const ContactPage: React.FC = () => {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-10 animate-fade-in-up">
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 animate-fade-in-up">
       <div>
-        <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+        <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-[#00DFFF]">
           Get in Touch
         </span>
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mt-1">
-          Contact SmartTools India
+        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1">
+          Contact Xenova-World
         </h1>
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
           Have an idea for a new calculator or utility? Found a bug? Send us a message below.
         </p>
       </div>
 
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-2xs">
+      <div className="xw-panel p-6 sm:p-8 shadow-2xs">
         {submitted ? (
           <div className="text-center py-8 space-y-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 mx-auto">
@@ -47,7 +47,7 @@ export const ContactPage: React.FC = () => {
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
               Thank You for Your Feedback!
             </h3>
-            <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
+            <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto">
               We have noted your message. We continuously review user suggestions to expand our suite of free online utilities.
             </p>
             <button
@@ -58,7 +58,7 @@ export const ContactPage: React.FC = () => {
                 setEmail('')
                 setMessage('')
               }}
-              className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-xs font-semibold text-white hover:bg-blue-700"
+              className="xw-btn-primary mt-4 min-h-[42px] px-5 py-2 text-xs sm:text-sm"
             >
               Send another note
             </button>
@@ -66,7 +66,7 @@ export const ContactPage: React.FC = () => {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+              <label htmlFor="name" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
                 Your Name
               </label>
               <input
@@ -76,12 +76,12 @@ export const ContactPage: React.FC = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Rahul Sharma"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="xw-input min-h-[44px]"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+              <label htmlFor="email" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
                 Email Address
               </label>
               <input
@@ -91,12 +91,12 @@ export const ContactPage: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="rahul@example.com"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="xw-input min-h-[44px]"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+              <label htmlFor="message" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
                 Message / Tool Suggestion
               </label>
               <textarea
@@ -106,13 +106,13 @@ export const ContactPage: React.FC = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Tell us what new tool or enhancement you would like to see..."
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="xw-input"
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="w-full sm:w-auto rounded-xl bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-700 transition-colors"
+              className="xw-btn-primary w-full sm:w-auto min-h-[44px] px-6 py-2.5 text-sm"
             >
               Send Message
             </button>
@@ -120,12 +120,12 @@ export const ContactPage: React.FC = () => {
         )}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-500 dark:text-slate-400">
-        <div className="flex items-center gap-2 p-3 rounded-lg bg-slate-100/60 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-          <Mail className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0" />
-          <span>General inquiries: contact@smarttools.in</span>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-600 dark:text-slate-300">
+        <div className="xw-surface flex items-center gap-2.5 p-3.5">
+          <Mail className="h-4 w-4 text-cyan-600 dark:text-[#00DFFF] shrink-0" />
+          <span>Direct inquiries via the feedback form above</span>
         </div>
-        <div className="flex items-center gap-2 p-3 rounded-lg bg-slate-100/60 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+        <div className="xw-surface flex items-center gap-2.5 p-3.5">
           <MessageSquare className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0" />
           <span>Feature requests reviewed continuously</span>
         </div>

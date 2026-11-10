@@ -115,9 +115,9 @@ export const TextToSpeechPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free Neural Text to Speech Converter & Audio Download | SmartTools India"
+      seoTitle="Free Neural Text to Speech Converter & Audio Download | Xenova-World"
       seoDescription="Convert text into natural neural speech and download MP3/WAV audio. High-fidelity Bengali, Hindi, English, and Urdu voices with speed, pitch, and volume controls."
-      keywords="free text to speech converter, neural text to speech, bengali text to speech, hindi text to speech, urdu text to speech, download tts wav mp3, read aloud, speech synthesis browser, indian english voice, smarttools india"
+      keywords="free text to speech converter, neural text to speech, bengali text to speech, hindi text to speech, urdu text to speech, download tts wav mp3, read aloud, speech synthesis browser, indian english voice, xenova-world"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

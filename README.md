@@ -1,6 +1,8 @@
-# SmartTools India 🇮🇳
+# Xenova-World
 
-Free online calculators, converters, media utilities, and interactive arcade games designed for students, professionals, and everyday internet users.
+> **Explore Beyond Limits.**
+
+All-in-one privacy-first platform of 25+ online calculators, unit converters, QR & security utilities, PDF studio, neural voice & audio tools, and interactive arcade games built for creators, students, developers, and professionals worldwide.
 
 ## 🚀 Features & Tools
 

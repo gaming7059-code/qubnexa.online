@@ -49,7 +49,7 @@ export const DateDifferenceCalculator: React.FC = () => {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
       {/* Mode Selector Tabs */}
       <div className="flex flex-wrap gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
         <button
@@ -58,7 +58,7 @@ export const DateDifferenceCalculator: React.FC = () => {
           className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'difference'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           Difference Between Two Dates
@@ -69,7 +69,7 @@ export const DateDifferenceCalculator: React.FC = () => {
           className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-colors ${
             mode === 'addSubtract'
               ? 'bg-blue-600 text-white shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+              : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
           }`}
         >
           Add or Subtract Days
@@ -99,7 +99,7 @@ export const DateDifferenceCalculator: React.FC = () => {
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
 
@@ -122,7 +122,7 @@ export const DateDifferenceCalculator: React.FC = () => {
                 type="date"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
           </div>
@@ -142,7 +142,7 @@ export const DateDifferenceCalculator: React.FC = () => {
           {diffResult?.success && diffResult.data ? (
             <div className="space-y-6 pt-2 animate-result-in">
               {/* Primary Difference Card */}
-              <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/40 dark:from-blue-950/30 dark:via-slate-900/40 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 text-center sm:text-left">
+              <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/40 dark:from-blue-950/30 dark:via-[#0B1020]/40 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 text-center sm:text-left">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">
                     Exact Calendar Difference
@@ -165,14 +165,14 @@ export const DateDifferenceCalculator: React.FC = () => {
 
               {/* Total Unit Breakdown Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 text-center">
+                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/50 p-4 text-center">
                   <div className="text-lg sm:text-2xl font-bold text-slate-900 dark:text-white">
                     {formatNumberIN(diffResult.data.totalDays)}
                   </div>
                   <div className="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">Total Days</div>
                 </div>
 
-                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 text-center">
+                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/50 p-4 text-center">
                   <div className="text-lg sm:text-2xl font-bold text-slate-900 dark:text-white">
                     {formatNumberIN(diffResult.data.totalWeeks)}
                   </div>
@@ -181,14 +181,14 @@ export const DateDifferenceCalculator: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 text-center">
+                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/50 p-4 text-center">
                   <div className="text-lg sm:text-2xl font-bold text-slate-900 dark:text-white">
                     {formatNumberIN(diffResult.data.totalMonths)}
                   </div>
                   <div className="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">Total Months</div>
                 </div>
 
-                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 text-center">
+                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/50 p-4 text-center">
                   <div className="text-lg sm:text-2xl font-bold text-slate-900 dark:text-white">
                     {formatNumberIN(diffResult.data.totalDays * 24)}
                   </div>
@@ -231,7 +231,7 @@ export const DateDifferenceCalculator: React.FC = () => {
                 type="date"
                 value={baseDate}
                 onChange={(e) => setBaseDate(e.target.value)}
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
 
@@ -240,7 +240,7 @@ export const DateDifferenceCalculator: React.FC = () => {
               <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
                 Operation
               </label>
-              <div className="grid grid-cols-2 rounded-xl border border-slate-200 dark:border-slate-800 p-1 bg-slate-50 dark:bg-slate-800">
+              <div className="grid grid-cols-2 rounded-xl border border-slate-200 dark:border-slate-800 p-1 bg-slate-50 dark:bg-[#11182D]">
                 <button
                   type="button"
                   onClick={() => setOperation('add')}
@@ -279,7 +279,7 @@ export const DateDifferenceCalculator: React.FC = () => {
                 value={daysCount}
                 onChange={(e) => setDaysCount(e.target.value)}
                 placeholder="e.g. 30"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
             </div>
           </div>
@@ -295,7 +295,7 @@ export const DateDifferenceCalculator: React.FC = () => {
                 className={`min-h-[36px] sm:min-h-[30px] px-3 py-1.5 text-xs font-semibold rounded-lg border transition-colors inline-flex items-center justify-center active:scale-95 ${
                   daysCount === d
                     ? 'border-blue-600 dark:border-blue-500 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300'
-                    : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
+                    : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/60 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-[#16203B]'
                 }`}
               >
                 {d} days
@@ -316,7 +316,7 @@ export const DateDifferenceCalculator: React.FC = () => {
 
           {/* Result Card 2 */}
           {addSubtractResult?.success && addSubtractResult.data ? (
-            <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/40 dark:from-blue-950/30 dark:via-slate-900/40 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 animate-result-in">
+            <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/40 dark:from-blue-950/30 dark:via-[#0B1020]/40 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 animate-result-in">
               <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">
                 Calculated Target Date
               </span>

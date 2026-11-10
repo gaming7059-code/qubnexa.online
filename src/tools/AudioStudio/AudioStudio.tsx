@@ -433,7 +433,7 @@ export const AudioStudio: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Workspace Header Card */}
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-7 shadow-xs space-y-6">
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-5 sm:p-7 shadow-xs space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800/80 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/40">
@@ -454,7 +454,7 @@ export const AudioStudio: React.FC = () => {
           </div>
 
           {/* Quick Info Badge */}
-          <div className="text-xs text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center gap-1.5">
+          <div className="text-xs text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-[#050814] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center gap-1.5">
             <Music className="h-4 w-4 text-blue-600" />
             <span>100% Client-Side • Private &amp; Offline</span>
           </div>
@@ -463,7 +463,7 @@ export const AudioStudio: React.FC = () => {
         {/* Upload or Record Area */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* File Upload Box */}
-          <label className="border-2 border-dashed border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 rounded-2xl p-6 text-center cursor-pointer transition-colors flex flex-col items-center justify-center gap-2 bg-slate-50/50 dark:bg-slate-950/30">
+          <label className="border-2 border-dashed border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 rounded-2xl p-6 text-center cursor-pointer transition-colors flex flex-col items-center justify-center gap-2 bg-slate-50/50 dark:bg-[#050814]/30">
             <input
               type="file"
               accept="audio/*"
@@ -482,7 +482,7 @@ export const AudioStudio: React.FC = () => {
           </label>
 
           {/* Microphone Recording Box */}
-          <div className="border border-slate-200 dark:border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center justify-center gap-2.5 bg-slate-50/50 dark:bg-slate-950/30">
+          <div className="border border-slate-200 dark:border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center justify-center gap-2.5 bg-slate-50/50 dark:bg-[#050814]/30">
             <div
               className={`flex h-12 w-12 items-center justify-center rounded-full transition-all ${
                 isRecording
@@ -518,7 +518,7 @@ export const AudioStudio: React.FC = () => {
 
         {/* Waveform Player Section (Only shown if audioBuffer exists) */}
         {audioBuffer && (
-          <div className="space-y-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/40 p-5">
+          <div className="space-y-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/40 p-5">
             <div className="flex items-center justify-between text-xs">
               <span className="font-bold text-slate-800 dark:text-slate-200 truncate max-w-xs">
                 {fileName}
@@ -559,7 +559,7 @@ export const AudioStudio: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleStop}
-                  className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors"
+                  className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-[#16203B] text-slate-700 dark:text-slate-300 transition-colors"
                   title="Stop and return to beginning"
                 >
                   <Square className="h-4 w-4 fill-current" />
@@ -588,7 +588,7 @@ export const AudioStudio: React.FC = () => {
         )}
 
         {/* Audio Effects & Processing Panel */}
-        <div className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/30 p-5 space-y-6">
+        <div className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-[#050814]/30 p-5 space-y-6">
           <div className="flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800 pb-3">
             <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">
               <AudioLines className="h-4 w-4 text-blue-600 dark:text-blue-400" />
@@ -625,7 +625,7 @@ export const AudioStudio: React.FC = () => {
                 className={`p-3 rounded-xl border text-left transition-all ${
                   activePreset === preset.id
                     ? 'border-blue-600 bg-blue-50/80 dark:bg-blue-950/60 shadow-xs ring-2 ring-blue-500/20'
-                    : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300'
+                    : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] hover:border-slate-300'
                 }`}
               >
                 <div className={`text-xs font-bold ${activePreset === preset.id ? 'text-blue-700 dark:text-blue-400' : 'text-slate-800 dark:text-slate-200'}`}>
@@ -641,7 +641,7 @@ export const AudioStudio: React.FC = () => {
           {/* Sliders: Speed & Gain */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
             {/* Speed & Tempo */}
-            <div className="space-y-2 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200/80 dark:border-slate-800">
+            <div className="space-y-2 bg-white dark:bg-[#0B1020] p-4 rounded-xl border border-slate-200/80 dark:border-slate-800">
               <div className="flex items-center justify-between text-xs font-bold text-slate-800 dark:text-slate-200">
                 <span>Speed / Tempo</span>
                 <span className="font-mono text-blue-600 dark:text-blue-400">{speed.toFixed(2)}×</span>
@@ -674,7 +674,7 @@ export const AudioStudio: React.FC = () => {
                     className={`min-h-[30px] px-2 py-1 rounded-md transition-colors active:scale-95 inline-flex items-center justify-center flex-1 ${
                       speed === s
                         ? 'bg-blue-600 text-white font-bold'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200'
+                        : 'bg-slate-100 dark:bg-[#11182D] text-slate-600 dark:text-slate-400 hover:bg-slate-200'
                     }`}
                   >
                     {s}×
@@ -684,7 +684,7 @@ export const AudioStudio: React.FC = () => {
             </div>
 
             {/* Volume Gain Boost */}
-            <div className="space-y-2 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200/80 dark:border-slate-800">
+            <div className="space-y-2 bg-white dark:bg-[#0B1020] p-4 rounded-xl border border-slate-200/80 dark:border-slate-800">
               <div className="flex items-center justify-between text-xs font-bold text-slate-800 dark:text-slate-200">
                 <span className="flex items-center gap-1">
                   <Volume2 className="h-4 w-4 text-emerald-600" />
@@ -726,7 +726,7 @@ export const AudioStudio: React.FC = () => {
                     className={`min-h-[30px] px-1.5 py-1 rounded-md transition-colors active:scale-95 inline-flex items-center justify-center flex-1 ${
                       gainLevel === item.v
                         ? 'bg-emerald-600 text-white font-bold'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200'
+                        : 'bg-slate-100 dark:bg-[#11182D] text-slate-600 dark:text-slate-400 hover:bg-slate-200'
                     }`}
                   >
                     {item.label}

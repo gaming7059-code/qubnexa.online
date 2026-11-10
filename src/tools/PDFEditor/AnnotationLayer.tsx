@@ -813,7 +813,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
       {/* Floating Inspector Popover for Selected Original Text Region */}
       {selectedActionBox && (
         <div
-          className="absolute z-50 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col gap-3 min-w-[320px] max-w-[380px] text-xs backdrop-blur-md animate-in fade-in zoom-in-95 duration-150"
+          className="absolute z-50 bg-white dark:bg-[#0B1020] rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col gap-3 min-w-[320px] max-w-[380px] text-xs backdrop-blur-md animate-in fade-in zoom-in-95 duration-150"
           style={{
             left: `${Math.min(0.6, Math.max(0.02, selectedActionBox.x)) * 100}%`,
             top: `${Math.max(0.02, selectedActionBox.y - 0.05) * 100}%`,
@@ -829,7 +829,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
             <button
               type="button"
               onClick={() => setSelectedActionBox(null)}
-              className="p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors"
+              className="p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#16203B] cursor-pointer transition-colors"
               title="Close"
             >
               <X className="h-4 w-4" />
@@ -837,7 +837,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
           </div>
 
           {/* Detected Properties Metadata Bar */}
-          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 flex flex-col gap-1.5">
+          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#11182D]/60 border border-slate-200/60 dark:border-slate-700/60 flex flex-col gap-1.5">
             <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
               Detected Original Properties
             </div>
@@ -891,7 +891,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
               }}
               autoFocus
               placeholder="Enter replacement text..."
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-xs focus:outline-hidden focus:ring-2 focus:ring-blue-500 font-medium resize-y min-h-[60px]"
+              className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D] text-slate-800 dark:text-slate-100 text-xs focus:outline-hidden focus:ring-2 focus:ring-blue-500 font-medium resize-y min-h-[60px]"
             />
           </div>
 
@@ -905,7 +905,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
               <select
                 value={editFontFamily}
                 onChange={(e) => setEditFontFamily(e.target.value)}
-                className="w-full px-2 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs focus:outline-hidden focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                className="w-full px-2 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D] text-slate-800 dark:text-slate-200 text-xs focus:outline-hidden focus:ring-2 focus:ring-blue-500 cursor-pointer"
               >
                 <option value="Helvetica (Sans-Serif)">Helvetica (Sans-Serif)</option>
                 <option value="Times Roman (Serif)">Times Roman (Serif)</option>
@@ -935,7 +935,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
             {/* Row 1: Style (B, I, U) + Alignment (Left, Center, Right) */}
             <div className="flex items-center justify-between gap-2 flex-wrap">
               {/* Bold, Italic, Underline */}
-              <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg">
+              <div className="flex items-center gap-1 bg-slate-100 dark:bg-[#11182D] p-0.5 rounded-lg">
                 <button
                   type="button"
                   onClick={() => setEditIsBold(!editIsBold)}
@@ -943,7 +943,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                   className={`w-7 h-7 rounded-md flex items-center justify-center font-bold text-xs transition-colors cursor-pointer ${
                     editIsBold
                       ? 'bg-blue-600 text-white shadow-xs'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
                   }`}
                 >
                   B
@@ -955,7 +955,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                   className={`w-7 h-7 rounded-md flex items-center justify-center italic font-serif text-xs transition-colors cursor-pointer ${
                     editIsItalic
                       ? 'bg-blue-600 text-white shadow-xs'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
                   }`}
                 >
                   I
@@ -967,7 +967,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                   className={`w-7 h-7 rounded-md flex items-center justify-center text-xs transition-colors cursor-pointer ${
                     editIsUnderline
                       ? 'bg-blue-600 text-white shadow-xs'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
                   }`}
                 >
                   <UnderlineIcon className="h-3.5 w-3.5" />
@@ -975,7 +975,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
               </div>
 
               {/* Text Alignment */}
-              <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg">
+              <div className="flex items-center gap-1 bg-slate-100 dark:bg-[#11182D] p-0.5 rounded-lg">
                 <button
                   type="button"
                   onClick={() => setEditTextAlign('left')}
@@ -983,7 +983,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                   className={`w-7 h-7 rounded-md flex items-center justify-center text-xs transition-colors cursor-pointer ${
                     editTextAlign === 'left'
                       ? 'bg-blue-600 text-white shadow-xs'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
                   }`}
                 >
                   <AlignLeft className="h-3.5 w-3.5" />
@@ -995,7 +995,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                   className={`w-7 h-7 rounded-md flex items-center justify-center text-xs transition-colors cursor-pointer ${
                     editTextAlign === 'center'
                       ? 'bg-blue-600 text-white shadow-xs'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
                   }`}
                 >
                   <AlignCenter className="h-3.5 w-3.5" />
@@ -1007,7 +1007,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                   className={`w-7 h-7 rounded-md flex items-center justify-center text-xs transition-colors cursor-pointer ${
                     editTextAlign === 'right'
                       ? 'bg-blue-600 text-white shadow-xs'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
                   }`}
                 >
                   <AlignRight className="h-3.5 w-3.5" />
@@ -1023,7 +1023,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                 <select
                   value={editLineSpacing}
                   onChange={(e) => setEditLineSpacing(Number(e.target.value))}
-                  className="px-1.5 py-1 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs cursor-pointer"
+                  className="px-1.5 py-1 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D] text-slate-800 dark:text-slate-200 text-xs cursor-pointer"
                 >
                   <option value={1.0}>1.0x</option>
                   <option value={1.15}>1.15x</option>
@@ -1217,7 +1217,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                 >
                   {/* Floating Toolbar */}
                   <div
-                    className="absolute -top-11 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 text-xs select-none animate-in fade-in zoom-in-95 pointer-events-auto whitespace-nowrap"
+                    className="absolute -top-11 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-[#0B1020] rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 text-xs select-none animate-in fade-in zoom-in-95 pointer-events-auto whitespace-nowrap"
                     onPointerDown={(e) => e.stopPropagation()}
                     onClick={(e) => e.stopPropagation()}
                   >
@@ -1249,7 +1249,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                         onChange={(e) => {
                           onUpdateAnnotation({ ...ann, strokeWidth: Number(e.target.value) })
                         }}
-                        className="px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-[11px]"
+                        className="px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D] text-[11px]"
                       >
                         {[1, 2, 3, 5, 8, 12].map((w) => (
                           <option key={w} value={w}>
@@ -1357,7 +1357,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                 >
                   {/* Floating Toolbar */}
                   <div
-                    className="absolute -top-11 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 text-xs select-none animate-in fade-in zoom-in-95 pointer-events-auto whitespace-nowrap"
+                    className="absolute -top-11 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-[#0B1020] rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 text-xs select-none animate-in fade-in zoom-in-95 pointer-events-auto whitespace-nowrap"
                     onPointerDown={(e) => e.stopPropagation()}
                     onClick={(e) => e.stopPropagation()}
                   >
@@ -1389,7 +1389,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                         onChange={(e) => {
                           onUpdateAnnotation({ ...ann, strokeWidth: Number(e.target.value) })
                         }}
-                        className="px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-[11px]"
+                        className="px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D] text-[11px]"
                       >
                         {[1, 2, 3, 5, 8, 12].map((w) => (
                           <option key={w} value={w}>
@@ -1689,7 +1689,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                       }
                     }}
                     onBlur={() => handleCommitText(ann.id, editingTextVal)}
-                    className="w-full h-full min-h-[44px] resize-none bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 p-1.5 rounded border border-blue-500 focus:outline-none shadow-sm"
+                    className="w-full h-full min-h-[44px] resize-none bg-white dark:bg-[#0B1020] text-slate-900 dark:text-slate-100 p-1.5 rounded border border-blue-500 focus:outline-none shadow-sm"
                   />
                 ) : (
                   <span className="whitespace-pre-wrap break-words block">
@@ -1737,7 +1737,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                 {/* Floating Property Toolbar for Shapes & Text & Markups */}
                 {ann.type !== 'image' && ann.type !== 'signature' && ann.type !== 'stickyNote' && !ann.isPdfTextReplacement && (
                   <div
-                    className="absolute -top-11 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 text-xs select-none animate-in fade-in zoom-in-95 pointer-events-auto whitespace-nowrap"
+                    className="absolute -top-11 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-[#0B1020] rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 text-xs select-none animate-in fade-in zoom-in-95 pointer-events-auto whitespace-nowrap"
                     onPointerDown={(e) => e.stopPropagation()}
                     onClick={(e) => e.stopPropagation()}
                   >
@@ -1834,7 +1834,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                             className={`px-1.5 py-0.5 rounded text-[10px] font-semibold transition-colors cursor-pointer ${
                               ann.fillColor && ann.fillColor !== 'transparent'
                                 ? 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300'
-                                : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
+                                : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-[#16203B]'
                             }`}
                           >
                             {ann.fillColor && ann.fillColor !== 'transparent' ? 'Solid' : 'Outline'}
@@ -1857,7 +1857,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                             onChange={(e) => {
                               onUpdateAnnotation({ ...ann, strokeWidth: Number(e.target.value) })
                             }}
-                            className="px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-[11px]"
+                            className="px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D] text-[11px]"
                           >
                             {[1, 2, 3, 5, 8].map((w) => (
                               <option key={w} value={w}>
@@ -1874,7 +1874,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                 {/* Floating Image & Signature Control Bar */}
                 {(ann.type === 'image' || ann.type === 'signature') && (
                   <div
-                    className="absolute -top-11 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1 px-2 py-1 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 text-xs select-none animate-in fade-in zoom-in-95 pointer-events-auto whitespace-nowrap"
+                    className="absolute -top-11 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1 px-2 py-1 bg-white dark:bg-[#0B1020] rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 text-xs select-none animate-in fade-in zoom-in-95 pointer-events-auto whitespace-nowrap"
                     onPointerDown={(e) => e.stopPropagation()}
                     onClick={(e) => e.stopPropagation()}
                   >
@@ -1886,7 +1886,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                         const newRot = ((ann.rotation || 0) + 270) % 360
                         onUpdateAnnotation({ ...ann, rotation: newRot })
                       }}
-                      className="p-1 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                      className="p-1 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors cursor-pointer"
                       title="Rotate 90° Counter-Clockwise"
                     >
                       <RotateCcw className="h-3.5 w-3.5" />
@@ -1900,7 +1900,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                         const newRot = ((ann.rotation || 0) + 90) % 360
                         onUpdateAnnotation({ ...ann, rotation: newRot })
                       }}
-                      className="p-1 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                      className="p-1 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors cursor-pointer"
                       title="Rotate 90° Clockwise"
                     >
                       <RotateCw className="h-3.5 w-3.5" />
@@ -1923,7 +1923,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                             e.stopPropagation()
                             handleOpenCrop(ann)
                           }}
-                          className="flex items-center gap-1 px-2 py-1 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-colors cursor-pointer"
+                          className="flex items-center gap-1 px-2 py-1 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] font-medium transition-colors cursor-pointer"
                           title="Crop Image"
                         >
                           <Crop className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
@@ -1955,7 +1955,7 @@ export const AnnotationLayer: React.FC<AnnotationLayerProps> = ({
                             e.stopPropagation()
                             handleTriggerReplaceImage(ann.id)
                           }}
-                          className="flex items-center gap-1 px-2 py-1 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-colors cursor-pointer"
+                          className="flex items-center gap-1 px-2 py-1 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] font-medium transition-colors cursor-pointer"
                           title="Replace with another image file"
                         >
                           <RefreshCw className="h-3.5 w-3.5 text-purple-600 dark:text-purple-400" />

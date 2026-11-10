@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ShieldCheck, Heart } from 'lucide-react'
+import { ShieldCheck, Sparkles } from 'lucide-react'
 import { ScrollReveal } from './ScrollReveal'
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 transition-colors duration-200">
+    <footer className="border-t border-slate-200 dark:border-slate-800/80 bg-white dark:bg-[#0B1020] text-slate-600 dark:text-slate-400 transition-colors duration-200">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
@@ -13,28 +13,33 @@ export const Footer: React.FC = () => {
             <div className="col-span-2 md:col-span-2 space-y-3">
               <Link
                 to="/"
-                className="flex items-center gap-2.5 transition-transform duration-200 hover:scale-[1.02] inline-flex"
-                aria-label="SmartTools India Homepage"
+                className="inline-flex items-center gap-2.5 transition-opacity duration-200 hover:opacity-90"
+                aria-label="Xenova-World Homepage"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}smarttools-logo.png`}
-                  alt="SmartTools India logo"
-                  width={32}
-                  height={32}
-                  className="h-8 w-8 object-contain rounded-lg border border-slate-200/80 dark:border-slate-700/80 bg-white shadow-2xs shrink-0"
+                  src={`${import.meta.env.BASE_URL}branding/xenova-world-icon.png`}
+                  alt="Xenova-World logo"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain rounded-full bg-[#050814] ring-1 ring-cyan-500/35 shadow-[0_0_12px_rgba(0,223,255,0.18)] shrink-0"
                   loading="lazy"
                   decoding="async"
                 />
-                <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
-                  SmartTools India
-                </span>
+                <div className="flex flex-col">
+                  <span className="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+                    Xenova<span className="text-cyan-600 dark:text-[#00DFFF]">-World</span>
+                  </span>
+                  <span className="text-[11px] font-medium text-slate-500 dark:text-[#00DFFF]/80">
+                    Explore Beyond Limits.
+                  </span>
+                </div>
               </Link>
-              <p className="text-sm text-slate-500 dark:text-slate-400 max-w-md leading-relaxed">
-                Free online calculators, client-side PDF tools, audio studio, AI prompt builders, and browser games for everyday life. Built for students, professionals, and creators across India.
+              <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md leading-relaxed">
+                Discover useful online tools, calculators, client-side PDF utilities, neural voice synthesis, creative AI tools, and browser experiences with Xenova-World.
               </p>
-              <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 pt-1">
-                <ShieldCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                <span>Client-side calculations • No sign-up • 100% Free</span>
+              <div className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300 pt-1">
+                <ShieldCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <span>Client-side execution • No sign-up • 100% Free</span>
               </div>
             </div>
 
@@ -43,44 +48,44 @@ export const Footer: React.FC = () => {
               <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
                 Categories
               </h4>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2.5 text-sm">
                 <li>
-                  <Link to="/tools?category=daily-utilities" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/tools?category=daily-utilities" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     Daily Utilities
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=calculators" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/tools?category=calculators" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     Calculators
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=pdf-documents" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/tools?category=pdf-documents" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     PDF &amp; Documents
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=image-media" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/tools?category=image-media" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     Image &amp; Media
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=voice-audio" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/tools?category=voice-audio" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     Voice &amp; Audio
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=ai-creator" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/tools?category=ai-creator" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     AI &amp; Creator
                   </Link>
                 </li>
                 <li>
-                  <Link to="/games" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/games" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     Games
                   </Link>
                 </li>
                 <li>
-                  <Link to="/categories" className="text-blue-600 dark:text-blue-400 font-medium hover:underline inline-block transition-all duration-200">
+                  <Link to="/categories" className="text-blue-600 dark:text-[#00DFFF] font-medium hover:underline inline-block transition-colors duration-200">
                     All Categories →
                   </Link>
                 </li>
@@ -92,29 +97,29 @@ export const Footer: React.FC = () => {
               <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
                 Explore
               </h4>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2.5 text-sm">
                 <li>
-                  <Link to="/tools" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/tools" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     All Tools
                   </Link>
                 </li>
                 <li>
-                  <Link to="/games" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/games" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     Games Arena
                   </Link>
                 </li>
                 <li>
-                  <Link to="/games/hex-drift" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/games/hex-drift" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     HEX DRIFT
                   </Link>
                 </li>
                 <li>
-                  <Link to="/categories" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/categories" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     Categories
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/about" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     About Us
                   </Link>
                 </li>
@@ -126,19 +131,19 @@ export const Footer: React.FC = () => {
               <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
                 Information
               </h4>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2.5 text-sm">
                 <li>
-                  <Link to="/contact" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/contact" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link to="/privacy" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/privacy" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="/terms" className="hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link to="/terms" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     Terms of Service
                   </Link>
                 </li>
@@ -148,9 +153,10 @@ export const Footer: React.FC = () => {
 
           {/* Bottom bar */}
           <div className="border-t border-slate-100 dark:border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
-            <p>© 2026 SmartTools India. All rights reserved.</p>
-            <p className="flex items-center gap-1">
-              Built with simplicity for India <Heart className="h-3.5 w-3.5 text-rose-500 fill-rose-500 inline" />
+            <p>© 2026 Xenova-World. All rights reserved.</p>
+            <p className="flex items-center gap-1.5">
+              <Sparkles className="h-3.5 w-3.5 text-cyan-500 inline" />
+              <span>Explore Beyond Limits • Built for privacy &amp; speed</span>
             </p>
           </div>
         </ScrollReveal>

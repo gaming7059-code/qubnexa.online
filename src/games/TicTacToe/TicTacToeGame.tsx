@@ -193,8 +193,8 @@ export const TicTacToeGame: React.FC = () => {
   return (
     <div className="mx-auto max-w-xl space-y-6">
       {/* Mode and Sound Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 sm:p-4 shadow-xs">
-        <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-3 sm:p-4 shadow-xs">
+        <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-[#11182D] p-1 rounded-xl">
           <button
             type="button"
             onClick={() => {
@@ -228,7 +228,7 @@ export const TicTacToeGame: React.FC = () => {
         </div>
 
         {mode === 'ai' && (
-          <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+          <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-[#11182D] p-1 rounded-xl">
             <button
               type="button"
               onClick={() => {
@@ -263,7 +263,7 @@ export const TicTacToeGame: React.FC = () => {
         <button
           type="button"
           onClick={toggleMute}
-          className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
           title={isMuted ? 'Unmute sounds' : 'Mute sounds'}
           aria-label={isMuted ? 'Unmute' : 'Mute'}
         >
@@ -281,7 +281,7 @@ export const TicTacToeGame: React.FC = () => {
             {stats.xWins}
           </div>
         </div>
-        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 p-3 text-center">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B1020]/80 p-3 text-center">
           <span className="text-xs font-medium text-slate-500 dark:text-slate-400">Ties</span>
           <div className="text-2xl font-bold text-slate-700 dark:text-slate-200">
             {stats.draws}
@@ -298,17 +298,17 @@ export const TicTacToeGame: React.FC = () => {
       </div>
 
       {/* Turn or Winner Banner */}
-      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 text-center shadow-xs">
+      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-4 py-3 text-center shadow-xs">
         {winner ? (
           <div className="flex items-center justify-center gap-2 font-semibold">
             {winner === 'draw' ? (
               <span className="text-amber-600 dark:text-amber-400 text-lg">
-                🤝 Game Draw! Well played.
+                Game Draw! Well played.
               </span>
             ) : (
               <span className="flex items-center gap-1.5 text-lg text-emerald-600 dark:text-emerald-400">
                 <Trophy className="h-5 w-5" />
-                Player {winner} {mode === 'ai' && winner === 'X' ? 'Wins! 🎉' : mode === 'ai' ? 'Takes the Round!' : 'Wins! 🎉'}
+                Player {winner} {mode === 'ai' && winner === 'X' ? 'Wins!' : mode === 'ai' ? 'Takes the Round!' : 'Wins!'}
               </span>
             )}
           </div>
@@ -329,7 +329,7 @@ export const TicTacToeGame: React.FC = () => {
       </div>
 
       {/* Game Board Grid */}
-      <div className="relative mx-auto aspect-square max-w-[340px] sm:max-w-[380px] p-3 rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 shadow-md">
+      <div className="relative mx-auto aspect-square max-w-[340px] sm:max-w-[380px] p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B1020] shadow-md">
         <div className="grid grid-cols-3 grid-rows-3 gap-2.5 h-full w-full">
           {board.map((cell, index) => {
             const isWinningCell = winningCombo?.includes(index)
@@ -342,14 +342,14 @@ export const TicTacToeGame: React.FC = () => {
                 aria-label={`Cell ${index + 1}: ${cell || 'Empty'}`}
                 className={`relative flex items-center justify-center rounded-2xl text-4xl sm:text-5xl font-black transition-all duration-200 select-none shadow-2xs active:scale-95 ${
                   cell === null && !winner
-                    ? 'hover:bg-white dark:hover:bg-slate-800 hover:shadow-md cursor-pointer'
+                    ? 'hover:bg-white dark:hover:bg-[#16203B] hover:shadow-md cursor-pointer'
                     : 'cursor-default'
                 } ${
                   isWinningCell
                     ? 'bg-gradient-to-tr from-emerald-500 to-teal-400 text-white shadow-lg shadow-emerald-500/30 scale-[1.03] z-10 animate-bounce'
                     : cell
-                    ? 'bg-white dark:bg-slate-800'
-                    : 'bg-white/70 dark:bg-slate-800/60'
+                    ? 'bg-white dark:bg-[#11182D]'
+                    : 'bg-white/70 dark:bg-[#11182D]/60'
                 }`}
               >
                 {cell === 'X' && (
@@ -381,7 +381,7 @@ export const TicTacToeGame: React.FC = () => {
         <button
           type="button"
           onClick={resetStats}
-          className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3.5 py-2.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
         >
           <Sparkles className="h-3.5 w-3.5" />
           Reset Score

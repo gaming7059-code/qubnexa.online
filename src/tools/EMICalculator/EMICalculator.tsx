@@ -35,7 +35,7 @@ export const EMICalculator: React.FC = () => {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-8 shadow-sm space-y-6">
       {/* Inputs Section */}
       <div className="space-y-5">
         {/* Loan Amount Input & Presets */}
@@ -53,7 +53,7 @@ export const EMICalculator: React.FC = () => {
                   className={`min-h-[36px] sm:min-h-[30px] px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors inline-flex items-center justify-center active:scale-95 ${
                     loanAmount === preset.value
                       ? 'bg-blue-600 text-white shadow-2xs'
-                      : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                      : 'bg-slate-100 dark:bg-[#11182D] text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#1B2748]'
                   }`}
                 >
                   {preset.label}
@@ -71,7 +71,7 @@ export const EMICalculator: React.FC = () => {
               value={loanAmount}
               onChange={(e) => setLoanAmount(e.target.value)}
               placeholder="e.g. 1000000"
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] pl-8 pr-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
             />
           </div>
         </div>
@@ -92,7 +92,7 @@ export const EMICalculator: React.FC = () => {
                 value={interestRate}
                 onChange={(e) => setInterestRate(e.target.value)}
                 placeholder="e.g. 8.5"
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
               />
               <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-semibold text-sm">%</span>
             </div>
@@ -104,7 +104,7 @@ export const EMICalculator: React.FC = () => {
               <label htmlFor="tenure" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                 Loan Tenure
               </label>
-              <div className="inline-flex rounded-lg border border-slate-200 dark:border-slate-800 p-0.5 bg-slate-50 dark:bg-slate-800">
+              <div className="inline-flex rounded-lg border border-slate-200 dark:border-slate-800 p-0.5 bg-slate-50 dark:bg-[#11182D]">
                 <button
                   type="button"
                   onClick={() => setTenureUnit('years')}
@@ -137,7 +137,7 @@ export const EMICalculator: React.FC = () => {
               value={tenure}
               onChange={(e) => setTenure(e.target.value)}
               placeholder={tenureUnit === 'years' ? 'e.g. 10' : 'e.g. 120'}
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050814] px-3.5 py-2.5 text-base font-medium text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-600 dark:focus:border-[#00DFFF] focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-[#00DFFF]/20"
             />
           </div>
         </div>
@@ -158,7 +158,7 @@ export const EMICalculator: React.FC = () => {
       {emiResult?.success && emiResult.data ? (
         <div className="space-y-6 pt-2 animate-result-in">
           {/* Monthly EMI Hero Card */}
-          <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/40 dark:from-blue-950/30 dark:via-slate-900/40 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/40 dark:from-blue-950/30 dark:via-[#0B1020]/40 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/40 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">
                 Monthly Loan EMI
@@ -174,7 +174,7 @@ export const EMICalculator: React.FC = () => {
 
           {/* Breakdown Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/50 p-4">
               <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                 Principal Amount
               </span>
@@ -198,7 +198,7 @@ export const EMICalculator: React.FC = () => {
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D]/50 p-4">
               <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                 Total Payment
               </span>
@@ -215,7 +215,7 @@ export const EMICalculator: React.FC = () => {
               <span>Principal: {emiResult.data.principalPercentage.toFixed(1)}%</span>
               <span>Interest: {emiResult.data.interestPercentage.toFixed(1)}%</span>
             </div>
-            <div className="h-3 w-full rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden flex">
+            <div className="h-3 w-full rounded-full bg-slate-200 dark:bg-[#11182D] overflow-hidden flex">
               <div
                 style={{ width: `${emiResult.data.principalPercentage}%` }}
                 className="bg-blue-600 h-full transition-all duration-300"

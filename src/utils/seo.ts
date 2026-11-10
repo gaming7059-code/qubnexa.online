@@ -83,7 +83,7 @@ export function usePageSEO({
   ogType = 'website',
   schema,
   keywords,
-  ogImage = '/favicon.svg',
+  ogImage = '/branding/xenova-world-logo.jpg',
 }: PageSEOMetadata) {
   useEffect(() => {
     // 1. Title
@@ -109,14 +109,14 @@ export function usePageSEO({
     setMetaTag('meta[property="og:description"]', 'content', description, { property: 'og:description' })
     setMetaTag('meta[property="og:url"]', 'content', fullCanonicalUrl, { property: 'og:url' })
     setMetaTag('meta[property="og:type"]', 'content', ogType, { property: 'og:type' })
-    setMetaTag('meta[property="og:site_name"]', 'content', 'SmartTools India', { property: 'og:site_name' })
+    setMetaTag('meta[property="og:site_name"]', 'content', 'Xenova-World', { property: 'og:site_name' })
     if (ogImage) {
       const fullImageUrl = ogImage.startsWith('http') ? ogImage : getFullUrl(ogImage)
       setMetaTag('meta[property="og:image"]', 'content', fullImageUrl, { property: 'og:image' })
     }
 
     // 7. Twitter Card
-    setMetaTag('meta[name="twitter:card"]', 'content', 'summary', { name: 'twitter:card' })
+    setMetaTag('meta[name="twitter:card"]', 'content', 'summary_large_image', { name: 'twitter:card' })
     setMetaTag('meta[name="twitter:title"]', 'content', title, { name: 'twitter:title' })
     setMetaTag('meta[name="twitter:description"]', 'content', description, { name: 'twitter:description' })
     if (ogImage) {
@@ -145,10 +145,10 @@ export function createWebSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'SmartTools India',
+    name: 'Xenova-World',
     url: getFullUrl('/'),
-    description: 'Free online calculators, converters and everyday utility tools for students, professionals, and internet users in India.',
-    inLanguage: 'en-IN',
+    description: 'Discover useful online tools, calculators, PDF utilities, creative tools and digital experiences with Xenova-World.',
+    inLanguage: 'en',
     potentialAction: {
       '@type': 'SearchAction',
       target: `${getFullUrl('/tools')}?q={search_term_string}`,
@@ -164,17 +164,17 @@ export function createWebApplicationSchema(toolName: string, description: string
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: `${toolName} — SmartTools India`,
+    name: `${toolName} — Xenova-World`,
     url: getFullUrl(path),
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'All',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
     description: description,
-    inLanguage: 'en-IN',
+    inLanguage: 'en',
     offers: {
       '@type': 'Offer',
       price: '0',
-      priceCurrency: 'INR',
+      priceCurrency: 'USD',
     },
   }
 }

@@ -80,9 +80,9 @@ export const WordCounterPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Word Counter — Real-Time Word Count, Characters & Reading Time | SmartTools India"
+      seoTitle="Word Counter — Real-Time Word Count, Characters & Reading Time | Xenova-World"
       seoDescription="Count words, characters, sentences, paragraphs, and estimated reading time live. Free text analysis tool for content writers, students, and SEO creators."
-      keywords="word counter, character counter, word count tool, count words online, reading time calculator, sentence counter, essay word counter, smarttools india"
+      keywords="word counter, character counter, word count tool, count words online, reading time calculator, sentence counter, essay word counter, xenova-world"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

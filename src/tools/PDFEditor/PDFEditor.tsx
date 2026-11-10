@@ -117,7 +117,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content, shortcut, children, placemen
     <div className="group/tooltip relative inline-flex items-center">
       {children}
       <div
-        className={`absolute left-1/2 -translate-x-1/2 hidden group-hover/tooltip:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/95 dark:bg-slate-800/95 text-white text-[11px] font-medium whitespace-nowrap shadow-xl border border-slate-700/50 backdrop-blur-xs pointer-events-none z-50 animate-in fade-in duration-150 ${
+        className={`absolute left-1/2 -translate-x-1/2 hidden group-hover/tooltip:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/95 dark:bg-[#11182D]/95 text-white text-[11px] font-medium whitespace-nowrap shadow-xl border border-slate-700/50 backdrop-blur-xs pointer-events-none z-50 animate-in fade-in duration-150 ${
           placement === 'top' ? 'bottom-full mb-2' : 'top-full mt-2'
         }`}
       >
@@ -186,13 +186,13 @@ const SidebarThumbnail: React.FC<{
   }, [page, pdfDoc, sourceDocs])
 
   return (
-    <div className="relative w-12 sm:w-14 h-16 sm:h-20 flex items-center justify-center bg-white dark:bg-slate-800 rounded-sm shadow-2xs overflow-hidden flex-shrink-0 border border-slate-200/80 dark:border-slate-700/80">
+    <div className="relative w-12 sm:w-14 h-16 sm:h-20 flex items-center justify-center bg-white dark:bg-[#11182D] rounded-sm shadow-2xs overflow-hidden flex-shrink-0 border border-slate-200/80 dark:border-slate-700/80">
       <canvas
         ref={canvasRef}
         className="max-w-full max-h-full object-contain"
       />
       {!rendered && !page.isBlank && (
-        <div className="absolute inset-0 flex items-center justify-center bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-xs">
+        <div className="absolute inset-0 flex items-center justify-center bg-slate-100/80 dark:bg-[#11182D]/80 backdrop-blur-xs">
           <Loader2 className="h-3 w-3 animate-spin text-slate-400" />
         </div>
       )}
@@ -999,10 +999,10 @@ export const PDFEditor: React.FC = () => {
           }}
           onDragLeave={() => setIsDragOver(false)}
           onDrop={handleDrop}
-          className={`relative flex flex-col items-center justify-center p-8 sm:p-14 border-2 border-dashed rounded-3xl transition-all duration-300 text-center ${
+          className={`relative flex flex-col items-center justify-center p-8 sm:p-14 border-2 border-dashed rounded-2xl transition-all duration-300 text-center ${
             isDragOver
-              ? 'border-blue-500 bg-blue-50/70 dark:border-blue-400 dark:bg-blue-950/30 scale-[1.01] shadow-xl shadow-blue-500/10'
-              : 'border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/70 hover:border-blue-400 dark:hover:border-blue-500 shadow-sm hover:shadow-md'
+              ? 'border-blue-600 bg-blue-50/70 dark:border-[#00DFFF] dark:bg-[#11182D] scale-[1.01] shadow-xl shadow-blue-500/10'
+              : 'border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0B1020] hover:border-blue-500/70 dark:hover:border-[#00DFFF]/60 shadow-sm hover:shadow-md'
           }`}
         >
           <input
@@ -1048,7 +1048,7 @@ export const PDFEditor: React.FC = () => {
               type="button"
               onClick={handleSampleLoad}
               disabled={isLoading}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 active:scale-95 font-semibold text-sm transition-all cursor-pointer disabled:opacity-50 border border-slate-200 dark:border-slate-700 shadow-2xs"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#11182D] dark:hover:bg-[#1B2748] text-slate-800 dark:text-slate-200 active:scale-95 font-semibold text-sm transition-all cursor-pointer disabled:opacity-50 border border-slate-200 dark:border-slate-700 shadow-2xs"
             >
               <Sparkles className="h-4 w-4 text-amber-500" />
               <span>Try with Sample PDF</span>
@@ -1064,7 +1064,7 @@ export const PDFEditor: React.FC = () => {
 
         {/* Feature Highlights Grid (6 Cards) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
+          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-[#0B1020]/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
             <div className="font-semibold text-slate-900 dark:text-white mb-1.5 flex items-center gap-2">
               <ScanText className="h-4 w-4 text-amber-500" />
               <span>Edit PDF Text</span>
@@ -1074,7 +1074,7 @@ export const PDFEditor: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
+          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-[#0B1020]/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
             <div className="font-semibold text-slate-900 dark:text-white mb-1.5 flex items-center gap-2">
               <Type className="h-4 w-4 text-blue-500" />
               <span>Markup & Annotations</span>
@@ -1084,7 +1084,7 @@ export const PDFEditor: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
+          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-[#0B1020]/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
             <div className="font-semibold text-slate-900 dark:text-white mb-1.5 flex items-center gap-2">
               <PenTool className="h-4 w-4 text-indigo-500" />
               <span>Digital Signatures</span>
@@ -1094,7 +1094,7 @@ export const PDFEditor: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
+          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-[#0B1020]/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
             <div className="font-semibold text-slate-900 dark:text-white mb-1.5 flex items-center gap-2">
               <LayoutGrid className="h-4 w-4 text-purple-500" />
               <span>Page Organizer</span>
@@ -1104,7 +1104,7 @@ export const PDFEditor: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
+          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-[#0B1020]/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
             <div className="font-semibold text-slate-900 dark:text-white mb-1.5 flex items-center gap-2">
               <Lock className="h-4 w-4 text-emerald-500" />
               <span>PDF Security & Encryption</span>
@@ -1114,7 +1114,7 @@ export const PDFEditor: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
+          <div className="p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-[#0B1020]/60 shadow-2xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
             <div className="font-semibold text-slate-900 dark:text-white mb-1.5 flex items-center gap-2">
               <Download className="h-4 w-4 text-blue-500" />
               <span>Lossless Local Export</span>
@@ -1149,10 +1149,10 @@ export const PDFEditor: React.FC = () => {
                 key={toast.id}
                 className={`pointer-events-auto flex items-start gap-3 p-3.5 rounded-2xl shadow-xl border backdrop-blur-md transition-all duration-300 animate-in fade-in slide-in-from-bottom-3 ${
                   toast.type === 'success'
-                    ? 'bg-white/95 dark:bg-slate-900/95 border-emerald-500/30 text-slate-900 dark:text-white ring-1 ring-emerald-500/20'
+                    ? 'bg-white/95 dark:bg-[#0B1020]/95 border-emerald-500/30 text-slate-900 dark:text-white ring-1 ring-emerald-500/20'
                     : toast.type === 'error'
-                    ? 'bg-white/95 dark:bg-slate-900/95 border-rose-500/30 text-slate-900 dark:text-white ring-1 ring-rose-500/20'
-                    : 'bg-white/95 dark:bg-slate-900/95 border-blue-500/30 text-slate-900 dark:text-white ring-1 ring-blue-500/20'
+                    ? 'bg-white/95 dark:bg-[#0B1020]/95 border-rose-500/30 text-slate-900 dark:text-white ring-1 ring-rose-500/20'
+                    : 'bg-white/95 dark:bg-[#0B1020]/95 border-blue-500/30 text-slate-900 dark:text-white ring-1 ring-blue-500/20'
                 }`}
               >
                 <div className="mt-0.5 flex-shrink-0">
@@ -1188,8 +1188,8 @@ export const PDFEditor: React.FC = () => {
     <div
       className={
         isFullscreen
-          ? "fixed inset-0 z-50 flex flex-col bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden animate-in fade-in duration-200"
-          : "flex flex-col rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 shadow-xl overflow-hidden transition-all duration-300"
+          ? "fixed inset-0 z-50 flex flex-col bg-slate-100 dark:bg-[#050814] text-slate-900 dark:text-white overflow-hidden animate-in fade-in duration-200"
+          : "flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0B1020]/95 shadow-xl overflow-hidden transition-all duration-300"
       }
     >
       {/* Hidden Image File Upload Input */}
@@ -1202,14 +1202,14 @@ export const PDFEditor: React.FC = () => {
       />
 
       {/* Top Application Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 border-b border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-950/70 backdrop-blur-md">
+      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 border-b border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-[#050814]/70 backdrop-blur-md">
         {/* Document Info & Sidebar Toggle */}
         <div className="flex items-center gap-2.5 min-w-0">
           <Tooltip content={isSidebarOpen ? 'Hide Pages Panel' : 'Show Pages Panel'}>
             <button
               type="button"
               onClick={() => setIsSidebarOpen((prev) => !prev)}
-              className="p-2 rounded-xl text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-2 rounded-xl text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-[#16203B] transition-colors cursor-pointer"
             >
               {isSidebarOpen ? <PanelLeftClose className="h-5 w-5" /> : <PanelLeftOpen className="h-5 w-5" />}
             </button>
@@ -1249,13 +1249,13 @@ export const PDFEditor: React.FC = () => {
         {/* Global Controls: Undo, Redo, Zoom, Fullscreen, Export, Close */}
         <div className="flex items-center gap-2 flex-wrap">
           {/* Undo / Redo Pill */}
-          <div className="flex items-center border border-slate-200 dark:border-slate-800 rounded-xl bg-white dark:bg-slate-900 p-0.5 shadow-2xs">
+          <div className="flex items-center border border-slate-200 dark:border-slate-800 rounded-xl bg-white dark:bg-[#0B1020] p-0.5 shadow-2xs">
             <Tooltip content="Undo" shortcut="Ctrl+Z">
               <button
                 type="button"
                 onClick={handleUndo}
                 disabled={history.length === 0}
-                className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               >
                 <Undo2 className="h-4 w-4" />
               </button>
@@ -1265,7 +1265,7 @@ export const PDFEditor: React.FC = () => {
                 type="button"
                 onClick={handleRedo}
                 disabled={redoStack.length === 0}
-                className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               >
                 <Redo2 className="h-4 w-4" />
               </button>
@@ -1273,12 +1273,12 @@ export const PDFEditor: React.FC = () => {
           </div>
 
           {/* Zoom Controls */}
-          <div className="flex items-center border border-slate-200 dark:border-slate-800 rounded-xl bg-white dark:bg-slate-900 p-0.5 shadow-2xs">
+          <div className="flex items-center border border-slate-200 dark:border-slate-800 rounded-xl bg-white dark:bg-[#0B1020] p-0.5 shadow-2xs">
             <Tooltip content="Zoom Out" shortcut="Ctrl+-">
               <button
                 type="button"
                 onClick={() => setZoom((z) => Math.max(0.5, Number((z - 0.15).toFixed(2))))}
-                className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
               >
                 <ZoomOut className="h-4 w-4" />
               </button>
@@ -1290,7 +1290,7 @@ export const PDFEditor: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setZoom((z) => Math.min(2.5, Number((z + 0.15).toFixed(2))))}
-                className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
               >
                 <ZoomIn className="h-4 w-4" />
               </button>
@@ -1299,7 +1299,7 @@ export const PDFEditor: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setZoom(1.0)}
-                className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border-l border-slate-200 dark:border-slate-800"
+                className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors border-l border-slate-200 dark:border-slate-800"
               >
                 <Maximize2 className="h-3.5 w-3.5" />
               </button>
@@ -1311,7 +1311,7 @@ export const PDFEditor: React.FC = () => {
             <button
               type="button"
               onClick={toggleFullscreen}
-              className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-2xs cursor-pointer"
+              className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors shadow-2xs cursor-pointer"
             >
               {isFullscreen ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
             </button>
@@ -1346,7 +1346,7 @@ export const PDFEditor: React.FC = () => {
       </div>
 
       {/* Primary Editing Toolbar */}
-      <div className="flex items-center justify-between gap-2 px-3 sm:px-4 py-2 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs sm:text-sm overflow-x-auto scrollbar-none">
+      <div className="flex items-center justify-between gap-2 px-3 sm:px-4 py-2 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] text-xs sm:text-sm overflow-x-auto scrollbar-none">
         <div className="flex items-center gap-1.5 flex-nowrap min-w-max">
           {/* Select Mode */}
           <Tooltip content="Select & Move Tool" shortcut="v">
@@ -1356,7 +1356,7 @@ export const PDFEditor: React.FC = () => {
               className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'select'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <MousePointer className="h-4 w-4" />
@@ -1364,7 +1364,7 @@ export const PDFEditor: React.FC = () => {
             </button>
           </Tooltip>
 
-          <div className="h-5 w-px bg-slate-200 dark:bg-slate-800 mx-0.5" />
+          <div className="h-5 w-px bg-slate-200 dark:bg-[#11182D] mx-0.5" />
 
           {/* Edit PDF Text */}
           <Tooltip content="Edit Existing PDF Text" shortcut="e">
@@ -1429,7 +1429,7 @@ export const PDFEditor: React.FC = () => {
               className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
                 isFindReplaceOpen && findReplaceTab === 'replace'
                   ? 'bg-purple-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <Replace className="h-4 w-4" />
@@ -1437,7 +1437,7 @@ export const PDFEditor: React.FC = () => {
             </button>
           </Tooltip>
 
-          <div className="h-5 w-px bg-slate-200 dark:bg-slate-800 mx-0.5" />
+          <div className="h-5 w-px bg-slate-200 dark:bg-[#11182D] mx-0.5" />
 
           {/* Text Tool */}
           <Tooltip content="Add Free Text" shortcut="t">
@@ -1447,7 +1447,7 @@ export const PDFEditor: React.FC = () => {
               className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'text'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <Type className="h-4 w-4" />
@@ -1463,7 +1463,7 @@ export const PDFEditor: React.FC = () => {
               className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'textbox'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <Type className="h-4 w-4 border border-current rounded-xs px-0.5" />
@@ -1487,7 +1487,7 @@ export const PDFEditor: React.FC = () => {
             </button>
           </Tooltip>
 
-          <div className="h-5 w-px bg-slate-200 dark:bg-slate-800 mx-0.5" />
+          <div className="h-5 w-px bg-slate-200 dark:bg-[#11182D] mx-0.5" />
 
           {/* Freehand Pen */}
           <Tooltip content="Freehand Pen" shortcut="d">
@@ -1497,7 +1497,7 @@ export const PDFEditor: React.FC = () => {
               className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'draw'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <Pencil className="h-4 w-4" />
@@ -1513,7 +1513,7 @@ export const PDFEditor: React.FC = () => {
               className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'highlight'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <Highlighter className="h-4 w-4" />
@@ -1529,7 +1529,7 @@ export const PDFEditor: React.FC = () => {
               className={`p-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'underline'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <UnderlineIcon className="h-4 w-4" />
@@ -1544,14 +1544,14 @@ export const PDFEditor: React.FC = () => {
               className={`p-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'strikethrough'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <StrikethroughIcon className="h-4 w-4" />
             </button>
           </Tooltip>
 
-          <div className="h-5 w-px bg-slate-200 dark:bg-slate-800 mx-0.5" />
+          <div className="h-5 w-px bg-slate-200 dark:bg-[#11182D] mx-0.5" />
 
           {/* Shapes */}
           <Tooltip content="Rectangle">
@@ -1561,7 +1561,7 @@ export const PDFEditor: React.FC = () => {
               className={`p-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'rectangle'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <Square className="h-4 w-4" />
@@ -1575,7 +1575,7 @@ export const PDFEditor: React.FC = () => {
               className={`p-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'circle'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <Circle className="h-4 w-4" />
@@ -1589,7 +1589,7 @@ export const PDFEditor: React.FC = () => {
               className={`p-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'line'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <Minus className="h-4 w-4" />
@@ -1603,21 +1603,21 @@ export const PDFEditor: React.FC = () => {
               className={`p-1.5 rounded-lg font-medium transition-all ${
                 activeTool === 'arrow'
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               <ArrowRight className="h-4 w-4" />
             </button>
           </Tooltip>
 
-          <div className="h-5 w-px bg-slate-200 dark:bg-slate-800 mx-0.5" />
+          <div className="h-5 w-px bg-slate-200 dark:bg-[#11182D] mx-0.5" />
 
           {/* Media & Sign */}
           <Tooltip content="Insert Image">
             <button
               type="button"
               onClick={() => imageFileInputRef.current?.click()}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-medium transition-all text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-medium transition-all text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] cursor-pointer"
             >
               <ImageIcon className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               <span className="hidden sm:inline">Image</span>
@@ -1635,14 +1635,14 @@ export const PDFEditor: React.FC = () => {
             </button>
           </Tooltip>
 
-          <div className="h-5 w-px bg-slate-200 dark:bg-slate-800 mx-0.5" />
+          <div className="h-5 w-px bg-slate-200 dark:bg-[#11182D] mx-0.5" />
 
           {/* Document Tools */}
           <Tooltip content="Page Organizer & Split/Merge">
             <button
               type="button"
               onClick={() => setIsPageOrganizerOpen(true)}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-medium transition-all text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-medium transition-all text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] cursor-pointer"
             >
               <LayoutGrid className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               <span className="hidden md:inline font-medium">Pages</span>
@@ -1656,7 +1656,7 @@ export const PDFEditor: React.FC = () => {
               className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
                 securitySettings?.enabled
                   ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B]'
               }`}
             >
               {securitySettings?.enabled ? (
@@ -1676,7 +1676,7 @@ export const PDFEditor: React.FC = () => {
       </div>
 
       {/* Tool Options Context Sub-Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2 border-b border-slate-200/80 dark:border-slate-800/80 bg-slate-50/70 dark:bg-slate-950/40 text-xs">
+      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2 border-b border-slate-200/80 dark:border-slate-800/80 bg-slate-50/70 dark:bg-[#050814]/40 text-xs">
         <div className="flex items-center gap-3 flex-wrap">
           {/* Color Palette */}
           <div className="flex items-center gap-1.5">
@@ -1711,7 +1711,7 @@ export const PDFEditor: React.FC = () => {
             </div>
           </div>
 
-          <div className="h-4 w-px bg-slate-200 dark:bg-slate-800" />
+          <div className="h-4 w-px bg-slate-200 dark:bg-[#11182D]" />
 
           {/* Font Size Selector (for text) */}
           {(activeTool === 'text' || activeTool === 'textbox') && (
@@ -1727,7 +1727,7 @@ export const PDFEditor: React.FC = () => {
                     if (target) handleUpdateAnnotation({ ...target, fontSize: val })
                   }
                 }}
-                className="px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-hidden text-xs cursor-pointer"
+                className="px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D] text-slate-800 dark:text-slate-200 focus:outline-hidden text-xs cursor-pointer"
               >
                 {FONT_SIZES.map((s) => (
                   <option key={s} value={s}>
@@ -1752,7 +1752,7 @@ export const PDFEditor: React.FC = () => {
                     if (target) handleUpdateAnnotation({ ...target, strokeWidth: val })
                   }
                 }}
-                className="px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-hidden text-xs cursor-pointer"
+                className="px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#11182D] text-slate-800 dark:text-slate-200 focus:outline-hidden text-xs cursor-pointer"
               >
                 {STROKE_WIDTHS.map((w) => (
                   <option key={w} value={w}>
@@ -1808,7 +1808,7 @@ export const PDFEditor: React.FC = () => {
       )}
 
       {/* Main Workspace Area: Sidebar + Canvas */}
-      <div className="flex flex-1 min-h-[550px] relative overflow-hidden bg-slate-100/70 dark:bg-slate-950/60">
+      <div className="flex flex-1 min-h-[550px] relative overflow-hidden bg-slate-100/70 dark:bg-[#050814]/60">
         {/* Mobile Sidebar Backdrop */}
         {isSidebarOpen && (
           <div
@@ -1819,7 +1819,7 @@ export const PDFEditor: React.FC = () => {
 
         {/* Left Page Management Sidebar */}
         {isSidebarOpen && (
-          <aside className="fixed inset-y-0 left-0 z-40 md:static md:z-10 w-64 sm:w-72 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 md:bg-white/90 md:dark:bg-slate-900/80 backdrop-blur-md flex flex-col flex-shrink-0 shadow-2xl md:shadow-none transition-all">
+          <aside className="fixed inset-y-0 left-0 z-40 md:static md:z-10 w-64 sm:w-72 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] md:bg-white/90 md:dark:bg-[#0B1020]/80 backdrop-blur-md flex flex-col flex-shrink-0 shadow-2xl md:shadow-none transition-all">
             <div className="p-3 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-1">
               <div className="flex items-center gap-1.5 min-w-0">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 truncate">
@@ -1868,7 +1868,7 @@ export const PDFEditor: React.FC = () => {
                     className={`group relative p-2 rounded-xl border transition-all cursor-pointer ${
                       isActive
                         ? 'border-blue-500 bg-blue-50/80 dark:border-blue-500 dark:bg-blue-950/40 shadow-xs ring-1 ring-blue-500/30'
-                        : 'border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/60 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-900'
+                        : 'border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-[#0B1020]/60 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-900'
                     }`}
                   >
                     <div className="flex items-start gap-2.5">
@@ -1887,7 +1887,7 @@ export const PDFEditor: React.FC = () => {
                               className={`text-xs font-bold px-1.5 py-0.5 rounded-md ${
                                 isActive
                                   ? 'bg-blue-600 text-white'
-                                  : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
+                                  : 'bg-slate-100 dark:bg-[#11182D] text-slate-700 dark:text-slate-300'
                               }`}
                             >
                               Page {idx + 1}
@@ -1914,7 +1914,7 @@ export const PDFEditor: React.FC = () => {
                                 e.stopPropagation()
                                 handleRotatePage(idx, -90)
                               }}
-                              className="p-1 rounded-md text-slate-500 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                              className="p-1 rounded-md text-slate-500 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
                             >
                               <RotateCcw className="h-3 w-3" />
                             </button>
@@ -1926,7 +1926,7 @@ export const PDFEditor: React.FC = () => {
                                 e.stopPropagation()
                                 handleRotatePage(idx, 90)
                               }}
-                              className="p-1 rounded-md text-slate-500 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                              className="p-1 rounded-md text-slate-500 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
                             >
                               <RotateCw className="h-3 w-3" />
                             </button>
@@ -1938,7 +1938,7 @@ export const PDFEditor: React.FC = () => {
                                 e.stopPropagation()
                                 handleDuplicatePage(idx)
                               }}
-                              className="p-1 rounded-md text-slate-500 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                              className="p-1 rounded-md text-slate-500 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-[#16203B] transition-colors"
                             >
                               <Copy className="h-3 w-3" />
                             </button>
@@ -2039,7 +2039,7 @@ export const PDFEditor: React.FC = () => {
 
             {/* Rendering Spinner Overlay */}
             {isRendering && (
-              <div className="absolute inset-0 bg-white/40 dark:bg-slate-900/40 backdrop-blur-[1px] flex items-center justify-center pointer-events-none">
+              <div className="absolute inset-0 bg-white/40 dark:bg-[#0B1020]/40 backdrop-blur-[1px] flex items-center justify-center pointer-events-none">
                 <Loader2 className="h-8 w-8 text-blue-600 animate-spin" />
               </div>
             )}
@@ -2048,13 +2048,13 @@ export const PDFEditor: React.FC = () => {
       </div>
 
       {/* Bottom Page Navigation Bar */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/60 backdrop-blur-sm text-xs sm:text-sm">
+      <div className="flex items-center justify-between px-4 py-2.5 border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-[#050814]/60 backdrop-blur-sm text-xs sm:text-sm">
         <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={() => setCurrentPageIndex((prev) => Math.max(0, prev - 1))}
             disabled={currentPageIndex === 0}
-            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           >
             <ChevronLeft className="h-4 w-4" />
             <span className="hidden sm:inline">Previous</span>
@@ -2068,7 +2068,7 @@ export const PDFEditor: React.FC = () => {
             type="button"
             onClick={() => setCurrentPageIndex((prev) => Math.min(pages.length - 1, prev + 1))}
             disabled={currentPageIndex === pages.length - 1}
-            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#16203B] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           >
             <span className="hidden sm:inline">Next</span>
             <ChevronRight className="h-4 w-4" />
@@ -2157,7 +2157,7 @@ export const PDFEditor: React.FC = () => {
       {/* Exporting Loading Overlay */}
       {isExporting && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex flex-col items-center justify-center p-4 animate-in fade-in duration-200">
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-2xl flex flex-col items-center gap-3 max-w-sm text-center">
+          <div className="bg-white dark:bg-[#0B1020] border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-2xl flex flex-col items-center gap-3 max-w-sm text-center">
             <div className="h-12 w-12 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center">
               <Loader2 className="h-6 w-6 animate-spin" />
             </div>

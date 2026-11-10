@@ -1,5 +1,5 @@
 """
-SmartTools India - Local Companion Neural TTS Engine 2.0
+Xenova-World - Local Companion Neural TTS Engine 2.0
 =========================================================
 High-fidelity, API-key-free neural speech synthesis server.
 Binds strictly to 127.0.0.1:8000 for private local operation.
@@ -23,7 +23,7 @@ from pydantic import BaseModel, Field
 import edge_tts
 
 app = FastAPI(
-    title="SmartTools India Neural TTS Engine",
+    title="Xenova-World Neural TTS Engine",
     version="2.0.0",
     description="Local high-fidelity neural speech synthesis companion service."
 )
@@ -67,7 +67,7 @@ VOICE_CATALOG = [
         "gender": "Male",
         "tier": "neural-hq",
         "tierLabel": "24kHz Neural",
-        "previewText": "নমস্কার! স্মার্ট টুলস ইন্ডিয়াতে আপনাকে স্বাগতম।",
+        "previewText": "নমস্কার! জেনোভা-ওয়ার্ল্ডে আপনাকে স্বাগতম।",
         "sampleRate": 24000
     },
     {
@@ -117,7 +117,7 @@ VOICE_CATALOG = [
         "gender": "Male",
         "tier": "neural-hq",
         "tierLabel": "24kHz Neural",
-        "previewText": "नमस्ते! स्मार्ट टूल्स इंडिया में आपका हार्दिक स्वागत है।",
+        "previewText": "नमस्ते! ज़ेनोवा-वर्ल्ड में आपका हार्दिक स्वागत है।",
         "sampleRate": 24000
     },
 
@@ -131,7 +131,7 @@ VOICE_CATALOG = [
         "gender": "Female",
         "tier": "neural-hq",
         "tierLabel": "24kHz Neural",
-        "previewText": "Welcome to SmartTools India. Experience high quality natural neural speech.",
+        "previewText": "Welcome to Xenova-World. Experience high quality natural neural speech.",
         "sampleRate": 24000
     },
     {
@@ -155,7 +155,7 @@ VOICE_CATALOG = [
         "gender": "Female",
         "tier": "neural-hq",
         "tierLabel": "24kHz Neural",
-        "previewText": "Hello! Welcome to SmartTools India. I hope you are having a wonderful day.",
+        "previewText": "Hello! Welcome to Xenova-World. I hope you are having a wonderful day.",
         "sampleRate": 24000
     },
     {
@@ -193,7 +193,7 @@ VOICE_CATALOG = [
         "gender": "Male",
         "tier": "neural-hq",
         "tierLabel": "24kHz Neural",
-        "previewText": "السلام علیکم! اسمارٹ ٹولز انڈیا میں آپ کا خیر مقدم ہے۔",
+        "previewText": "السلام علیکم! زینووا-ورلڈ میں آپ کا خیر مقدم ہے۔",
         "sampleRate": 24000
     },
     {
@@ -233,7 +233,7 @@ class SynthesisRequest(BaseModel):
 async def health_check():
     return {
         "status": "ok",
-        "engine": "SmartTools Neural Engine 2.0 (FastAPI)",
+        "engine": "Xenova-World Neural Engine 2.0 (FastAPI)",
         "version": "2.0.0",
         "voices_count": len(VOICE_CATALOG),
         "supported_languages": ["bn", "hi", "en", "ur"],
@@ -302,7 +302,7 @@ async def synthesize_speech(req: SynthesisRequest):
                 "X-Synthesis-Time-Sec": str(elapsed),
                 "X-Audio-Bytes": str(len(audio_bytes)),
                 "X-Voice-Used": voice_id,
-                "Content-Disposition": f'attachment; filename="smarttools-neural-{voice_id}.mp3"'
+                "Content-Disposition": f'attachment; filename="xenova-world-neural-{voice_id}.mp3"'
             }
         )
     except Exception as e:
@@ -311,5 +311,5 @@ async def synthesize_speech(req: SynthesisRequest):
 if __name__ == "__main__":
     import uvicorn
     # Bind strictly to localhost / 127.0.0.1 for maximum security
-    print("Starting SmartTools Neural TTS Engine 2.0 on http://127.0.0.1:8000 ...")
+    print("Starting Xenova-World Neural TTS Engine 2.0 on http://127.0.0.1:8000 ...")
     uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")

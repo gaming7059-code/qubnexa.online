@@ -154,8 +154,8 @@ export class LocalNeuralTTSProvider implements TTSProvider {
   async preview(voiceId: string, options?: Partial<TTSPlaybackOptions>): Promise<void> {
     const previewText =
       voiceId === 'neural-hi'
-        ? 'नमस्ते! स्मार्टटूल्स इंडिया में आपका स्वागत है।'
-        : 'Hello! Welcome to SmartTools India.'
+        ? 'नमस्ते! ज़ेनोवा-वर्ल्ड में आपका स्वागत है।'
+        : 'Hello! Welcome to Xenova-World.'
 
     await this.speak(
       previewText,
