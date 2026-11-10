@@ -34,6 +34,7 @@ const AudioStudioPage = React.lazy(() => import('./pages/tools/AudioStudioPage')
 const AudioTranscriberPage = React.lazy(() => import('./pages/tools/AudioTranscriberPage').then((m) => ({ default: m.AudioTranscriberPage })))
 const JpgToPdfPage = React.lazy(() => import('./pages/tools/JpgToPdfPage').then((m) => ({ default: m.JpgToPdfPage })))
 const ImageQualityIncreaserPage = React.lazy(() => import('./pages/tools/ImageQualityIncreaserPage').then((m) => ({ default: m.ImageQualityIncreaserPage })))
+const VideoDownloaderPage = React.lazy(() => import('./pages/tools/VideoDownloaderPage').then((m) => ({ default: m.VideoDownloaderPage })))
 const GamesPage = React.lazy(() => import('./pages/GamesPage').then((m) => ({ default: m.GamesPage })))
 const HexDriftPage = React.lazy(() => import('./pages/games/HexDriftPage').then((m) => ({ default: m.HexDriftPage })))
 
@@ -218,6 +219,14 @@ export const App: React.FC = () => {
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <ImageQualityIncreaserPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/video-downloader"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <VideoDownloaderPage />
                 </Suspense>
               }
             />

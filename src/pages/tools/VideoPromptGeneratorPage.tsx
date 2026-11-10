@@ -101,7 +101,7 @@ export const VideoPromptGeneratorPage: React.FC = () => {
     },
   ]
 
-  const relatedSlugs = ['text-to-speech', 'word-counter', 'pdf-editor']
+  const relatedSlugs = ['video-downloader', 'text-to-speech', 'word-counter', 'pdf-editor']
 
   return (
     <ToolPageLayout

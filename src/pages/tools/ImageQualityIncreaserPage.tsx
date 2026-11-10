@@ -95,7 +95,7 @@ export const ImageQualityIncreaserPage: React.FC = () => {
     },
   ]
 
-  const relatedSlugs = ['jpg-to-pdf', 'pdf-editor', 'video-prompt-generator', 'audio-studio']
+  const relatedSlugs = ['video-downloader', 'jpg-to-pdf', 'pdf-editor', 'video-prompt-generator']
 
   return (
     <ToolPageLayout

@@ -16,6 +16,7 @@ export const REGISTERED_TOOL_MODULES = [
   'date-difference-calculator',
   'unit-converter',
   'word-counter',
+  'video-downloader',
 ] as const
 
 export type RegisteredToolId = typeof REGISTERED_TOOL_MODULES[number]

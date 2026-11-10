@@ -193,7 +193,7 @@ export const ALL_TOOLS: Tool[] = [
     keywords: ['jpg to pdf', 'images to pdf', 'convert jpg to pdf', 'png to pdf', 'jpeg to pdf', 'combine photos into pdf', 'pdf converter online'],
   },
 
-  // --- 4. IMAGE & MEDIA (1 Tool) ---
+  // --- 4. IMAGE & MEDIA (2 Tools) ---
   {
     id: 'image-quality-increaser',
     name: 'Image Quality Increaser',
@@ -208,6 +208,21 @@ export const ALL_TOOLS: Tool[] = [
     isNew: true,
     isFunctional: true,
     keywords: ['image quality increaser', 'enhance image online', 'upscale photo', 'image sharpener', 'photo resolution booster', 'browser image enhancer'],
+  },
+  {
+    id: 'video-downloader',
+    name: 'Video Downloader',
+    slug: 'video-downloader',
+    path: '/tools/video-downloader',
+    description: 'Download videos you own or are authorized to save from direct MP4 and WebM URLs with live progress and honest platform detection.',
+    categoryId: 'image-media',
+    categoryIds: ['image-media', 'daily-utilities'],
+    categoryName: 'Image & Media',
+    icon: 'Download',
+    isPopular: true,
+    isNew: true,
+    isFunctional: true,
+    keywords: ['video downloader', 'mp4 downloader', 'webm downloader', 'download video', 'save video', 'direct media url', 'youtube', 'instagram', 'facebook', 'twitter', 'tiktok'],
   },
 
   // --- 5. TEXT & DEVELOPER (1 Tool) ---
