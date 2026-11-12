@@ -341,7 +341,7 @@ export const ALL_TOOLS: Tool[] = [
   }),
 
   // =========================================================================
-  // 8. TEXT & WRITING TOOLS (1 primary tool)
+  // 8. TEXT & WRITING TOOLS (3 primary tools)
   // =========================================================================
   createTool({
     id: 'word-counter',
@@ -355,6 +355,36 @@ export const ALL_TOOLS: Tool[] = [
     releaseOrder: 9,
     createdAt: '2026-01-28',
     tags: ['word counter', 'character counter', 'reading time', 'text analyzer', 'essay length'],
+  }),
+  createTool({
+    id: 'text-repeater',
+    name: 'Text Repeater',
+    slug: 'text-repeater',
+    route: '/tools/text-repeater',
+    description: 'Repeat any text, word, sentence or message as many times as you want with custom separators, styles, and instant export.',
+    primaryCategory: 'text-writing',
+    secondaryCategories: ['utilities'],
+    icon: 'Repeat',
+    releaseOrder: 26,
+    createdAt: '2026-11-12',
+    isNew: true,
+    isFeatured: true,
+    tags: ['text repeater', 'repeat text', 'duplicate text', 'copy text multiple times', 'text multiplier', 'whatsapp repeater'],
+  }),
+  createTool({
+    id: 'text-inverter',
+    name: 'Text Inverter',
+    slug: 'text-inverter',
+    route: '/tools/text-inverter',
+    description: 'Flip text upside down, reverse it backwards, or reverse individual words and word order instantly with Unicode safety.',
+    primaryCategory: 'text-writing',
+    secondaryCategories: ['utilities'],
+    icon: 'FlipVertical2',
+    releaseOrder: 27,
+    createdAt: '2026-11-12',
+    isNew: true,
+    isFeatured: true,
+    tags: ['text inverter', 'flip text', 'upside down text', 'reverse text', 'backwards text', 'reverse words'],
   }),
 
   // =========================================================================

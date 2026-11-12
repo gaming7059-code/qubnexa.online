@@ -24,6 +24,8 @@ const TOOL_INTENT_PHRASES: Record<string, string[]> = {
   'audio-studio': ['clean audio', 'remove noise', 'remove background hum', 'edit audio', 'trim audio', 'voice eq'],
   'audio-transcriber': ['voice to text', 'speech to text', 'transcribe audio', 'dictate text', 'whisper'],
   'word-counter': ['count words', 'character count', 'reading time', 'essay word count'],
+  'text-repeater': ['repeat text', 'duplicate text', 'copy text multiple times', 'multiply text', 'text multiplier'],
+  'text-inverter': ['flip text', 'upside down text', 'reverse text', 'backwards text', 'invert text', 'reverse words'],
   'ai-video-prompt-generator': ['ai tool', 'video prompt', 'sora prompt', 'veo prompt', 'runway prompt', 'kling prompt', 'ai generator'],
   'game-hex-drift': ['play game', 'space shooter', 'arcade runner', 'neon game'],
   'game-tic-tac-toe': ['play tic tac toe', 'x and o', 'board game'],

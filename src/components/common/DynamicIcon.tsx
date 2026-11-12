@@ -60,6 +60,8 @@ import {
   Wrench,
   Share2,
   Download,
+  Repeat,
+  FlipVertical2,
   type LucideProps
 } from 'lucide-react'
 
@@ -124,6 +126,8 @@ const iconMap: Record<string, React.ComponentType<LucideProps>> = {
   Wrench,
   Share2,
   Download,
+  Repeat,
+  FlipVertical2,
 }
 
 interface DynamicIconProps extends LucideProps {

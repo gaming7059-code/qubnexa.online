@@ -87,7 +87,7 @@ export const WordCounterPage: React.FC = () => {
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['unit-converter', 'percentage-calculator', 'date-difference-calculator']}
+      relatedSlugs={['text-repeater', 'text-inverter', 'unit-converter', 'percentage-calculator']}
     >
       <WordCounter />
     </ToolPageLayout>

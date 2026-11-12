@@ -28,6 +28,8 @@ const QrCodeGeneratorPage = React.lazy(() => import('./pages/tools/QrCodeGenerat
 const PasswordGeneratorPage = React.lazy(() => import('./pages/tools/PasswordGeneratorPage').then((m) => ({ default: m.PasswordGeneratorPage })))
 const UnitConverterPage = React.lazy(() => import('./pages/tools/UnitConverterPage').then((m) => ({ default: m.UnitConverterPage })))
 const WordCounterPage = React.lazy(() => import('./pages/tools/WordCounterPage').then((m) => ({ default: m.WordCounterPage })))
+const TextRepeaterPage = React.lazy(() => import('./pages/tools/TextRepeaterPage').then((m) => ({ default: m.TextRepeaterPage })))
+const TextInverterPage = React.lazy(() => import('./pages/tools/TextInverterPage').then((m) => ({ default: m.TextInverterPage })))
 const PDFEditorPage = React.lazy(() => import('./pages/tools/PDFEditorPage').then((m) => ({ default: m.PDFEditorPage })))
 const TextToSpeechPage = React.lazy(() => import('./pages/tools/TextToSpeechPage').then((m) => ({ default: m.TextToSpeechPage })))
 const VideoPromptGeneratorPage = React.lazy(() => import('./pages/tools/VideoPromptGeneratorPage').then((m) => ({ default: m.VideoPromptGeneratorPage })))
@@ -164,6 +166,22 @@ export const App: React.FC = () => {
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <WordCounterPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/text-repeater"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <TextRepeaterPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/text-inverter"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <TextInverterPage />
                 </Suspense>
               }
             />

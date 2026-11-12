@@ -1,6 +1,6 @@
 /**
  * QUBNEXA — Implemented Tool Modules Index
- * Syncs with all 20 standalone utility tool modules and routes.
+ * Syncs with all standalone utility tool modules and routes.
  */
 
 export const REGISTERED_TOOL_MODULES = [
@@ -14,6 +14,8 @@ export const REGISTERED_TOOL_MODULES = [
   'date-time-calculator',
   'unit-converter',
   'word-counter',
+  'text-repeater',
+  'text-inverter',
   'pdf-editor',
   'jpg-to-pdf',
   'qr-code-generator',
