@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useOutletContext } from 'react-router-dom'
-import { ChevronRight, HelpCircle, BookOpen, Calculator, Sparkles, ChevronDown } from 'lucide-react'
+import { ChevronRight, HelpCircle, BookOpen, Calculator, Sparkles, ChevronDown, ArrowLeft, LayoutGrid } from 'lucide-react'
 import { ALL_TOOLS } from '../../data/toolsData'
+import { normalizeCategoryId } from '../../data/categoriesData'
+import { recordRecentTool } from '../../utils/recentTools'
 import { ToolCard } from '../common/ToolCard'
 import { ScrollReveal } from '../common/ScrollReveal'
 import {
@@ -56,13 +58,16 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
   relatedSlugs,
   children,
 }) => {
+  const primaryCatId = normalizeCategoryId(tool.primaryCategory || tool.categoryId)
+  const categoryPath = primaryCatId !== 'all' ? `/categories/${primaryCatId}` : '/categories'
+
   // Build structured data schemas
   const schemas: Array<Record<string, unknown>> = [
     createWebApplicationSchema(tool.name, seoDescription || tool.description, tool.path),
     createBreadcrumbSchema([
       { name: 'Home', path: '/' },
-      { name: 'Tools', path: '/tools' },
-      { name: tool.categoryName, path: `/tools?category=${tool.categoryId}` },
+      { name: 'Categories', path: '/categories' },
+      { name: tool.categoryName, path: categoryPath },
       { name: tool.name, path: tool.path },
     ]),
   ]
@@ -83,23 +88,27 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
   const { openToolPreview } = useOutletContext<LayoutContextType>()
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0)
 
+  useEffect(() => {
+    recordRecentTool(tool.id)
+  }, [tool.id])
+
   // Find related tools from slugs
   const relatedTools = ALL_TOOLS.filter((t) => relatedSlugs.includes(t.slug))
 
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">
       {/* 1. Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="animate-fade-in flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
+      <nav aria-label="Breadcrumb" className="animate-fade-in flex flex-wrap items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
         <Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
           Home
         </Link>
         <ChevronRight className="h-3.5 w-3.5 text-slate-400 dark:text-slate-600" />
-        <Link to="/tools" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-          Tools
+        <Link to="/categories" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          Categories
         </Link>
         <ChevronRight className="h-3.5 w-3.5 text-slate-400 dark:text-slate-600" />
         <Link
-          to={`/tools?category=${tool.categoryId}`}
+          to={categoryPath}
           className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
         >
           {tool.categoryName}
@@ -111,10 +120,32 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
       </nav>
 
       {/* 2. Page Header */}
-      <header className="space-y-1.5 animate-fade-in-up">
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 dark:bg-[#11182D] px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-blue-700 dark:text-[#00DFFF] border border-blue-100 dark:border-slate-800">
-          <Sparkles className="h-3 w-3" />
-          <span>{tool.categoryName} Utility</span>
+      <header className="space-y-2 animate-fade-in-up">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <Link
+            to={categoryPath}
+            className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 dark:bg-[#11182D] px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-blue-700 dark:text-[#00DFFF] border border-blue-100 dark:border-slate-800 hover:border-blue-400 dark:hover:border-[#00DFFF]/50 transition-colors"
+          >
+            <Sparkles className="h-3 w-3" />
+            <span>{tool.categoryName}</span>
+          </Link>
+
+          <div className="flex flex-wrap items-center gap-2">
+            <Link
+              to={categoryPath}
+              className="inline-flex min-h-[38px] items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-500/50 dark:hover:border-[#00DFFF]/50 hover:text-blue-600 dark:hover:text-[#00DFFF] transition-colors"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              <span>Back to {tool.categoryName}</span>
+            </Link>
+            <Link
+              to="/tools"
+              className="inline-flex min-h-[38px] items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#11182D] px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-500/50 dark:hover:border-[#00DFFF]/50 hover:text-blue-600 dark:hover:text-[#00DFFF] transition-colors"
+            >
+              <LayoutGrid className="h-3.5 w-3.5" />
+              <span>All Tools</span>
+            </Link>
+          </div>
         </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
           {tool.name}

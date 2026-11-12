@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Clock, Sparkles } from 'lucide-react'
+import { ArrowRight, Clock } from 'lucide-react'
 import type { Tool } from '../../types/tools'
 import { DynamicIcon } from './DynamicIcon'
+import { HighlightedText } from './HighlightedText'
 
 interface ToolCardProps {
   tool: Tool
   onOpenPreview?: (tool: Tool) => void
+  highlightQuery?: string
 }
 
 /**
@@ -18,19 +20,29 @@ function getCategoryBadgeStyle(categoryId: string): string {
     case 'finance':
     case 'math':
       return 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800'
+    case 'date-time':
+      return 'bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-800'
+    case 'utilities':
+    case 'converters':
     case 'daily-utilities':
     case 'daily-utility':
-      return 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800'
+      return 'bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border-sky-200 dark:border-sky-800'
     case 'pdf-documents':
     case 'pdf-tools':
       return 'bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800'
+    case 'image-tools':
     case 'image-media':
       return 'bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800'
+    case 'video-tools':
+      return 'bg-orange-50 dark:bg-orange-950/60 text-orange-700 dark:text-orange-300 border-orange-200 dark:border-orange-800'
+    case 'text-writing':
     case 'text-developer':
     case 'seo-tools':
       return 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800'
+    case 'audio-tools':
     case 'voice-audio':
       return 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800'
+    case 'ai-tools':
     case 'ai-creator':
     case 'creator-tools':
       return 'bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800'
@@ -41,7 +53,7 @@ function getCategoryBadgeStyle(categoryId: string): string {
   }
 }
 
-export const ToolCard: React.FC<ToolCardProps> = ({ tool, onOpenPreview }) => {
+export const ToolCard: React.FC<ToolCardProps> = ({ tool, onOpenPreview, highlightQuery }) => {
   const isReady = tool.isFunctional !== false
   const isGame = tool.categoryId === 'games'
   const badgeClass = getCategoryBadgeStyle(tool.categoryId)
@@ -52,7 +64,7 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool, onOpenPreview }) => {
       <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[#00DFFF] via-blue-500 to-[#8B5CF6] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       <div>
-        {/* Top Header: Icon + Category Badge + (New/Popular) */}
+        {/* Top Header: Icon + Category Badge + (New/Status) */}
         <div className="flex items-start justify-between gap-2.5 mb-3.5">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 dark:bg-[#11182D] border border-blue-100 dark:border-slate-800 text-blue-600 dark:text-[#00DFFF] transition-colors duration-200 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 dark:group-hover:border-[#00DFFF]/60">
             <DynamicIcon name={tool.icon} className="h-5 w-5" />
@@ -64,12 +76,6 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool, onOpenPreview }) => {
               <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-950/70 border border-emerald-200 dark:border-emerald-800/80 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300 uppercase tracking-wide">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 New
-              </span>
-            )}
-            {!tool.isNew && tool.isPopular && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 dark:bg-amber-950/70 border border-amber-200 dark:border-amber-800/80 px-2 py-0.5 text-[10px] font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wide">
-                <Sparkles className="h-2.5 w-2.5 text-amber-500 fill-amber-500" />
-                Popular
               </span>
             )}
             {!isReady && (
@@ -89,18 +95,18 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool, onOpenPreview }) => {
         {isReady ? (
           <Link to={tool.path} className="focus:outline-none focus:underline">
             <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-[#00DFFF] transition-colors duration-200 line-clamp-1">
-              {tool.name}
+              <HighlightedText text={tool.name} query={highlightQuery} />
             </h3>
           </Link>
         ) : (
           <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-[#00DFFF] transition-colors duration-200 line-clamp-1">
-            {tool.name}
+            <HighlightedText text={tool.name} query={highlightQuery} />
           </h3>
         )}
 
         {/* Tool Description */}
         <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-400 line-clamp-2">
-          {tool.description}
+          <HighlightedText text={tool.description} query={highlightQuery} />
         </p>
       </div>
 

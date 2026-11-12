@@ -218,7 +218,41 @@ const AICreatorIconSvg: React.FC<{ className?: string }> = ({ className }) => (
 )
 
 /**
- * 9. Games: Arcade controller
+ * 9. Video Tools: Playable studio screen
+ */
+const VideoToolsIconSvg: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+    <defs>
+      <linearGradient id="cat-video-g" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#f97316" />
+        <stop offset="1" stopColor="#ef4444" />
+      </linearGradient>
+    </defs>
+    <rect x="5" y="5" width="22" height="22" rx="5" fill="url(#cat-video-g)" />
+    <path d="M13 11.5L21 16L13 20.5V11.5Z" fill="#ffffff" />
+  </svg>
+)
+
+/**
+ * 10. Date & Time Tools: Precision calendar & clock
+ */
+const DateTimeIconSvg: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+    <defs>
+      <linearGradient id="cat-date-g" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#14b8a6" />
+        <stop offset="1" stopColor="#0284c7" />
+      </linearGradient>
+    </defs>
+    <rect x="5" y="6" width="22" height="21" rx="5" fill="url(#cat-date-g)" />
+    <path d="M10 12.5H22" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+    <circle cx="16" cy="18.5" r="3.5" stroke="#ffffff" strokeWidth="1.6" />
+    <path d="M16 17V18.6L17.2 19.4" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" />
+  </svg>
+)
+
+/**
+ * 11. Games: Arcade controller
  */
 const GamesCategoryIconSvg: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
@@ -257,23 +291,33 @@ export const CategoryIcon: React.FC<CategoryIconProps> = ({
     case 'calculators':
     case 'finance':
     case 'math':
-    case 'converters':
-    case 'date-time':
     case 'education':
       return <CalculatorsIconSvg className={combinedClass} />
+    case 'date-time':
+    case 'date-tools':
+      return <DateTimeIconSvg className={combinedClass} />
+    case 'utilities':
+    case 'converters':
     case 'daily-utilities':
     case 'daily-utility':
       return <DailyUtilitiesIconSvg className={combinedClass} />
     case 'pdf-documents':
     case 'pdf-tools':
       return <PDFDocumentsIconSvg className={combinedClass} />
+    case 'image-tools':
     case 'image-media':
       return <ImageMediaIconSvg className={combinedClass} />
+    case 'video-tools':
+    case 'video':
+      return <VideoToolsIconSvg className={combinedClass} />
+    case 'text-writing':
     case 'text-developer':
     case 'seo-tools':
       return <TextDeveloperIconSvg className={combinedClass} />
+    case 'audio-tools':
     case 'voice-audio':
       return <VoiceAudioIconSvg className={combinedClass} />
+    case 'ai-tools':
     case 'ai-creator':
     case 'creator-tools':
       return <AICreatorIconSvg className={combinedClass} />

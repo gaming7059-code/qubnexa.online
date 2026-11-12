@@ -8,6 +8,7 @@ import { LoadingFallback } from './components/common/LoadingFallback'
 const HomePage = React.lazy(() => import('./pages/HomePage').then((m) => ({ default: m.HomePage })))
 const ToolsPage = React.lazy(() => import('./pages/ToolsPage').then((m) => ({ default: m.ToolsPage })))
 const CategoriesPage = React.lazy(() => import('./pages/CategoriesPage').then((m) => ({ default: m.CategoriesPage })))
+const CategoryDetailPage = React.lazy(() => import('./pages/CategoryDetailPage').then((m) => ({ default: m.CategoryDetailPage })))
 const AboutPage = React.lazy(() => import('./pages/AboutPage').then((m) => ({ default: m.AboutPage })))
 const ContactPage = React.lazy(() => import('./pages/ContactPage').then((m) => ({ default: m.ContactPage })))
 const PrivacyPage = React.lazy(() => import('./pages/PrivacyPage').then((m) => ({ default: m.PrivacyPage })))
@@ -251,6 +252,30 @@ export const App: React.FC = () => {
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <CategoriesPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="categories/:categorySlug"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <CategoryDetailPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="popular"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <ToolsPage presetFilter="popular" presetSort="featured" />
+                </Suspense>
+              }
+            />
+            <Route
+              path="new-tools"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <ToolsPage presetFilter="new" presetSort="newest" />
                 </Suspense>
               }
             />

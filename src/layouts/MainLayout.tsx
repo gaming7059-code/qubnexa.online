@@ -4,6 +4,7 @@ import { Header } from '../components/common/Header'
 import { Footer } from '../components/common/Footer'
 import { SearchModal } from '../components/common/SearchModal'
 import { ToolPreviewModal } from '../components/common/ToolPreviewModal'
+import { recordRecentTool } from '../utils/recentTools'
 import type { Tool } from '../types/tools'
 
 export interface LayoutContextType {
@@ -22,6 +23,7 @@ export const MainLayout: React.FC = () => {
 
   const handleOpenToolPreview = (tool: Tool) => {
     if (tool.isFunctional) {
+      recordRecentTool(tool.id)
       navigate(tool.path)
     } else {
       setPreviewTool(tool)
@@ -35,6 +37,7 @@ export const MainLayout: React.FC = () => {
   const handleSelectToolFromSearch = (tool: Tool) => {
     setIsSearchOpen(false)
     if (tool.isFunctional) {
+      recordRecentTool(tool.id)
       navigate(tool.path)
     } else {
       setPreviewTool(tool)

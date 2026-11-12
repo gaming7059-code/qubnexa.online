@@ -50,38 +50,38 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2.5 text-sm">
                 <li>
-                  <Link to="/tools?category=daily-utilities" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    Daily Utilities
+                  <Link to="/categories/calculators" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                    Calculators &amp; Finance
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=calculators" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    Calculators
+                  <Link to="/categories/utilities" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                    Converters &amp; Utilities
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=pdf-documents" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <Link to="/categories/pdf-documents" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
                     PDF &amp; Documents
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=image-media" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    Image &amp; Media
+                  <Link to="/categories/audio-tools" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                    Audio &amp; Music Tools
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=voice-audio" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    Voice &amp; Audio
+                  <Link to="/categories/video-tools" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                    Video Tools
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tools?category=ai-creator" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    AI &amp; Creator
+                  <Link to="/categories/ai-tools" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                    AI Tools
                   </Link>
                 </li>
                 <li>
-                  <Link to="/games" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    Games
+                  <Link to="/categories/games" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                    Games Arena
                   </Link>
                 </li>
                 <li>
@@ -104,13 +104,18 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/games" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    Games Arena
+                  <Link to="/popular" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                    Popular Tools
                   </Link>
                 </li>
                 <li>
-                  <Link to="/games/hex-drift" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    HEX DRIFT
+                  <Link to="/new-tools" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                    New Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/games" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                    Play Games
                   </Link>
                 </li>
                 <li>

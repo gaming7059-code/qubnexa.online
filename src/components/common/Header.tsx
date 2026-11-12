@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Search, Menu, X } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
+import { PRIMARY_CATEGORIES } from '../../data/categoriesData'
 
 interface HeaderProps {
   onOpenSearch: () => void
@@ -22,13 +23,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/tools/text-to-speech', label: 'Voice Tools', matchPrefixes: ['/tools/text-to-speech', '/tools/audio-studio', '/tools/audio-transcriber'] },
-    { to: '/tools/pdf-editor', label: 'PDF Tools', matchPrefixes: ['/tools/pdf-editor'] },
-    { to: '/games', label: 'Games', matchPrefixes: ['/games'] },
-    { to: '/tools/video-prompt-generator', label: 'AI Prompts', matchPrefixes: ['/tools/video-prompt-generator'] },
-    { to: '/tools', label: 'All Tools', exact: true },
+  const navLinks: Array<{ to: string; label: string; exact?: boolean; matchPrefixes?: string[] }> = [
+    { to: '/', label: 'Home', exact: true },
+    { to: '/tools', label: 'All Tools', matchPrefixes: ['/tools'] },
+    { to: '/categories', label: 'Categories', matchPrefixes: ['/categories'] },
+    { to: '/popular', label: 'Popular', exact: true },
+    { to: '/new-tools', label: 'New Tools', exact: true },
+    { to: '/about', label: 'About', exact: true },
   ]
 
   const isLinkActive = (link: typeof navLinks[0]) => {
@@ -151,25 +152,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
           {/* Quick Categories in Mobile Menu */}
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800/80">
             <span className="block px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              More Categories
+              Browse Categories
             </span>
             <div className="mt-1.5 flex flex-wrap gap-2 px-3">
-              {[
-                { name: 'Daily Utilities', path: '/tools?category=daily-utilities' },
-                { name: 'Calculators', path: '/tools?category=calculators' },
-                { name: 'PDF & Documents', path: '/tools?category=pdf-documents' },
-                { name: 'Image & Media', path: '/tools?category=image-media' },
-                { name: 'Text & Developer', path: '/tools?category=text-developer' },
-                { name: 'Voice & Audio', path: '/tools?category=voice-audio' },
-                { name: 'AI & Creator', path: '/tools?category=ai-creator' },
-                { name: 'Games', path: '/games' },
-                { name: 'All Categories', path: '/categories' },
-              ].map((c) => (
+              {PRIMARY_CATEGORIES.map((c) => (
                 <Link
-                  key={c.name}
+                  key={c.id}
                   to={c.path}
                   onClick={closeMobileMenu}
-                  className="inline-flex min-h-[36px] items-center rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B1020] px-2.5 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 hover:border-blue-500/40 dark:hover:border-[#00DFFF]/40 hover:text-blue-600 dark:hover:text-[#00DFFF] transition-colors"
+                  className="inline-flex min-h-[38px] items-center rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B1020] px-2.5 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 hover:border-blue-500/40 dark:hover:border-[#00DFFF]/40 hover:text-blue-600 dark:hover:text-[#00DFFF] transition-colors"
                 >
                   {c.name}
                 </Link>

@@ -1,8 +1,6 @@
 /**
- * Xenova-World — Tools Module Registry
- * 
- * Individual calculator components will be implemented and registered here
- * in Step 2.
+ * Xenova-World — Implemented Tool Modules Index
+ * Syncs with all 20 standalone utility tool modules and routes.
  */
 
 export const REGISTERED_TOOL_MODULES = [
@@ -13,10 +11,19 @@ export const REGISTERED_TOOL_MODULES = [
   'discount-calculator',
   'profit-and-loss-calculator',
   'salary-calculator',
-  'date-difference-calculator',
+  'date-time-calculator',
   'unit-converter',
   'word-counter',
+  'pdf-editor',
+  'jpg-to-pdf',
+  'qr-code-generator',
+  'password-generator',
+  'image-quality-increaser',
   'video-downloader',
+  'text-to-speech',
+  'audio-studio',
+  'audio-transcriber',
+  'video-prompt-generator',
 ] as const
 
 export type RegisteredToolId = typeof REGISTERED_TOOL_MODULES[number]

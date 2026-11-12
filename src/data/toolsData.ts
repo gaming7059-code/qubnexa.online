@@ -1,403 +1,480 @@
-import type { Tool } from '../types/tools'
+import type { PrimaryCategoryId, Tool, ToolStatus } from '../types/tools'
+import { CATEGORY_MAP, getToolsByCategory } from './categoriesData'
+
+interface ToolDefinition {
+  id: string
+  name: string
+  slug: string
+  route: string
+  description: string
+  primaryCategory: PrimaryCategoryId
+  secondaryCategories?: PrimaryCategoryId[]
+  icon: string
+  tags: string[]
+  releaseOrder: number
+  createdAt: string
+  status?: ToolStatus
+  isPopular?: boolean
+  isNew?: boolean
+  isFeatured?: boolean
+  badge?: string
+}
+
+function createTool(def: ToolDefinition): Tool {
+  const primary = CATEGORY_MAP[def.primaryCategory]
+  const combinedCategories = [
+    def.primaryCategory,
+    ...(def.secondaryCategories || []),
+  ]
+
+  return {
+    id: def.id,
+    name: def.name,
+    slug: def.slug,
+    route: def.route,
+    path: def.route,
+    description: def.description,
+    primaryCategory: def.primaryCategory,
+    secondaryCategories: def.secondaryCategories,
+    categoryId: def.primaryCategory,
+    categoryIds: combinedCategories,
+    categoryName: primary ? primary.name : def.primaryCategory,
+    icon: def.icon,
+    tags: def.tags,
+    keywords: def.tags,
+    status: def.status || 'live',
+    releaseOrder: def.releaseOrder,
+    createdAt: def.createdAt,
+    isPopular: def.isPopular,
+    isNew: def.isNew,
+    isFeatured: def.isFeatured,
+    isFunctional: (def.status || 'live') === 'live',
+    badge: def.badge,
+  }
+}
 
 export const ALL_TOOLS: Tool[] = [
-  // --- 1. CALCULATORS (9 Tools) ---
-  {
+  // =========================================================================
+  // 1. CALCULATORS & FINANCE (6 primary tools)
+  // =========================================================================
+  createTool({
     id: 'emi-calculator',
     name: 'EMI Calculator',
     slug: 'emi-calculator',
-    path: '/tools/emi-calculator',
-    description: 'Calculate equated monthly installments for home loans, car loans, and personal loans with interest breakdown.',
-    categoryId: 'calculators',
-    categoryIds: ['calculators', 'finance'],
-    categoryName: 'Calculators',
+    route: '/tools/emi-calculator',
+    description: 'Plan home loans, car loans, or personal finance with exact monthly EMIs, interest breakdowns, and full schedule tables.',
+    primaryCategory: 'calculators',
     icon: 'Landmark',
+    releaseOrder: 2,
+    createdAt: '2026-01-12',
     isPopular: true,
-    isFunctional: true,
-    keywords: ['emi', 'loan', 'home loan', 'car loan', 'bank', 'interest', 'finance', 'calculator'],
-  },
-  {
+    isFeatured: true,
+    tags: ['emi calculator', 'loan emi', 'home loan calculator', 'car loan', 'interest amortization', 'inr finance'],
+  }),
+  createTool({
     id: 'gst-calculator',
     name: 'GST Calculator',
     slug: 'gst-calculator',
-    path: '/tools/gst-calculator',
-    description: 'Add or remove GST with standard Indian tax slabs (5%, 12%, 18%, 28%) and view CGST, SGST, and IGST breakdowns.',
-    categoryId: 'calculators',
-    categoryIds: ['calculators', 'finance'],
-    categoryName: 'Calculators',
+    route: '/tools/gst-calculator',
+    description: 'Add or remove GST tax seamlessly with automatic CGST + SGST / IGST breakdowns for standard Indian tax slabs.',
+    primaryCategory: 'calculators',
     icon: 'Receipt',
+    releaseOrder: 3,
+    createdAt: '2026-01-15',
     isPopular: true,
-    isFunctional: true,
-    keywords: ['gst', 'tax', 'cgst', 'sgst', 'igst', 'invoice', 'indian tax', 'calculator'],
-  },
-  {
+    tags: ['gst calculator', 'cgst sgst', 'igst calculator', 'indian tax slabs', 'invoice gst'],
+  }),
+  createTool({
     id: 'salary-calculator',
     name: 'Salary Calculator',
     slug: 'salary-calculator',
-    path: '/tools/salary-calculator',
-    description: 'Estimate your monthly take-home in-hand salary based on annual CTC, EPF contributions, and tax regime deductions.',
-    categoryId: 'calculators',
-    categoryIds: ['calculators', 'finance'],
-    categoryName: 'Calculators',
+    route: '/tools/salary-calculator',
+    description: 'Convert CTC to exact monthly in-hand salary with transparent EPF, standard deduction, and New/Old tax breakdowns.',
+    primaryCategory: 'calculators',
     icon: 'IndianRupee',
+    releaseOrder: 4,
+    createdAt: '2026-01-18',
     isPopular: true,
-    isFunctional: true,
-    keywords: ['salary', 'ctc', 'take home', 'in hand', 'income tax', 'epf', 'deductions', 'calculator'],
-  },
-  {
-    id: 'percentage-calculator',
-    name: 'Percentage Calculator',
-    slug: 'percentage-calculator',
-    path: '/tools/percentage-calculator',
-    description: 'Calculate percentage values, percentage increase or decrease, ratios, and original amounts in seconds.',
-    categoryId: 'calculators',
-    categoryIds: ['calculators', 'math'],
-    categoryName: 'Calculators',
-    icon: 'Percent',
-    isPopular: true,
-    isFunctional: true,
-    keywords: ['percentage', 'math', 'discount', 'ratio', 'fraction', 'growth', 'calculator'],
-  },
-  {
-    id: 'age-calculator',
-    name: 'Age Calculator',
-    slug: 'age-calculator',
-    path: '/tools/age-calculator',
-    description: 'Find your exact age in years, months, days, hours, and find upcoming birthday countdowns.',
-    categoryId: 'calculators',
-    categoryIds: ['calculators', 'date-time'],
-    categoryName: 'Calculators',
-    icon: 'Calendar',
-    isPopular: true,
-    isFunctional: true,
-    keywords: ['age', 'birthday', 'years', 'months', 'dob', 'date of birth', 'calculator'],
-  },
-  {
+    tags: ['salary calculator', 'ctc to in hand', 'epf calculator', 'income tax india', 'take home pay'],
+  }),
+  createTool({
     id: 'discount-calculator',
     name: 'Discount Calculator',
     slug: 'discount-calculator',
-    path: '/tools/discount-calculator',
-    description: 'Find final sale prices, money saved, and double stacked festival shopping discounts instantly.',
-    categoryId: 'calculators',
-    categoryIds: ['calculators', 'finance', 'math'],
-    categoryName: 'Calculators',
+    route: '/tools/discount-calculator',
+    description: 'Calculate sale prices, stacked discount percentages, extra tax adjustments, and exact savings during shopping.',
+    primaryCategory: 'calculators',
     icon: 'Tag',
-    isPopular: true,
-    isFunctional: true,
-    keywords: ['discount', 'sale', 'savings', 'offer', 'shopping', 'price', 'calculator'],
-  },
-  {
-    id: 'profit-and-loss-calculator',
+    releaseOrder: 5,
+    createdAt: '2026-01-20',
+    tags: ['discount calculator', 'sale price', 'stacked percentage', 'shopping savings'],
+  }),
+  createTool({
+    id: 'profit-loss-calculator',
     name: 'Profit & Loss Calculator',
-    slug: 'profit-loss-calculator',
-    path: '/tools/profit-loss-calculator',
-    description: 'Determine profit margin percentage, markup rate, and net gain or loss on goods sold.',
-    categoryId: 'calculators',
-    categoryIds: ['calculators', 'finance', 'math'],
-    categoryName: 'Calculators',
+    slug: 'profit-and-loss-calculator',
+    route: '/tools/profit-loss-calculator',
+    description: 'Analyze gross profit, net margin, markup ratio, and loss percentages instantly for business and e-commerce pricing.',
+    primaryCategory: 'calculators',
     icon: 'TrendingUp',
+    releaseOrder: 6,
+    createdAt: '2026-01-22',
+    tags: ['profit and loss calculator', 'profit margin', 'markup calculator', 'cost price selling price'],
+  }),
+  createTool({
+    id: 'percentage-calculator',
+    name: 'Percentage Calculator',
+    slug: 'percentage-calculator',
+    route: '/tools/percentage-calculator',
+    description: 'Compute percentage of values, X-is-what-%-of-Y checks, and percentage increase or decrease cleanly.',
+    primaryCategory: 'calculators',
+    icon: 'Percent',
+    releaseOrder: 1,
+    createdAt: '2026-01-10',
     isPopular: true,
-    isFunctional: true,
-    keywords: ['profit', 'loss', 'margin', 'business', 'cost price', 'selling price', 'profit loss', 'calculator'],
-  },
-  {
+    tags: ['percentage calculator', 'percent increase', 'percent change', 'math tool'],
+  }),
+
+  // =========================================================================
+  // 2. DATE & TIME TOOLS (2 primary tools)
+  // =========================================================================
+  createTool({
+    id: 'age-calculator',
+    name: 'Age Calculator',
+    slug: 'age-calculator',
+    route: '/tools/age-calculator',
+    description: 'Calculate exact chronological age in years, months, days, hours, and view next birthday countdowns.',
+    primaryCategory: 'date-time',
+    secondaryCategories: ['calculators'],
+    icon: 'Calendar',
+    releaseOrder: 7,
+    createdAt: '2026-01-24',
+    isPopular: true,
+    tags: ['age calculator', 'chronological age', 'birthday countdown', 'exact age'],
+  }),
+  createTool({
     id: 'date-time-calculator',
     name: 'Date & Time Calculator',
     slug: 'date-time-calculator',
-    path: '/tools/date-time-calculator',
-    description: 'Calculate date intervals in years, months and days, add or subtract days with business day skipping, count down to events, and calculate working days.',
-    categoryId: 'calculators',
-    categoryIds: ['calculators', 'daily-utilities', 'date-time'],
-    categoryName: 'Calculators',
+    route: '/tools/date-time-calculator',
+    description: 'Calculate age differences, exact day spans, business days between dates, or add and subtract days cleanly.',
+    primaryCategory: 'date-time',
+    secondaryCategories: ['calculators', 'utilities'],
     icon: 'CalendarDays',
-    isPopular: true,
-    isNew: true,
-    isFunctional: true,
-    keywords: ['date calculator', 'date difference calculator', 'days between dates', 'add days to date', 'working days calculator', 'business days calculator', 'countdown to date'],
-  },
-  {
+    releaseOrder: 12,
+    createdAt: '2026-02-05',
+    badge: 'Pro',
+    tags: ['date calculator', 'date difference calculator', 'business days', 'days between dates', 'add days'],
+  }),
+
+  // =========================================================================
+  // 3. CONVERTERS & UTILITIES (3 primary tools)
+  // =========================================================================
+  createTool({
     id: 'unit-converter',
     name: 'Unit Converter',
     slug: 'unit-converter',
-    path: '/tools/unit-converter',
-    description: 'Convert units across 8 categories: Length, Weight, Temperature, Area, Volume, Speed, Time, and Digital Storage with instant calculation.',
-    categoryId: 'calculators',
-    categoryIds: ['calculators', 'daily-utilities', 'converters'],
-    categoryName: 'Calculators',
+    route: '/tools/unit-converter',
+    description: 'Convert Length, Weight, Temperature, Area, Volume, Speed, Time, and Digital Storage instantaneously.',
+    primaryCategory: 'utilities',
+    secondaryCategories: ['calculators'],
     icon: 'ArrowLeftRight',
+    releaseOrder: 8,
+    createdAt: '2026-01-26',
     isPopular: true,
-    isFunctional: true,
-    keywords: ['unit', 'converter', 'metric', 'length', 'kg to lbs', 'meters', 'celsius', 'speed converter', 'conversion'],
-  },
-
-  // --- 2. DAILY UTILITIES (2 Tools) ---
-  {
+    tags: ['unit converter', 'metric converter', 'km to miles', 'celsius fahrenheit', 'storage units'],
+  }),
+  createTool({
     id: 'qr-code-generator',
     name: 'QR Code Generator',
     slug: 'qr-code-generator',
-    path: '/tools/qr-code-generator',
-    description: 'Create custom, high-resolution QR codes for websites, Wi-Fi networks, text, email, phone numbers, and vCard contacts with instant PNG/SVG downloads.',
-    categoryId: 'daily-utilities',
-    categoryIds: ['daily-utilities', 'text-developer'],
-    categoryName: 'Daily Utilities',
+    route: '/tools/qr-code-generator',
+    description: 'Create custom QR codes for URLs, Wi-Fi networks, vCard contacts, email, and text with PNG and SVG export.',
+    primaryCategory: 'utilities',
+    secondaryCategories: ['text-writing'],
     icon: 'QrCode',
+    releaseOrder: 13,
+    createdAt: '2026-02-10',
     isPopular: true,
-    isNew: true,
-    isFunctional: true,
-    keywords: ['qr code generator', 'free qr code', 'wifi qr code', 'vcard qr code', 'custom qr code', 'svg qr code', 'qr code maker online'],
-  },
-  {
+    isFeatured: true,
+    badge: 'Utility',
+    tags: ['qr code generator', 'wifi qr code', 'vcard qr', 'custom qr svg', 'download qr png'],
+  }),
+  createTool({
     id: 'password-generator',
     name: 'Password Generator',
     slug: 'password-generator',
-    path: '/tools/password-generator',
-    description: 'Generate ultra-secure, cryptographically random passwords with custom lengths (4–128 characters), entropy indicators, and zero server transmission.',
-    categoryId: 'daily-utilities',
-    categoryIds: ['daily-utilities', 'text-developer'],
-    categoryName: 'Daily Utilities',
+    route: '/tools/password-generator',
+    description: 'Generate cryptographically random passwords and Diceware passphrases privately in your browser using Web Crypto.',
+    primaryCategory: 'utilities',
+    secondaryCategories: ['text-writing'],
     icon: 'KeyRound',
-    isPopular: true,
-    isNew: true,
-    isFunctional: true,
-    keywords: ['password generator', 'random password', 'secure password', 'strong password generator', 'cryptographic password', 'csprng password online'],
-  },
+    releaseOrder: 14,
+    createdAt: '2026-02-12',
+    badge: 'Security',
+    tags: ['password generator', 'strong password', 'passphrase', 'web crypto entropy'],
+  }),
 
-  // --- 3. PDF & DOCUMENTS (2 Tools) ---
-  {
+  // =========================================================================
+  // 4. PDF & DOCUMENT TOOLS (2 primary tools)
+  // =========================================================================
+  createTool({
     id: 'pdf-editor',
     name: 'PDF Editor',
     slug: 'pdf-editor',
-    path: '/tools/pdf-editor',
-    description: 'Edit, annotate, draw, highlight, organize, rotate, and add text to PDF documents directly in your browser.',
-    categoryId: 'pdf-documents',
-    categoryIds: ['pdf-documents', 'pdf-tools'],
-    categoryName: 'PDF & Documents',
+    route: '/tools/pdf-editor',
+    description: 'Annotate, add text, insert shapes, highlight pages, draw signatures, and export edited PDFs with zero server uploads.',
+    primaryCategory: 'pdf-documents',
     icon: 'FileEdit',
+    releaseOrder: 10,
+    createdAt: '2026-01-30',
     isPopular: true,
-    isFunctional: true,
-    keywords: ['pdf', 'pdf editor', 'edit pdf', 'annotate pdf', 'draw on pdf', 'highlight pdf', 'pdf tools', 'sign pdf', 'online pdf editor'],
-  },
-  {
+    isFeatured: true,
+    badge: 'No Upload',
+    tags: ['pdf editor', 'annotate pdf', 'edit pdf offline', 'sign pdf', 'private pdf tool'],
+  }),
+  createTool({
     id: 'jpg-to-pdf',
     name: 'JPG to PDF Converter',
     slug: 'jpg-to-pdf',
-    path: '/tools/jpg-to-pdf',
-    description: 'Convert JPG, JPEG, and PNG images into a clean, professional PDF document with custom page sizes and margins.',
-    categoryId: 'pdf-documents',
-    categoryIds: ['pdf-documents', 'pdf-tools'],
-    categoryName: 'PDF & Documents',
+    route: '/tools/jpg-to-pdf',
+    description: 'Combine multiple JPG, PNG, and WebP photos into ordered A4 or Letter PDF documents locally with zero uploads.',
+    primaryCategory: 'pdf-documents',
+    secondaryCategories: ['image-tools', 'utilities'],
     icon: 'FileImage',
-    isPopular: true,
-    isNew: true,
-    isFunctional: true,
-    keywords: ['jpg to pdf', 'images to pdf', 'convert jpg to pdf', 'png to pdf', 'jpeg to pdf', 'combine photos into pdf', 'pdf converter online'],
-  },
+    releaseOrder: 15,
+    createdAt: '2026-02-15',
+    badge: 'Converter',
+    tags: ['jpg to pdf', 'images to pdf', 'png to pdf', 'combine photos into pdf'],
+  }),
 
-  // --- 4. IMAGE & MEDIA (2 Tools) ---
-  {
+  // =========================================================================
+  // 5. IMAGE TOOLS (1 primary tool)
+  // =========================================================================
+  createTool({
     id: 'image-quality-increaser',
     name: 'Image Quality Increaser',
     slug: 'image-quality-increaser',
-    path: '/tools/image-quality-increaser',
-    description: 'Enhance image clarity, edge sharpness, contrast, and upscaled resolution up to 4x directly in your browser with zero server uploads.',
-    categoryId: 'image-media',
-    categoryIds: ['image-media'],
-    categoryName: 'Image & Media',
+    route: '/tools/image-quality-increaser',
+    description: 'Upscale resolution 2x-4x, sharpen fine textures, and boost image clarity completely locally inside your browser.',
+    primaryCategory: 'image-tools',
+    secondaryCategories: ['ai-tools'],
     icon: 'Maximize2',
+    releaseOrder: 18,
+    createdAt: '2026-03-04',
     isPopular: true,
     isNew: true,
-    isFunctional: true,
-    keywords: ['image quality increaser', 'enhance image online', 'upscale photo', 'image sharpener', 'photo resolution booster', 'browser image enhancer'],
-  },
-  {
+    isFeatured: true,
+    badge: '4x Upscale',
+    tags: ['image quality increaser', 'photo upscaler', 'image sharpener', 'enhance image resolution'],
+  }),
+
+  // =========================================================================
+  // 6. VIDEO TOOLS (1 primary tool + AI Video Prompt secondary)
+  // =========================================================================
+  createTool({
     id: 'video-downloader',
-    name: 'Video Downloader',
+    name: 'Universal Video Downloader',
     slug: 'video-downloader',
-    path: '/tools/video-downloader',
-    description: 'Download videos you own or are authorized to save from direct MP4 and WebM URLs with live progress and honest platform detection.',
-    categoryId: 'image-media',
-    categoryIds: ['image-media', 'daily-utilities'],
-    categoryName: 'Image & Media',
+    route: '/tools/video-downloader',
+    description: 'Inspect video links, detect authorized direct MP4/WebM streams, preview playback, and download files without logins.',
+    primaryCategory: 'video-tools',
+    secondaryCategories: ['utilities'],
     icon: 'Download',
+    releaseOrder: 26,
+    createdAt: '2026-10-15',
     isPopular: true,
     isNew: true,
-    isFunctional: true,
-    keywords: ['video downloader', 'mp4 downloader', 'webm downloader', 'download video', 'save video', 'direct media url', 'youtube', 'instagram', 'facebook', 'twitter', 'tiktok'],
-  },
+    isFeatured: true,
+    badge: 'Free',
+    tags: ['video downloader', 'mp4 downloader', 'webm downloader', 'video link inspector', 'direct video download'],
+  }),
 
-  // --- 5. TEXT & DEVELOPER (1 Tool) ---
-  {
-    id: 'word-counter',
-    name: 'Word Counter',
-    slug: 'word-counter',
-    path: '/tools/word-counter',
-    description: 'Count words, characters, sentences, paragraphs, and estimated reading time in real-time.',
-    categoryId: 'text-developer',
-    categoryIds: ['text-developer', 'seo-tools'],
-    categoryName: 'Text & Developer',
-    icon: 'FileText',
-    isPopular: true,
-    isFunctional: true,
-    keywords: ['words', 'characters', 'counter', 'writing', 'essay', 'blog', 'seo', 'developer text'],
-  },
-
-  // --- 6. VOICE & AUDIO (3 Tools) ---
-  {
+  // =========================================================================
+  // 7. AUDIO & MUSIC TOOLS (3 primary tools)
+  // =========================================================================
+  createTool({
     id: 'text-to-speech',
     name: 'Text to Speech Converter',
     slug: 'text-to-speech',
-    path: '/tools/text-to-speech',
-    description: 'Convert written or pasted text into natural spoken speech using device browser voices & neural engine with multi-language WAV export.',
-    categoryId: 'voice-audio',
-    categoryIds: ['voice-audio'],
-    categoryName: 'Voice & Audio',
+    route: '/tools/text-to-speech',
+    description: 'Convert English, Hindi, Hinglish, and regional scripts into natural voices with offline Kokoro neural TTS and WAV export.',
+    primaryCategory: 'audio-tools',
+    secondaryCategories: ['ai-tools'],
     icon: 'Volume2',
+    releaseOrder: 11,
+    createdAt: '2026-02-02',
     isPopular: true,
-    isFunctional: true,
-    keywords: ['text to speech', 'tts', 'speech synthesis', 'read aloud', 'voice generator', 'audio', 'hindi tts', 'indian english voice', 'convert text to voice'],
-  },
-  {
+    isFeatured: true,
+    badge: 'Neural AI',
+    tags: ['text to speech', 'hindi tts', 'hinglish speech', 'neural voice', 'wav audio export'],
+  }),
+  createTool({
     id: 'audio-studio',
     name: 'Audio Studio & Effects Cleaner',
     slug: 'audio-studio',
-    path: '/tools/audio-studio',
-    description: 'Adjust playback speed, boost volume gain, eliminate microphone room hum with 120Hz low-cut filters, and master 16-bit WAV audio in your browser.',
-    categoryId: 'voice-audio',
-    categoryIds: ['voice-audio'],
-    categoryName: 'Voice & Audio',
+    route: '/tools/audio-studio',
+    description: 'Record or upload audio, remove background hum, boost vocal clarity, trim clips, apply EQ, and export clean WAV files.',
+    primaryCategory: 'audio-tools',
     icon: 'SlidersHorizontal',
-    isPopular: true,
+    releaseOrder: 19,
+    createdAt: '2026-03-08',
     isNew: true,
-    isFunctional: true,
-    keywords: ['audio studio', 'audio effects', 'volume booster', 'audio speed changer', 'mic hum cleaner', 'wav exporter', 'web audio cleaner', 'voice recorder'],
-  },
-  {
+    isFeatured: true,
+    badge: 'Studio',
+    tags: ['audio cleaner', 'remove background noise', 'audio studio', 'vocal enhancer', 'de-hum'],
+  }),
+  createTool({
     id: 'audio-transcriber',
     name: 'Audio & Speech Transcriber',
     slug: 'audio-transcriber',
-    path: '/tools/audio-transcriber',
-    description: 'Transcribe speech to text in real time with microphone dictation, slow down audio files for manual transcription, and export TXT or SRT subtitles.',
-    categoryId: 'voice-audio',
-    categoryIds: ['voice-audio'],
-    categoryName: 'Voice & Audio',
-    icon: 'Mic',
-    isPopular: true,
+    route: '/tools/audio-transcriber',
+    description: 'Dictate live via microphone across 8+ languages or run offline Whisper AI speech-to-text transcription on audio files.',
+    primaryCategory: 'audio-tools',
+    secondaryCategories: ['ai-tools', 'text-writing'],
+    icon: 'AudioLines',
+    releaseOrder: 20,
+    createdAt: '2026-03-12',
     isNew: true,
-    isFunctional: true,
-    keywords: ['speech to text', 'audio transcriber', 'voice dictation', 'transcribe audio online', 'hindi speech to text', 'srt subtitle generator', 'voice notes'],
-  },
+    badge: 'Whisper AI',
+    tags: ['audio transcriber', 'speech to text', 'voice dictation', 'whisper transcription', 'txt export'],
+  }),
 
-  // --- 7. AI & CREATOR TOOLS (1 Tool) ---
-  {
-    id: 'video-prompt-generator',
+  // =========================================================================
+  // 8. TEXT & WRITING TOOLS (1 primary tool)
+  // =========================================================================
+  createTool({
+    id: 'word-counter',
+    name: 'Word Counter',
+    slug: 'word-counter',
+    route: '/tools/word-counter',
+    description: 'Count words, characters with and without spaces, sentences, paragraphs, and estimated reading speed live.',
+    primaryCategory: 'text-writing',
+    secondaryCategories: ['utilities'],
+    icon: 'FileCode',
+    releaseOrder: 9,
+    createdAt: '2026-01-28',
+    tags: ['word counter', 'character counter', 'reading time', 'text analyzer', 'essay length'],
+  }),
+
+  // =========================================================================
+  // 9. AI TOOLS (1 primary tool + AI-powered tools cross-tagged)
+  // =========================================================================
+  createTool({
+    id: 'ai-video-prompt-generator',
     name: 'AI Video Prompt Generator',
     slug: 'video-prompt-generator',
-    path: '/tools/video-prompt-generator',
-    description: 'Construct and reverse-engineer director-level cinematic video prompts for OpenAI Sora, Runway Gen-3, Kling AI, and Midjourney.',
-    categoryId: 'ai-creator',
-    categoryIds: ['ai-creator', 'creator-tools'],
-    categoryName: 'AI & Creator Tools',
-    icon: 'Clapperboard',
+    route: '/tools/video-prompt-generator',
+    description: 'Build ultra-detailed cinematic AI video prompts for Veo, Sora, Runway, Kling, Pika, and Luma with camera presets.',
+    primaryCategory: 'ai-tools',
+    secondaryCategories: ['video-tools'],
+    icon: 'Sparkles',
+    releaseOrder: 21,
+    createdAt: '2026-03-18',
     isPopular: true,
     isNew: true,
-    isFunctional: true,
-    keywords: ['ai video prompt', 'sora prompt generator', 'runway gen 3 prompt', 'kling prompt', 'cinematography prompt', 'midjourney prompt', 'ai prompt'],
-  },
+    isFeatured: true,
+    badge: 'Prompt Builder',
+    tags: ['ai video prompt generator', 'sora prompt builder', 'runway gen-3 prompt', 'kling ai prompts', 'veo prompts'],
+  }),
 
-  // --- 8. GAMES (6 Games) ---
-  {
-    id: 'hex-drift',
+  // =========================================================================
+  // 10. GAMES & ENTERTAINMENT (6 playable browser games)
+  // =========================================================================
+  createTool({
+    id: 'game-hex-drift',
     name: 'HEX DRIFT: Neon Void Runner',
     slug: 'hex-drift',
-    path: '/games/hex-drift',
-    description: 'Arcade neon spaceship runner. Dodge geometric hazards, engage continuous laser cannons, battle mega boss flagships, and claim the high score.',
-    categoryId: 'games',
-    categoryIds: ['games'],
-    categoryName: 'Games',
-    icon: 'Gamepad2',
+    route: '/games/hex-drift',
+    description: 'High-speed cyber-minimalist sci-fi arcade runner with weapon upgrades, wave bosses, shields, and WebAudio SFX.',
+    primaryCategory: 'games',
+    icon: 'Zap',
+    releaseOrder: 25,
+    createdAt: '2026-05-01',
     isPopular: true,
     isNew: true,
-    isFunctional: true,
-    keywords: ['hex drift', 'game', 'neon runner', 'space runner', 'browser game', 'arcade game', 'shoot em up', 'boss fight'],
-  },
-  {
-    id: 'tic-tac-toe',
+    isFeatured: true,
+    badge: 'Arcade',
+    tags: ['hex drift', 'neon shooter game', 'html5 canvas runner', 'space arcade game'],
+  }),
+  createTool({
+    id: 'game-tic-tac-toe',
     name: 'Tic-Tac-Toe Game',
     slug: 'tic-tac-toe',
-    path: '/games?play=tic-tac-toe',
-    description: 'Play the timeless X & O grid strategy game against intelligent AI or pass-and-play with a friend on mobile or desktop.',
-    categoryId: 'games',
-    categoryIds: ['games'],
-    categoryName: 'Games',
-    icon: 'Gamepad2',
-    isPopular: false,
-    isFunctional: true,
-    keywords: ['tic tac toe', 'game', 'x and o', 'puzzle', 'strategy game', 'browser game', 'mini game'],
-  },
-  {
-    id: 'snake',
+    route: '/games?play=tic-tac-toe',
+    description: 'Challenge an unbeatable AI across 3 difficulty tiers or play local 2-player matches with crisp win tracking.',
+    primaryCategory: 'games',
+    icon: 'Flame',
+    releaseOrder: 16,
+    createdAt: '2026-02-20',
+    badge: 'Strategy',
+    tags: ['tic tac toe', 'noughts and crosses', 'ai board game', 'two player game'],
+  }),
+  createTool({
+    id: 'game-snake',
     name: 'Retro Snake Game',
     slug: 'snake',
-    path: '/games?play=snake',
-    description: 'Classic arcade snake. Guide the hungry snake, eat apples and bonus golden stars, and set new high scores without crashing.',
-    categoryId: 'games',
-    categoryIds: ['games'],
-    categoryName: 'Games',
+    route: '/games?play=snake',
+    description: 'Classic arcade Snake powered by smooth HTML5 Canvas rendering, swipe support, keyboard controls, and saved high scores.',
+    primaryCategory: 'games',
     icon: 'Gamepad2',
-    isPopular: false,
-    isFunctional: true,
-    keywords: ['snake game', 'retro arcade', 'snake', 'browser game', 'classic game', 'mini game'],
-  },
-  {
-    id: 'memory-match',
+    releaseOrder: 17,
+    createdAt: '2026-02-22',
+    isPopular: true,
+    badge: 'Arcade',
+    tags: ['snake game', 'retro arcade', 'html5 canvas game', 'browser snake'],
+  }),
+  createTool({
+    id: 'game-memory-match',
     name: 'Memory Card Match',
     slug: 'memory-match',
-    path: '/games?play=memory-match',
-    description: 'Brain-training card match. Flip pairs of cards to find matching icons with move counters and time tracking.',
-    categoryId: 'games',
-    categoryIds: ['games'],
-    categoryName: 'Games',
-    icon: 'Gamepad2',
-    isPopular: false,
-    isFunctional: true,
-    keywords: ['memory match', 'card game', 'brain test', 'puzzle game', 'browser game', 'mini game'],
-  },
-  {
-    id: 'rock-paper-scissors',
+    route: '/games?play=memory-match',
+    description: 'Flip pairs across 4x4 or 6x4 grids with smooth transitions, move counters, timer tracking, and best scores.',
+    primaryCategory: 'games',
+    icon: 'Layers',
+    releaseOrder: 22,
+    createdAt: '2026-03-22',
+    badge: 'Puzzle',
+    tags: ['memory match', 'brain puzzle game', 'card matching game', 'concentration'],
+  }),
+  createTool({
+    id: 'game-rock-paper-scissors',
     name: 'Rock Paper Scissors',
     slug: 'rock-paper-scissors',
-    path: '/games?play=rock-paper-scissors',
-    description: 'Fast hand-gesture game against AI with continuous win streaks, animations, and sound effects.',
-    categoryId: 'games',
-    categoryIds: ['games'],
-    categoryName: 'Games',
-    icon: 'Gamepad2',
-    isPopular: false,
-    isFunctional: true,
-    keywords: ['rock paper scissors', 'rps game', 'casual game', 'browser game', 'mini game'],
-  },
-  {
-    id: 'number-guess',
+    route: '/games?play=rock-paper-scissors',
+    description: 'Play fast First-to-5 rounds against the computer with streak counters and crisp visual feedback.',
+    primaryCategory: 'games',
+    icon: 'Sparkles',
+    releaseOrder: 23,
+    createdAt: '2026-03-25',
+    badge: 'Quick',
+    tags: ['rock paper scissors', 'casual game', 'quick browser game'],
+  }),
+  createTool({
+    id: 'game-number-guess',
     name: 'Number Guessing Game',
     slug: 'number-guess',
-    path: '/games?play=number-guess',
-    description: 'High-low deductive mystery game. Crack the secret number within limited attempts using hot and cold clues.',
-    categoryId: 'games',
-    categoryIds: ['games'],
-    categoryName: 'Games',
-    icon: 'Gamepad2',
-    isPopular: false,
-    isFunctional: true,
-    keywords: ['number guess', 'guessing game', 'logic game', 'math game', 'browser game', 'mini game'],
-  },
+    route: '/games?play=number-guess',
+    description: 'Deduce the mystery secret number between 1 and 1000 using temperature clues across three challenge levels.',
+    primaryCategory: 'games',
+    icon: 'HelpCircle',
+    releaseOrder: 24,
+    createdAt: '2026-03-28',
+    badge: 'Logic',
+    tags: ['number guessing game', 'logic puzzle', 'brain teaser'],
+  }),
 ]
 
-/**
- * Featured popular tools across categories for quick discovery
- */
-export const POPULAR_TOOLS: Tool[] = ALL_TOOLS.filter((t) => t.isPopular)
+export const POPULAR_TOOLS: Tool[] = ALL_TOOLS.filter((tool) => tool.isPopular)
 
-/**
- * Recently added flagship tools and games
- */
-export const RECENT_TOOLS: Tool[] = ALL_TOOLS.filter((t) => t.isNew)
+export const RECENT_TOOLS: Tool[] = [...ALL_TOOLS].sort(
+  (a, b) => (b.releaseOrder ?? 0) - (a.releaseOrder ?? 0),
+)
+
+export const FEATURED_TOOLS: Tool[] = ALL_TOOLS.filter((tool) => tool.isFeatured)
+
+export const GAMES_TOOLS: Tool[] = getToolsByCategory(ALL_TOOLS, 'games', false)
+
+export function getToolBySlug(slug: string): Tool | undefined {
+  return ALL_TOOLS.find((tool) => tool.slug === slug || tool.id === slug)
+}

@@ -1,54 +1,78 @@
 export type PrimaryCategoryId =
-  | 'calculators'
-  | 'daily-utilities'
+  | 'ai-tools'
+  | 'image-tools'
+  | 'video-tools'
+  | 'audio-tools'
   | 'pdf-documents'
-  | 'image-media'
-  | 'text-developer'
-  | 'voice-audio'
-  | 'ai-creator'
+  | 'text-writing'
+  | 'calculators'
+  | 'date-time'
+  | 'utilities'
   | 'games'
 
-export type CategoryId =
-  | 'all'
-  | PrimaryCategoryId
-  // Aliases and legacy category IDs preserved for backward compatibility
+export type LegacyCategoryId =
+  | 'daily-utilities'
   | 'daily-utility'
-  | 'finance'
-  | 'math'
-  | 'converters'
-  | 'date-time'
-  | 'education'
+  | 'image-media'
+  | 'voice-audio'
+  | 'ai-creator'
   | 'creator-tools'
+  | 'text-developer'
   | 'seo-tools'
   | 'pdf-tools'
+
+export type CategoryId = 'all' | PrimaryCategoryId | LegacyCategoryId
+
+export type ToolStatus = 'live' | 'beta' | 'coming-soon'
 
 export interface Category {
   id: CategoryId
   name: string
-  emoji: string
+  slug: string
   tagline: string
   description: string
   icon: string
-  toolCount: number
-  path?: string
+  path: string
+  accentColor: string
+  keywords?: string[]
+  /** Optional unit label override (e.g., "Tools" vs "Games") */
+  unitLabel?: string
+  /** Legacy compatibility field derived dynamically when needed */
+  toolCount?: number
   itemLabel?: string
-  accentGradient?: string
-  badgeColor?: string
 }
 
 export interface Tool {
   id: string
   name: string
   slug: string
-  path: string
   description: string
+  icon: string
+  /** Standardized primary category ID */
+  primaryCategory?: PrimaryCategoryId
+  /** Optional secondary categories for cross-domain discoverability */
+  secondaryCategories?: PrimaryCategoryId[]
+  /** Standardized route path */
+  route?: string
+  /** Standardized searchable tags */
+  tags?: string[]
+  /** Availability status */
+  status?: ToolStatus
+  /** Chronological release rank (higher = more recently added) */
+  releaseOrder?: number
+  /** Release date metadata (YYYY-MM-DD) */
+  createdAt?: string
+  /** Highlight flags */
+  isPopular?: boolean
+  isNew?: boolean
+  isFeatured?: boolean
+  isFunctional?: boolean
+  badge?: string
+
+  /** Legacy/compatibility aliases kept in sync with primary fields */
+  path: string
   categoryId: CategoryId
   categoryIds?: CategoryId[]
   categoryName: string
-  icon: string
-  isPopular?: boolean
-  isNew?: boolean
-  isFunctional?: boolean
-  badge?: string
   keywords: string[]
 }

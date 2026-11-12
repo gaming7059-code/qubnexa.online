@@ -1,166 +1,266 @@
-import type { Category, PrimaryCategoryId } from '../types/tools'
+import type { Category, CategoryId, PrimaryCategoryId, Tool } from '../types/tools'
 
 export const PRIMARY_CATEGORIES: Category[] = [
   {
     id: 'calculators',
-    name: 'Calculators',
-    emoji: '🧮',
-    tagline: 'High-precision finance, math & date calculators.',
-    description: 'Calculate loan EMI, GST slabs, salary in-hand, percentages, discounts, age, date differences, and units with instant precision.',
+    name: 'Calculators & Finance',
+    slug: 'calculators',
+    tagline: 'Finance, EMI, GST, Salary & Math',
+    description: 'Calculate EMI schedules, GST invoices, take-home salary, retail discounts, profit margins, and percentages.',
     icon: 'Calculator',
-    toolCount: 9,
-    itemLabel: '9 Calculators',
-    path: '/tools?category=calculators',
-    accentGradient: 'from-emerald-500 to-teal-600',
-    badgeColor: 'emerald',
+    path: '/categories/calculators',
+    accentColor: '#2563eb',
+    unitLabel: 'Tools',
+    keywords: ['calculators', 'finance calculator', 'emi', 'gst', 'salary', 'discount', 'percentage', 'profit loss'],
   },
   {
-    id: 'daily-utilities',
-    name: 'Daily Utilities',
-    emoji: '⚡',
-    tagline: 'QR codes, secure passwords & everyday digital helpers.',
-    description: 'Generate custom URL, Wi-Fi, vCard and email QR codes, generate cryptographically secure passwords, and access quick browser tools with zero server storage.',
-    icon: 'Zap',
-    toolCount: 2,
-    itemLabel: '2 Tools',
-    path: '/tools?category=daily-utilities',
-    accentGradient: 'from-amber-500 to-orange-600',
-    badgeColor: 'amber',
+    id: 'utilities',
+    name: 'Converters & Utilities',
+    slug: 'utilities',
+    tagline: 'QR Codes, Passwords & Unit Converters',
+    description: 'Essential daily productivity tools including QR code generation, password security, and multi-unit conversion.',
+    icon: 'Wrench',
+    path: '/categories/utilities',
+    accentColor: '#0284c7',
+    unitLabel: 'Tools',
+    keywords: ['utilities', 'converters', 'qr code', 'password generator', 'unit converter', 'daily tools'],
   },
   {
     id: 'pdf-documents',
-    name: 'PDF & Documents',
-    emoji: '📄',
-    tagline: 'Private, in-browser PDF editing & conversion.',
-    description: 'Edit, annotate, draw, sign, rotate PDFs and convert JPG/PNG images into professional PDF files with zero server uploads.',
+    name: 'PDF & Document Tools',
+    slug: 'pdf-documents',
+    tagline: 'Edit, Annotate & Convert PDFs',
+    description: 'Private client-side PDF annotation, text insertion, drawing, signing, and multi-image JPG-to-PDF conversion.',
     icon: 'FileText',
-    toolCount: 2,
-    itemLabel: '2 Tools',
-    path: '/tools?category=pdf-documents',
-    accentGradient: 'from-rose-500 to-red-600',
-    badgeColor: 'rose',
+    path: '/categories/pdf-documents',
+    accentColor: '#dc2626',
+    unitLabel: 'Tools',
+    keywords: ['pdf editor', 'jpg to pdf', 'document tools', 'private pdf', 'annotate pdf'],
   },
   {
-    id: 'image-media',
-    name: 'Image & Media',
-    emoji: '🖼️',
-    tagline: 'Enhance, upscale & save authorized media locally.',
-    description: 'Enhance photo clarity, edge sharpness, and resolution up to 4x, or analyze and save authorized direct MP4/WebM video links directly in your browser.',
-    icon: 'Maximize2',
-    toolCount: 2,
-    itemLabel: '2 Tools',
-    path: '/tools?category=image-media',
-    accentGradient: 'from-cyan-500 to-blue-600',
-    badgeColor: 'cyan',
-  },
-  {
-    id: 'text-developer',
-    name: 'Text & Developer',
-    emoji: '📝',
-    tagline: 'Text analytics, word counts & developer helpers.',
-    description: 'Real-time word counts, character statistics, sentence breakdowns, reading time estimation, and text formatting tools.',
-    icon: 'FileCode',
-    toolCount: 1,
-    itemLabel: '1 Tool',
-    path: '/tools?category=text-developer',
-    accentGradient: 'from-blue-500 to-indigo-600',
-    badgeColor: 'blue',
-  },
-  {
-    id: 'voice-audio',
-    name: 'Voice & Audio',
-    emoji: '🎙️',
-    tagline: 'Neural & browser TTS, audio cleaner & transcriber.',
-    description: 'Convert text to natural speech in multiple Indian languages, clean mic hum & boost gain in Audio Studio, and transcribe voice to text in real-time.',
+    id: 'audio-tools',
+    name: 'Audio & Music Tools',
+    slug: 'audio-tools',
+    tagline: 'Neural TTS, Audio Cleaner & Dictation',
+    description: 'Generate natural offline speech, clean background hum and room noise, apply EQ, and transcribe voice into text.',
     icon: 'Mic',
-    toolCount: 3,
-    itemLabel: '3 Audio Tools',
-    path: '/tools?category=voice-audio',
-    accentGradient: 'from-blue-600 to-indigo-600',
-    badgeColor: 'blue',
+    path: '/categories/audio-tools',
+    accentColor: '#4f46e5',
+    unitLabel: 'Tools',
+    keywords: ['text to speech', 'audio studio', 'audio cleaner', 'voice transcriber', 'speech to text'],
   },
   {
-    id: 'ai-creator',
-    name: 'AI & Creator Tools',
-    emoji: '✨',
-    tagline: 'Cinematic prompts & generative creator utilities.',
-    description: 'Craft director-level cinematic video prompts with camera angles, lighting, motion physics, and reverse engineering for Sora, Kling, and Runway.',
+    id: 'video-tools',
+    name: 'Video Tools',
+    slug: 'video-tools',
+    tagline: 'Video Downloads & Media Workflows',
+    description: 'Analyze video URLs, extract authorized direct MP4/WebM media streams, and inspect playback links privately.',
+    icon: 'Video',
+    path: '/categories/video-tools',
+    accentColor: '#ea580c',
+    unitLabel: 'Tools',
+    keywords: ['video downloader', 'mp4 downloader', 'webm', 'media saver', 'video tools'],
+  },
+  {
+    id: 'image-tools',
+    name: 'Image Tools',
+    slug: 'image-tools',
+    tagline: 'Enhance & Upscale Images Locally',
+    description: 'Upscale resolution, sharpen edges, remove noise, and improve clarity in PNG, JPG, and WebP photos cleanly.',
+    icon: 'Image',
+    path: '/categories/image-tools',
+    accentColor: '#7c3aed',
+    unitLabel: 'Tools',
+    keywords: ['image quality increaser', 'image upscaler', 'photo enhancer', 'image sharpener'],
+  },
+  {
+    id: 'ai-tools',
+    name: 'AI Tools',
+    slug: 'ai-tools',
+    tagline: 'Prompt Engineering & Neural Utilities',
+    description: 'Craft structured cinematic prompts for AI video models alongside neural speech synthesis and browser AI workflows.',
     icon: 'Sparkles',
-    toolCount: 1,
-    itemLabel: '1 AI Studio',
-    path: '/tools?category=ai-creator',
-    accentGradient: 'from-purple-500 to-fuchsia-600',
-    badgeColor: 'purple',
+    path: '/categories/ai-tools',
+    accentColor: '#a855f7',
+    unitLabel: 'Tools',
+    keywords: ['ai tools', 'ai video prompt generator', 'prompt builder', 'neural voice', 'ai creator'],
+  },
+  {
+    id: 'date-time',
+    name: 'Date & Time Tools',
+    slug: 'date-time',
+    tagline: 'Age, Intervals & Day Arithmetic',
+    description: 'Compute exact chronological age, day differences between dates, business days, and future milestone dates.',
+    icon: 'CalendarDays',
+    path: '/categories/date-time',
+    accentColor: '#0d9488',
+    unitLabel: 'Tools',
+    keywords: ['age calculator', 'date calculator', 'date difference', 'days calculator', 'countdown'],
+  },
+  {
+    id: 'text-writing',
+    name: 'Text & Writing Tools',
+    slug: 'text-writing',
+    tagline: 'Word Count, Reading Time & Text Analysis',
+    description: 'Measure word count, character limits, sentence cadence, paragraph structure, and reading duration in real time.',
+    icon: 'FileCode',
+    path: '/categories/text-writing',
+    accentColor: '#059669',
+    unitLabel: 'Tools',
+    keywords: ['word counter', 'character counter', 'writing tools', 'reading time', 'text analyzer'],
   },
   {
     id: 'games',
-    name: 'Games',
-    emoji: '🎮',
-    tagline: 'Free arcade, action & brain mini-games.',
-    description: 'Play HEX DRIFT Neon Void Runner, Tic-Tac-Toe, Retro Snake, Memory Card Match, Rock Paper Scissors, and Number Guessing with zero downloads.',
+    name: 'Games & Entertainment',
+    slug: 'games',
+    tagline: 'Instant Zero-Install Arcade',
+    description: 'Play responsive HTML5 sci-fi arcade shooters and timeless mini-games with synthesized sound and touch controls.',
     icon: 'Gamepad2',
-    toolCount: 6,
-    itemLabel: '6 Games',
-    path: '/games',
-    accentGradient: 'from-indigo-500 to-purple-600',
-    badgeColor: 'indigo',
+    path: '/categories/games',
+    accentColor: '#9333ea',
+    unitLabel: 'Games',
+    keywords: ['free browser games', 'hex drift', 'tic tac toe', 'snake', 'memory card match', 'arcade'],
   },
 ]
 
-export const CATEGORIES: Category[] = [
-  {
-    id: 'all',
-    name: 'All Tools',
-    emoji: '🛠️',
-    tagline: 'Complete directory of all 26 online utilities & games.',
-    description: 'Browse the entire collection of free calculators, daily utilities, PDF tools, image enhancers, audio studios, AI creators, and browser games.',
-    icon: 'Layers',
-    toolCount: 26,
-    itemLabel: '26 Items',
-    path: '/tools',
-    accentGradient: 'from-blue-600 to-indigo-600',
-    badgeColor: 'blue',
+export const ALL_TOOLS_CATEGORY: Category = {
+  id: 'all',
+  name: 'All Tools',
+  slug: 'all',
+  tagline: 'Complete Xenova-World Directory',
+  description: 'Explore every calculator, converter, PDF editor, multimedia studio, AI utility, and arcade game.',
+  icon: 'Layers',
+  path: '/tools',
+  accentColor: '#0f172a',
+  unitLabel: 'Items',
+}
+
+export const CATEGORIES: Category[] = [ALL_TOOLS_CATEGORY, ...PRIMARY_CATEGORIES]
+
+export const CATEGORY_MAP: Record<CategoryId, Category> = CATEGORIES.reduce(
+  (acc, category) => {
+    acc[category.id] = category
+    return acc
   },
-  ...PRIMARY_CATEGORIES,
-]
+  {} as Record<CategoryId, Category>,
+)
 
-export const CATEGORY_MAP: Record<string, Category> = CATEGORIES.reduce((acc, cat) => {
-  acc[cat.id] = cat
-  return acc
-}, {} as Record<string, Category>)
+const LEGACY_CATEGORY_ALIASES: Record<string, 'all' | PrimaryCategoryId> = {
+  all: 'all',
+  'all-tools': 'all',
+  calculators: 'calculators',
+  calculator: 'calculators',
+  finance: 'calculators',
+  'calculators-finance': 'calculators',
+  math: 'calculators',
+  education: 'calculators',
+  utilities: 'utilities',
+  utility: 'utilities',
+  'daily-utilities': 'utilities',
+  'daily-utility': 'utilities',
+  converters: 'utilities',
+  'converters-utilities': 'utilities',
+  'pdf-documents': 'pdf-documents',
+  'pdf-tools': 'pdf-documents',
+  pdf: 'pdf-documents',
+  'audio-tools': 'audio-tools',
+  'voice-audio': 'audio-tools',
+  audio: 'audio-tools',
+  voice: 'audio-tools',
+  'video-tools': 'video-tools',
+  video: 'video-tools',
+  'image-tools': 'image-tools',
+  'image-media': 'image-tools',
+  image: 'image-tools',
+  'ai-tools': 'ai-tools',
+  'ai-creator': 'ai-tools',
+  'creator-tools': 'ai-tools',
+  ai: 'ai-tools',
+  'date-time': 'date-time',
+  'date-tools': 'date-time',
+  date: 'date-time',
+  'text-writing': 'text-writing',
+  'text-developer': 'text-writing',
+  'seo-tools': 'text-writing',
+  'developer-tools': 'text-writing',
+  text: 'text-writing',
+  games: 'games',
+  entertainment: 'games',
+}
 
-/**
- * Normalizes legacy category URLs and aliases to the canonical primary categories.
- */
-export function normalizeCategoryId(id: string | null | undefined): PrimaryCategoryId | 'all' {
-  if (!id || id === 'all') return 'all'
-  switch (id) {
-    case 'calculators':
-    case 'finance':
-    case 'math':
-    case 'converters':
-    case 'date-time':
-    case 'education':
-      return 'calculators'
-    case 'daily-utilities':
-    case 'daily-utility':
-      return 'daily-utilities'
-    case 'pdf-documents':
-    case 'pdf-tools':
-      return 'pdf-documents'
-    case 'image-media':
-      return 'image-media'
-    case 'text-developer':
-      return 'text-developer'
-    case 'voice-audio':
-      return 'voice-audio'
-    case 'ai-creator':
-    case 'creator-tools':
-    case 'seo-tools':
-      return 'ai-creator'
-    case 'games':
-      return 'games'
-    default:
-      return 'all'
-  }
+export function normalizeCategoryId(rawCategory: string | null | undefined): 'all' | PrimaryCategoryId {
+  if (!rawCategory) return 'all'
+  const normalized = rawCategory.trim().toLowerCase()
+  return LEGACY_CATEGORY_ALIASES[normalized] || 'all'
+}
+
+export function isValidPrimaryCategorySlug(rawSlug: string | null | undefined): PrimaryCategoryId | null {
+  if (!rawSlug) return null
+  const normalized = normalizeCategoryId(rawSlug)
+  if (normalized === 'all') return null
+  return normalized
+}
+
+export function getCategoryById(id: string | null | undefined): Category {
+  const normalized = normalizeCategoryId(id)
+  return CATEGORY_MAP[normalized] || ALL_TOOLS_CATEGORY
+}
+
+export function isToolInCategory(
+  tool: Tool,
+  categoryId: CategoryId | string,
+  includeSecondary = true,
+): boolean {
+  const normalized = normalizeCategoryId(categoryId)
+  if (normalized === 'all') return true
+  if (tool.primaryCategory === normalized || tool.categoryId === normalized) return true
+  if (!includeSecondary) return false
+  if (tool.secondaryCategories?.includes(normalized as PrimaryCategoryId)) return true
+  if (tool.categoryIds?.includes(normalized)) return true
+  return false
+}
+
+export function getToolsByCategory(
+  tools: Tool[],
+  categoryId: CategoryId | string,
+  includeSecondary = true,
+): Tool[] {
+  const normalized = normalizeCategoryId(categoryId)
+  if (normalized === 'all') return tools
+  return tools.filter((tool) => isToolInCategory(tool, normalized, includeSecondary))
+}
+
+export function getCategoryToolCount(
+  tools: Tool[],
+  categoryId: CategoryId | string,
+  includeSecondary = false,
+): number {
+  return getToolsByCategory(tools, categoryId, includeSecondary).length
+}
+
+export function getCategoryCountLabel(tools: Tool[], category: Category): string {
+  const count = getCategoryToolCount(tools, category.id, false)
+  const unit = category.unitLabel || 'Tools'
+  return `${count} ${count === 1 ? unit.replace(/s$/, '') : unit}`
+}
+
+const RELATED_CATEGORY_GRAPH: Record<PrimaryCategoryId, PrimaryCategoryId[]> = {
+  calculators: ['date-time', 'utilities', 'text-writing'],
+  utilities: ['calculators', 'text-writing', 'pdf-documents'],
+  'pdf-documents': ['image-tools', 'utilities', 'text-writing'],
+  'audio-tools': ['video-tools', 'ai-tools', 'utilities'],
+  'video-tools': ['ai-tools', 'audio-tools', 'image-tools'],
+  'image-tools': ['pdf-documents', 'video-tools', 'ai-tools'],
+  'ai-tools': ['video-tools', 'audio-tools', 'image-tools'],
+  'date-time': ['calculators', 'utilities', 'text-writing'],
+  'text-writing': ['utilities', 'pdf-documents', 'ai-tools'],
+  games: ['utilities', 'calculators', 'audio-tools'],
+}
+
+export function getRelatedCategories(categoryId: PrimaryCategoryId, limit = 3): Category[] {
+  const relatedIds = RELATED_CATEGORY_GRAPH[categoryId] || []
+  return relatedIds
+    .slice(0, limit)
+    .map((id) => CATEGORY_MAP[id])
+    .filter((cat): cat is Category => Boolean(cat))
 }
