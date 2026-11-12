@@ -41,11 +41,11 @@ export const CategoryDetailPage: React.FC = () => {
 
   usePageSEO({
     title: category
-      ? `${category.name} — Free Online Tools | Xenova-World`
-      : 'Category Not Found — Xenova-World',
+      ? `${category.name} — Free Online Tools | QUBNEXA`
+      : 'Category Not Found — QUBNEXA',
     description: category
-      ? `${category.description} Explore free browser-based ${category.name.toLowerCase()} with zero logins.`
-      : 'The requested tool category could not be found on Xenova-World.',
+      ? `${category.description} Explore free browser-based ${category.name.toLowerCase()} with zero logins on QUBNEXA.`
+      : 'The requested tool category could not be found on QUBNEXA.',
     canonicalPath: category ? `/categories/${category.slug}` : '/categories',
     keywords: category?.keywords?.join(', '),
     schema: category
@@ -255,7 +255,7 @@ export const CategoryDetailPage: React.FC = () => {
             No matching tools in {category.name}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-            Try clearing your search or exploring the full Xenova-World directory.
+            Try clearing your search or exploring the full QUBNEXA directory.
           </p>
           <div className="flex flex-wrap justify-center gap-3 pt-2">
             <button
@@ -292,7 +292,7 @@ export const CategoryDetailPage: React.FC = () => {
                 Related Categories
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-                Continue exploring neighboring tool collections on Xenova-World.
+                Continue exploring neighboring tool collections on QUBNEXA.
               </p>
             </div>
             <Link

@@ -4,10 +4,10 @@ import { usePageSEO, createBreadcrumbSchema } from '../utils/seo'
 
 export const AboutPage: React.FC = () => {
   usePageSEO({
-    title: 'About Us — Fast, Private & Free Online Utilities | Xenova-World',
-    description: 'Learn about Xenova-World, our mission to build fast, privacy-first, client-side digital calculators and modern utility tools designed for users worldwide.',
+    title: 'About Us — Your All-in-One Online Tools Platform | QUBNEXA',
+    description: 'Learn about QUBNEXA, our mission to build fast, privacy-first, client-side digital calculators and modern utility tools designed for users worldwide.',
     canonicalPath: '/about',
-    keywords: 'about xenova-world, free online utilities, client-side calculators, modern digital ecosystem, private web utilities',
+    keywords: 'about qubnexa, free online utilities, client-side calculators, modern digital ecosystem, private web utilities',
     schema: createBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'About Us', path: '/about' },
@@ -17,26 +17,26 @@ export const AboutPage: React.FC = () => {
     <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-10 animate-fade-in-up">
       <div>
         <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-[#00DFFF]">
-          Our Mission — Explore Beyond Limits.
+          Our Mission — Explore. Create. Simplify.
         </span>
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1.5">
-          About Xenova-World
+          About QUBNEXA
         </h1>
         <p className="mt-3 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-          Xenova-World was established with a singular objective: to deliver fast, free, futuristic, and reliable everyday digital tools for creators, students, developers, and professionals worldwide.
+          QUBNEXA was established with a singular objective: to deliver fast, free, futuristic, and reliable everyday digital tools for creators, students, developers, and professionals worldwide.
         </p>
       </div>
 
       <div className="text-slate-600 dark:text-slate-300 space-y-6 text-sm sm:text-base leading-relaxed">
         <section className="xw-panel p-6 sm:p-8 space-y-4 shadow-2xs">
           <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-            Why We Built Xenova-World
+            Why We Built QUBNEXA
           </h2>
           <p>
             When searching for basic calculators online—such as calculating a loan EMI, finding tax rates, or converting units—users are frequently confronted with heavy ads, mandatory sign-up popups, slow loading speeds, and complex interfaces.
           </p>
           <p>
-            Xenova-World removes that friction. We believe essential computational and creative utilities should be as fast and effortless as opening a native workspace.
+            QUBNEXA removes that friction. We believe essential computational and creative utilities should be as fast and effortless as opening a native workspace.
           </p>
         </section>
 

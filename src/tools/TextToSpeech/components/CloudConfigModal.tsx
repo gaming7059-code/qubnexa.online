@@ -119,7 +119,7 @@ export const CloudConfigModal: React.FC<CloudConfigModalProps> = ({
               autoComplete="off"
             />
             <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
-              Your key is saved <strong>only in this browser&apos;s localStorage</strong>. It is never transmitted to or stored on Xenova-World servers.
+              Your key is saved <strong>only in this browser&apos;s localStorage</strong>. It is never transmitted to or stored on QUBNEXA servers.
             </p>
           </div>
 

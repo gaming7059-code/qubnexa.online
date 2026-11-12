@@ -18,11 +18,11 @@ export const LoadingFallback: React.FC = () => {
         </div>
         <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-50/70 dark:bg-cyan-950/30 px-3 py-1 text-xs font-semibold text-cyan-700 dark:text-cyan-300">
           <img
-            src={`${import.meta.env.BASE_URL}branding/xenova-world-icon.png`}
+            src={`${import.meta.env.BASE_URL}branding/qubnexa-icon.png`}
             alt=""
             className="h-4 w-4 rounded-full object-contain bg-[#050814]"
           />
-          <span>Xenova-World</span>
+          <span>QUBNEXA</span>
         </div>
       </div>
 

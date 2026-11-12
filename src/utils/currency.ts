@@ -1,5 +1,5 @@
 /**
- * Xenova-World — Currency & Number Formatting Utilities
+ * QUBNEXA — Currency & Number Formatting Utilities
  * Uses standard en-IN locale with Intl.NumberFormat
  */
 

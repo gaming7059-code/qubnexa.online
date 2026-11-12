@@ -4,7 +4,7 @@
  * Enables optional studio-grade cloud neural voices for advanced users.
  * - 100% Client-Side Direct Calls: Requests are sent directly from the user's browser.
  * - Zero Server Storage: API keys are stored strictly in the user's local browser localStorage.
- * - Zero Cost to Xenova-World: No backend bills or proxy requirements.
+ * - Zero Cost to QUBNEXA: No backend bills or proxy requirements.
  * - Supported Providers: OpenAI TTS (tts-1), ElevenLabs
  */
 
@@ -284,7 +284,7 @@ export class CloudNeuralTTSProvider implements TTSProvider {
     return {
       blob,
       url,
-      filename: `xenova-world-cloud-${voiceName}-${timestamp}.mp3`,
+      filename: `qubnexa-cloud-${voiceName}-${timestamp}.mp3`,
       durationSeconds: 0,
       sizeBytes: blob.size,
       sampleRate: 24000,

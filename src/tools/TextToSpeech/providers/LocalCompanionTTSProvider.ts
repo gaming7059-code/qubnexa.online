@@ -286,7 +286,7 @@ export class LocalCompanionTTSProvider implements TTSProvider {
     const blob = await resp.blob()
     const url = URL.createObjectURL(blob)
     const timestamp = Date.now()
-    const filename = `xenova-world-neural-${options.voiceId}-${timestamp}.mp3`
+    const filename = `qubnexa-neural-${options.voiceId}-${timestamp}.mp3`
 
     onProgress?.({
       stage: 'Complete',

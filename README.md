@@ -1,8 +1,8 @@
-# Xenova-World
+# QUBNEXA
 
-> **Explore Beyond Limits.**
+> **Explore. Create. Simplify.** — Your All-in-One Online Tools Platform.
 
-All-in-one privacy-first platform of 25+ online calculators, unit converters, QR & security utilities, PDF studio, neural voice & audio tools, and interactive arcade games built for creators, students, developers, and professionals worldwide.
+All-in-one privacy-first platform of online calculators, unit converters, QR & security utilities, PDF studio, audio & voice tools, video utilities, image enhancers, AI tools, text writing utilities, and interactive browser games built for creators, students, developers, and professionals worldwide.
 
 ## 🚀 Features & Tools
 

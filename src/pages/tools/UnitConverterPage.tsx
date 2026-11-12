@@ -80,7 +80,7 @@ export const UnitConverterPage: React.FC = () => {
   const faqs = [
     {
       question: 'Which 8 unit categories are supported?',
-      answer: 'Xenova-World supports Length (mm, cm, m, km, in, ft, yd, mi, nmi), Weight / Mass (mg, g, kg, t, oz, lb, st), Temperature (°C, °F, K), Area (m², km², cm², ft², yd², mi², ac, ha), Volume (mL, L, m³, cm³, ft³, in³, gal US, imp gal, fl oz), Speed (m/s, km/h, mph, kn, ft/s), Time (ms, s, min, h, d, wk, mo, yr), and Digital Storage (bit, B, KB, MB, GB, TB, PB).',
+      answer: 'QUBNEXA supports Length (mm, cm, m, km, in, ft, yd, mi, nmi), Weight / Mass (mg, g, kg, t, oz, lb, st), Temperature (°C, °F, K), Area (m², km², cm², ft², yd², mi², ac, ha), Volume (mL, L, m³, cm³, ft³, in³, gal US, imp gal, fl oz), Speed (m/s, km/h, mph, kn, ft/s), Time (ms, s, min, h, d, wk, mo, yr), and Digital Storage (bit, B, KB, MB, GB, TB, PB).',
     },
     {
       question: 'Why does temperature conversion require a formula instead of a ratio?',
@@ -99,7 +99,7 @@ export const UnitConverterPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free Online Unit Converter — 8 Categories with Instant Conversions | Xenova-World"
+      seoTitle="Free Online Unit Converter — 8 Categories with Instant Conversions | QUBNEXA"
       seoDescription="Convert units across 8 categories: Length, Weight, Temperature, Area, Volume, Speed, Time, and Digital Storage with instant calculation and live comparison."
       howToUseSteps={howToUseSteps}
       formulas={formulas}

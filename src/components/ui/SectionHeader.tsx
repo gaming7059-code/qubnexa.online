@@ -20,7 +20,7 @@ const EYEBROW_COLORS = {
 }
 
 /**
- * Reusable section heading establishing a unified Xenova-World typographic hierarchy
+ * Reusable section heading establishing a unified QUBNEXA typographic hierarchy
  */
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   eyebrow,

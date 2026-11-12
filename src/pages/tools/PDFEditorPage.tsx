@@ -60,7 +60,7 @@ export const PDFEditorPage: React.FC = () => {
     {
       question: 'Are my uploaded PDF files saved on your servers?',
       answer:
-        'No. Xenova-World processes all PDF operations 100% locally in your browser using JavaScript and HTML5 Canvas. Your files are never sent across the internet, stored in any database, or shared with third parties.',
+        'No. QUBNEXA processes all PDF operations 100% locally in your browser using JavaScript and HTML5 Canvas. Your files are never sent across the internet, stored in any database, or shared with third parties.',
     },
     {
       question: 'Is this PDF Editor completely free to use?',
@@ -80,7 +80,7 @@ export const PDFEditorPage: React.FC = () => {
     {
       question: 'Do I need to install any software or browser extensions?',
       answer:
-        'No software installation is required. The Xenova-World PDF Editor works directly in all modern desktop, tablet, and mobile browsers (Chrome, Firefox, Safari, Edge).',
+        'No software installation is required. The QUBNEXA PDF Editor works directly in all modern desktop, tablet, and mobile browsers (Chrome, Firefox, Safari, Edge).',
     },
   ]
 
@@ -89,9 +89,9 @@ export const PDFEditorPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="PDF Editor — Free Online PDF Annotator, Signer & Page Organizer | Xenova-World"
+      seoTitle="PDF Editor — Free Online PDF Annotator, Signer & Page Organizer | QUBNEXA"
       seoDescription="Edit, annotate, draw, sign, highlight, rotate, and organize PDF documents directly in your web browser with 100% client-side privacy. No file upload to servers."
-      keywords="pdf editor, free online pdf editor, annotate pdf, sign pdf online, draw on pdf, rotate pdf pages, private pdf editor browser, xenova-world"
+      keywords="pdf editor, free online pdf editor, annotate pdf, sign pdf online, draw on pdf, rotate pdf pages, private pdf editor browser, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

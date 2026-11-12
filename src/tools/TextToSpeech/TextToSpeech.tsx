@@ -52,7 +52,7 @@ import { revokeSpeechAudioUrl } from '../../utils/wavAudioGenerator'
 
 export const TextToSpeech: React.FC = () => {
   const [text, setText] = useState<string>(
-    'Welcome to Xenova-World! This advanced text-to-speech studio turns your typed or pasted text into clear, natural spoken audio directly inside your web browser. Try adjusting the voice, playback speed, pitch, and volume controls below.'
+    'Welcome to QUBNEXA! This advanced text-to-speech studio turns your typed or pasted text into clear, natural spoken audio directly inside your web browser. Try adjusting the voice, playback speed, pitch, and volume controls below.'
   )
 
   const isBrowserTtsSupported =
@@ -463,7 +463,7 @@ export const TextToSpeech: React.FC = () => {
       const match = voices.find((v) => v.lang.toLowerCase().startsWith('hi'))
       if (match) setSelectedVoiceId(match.id)
     } else if (type === 'en') {
-      setText('Hello! Welcome to Xenova-World. I hope you are having a wonderful day.')
+      setText('Hello! Welcome to QUBNEXA. I hope you are having a wonderful day.')
       setIsUrduRtl(false)
       setSelectedLanguage('en')
       const match = voices.find((v) => v.lang.toLowerCase().startsWith('en'))
@@ -481,7 +481,7 @@ export const TextToSpeech: React.FC = () => {
       if (match) setSelectedVoiceId(match.id)
     } else {
       setText(
-        'Once upon a time in ancient India, scholars invented the decimal numbering system and the concept of zero. Today, digital technology allows us to calculate, create, and communicate faster than ever before. Enjoy learning and exploring everyday tools on Xenova-World!'
+        'Once upon a time in ancient India, scholars invented the decimal numbering system and the concept of zero. Today, digital technology allows us to calculate, create, and communicate faster than ever before. Enjoy learning and exploring everyday tools on QUBNEXA!'
       )
       setIsUrduRtl(false)
     }
@@ -576,7 +576,7 @@ export const TextToSpeech: React.FC = () => {
           <div className="text-sm">
             <h3 className="font-semibold text-rose-900 dark:text-rose-100">Speech Synthesis Not Supported</h3>
             <p className="mt-1 text-rose-700 dark:text-rose-300">
-              Your web browser does not support the Web Speech API. For the best natural voices, please open Xenova-World in Google Chrome, Microsoft Edge, Apple Safari, or Mozilla Firefox.
+              Your web browser does not support the Web Speech API. For the best natural voices, please open QUBNEXA in Google Chrome, Microsoft Edge, Apple Safari, or Mozilla Firefox.
             </p>
           </div>
         </div>
@@ -1403,7 +1403,7 @@ export const TextToSpeech: React.FC = () => {
         </div>
 
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          Xenova-World maintains full transparency about audio generation technologies. We never falsely label standard browser speech as AI Neural speech. Here is how each engine operates:
+          QUBNEXA maintains full transparency about audio generation technologies. We never falsely label standard browser speech as AI Neural speech. Here is how each engine operates:
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">

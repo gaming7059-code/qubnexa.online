@@ -75,7 +75,7 @@ export const PasswordGeneratorPage: React.FC = () => {
       answer: 'Yes, absolutely. All passwords are generated purely client-side inside your browser’s volatile memory using the Web Cryptography API (crypto.getRandomValues). The passwords are never sent to our servers, never logged to the browser console, and never saved in cookies or storage.',
     },
     {
-      question: 'Why does Xenova-World avoid Math.random()?',
+      question: 'Why does QUBNEXA avoid Math.random()?',
       answer: 'Standard Math.random() functions in JavaScript are pseudo-random number generators (PRNG) that are not cryptographically secure. Their internal seed state can potentially be deduced by attackers. In contrast, crypto.getRandomValues() queries your operating system’s cryptographic entropy pool, making outputs statistically unpredictable.',
     },
     {
@@ -91,7 +91,7 @@ export const PasswordGeneratorPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Strong Password Generator Online — Cryptographically Secure | Xenova-World"
+      seoTitle="Strong Password Generator Online — Cryptographically Secure | QUBNEXA"
       seoDescription="Generate strong, secure passwords online using crypto.getRandomValues(). Custom lengths 4–128 chars, symbol choices, entropy meters, and 100% private in-browser generation."
       howToUseSteps={howToUseSteps}
       formulas={formulas}

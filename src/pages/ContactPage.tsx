@@ -4,10 +4,10 @@ import { usePageSEO, createBreadcrumbSchema } from '../utils/seo'
 
 export const ContactPage: React.FC = () => {
   usePageSEO({
-    title: 'Contact Us — Support, Suggestions & Feedback | Xenova-World',
-    description: 'Contact the Xenova-World team to suggest new calculators, report issues, or provide feedback on our suite of free online utilities.',
+    title: 'Contact Us — Support, Suggestions & Feedback | QUBNEXA',
+    description: 'Contact the QUBNEXA team to suggest new calculators, report issues, or provide feedback on our suite of free online utilities.',
     canonicalPath: '/contact',
-    keywords: 'contact xenova-world, suggest calculator, report bug, tool feedback, xenova-world support',
+    keywords: 'contact qubnexa, suggest calculator, report bug, tool feedback, qubnexa support',
     schema: createBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Contact', path: '/contact' },
@@ -31,7 +31,7 @@ export const ContactPage: React.FC = () => {
           Get in Touch
         </span>
         <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1">
-          Contact Xenova-World
+          Contact QUBNEXA
         </h1>
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
           Have an idea for a new calculator or utility? Found a bug? Send us a message below.

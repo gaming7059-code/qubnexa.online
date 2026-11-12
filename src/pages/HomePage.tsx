@@ -40,8 +40,8 @@ import type { PrimaryCategoryId, Tool } from '../types/tools'
 
 const HOME_FAQS = [
   {
-    question: 'Are all tools and utilities on Xenova-World completely free?',
-    answer: 'Yes. Every calculator, converter, PDF editor, audio processor, image enhancer, AI prompt builder, video analyzer, and browser game on Xenova-World is 100% free with zero paywalls or mandatory signups.',
+    question: 'Are all tools and utilities on QUBNEXA completely free?',
+    answer: 'Yes. Every calculator, converter, PDF editor, audio processor, image enhancer, AI prompt builder, video analyzer, and browser game on QUBNEXA is 100% free with zero paywalls or mandatory signups.',
   },
   {
     question: 'Do my files, PDFs, or audio recordings leave my device?',
@@ -78,10 +78,10 @@ export const HomePage: React.FC = () => {
   const faqSchema = useMemo(() => createFAQSchema(HOME_FAQS), [])
 
   usePageSEO({
-    title: 'Xenova-World — Explore Beyond Limits | Free Online Tools, AI & Utilities',
-    description: `Access ${ALL_TOOLS.length} free browser-based utilities across ${PRIMARY_CATEGORIES.length} structured categories including calculators, PDF editors, audio studio, AI tools, video tools, and games.`,
+    title: 'QUBNEXA — Explore. Create. Simplify. | Your All-in-One Online Tools Platform',
+    description: `Your All-in-One Online Tools Platform. Access ${ALL_TOOLS.length} free browser-based utilities across ${PRIMARY_CATEGORIES.length} structured categories including AI tools, calculators, PDF editors, image enhancement, video & audio tools, converters, and games on QUBNEXA.`,
     canonicalPath: '/',
-    keywords: 'xenova-world, free online tools, ai tools, calculators, pdf editor, video downloader, audio studio, qr generator, browser games',
+    keywords: 'qubnexa, online tools platform, ai tools, calculators, pdf editor, video downloader, audio studio, image enhancer, unit converter, text writing tools, browser games',
     schema: faqSchema ? [createWebSiteSchema(), faqSchema] : createWebSiteSchema(),
   })
 
@@ -167,8 +167,8 @@ export const HomePage: React.FC = () => {
           <div className="animate-fade-in-up mb-4 flex justify-center">
             <div className="relative inline-flex items-center justify-center rounded-full p-1 bg-gradient-to-tr from-cyan-500/35 via-blue-500/25 to-purple-500/35 shadow-[0_0_24px_rgba(0,223,255,0.2)]">
               <img
-                src={`${import.meta.env.BASE_URL}branding/xenova-world-icon.png`}
-                alt="Xenova-World official emblem"
+                src={`${import.meta.env.BASE_URL}branding/qubnexa-icon.png`}
+                alt="QUBNEXA emblem"
                 width={80}
                 height={80}
                 className="h-16 w-16 sm:h-20 sm:w-20 object-contain rounded-full bg-[#050814]"
@@ -180,16 +180,16 @@ export const HomePage: React.FC = () => {
 
           <div className="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-cyan-200 dark:border-[#00DFFF]/30 bg-cyan-50/90 dark:bg-[#11182D] px-3.5 py-1 text-xs font-semibold text-cyan-800 dark:text-[#00DFFF] mb-4 shadow-2xs">
             <span className="inline-block h-2 w-2 rounded-full bg-cyan-600 dark:bg-[#00DFFF] animate-subtle-pulse" />
-            <span>Xenova-World • Explore Beyond Limits. • 100% Free &amp; Private</span>
+            <span>QUBNEXA • Your All-in-One Online Tools Platform • 100% Free &amp; Private</span>
           </div>
 
           <h1 className="animate-fade-in-up animation-delay-100 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
-            Everything You Need,{' '}
-            <span className="animate-gradient-text">Explore Beyond Limits.</span>
+            QUBNEXA —{' '}
+            <span className="animate-gradient-text">Explore. Create. Simplify.</span>
           </h1>
 
           <p className="animate-fade-in-up animation-delay-200 mt-3.5 text-sm sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Find any tool in seconds. Private browser calculators, PDF editors, image enhancement, video inspection, audio studio, AI workflows, and games.
+            Your All-in-One Online Tools Platform. Find AI tools, image and video utilities, PDF tools, audio studio, calculators, converters, writing helpers, and games in seconds.
           </p>
 
           <div className="animate-fade-in-up animation-delay-200 mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -558,7 +558,7 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 7. HELPFUL USAGE GUIDANCE & WHY CHOOSE XENOVA-WORLD */}
+      {/* 7. HELPFUL USAGE GUIDANCE & WHY CHOOSE QUBNEXA */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
         <ScrollReveal>
           <div className="xw-panel p-6 sm:p-10 shadow-xs space-y-8">

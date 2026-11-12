@@ -103,12 +103,12 @@ export const HexDriftPage: React.FC = () => {
   ]
 
   usePageSEO({
-    title: 'HEX DRIFT — Neon Void Runner Online | Boss Fights, Upgrades & Ships | Xenova-World',
+    title: 'HEX DRIFT — Neon Void Runner Online | Boss Fights, Upgrades & Ships | QUBNEXA',
     description:
-      'Play HEX DRIFT: Neon Void Runner with Boss Battles, Level Progression, Star Hangar Spaceships, Weapon Upgrades, and Daily Missions on Xenova-World. 100% free client-side browser arcade game.',
+      'Play HEX DRIFT: Neon Void Runner with Boss Battles, Level Progression, Star Hangar Spaceships, Weapon Upgrades, and Daily Missions on QUBNEXA. 100% free client-side browser arcade game.',
     canonicalPath: '/games/hex-drift',
     keywords:
-      'hex drift, neon void runner, boss fight arcade game, spaceship shop game, browser shooter, space runner game, xenova-world games',
+      'hex drift, neon void runner, boss fight arcade game, spaceship shop game, browser shooter, space runner game, qubnexa games',
     schema: [
       createWebApplicationSchema(
         'HEX DRIFT — Neon Void Runner',

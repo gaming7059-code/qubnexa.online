@@ -60,11 +60,11 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({
     return 'All Online Tools & Games'
   }, [activeCategory, currentCategoryObj.name, activeQuickFilter])
 
-  const dynamicTitle = `${pageHeading} — Free Online Utilities | Xenova-World`
+  const dynamicTitle = `${pageHeading} — Free Online Utilities | QUBNEXA`
   const dynamicDescription =
     activeCategory !== 'all'
-      ? `Browse free ${currentCategoryObj.name.toLowerCase()} on Xenova-World. ${currentCategoryObj.description}`
-      : 'Browse our complete catalog of calculators, converters, PDF tools, audio studio utilities, AI tools, video tools, and arcade games on Xenova-World.'
+      ? `Browse free ${currentCategoryObj.name.toLowerCase()} on QUBNEXA. ${currentCategoryObj.description}`
+      : 'Browse our complete catalog of calculators, converters, PDF tools, audio studio utilities, AI tools, video tools, and arcade games on QUBNEXA.'
 
   const canonicalPath =
     activeQuickFilter === 'popular' && activeCategory === 'all'
@@ -78,7 +78,7 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({
   usePageSEO({
     title: dynamicTitle,
     description: dynamicDescription,
-    keywords: `${pageHeading.toLowerCase()}, free online tools, xenova-world`,
+    keywords: `${pageHeading.toLowerCase()}, free online tools, qubnexa`,
     canonicalPath,
     schema: createBreadcrumbSchema([
       { name: 'Home', path: '/' },
@@ -164,7 +164,7 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({
       <div className="animate-fade-in-up">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-[#00DFFF]">
-            {activeCategory === 'all' ? 'Xenova-World Directory' : 'Tool Category'}
+            {activeCategory === 'all' ? 'QUBNEXA Directory' : 'Tool Category'}
           </span>
           <span className="text-slate-300 dark:text-slate-700">•</span>
           <span className="text-xs font-medium text-slate-500 dark:text-slate-400">

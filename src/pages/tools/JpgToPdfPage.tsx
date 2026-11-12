@@ -70,7 +70,7 @@ export const JpgToPdfPage: React.FC = () => {
     {
       question: 'Are my private photos uploaded to any external server?',
       answer:
-        'No. Xenova-World processes everything locally inside your web browser using client-side JavaScript and pdf-lib. Your photographs never leave your phone or computer, guaranteeing 100% confidentiality.',
+        'No. QUBNEXA processes everything locally inside your web browser using client-side JavaScript and pdf-lib. Your photographs never leave your phone or computer, guaranteeing 100% confidentiality.',
     },
     {
       question: 'Can I change the order of pages before downloading?',
@@ -94,9 +94,9 @@ export const JpgToPdfPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free JPG to PDF Converter — Convert Images to PDF Online | Xenova-World"
+      seoTitle="Free JPG to PDF Converter — Convert Images to PDF Online | QUBNEXA"
       seoDescription="Convert multiple JPG, JPEG, and PNG images into a single professional PDF document. 100% free, private in your browser, custom page sizes, orientations, and margins."
-      keywords="jpg to pdf, convert jpg to pdf, free image to pdf converter, combine photos to pdf, png to pdf, jpeg to pdf online, xenova-world"
+      keywords="jpg to pdf, convert jpg to pdf, free image to pdf converter, combine photos to pdf, png to pdf, jpeg to pdf online, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

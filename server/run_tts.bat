@@ -1,8 +1,8 @@
 @echo off
-title Xenova-World - Neural TTS Companion Engine
+title QUBNEXA — Text-to-Speech Companion Server
 color 0A
 echo =====================================================================
-echo    XENOVA-WORLD - REALISTIC NEURAL TTS ENGINE 2.0 (LOCAL HOST)
+echo    QUBNEXA - TEXT-TO-SPEECH COMPANION SERVER (LOCAL HOST)
 echo =====================================================================
 echo.
 echo Checking Python environment...
@@ -24,7 +24,7 @@ if %errorlevel% neq 0 (
 echo.
 echo [OK] Dependencies verified.
 echo Starting local neural companion engine on http://127.0.0.1:8000
-echo Leave this terminal open while using the Neural TTS tool on Xenova-World.
+echo Leave this terminal open while using the Text-to-Speech tool on QUBNEXA.
 echo Press Ctrl+C to stop the engine.
 echo.
 python "%~dp0tts_server.py"

@@ -56,11 +56,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
         <Link 
           to="/" 
           className="group flex items-center gap-2.5 shrink-0 transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
-          aria-label="Xenova-World Homepage"
+          aria-label="QUBNEXA Homepage"
         >
           <img
-            src={`${import.meta.env.BASE_URL}branding/xenova-world-icon.png`}
-            alt="Xenova-World logo"
+            src={`${import.meta.env.BASE_URL}branding/qubnexa-icon.png`}
+            alt="QUBNEXA logo"
             width={40}
             height={40}
             className="h-9 w-9 sm:h-10 sm:w-10 object-contain rounded-full bg-[#050814] ring-1 ring-cyan-500/40 shadow-[0_0_12px_rgba(6,182,212,0.2)] transition-transform duration-300 group-hover:scale-105 shrink-0"
@@ -69,10 +69,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
           />
           <div className="flex flex-col">
             <span className="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight whitespace-nowrap">
-              Xenova<span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 dark:from-cyan-400 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent">-World</span>
+              QUB<span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 dark:from-[#00DFFF] dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent">NEXA</span>
             </span>
             <span className="text-[10px] font-medium tracking-wider text-slate-500 dark:text-cyan-300/80 whitespace-nowrap hidden sm:block md:hidden lg:block">
-              Explore Beyond Limits.
+              Explore. Create. Simplify.
             </span>
           </div>
         </Link>

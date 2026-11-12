@@ -36,7 +36,7 @@ export function runVideoUtilsTests(): number {
     'http://192.168.1.10/cam.mp4',
     'https://10.0.0.5/internal.webm',
   ]) {
-    const res = validateAndNormalizeUrl(unsafeUrl, 'https://xenova-world.example')
+    const res = validateAndNormalizeUrl(unsafeUrl, 'https://qubnexa.example')
     assert(!res.valid, `Expected unsafe/invalid URL to be rejected: ${unsafeUrl}`)
     passed++
   }

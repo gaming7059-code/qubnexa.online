@@ -1,6 +1,6 @@
-# Xenova-World — Local Companion Neural TTS Engine 2.0
+# QUBNEXA — Text-to-Speech Companion Server
 
-High-fidelity, zero-API-key neural speech synthesis companion service for Xenova-World.
+High-fidelity, zero-API-key neural speech synthesis companion service for **QUBNEXA** — *Your All-in-One Online Tools Platform* (*Explore. Create. Simplify.*).
 
 ## Features
 - **Authentic Studio-Grade Quality**: Generates 24kHz natural neural audio with human cadence, natural breathing pauses, and expressive prosody.
@@ -19,7 +19,7 @@ High-fidelity, zero-API-key neural speech synthesis companion service for Xenova
    pip install -r requirements.txt
    python tts_server.py
    ```
-2. Open Xenova-World (`/tools/text-to-speech`). Click Connect / Check Status and the web interface detects `http://127.0.0.1:8000` and displays:
+2. Open QUBNEXA (`/tools/text-to-speech`). Click Connect / Check Status and the web interface detects `http://127.0.0.1:8000` and displays:
    `🟢 Companion Neural Engine Connected`.
 
 ## API Endpoints

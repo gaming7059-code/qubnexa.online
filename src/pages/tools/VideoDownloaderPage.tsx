@@ -41,7 +41,7 @@ export const VideoDownloaderPage: React.FC = () => {
       title: 'Client-Side Stream & Header Inspection',
       formula: 'HEAD / 1-Byte Range Probe → Content-Type ∈ {video/mp4, video/webm} + CORS Check',
       explanation:
-        'Before buffering any bytes, Xenova-World checks HTTP status, MIME headers, Content-Length, and Content-Disposition safely using fetch() with credentials omitted.',
+        'Before buffering any bytes, QUBNEXA checks HTTP status, MIME headers, Content-Length, and Content-Disposition safely using fetch() with credentials omitted.',
     },
     {
       title: 'Honest Platform & CORS Distinction',
@@ -80,19 +80,19 @@ export const VideoDownloaderPage: React.FC = () => {
 
   const faqs = [
     {
-      question: 'Is the Xenova-World Video Downloader completely free?',
+      question: 'Is the QUBNEXA Video Downloader completely free?',
       answer:
         'Yes. There are no logins, subscriptions, paid APIs, API keys, or hidden fees. All URL validation, metadata probing, and supported direct downloads run free in your browser.',
     },
     {
       question: 'Which video URLs can be downloaded directly with progress tracking?',
       answer:
-        'Publicly accessible direct MP4 and WebM URLs hosted on servers that return valid video/mp4 or video/webm MIME headers and allow cross-origin browser requests (Access-Control-Allow-Origin) download directly inside Xenova-World with real-time progress and Content-Disposition filenames.',
+        'Publicly accessible direct MP4 and WebM URLs hosted on servers that return valid video/mp4 or video/webm MIME headers and allow cross-origin browser requests (Access-Control-Allow-Origin) download directly inside QUBNEXA with real-time progress and Content-Disposition filenames.',
     },
     {
-      question: 'Why does Xenova-World not directly rip YouTube, Instagram, Facebook, X, or TikTok videos?',
+      question: 'Why does QUBNEXA not directly rip YouTube, Instagram, Facebook, X, or TikTok videos?',
       answer:
-        'Those platforms use expiring signed manifests, authentication gates, DRM/encryption, or block CORS browser reads, and automating extraction violates their terms or requires an unrestricted server-side proxy. Xenova-World strictly runs on static Cloudflare Pages hosting without DRM bypasses or unsafe proxies—so we accurately detect those platforms and link you directly to official viewing and creator archive/export routes.',
+        'Those platforms use expiring signed manifests, authentication gates, DRM/encryption, or block CORS browser reads, and automating extraction violates their terms or requires an unrestricted server-side proxy. QUBNEXA strictly runs on static Cloudflare Pages hosting without DRM bypasses or unsafe proxies—so we accurately detect those platforms and link you directly to official viewing and creator archive/export routes.',
     },
     {
       question: 'What happens if a direct MP4 link blocks CORS?',
@@ -111,9 +111,9 @@ export const VideoDownloaderPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free Video Downloader — Direct MP4 & WebM Downloader Online | Xenova-World"
+      seoTitle="Free Video Downloader — Direct MP4 & WebM Downloader Online | QUBNEXA"
       seoDescription="Download videos you own or are authorized to save from direct MP4 and WebM URLs with browser-side progress, Content-Disposition filenames, and honest platform detection. 100% free with zero login."
-      keywords="video downloader, free video downloader, mp4 downloader, webm downloader, direct video download, online media saver, xenova-world"
+      keywords="video downloader, free video downloader, mp4 downloader, webm downloader, direct video download, online media saver, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

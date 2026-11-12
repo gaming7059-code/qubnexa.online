@@ -243,7 +243,7 @@ export async function analyzeVideoUrl(rawUrl: string): Promise<VideoAnalysisResu
         ? `${detected.platformName} story or authenticated page cannot be fetched without login.`
         : routes.summary,
       explanation: isRestricted
-        ? 'This URL points to a login screen, story, or account-gated page. Xenova-World does not bypass authentication, login walls, or private viewing controls.'
+        ? 'This URL points to a login screen, story, or account-gated page. QUBNEXA does not bypass authentication, login walls, or private viewing controls.'
         : routes.explanation,
       title: ytId ? `YouTube Video (${ytId})` : `${detected.platformName} Media Link`,
       filename: `${detected.platformId}-video.mp4`,
@@ -443,7 +443,7 @@ export async function analyzeVideoUrl(rawUrl: string): Promise<VideoAnalysisResu
           statusSummary:
             'The remote server blocks JavaScript cross-origin reads (missing Access-Control-Allow-Origin), so in-browser Blob progress download is blocked.',
           explanation:
-            'Playable video metadata was detected cleanly, meaning the file is live — however, strict browser CORS policy prevents Xenova-World from reading its raw bytes for forced-filename Blob downloads. We never pretend CORS-blocked downloads support progress bars or run an open server proxy. Use the native browser tab link below to open or save directly.',
+            'Playable video metadata was detected cleanly, meaning the file is live — however, strict browser CORS policy prevents QUBNEXA from reading its raw bytes for forced-filename Blob downloads. We never pretend CORS-blocked downloads support progress bars or run an open server proxy. Use the native browser tab link below to open or save directly.',
           title: fallbackUrlName.title,
           filename: fallbackUrlName.filename,
           previewVideoUrl: normalizedUrl,

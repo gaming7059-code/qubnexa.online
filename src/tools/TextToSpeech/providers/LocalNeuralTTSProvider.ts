@@ -155,7 +155,7 @@ export class LocalNeuralTTSProvider implements TTSProvider {
     const previewText =
       voiceId === 'neural-hi'
         ? 'नमस्ते! ज़ेनोवा-वर्ल्ड में आपका स्वागत है।'
-        : 'Hello! Welcome to Xenova-World.'
+        : 'Hello! Welcome to QUBNEXA.'
 
     await this.speak(
       previewText,

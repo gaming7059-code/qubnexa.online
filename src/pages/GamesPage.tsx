@@ -41,7 +41,7 @@ export const GamesPage: React.FC = () => {
 
   const faqs = [
     {
-      question: 'Are all games on Xenova-World 100% free?',
+      question: 'Are all games on QUBNEXA 100% free?',
       answer: 'Yes! Every game in this section is completely free to play directly in your web browser with no subscriptions, in-app purchases, or hidden fees.',
     },
     {
@@ -60,15 +60,15 @@ export const GamesPage: React.FC = () => {
 
   usePageSEO({
     title: playParam
-      ? `Play ${activeGame.title} Online Free — Browser Games | Xenova-World`
-      : 'Free Online Browser Games — Play Tic-Tac-Toe, Snake & More | Xenova-World',
-    description: `Play free online browser games on Xenova-World: HEX DRIFT Neon Runner, Snake, Tic-Tac-Toe, Memory Match, Rock Paper Scissors, and Number Guessing. 100% free with touch controls and zero downloads.`,
+      ? `Play ${activeGame.title} Online Free — Browser Games | QUBNEXA`
+      : 'Free Online Browser Games — Play Tic-Tac-Toe, Snake & More | QUBNEXA',
+    description: `Play free online browser games on QUBNEXA: HEX DRIFT Neon Runner, Snake, Tic-Tac-Toe, Memory Match, Rock Paper Scissors, and Number Guessing. 100% free with touch controls and zero downloads.`,
     canonicalPath: '/games',
-    keywords: 'free online games, browser games, play snake game, tic tac toe online, memory match game, rock paper scissors, number guessing game, free mini games, xenova-world',
+    keywords: 'free online games, browser games, play snake game, tic tac toe online, memory match game, rock paper scissors, number guessing game, free mini games, qubnexa',
     schema: [
       createWebApplicationSchema(
         'Free Online Games',
-        'Free online browser games including HEX DRIFT Neon Runner, Tic-Tac-Toe, Snake, Memory Match, Rock Paper Scissors, and Number Guessing on Xenova-World.',
+        'Free online browser games including HEX DRIFT Neon Runner, Tic-Tac-Toe, Snake, Memory Match, Rock Paper Scissors, and Number Guessing on QUBNEXA.',
         '/games'
       ),
       createFAQSchema(faqs) || {},
@@ -92,7 +92,7 @@ export const GamesPage: React.FC = () => {
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-            Xenova-World Games Arena
+            QUBNEXA Games Arena
           </h1>
 
           <p className="mt-3.5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
@@ -244,12 +244,12 @@ export const GamesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. WHY PLAY ON XENOVA-WORLD */}
+      {/* 4. WHY PLAY ON QUBNEXA */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="xw-panel p-8 sm:p-10 shadow-xs">
             <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">
-              Why Play on Xenova-World?
+              Why Play on QUBNEXA?
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

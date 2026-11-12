@@ -105,7 +105,7 @@ export const AudioStudioPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free Online Audio Studio & Effects Cleaner — De-Hum, Boost Gain & Speed | Xenova-World"
+      seoTitle="Free Online Audio Studio & Effects Cleaner — De-Hum, Boost Gain & Speed | QUBNEXA"
       seoDescription="Free browser-based audio studio. Boost volume gain, adjust tempo speed, clean microphone room hum with 120Hz low-cut filters, and download 16-bit WAV files."
       keywords="audio studio online, clean audio room hum, volume booster online, audio speed changer, free audio editor wav, mic noise filter, creator audio tools"
       howToUseSteps={howToUseSteps}

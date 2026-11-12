@@ -14,11 +14,11 @@ export const Footer: React.FC = () => {
               <Link
                 to="/"
                 className="inline-flex items-center gap-2.5 transition-opacity duration-200 hover:opacity-90"
-                aria-label="Xenova-World Homepage"
+                aria-label="QUBNEXA Homepage"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}branding/xenova-world-icon.png`}
-                  alt="Xenova-World logo"
+                  src={`${import.meta.env.BASE_URL}branding/qubnexa-icon.png`}
+                  alt="QUBNEXA logo"
                   width={36}
                   height={36}
                   className="h-9 w-9 object-contain rounded-full bg-[#050814] ring-1 ring-cyan-500/35 shadow-[0_0_12px_rgba(0,223,255,0.18)] shrink-0"
@@ -27,15 +27,15 @@ export const Footer: React.FC = () => {
                 />
                 <div className="flex flex-col">
                   <span className="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-                    Xenova<span className="text-cyan-600 dark:text-[#00DFFF]">-World</span>
+                    QUB<span className="text-cyan-600 dark:text-[#00DFFF]">NEXA</span>
                   </span>
                   <span className="text-[11px] font-medium text-slate-500 dark:text-[#00DFFF]/80">
-                    Explore Beyond Limits.
+                    Explore. Create. Simplify.
                   </span>
                 </div>
               </Link>
               <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md leading-relaxed">
-                Discover useful online tools, calculators, client-side PDF utilities, neural voice synthesis, creative AI tools, and browser experiences with Xenova-World.
+                Your All-in-One Online Tools Platform. Explore free AI tools, calculators, PDF utilities, image and video tools, audio studio, converters, and browser games on QUBNEXA.
               </p>
               <div className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300 pt-1">
                 <ShieldCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
@@ -158,10 +158,10 @@ export const Footer: React.FC = () => {
 
           {/* Bottom bar */}
           <div className="border-t border-slate-100 dark:border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
-            <p>© 2026 Xenova-World. All rights reserved.</p>
+            <p>© 2026 QUBNEXA. All rights reserved.</p>
             <p className="flex items-center gap-1.5">
               <Sparkles className="h-3.5 w-3.5 text-cyan-500 inline" />
-              <span>Explore Beyond Limits • Built for privacy &amp; speed</span>
+              <span>Explore. Create. Simplify. • Built for privacy &amp; speed</span>
             </p>
           </div>
         </ScrollReveal>

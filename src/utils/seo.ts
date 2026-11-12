@@ -83,7 +83,7 @@ export function usePageSEO({
   ogType = 'website',
   schema,
   keywords,
-  ogImage = '/branding/xenova-world-logo.jpg',
+  ogImage = '/branding/qubnexa-logo.png',
 }: PageSEOMetadata) {
   useEffect(() => {
     // 1. Title
@@ -109,7 +109,7 @@ export function usePageSEO({
     setMetaTag('meta[property="og:description"]', 'content', description, { property: 'og:description' })
     setMetaTag('meta[property="og:url"]', 'content', fullCanonicalUrl, { property: 'og:url' })
     setMetaTag('meta[property="og:type"]', 'content', ogType, { property: 'og:type' })
-    setMetaTag('meta[property="og:site_name"]', 'content', 'Xenova-World', { property: 'og:site_name' })
+    setMetaTag('meta[property="og:site_name"]', 'content', 'QUBNEXA', { property: 'og:site_name' })
     if (ogImage) {
       const fullImageUrl = ogImage.startsWith('http') ? ogImage : getFullUrl(ogImage)
       setMetaTag('meta[property="og:image"]', 'content', fullImageUrl, { property: 'og:image' })
@@ -145,9 +145,9 @@ export function createWebSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Xenova-World',
+    name: 'QUBNEXA',
     url: getFullUrl('/'),
-    description: 'Discover useful online tools, calculators, PDF utilities, creative tools and digital experiences with Xenova-World.',
+    description: 'Your All-in-One Online Tools Platform. Explore free AI tools, calculators, PDF utilities, image and video tools, audio studio, converters, and browser games on QUBNEXA.',
     inLanguage: 'en',
     potentialAction: {
       '@type': 'SearchAction',
@@ -164,7 +164,7 @@ export function createWebApplicationSchema(toolName: string, description: string
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: `${toolName} — Xenova-World`,
+    name: `${toolName} — QUBNEXA`,
     url: getFullUrl(path),
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'All',

@@ -6,7 +6,7 @@ import { formatNumberIN } from '../../utils/currency'
 
 export const WordCounter: React.FC = () => {
   const [text, setText] = useState<string>(
-    'Xenova-World provides fast, free, and privacy-friendly online tools and calculators for creators, students, developers, and professionals.'
+    'QUBNEXA provides fast, free, and privacy-friendly online tools and calculators for creators, students, developers, and professionals.'
   )
   const [copied, setCopied] = useState(false)
 
@@ -32,7 +32,7 @@ export const WordCounter: React.FC = () => {
 
   const handleInsertSample = () => {
     setText(
-      'Xenova-World is designed to make everyday calculations and workflows seamless and instant. All computations run directly in your browser without requiring logins, databases, or API keys.\n\nWhether calculating loan EMIs, computing taxes, converting units, or counting words in an article, Xenova-World delivers rapid and trustworthy results on mobile and desktop devices alike.'
+      'QUBNEXA is designed to make everyday calculations and workflows seamless and instant. All computations run directly in your browser without requiring logins, databases, or API keys.\n\nWhether calculating loan EMIs, computing taxes, converting units, or counting words in an article, QUBNEXA delivers rapid and trustworthy results on mobile and desktop devices alike.'
     )
   }
 

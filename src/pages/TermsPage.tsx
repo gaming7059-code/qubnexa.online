@@ -3,10 +3,10 @@ import { usePageSEO, createBreadcrumbSchema } from '../utils/seo'
 
 export const TermsPage: React.FC = () => {
   usePageSEO({
-    title: 'Terms of Service — Disclaimer & Usage Guidelines | Xenova-World',
-    description: 'Read the Xenova-World terms of service. Understand our educational utility guidelines, terms of use, and computational disclaimer.',
+    title: 'Terms of Service — Disclaimer & Usage Guidelines | QUBNEXA',
+    description: 'Read the QUBNEXA terms of service. Understand our educational utility guidelines, terms of use, and computational disclaimer.',
     canonicalPath: '/terms',
-    keywords: 'terms of service, xenova-world terms, disclaimer, acceptable use, online tool guidelines',
+    keywords: 'terms of service, qubnexa terms, disclaimer, acceptable use, online tool guidelines',
     schema: createBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Terms of Service', path: '/terms' },
@@ -32,7 +32,7 @@ export const TermsPage: React.FC = () => {
             1. Acceptance of Terms
           </h2>
           <p>
-            By accessing and utilizing Xenova-World (&ldquo;the Website&rdquo;), you agree to be bound by these Terms of Service. If you do not agree with any portion of these terms, please discontinue use of the tools.
+            By accessing and utilizing QUBNEXA (&ldquo;the Website&rdquo;), you agree to be bound by these Terms of Service. If you do not agree with any portion of these terms, please discontinue use of the tools.
           </p>
         </section>
 
@@ -41,7 +41,7 @@ export const TermsPage: React.FC = () => {
             2. Nature of the Service
           </h2>
           <p>
-            Xenova-World provides free, browser-based calculation, conversion, and digital utilities. The service is provided &ldquo;as is&rdquo; without warranties of any kind.
+            QUBNEXA provides free, browser-based calculation, conversion, and digital utilities. The service is provided &ldquo;as is&rdquo; without warranties of any kind.
           </p>
         </section>
 

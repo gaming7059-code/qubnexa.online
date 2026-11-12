@@ -127,7 +127,7 @@ export const ALL_TOOLS_CATEGORY: Category = {
   id: 'all',
   name: 'All Tools',
   slug: 'all',
-  tagline: 'Complete Xenova-World Directory',
+  tagline: 'Complete QUBNEXA Directory',
   description: 'Explore every calculator, converter, PDF editor, multimedia studio, AI utility, and arcade game.',
   icon: 'Layers',
   path: '/tools',

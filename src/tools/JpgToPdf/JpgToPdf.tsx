@@ -354,7 +354,7 @@ export const JpgToPdf: React.FC = () => {
 
       const outputName = images.length === 1
         ? `${images[0].name.replace(/\.[^/.]+$/, '')}.pdf`
-        : `Xenova-World-${images.length}-images.pdf`
+        : `QUBNEXA-${images.length}-images.pdf`
 
       setDownloadUrl(url)
       setDownloadFileName(outputName)

@@ -80,9 +80,9 @@ export const ProfitLossCalculatorPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Profit and Loss Calculator — Profit Margin, Loss & Markup Rates | Xenova-World"
+      seoTitle="Profit and Loss Calculator — Profit Margin, Loss & Markup Rates | QUBNEXA"
       seoDescription="Calculate net profit, loss amount, profit margin percentages, and cost price markup instantly. Free online commercial calculation tool for Indian retailers and businesses."
-      keywords="profit and loss calculator, calculate profit margin, markup calculator, cost price selling price, gross profit calculator, business margin, xenova-world"
+      keywords="profit and loss calculator, calculate profit margin, markup calculator, cost price selling price, gross profit calculator, business margin, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

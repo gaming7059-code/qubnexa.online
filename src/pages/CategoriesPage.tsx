@@ -14,10 +14,10 @@ export const CategoriesPage: React.FC = () => {
   const { openToolPreview } = useOutletContext<LayoutContextType>()
 
   usePageSEO({
-    title: `Explore All ${PRIMARY_CATEGORIES.length} Tool Categories — Xenova-World`,
-    description: `Browse ${ALL_TOOLS.length} free browser tools and games organized across ${PRIMARY_CATEGORIES.length} structured categories including AI Tools, Video Tools, Audio Studio, PDF Documents, Image Enhancement, Calculators, and Utilities.`,
+    title: `Explore All ${PRIMARY_CATEGORIES.length} Tool Categories — QUBNEXA`,
+    description: `Browse ${ALL_TOOLS.length} free browser tools and games organized across ${PRIMARY_CATEGORIES.length} structured categories including AI Tools, Video Tools, Audio Studio, PDF Documents, Image Enhancement, Calculators, and Utilities on QUBNEXA.`,
     canonicalPath: '/categories',
-    keywords: 'tool categories, ai tools directory, calculators, utilities, pdf tools, video downloader, audio studio, image enhancer, games, xenova-world',
+    keywords: 'tool categories, ai tools directory, calculators, utilities, pdf tools, video downloader, audio studio, image enhancer, games, qubnexa',
     schema: createBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Categories', path: '/categories' },

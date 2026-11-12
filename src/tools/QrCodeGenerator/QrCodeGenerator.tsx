@@ -49,7 +49,7 @@ export const QrCodeGenerator: React.FC = () => {
   // Form States
   const defaultSampleUrl = typeof window !== 'undefined' && window.location.origin ? window.location.origin : 'https://example.com'
   const [urlInput, setUrlInput] = useState(defaultSampleUrl)
-  const [textInput, setTextInput] = useState('Welcome to Xenova-World!')
+  const [textInput, setTextInput] = useState('Welcome to QUBNEXA!')
   const [wifiConfig, setWifiConfig] = useState<WifiConfig>({
     ssid: 'Home_WiFi_5G',
     password: '',
@@ -59,7 +59,7 @@ export const QrCodeGenerator: React.FC = () => {
   const [emailConfig, setEmailConfig] = useState<EmailConfig>({
     email: 'contact@example.com',
     subject: 'Inquiry',
-    body: 'Hello from Xenova-World!',
+    body: 'Hello from QUBNEXA!',
   })
   const [phoneInput, setPhoneInput] = useState('+91 98765 43210')
   const [vCardConfig, setVCardConfig] = useState<VCardConfig>({
@@ -135,7 +135,7 @@ export const QrCodeGenerator: React.FC = () => {
   const handleDownloadPng = () => {
     if (!canvasRef.current || !currentPayload) return
     const link = document.createElement('a')
-    link.download = `xenova-world-qr-${activeType}.png`
+    link.download = `qubnexa-qr-${activeType}.png`
     link.href = canvasRef.current.toDataURL('image/png')
     link.click()
   }
@@ -152,7 +152,7 @@ export const QrCodeGenerator: React.FC = () => {
       const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' })
       const url = URL.createObjectURL(blob)
       const link = document.createElement('a')
-      link.download = `xenova-world-qr-${activeType}.svg`
+      link.download = `qubnexa-qr-${activeType}.svg`
       link.href = url
       link.click()
       URL.revokeObjectURL(url)

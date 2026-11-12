@@ -580,7 +580,7 @@ export async function createSamplePdf(): Promise<{ file: File }> {
   const page1 = doc.addPage([595.28, 841.89])
   const { width, height } = page1.getSize()
 
-  page1.drawText('Xenova-World — PDF Editor', {
+  page1.drawText('QUBNEXA — PDF Editor', {
     x: 50,
     y: height - 80,
     size: 24,

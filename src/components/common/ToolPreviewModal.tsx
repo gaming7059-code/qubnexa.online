@@ -51,10 +51,10 @@ export const ToolPreviewModal: React.FC<ToolPreviewModalProps> = ({ tool, onClos
           <div className="rounded-xl bg-cyan-50/70 dark:bg-cyan-950/35 border border-cyan-100 dark:border-[#00DFFF]/25 p-4">
             <div className="flex items-center gap-2 text-cyan-800 dark:text-[#00DFFF] font-semibold text-sm mb-1.5">
               <Clock className="h-4 w-4 text-cyan-600 dark:text-[#00DFFF]" />
-              <span>Xenova-World Module Preview</span>
+              <span>QUBNEXA Module Preview</span>
             </div>
             <p className="text-xs text-cyan-800 dark:text-cyan-200 leading-relaxed">
-              This utility is scheduled on the Xenova-World platform roadmap for an upcoming release.
+              This utility is scheduled on the QUBNEXA platform roadmap for an upcoming release.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export const ToolPreviewModal: React.FC<ToolPreviewModalProps> = ({ tool, onClos
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-              <span>Fast, responsive, and built for Xenova-World users globally</span>
+              <span>Fast, responsive, and built for QUBNEXA users globally</span>
             </div>
           </div>
         </div>

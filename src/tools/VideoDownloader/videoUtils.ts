@@ -371,7 +371,7 @@ export function sanitizeDownloadFilename(
   const leafSegment = (rawName || '').split(/[\\/]/).pop() || ''
   const leaf = stripControlAndUnsafeFilenameChars(leafSegment.replace(/\.\./g, '')).trim()
 
-  const baseClean = leaf && leaf !== '.' && leaf !== '..' ? leaf : `xenova-video.${fallbackExt}`
+  const baseClean = leaf && leaf !== '.' && leaf !== '..' ? leaf : `qubnexa-video.${fallbackExt}`
   const truncated = baseClean.length > 120 ? baseClean.slice(0, 120) : baseClean
 
   const lower = truncated.toLowerCase()
@@ -379,7 +379,7 @@ export function sanitizeDownloadFilename(
     return truncated
   }
 
-  const stem = truncated.replace(/\.[^.]+$/, '') || 'xenova-video'
+  const stem = truncated.replace(/\.[^.]+$/, '') || 'qubnexa-video'
   return `${stem}.${fallbackExt}`
 }
 
@@ -396,7 +396,7 @@ export function extractFilenameFromUrl(url: URL, mimeType?: string | null): {
     decodedSegment = lastSegment
   }
 
-  const filename = sanitizeDownloadFilename(decodedSegment || `xenova-video.${ext}`, ext)
+  const filename = sanitizeDownloadFilename(decodedSegment || `qubnexa-video.${ext}`, ext)
   const title =
     filename.replace(/\.(mp4|webm|m4v)$/i, '').replace(/[-_]+/g, ' ').trim() || 'Direct Video File'
 
@@ -451,7 +451,7 @@ export function getOfficialPlatformRoutes(platformId: PlatformId, normalizedUrl:
       return {
         summary: 'YouTube restricts third-party direct video extraction.',
         explanation:
-          'YouTube uses signed, expiring stream manifests and does not grant CORS access for direct MP4/WebM downloads in static browser tools. Xenova-World does not bypass platform restrictions or DRM. Watch officially on YouTube or download your own uploaded videos via YouTube Studio / Google Takeout.',
+          'YouTube uses signed, expiring stream manifests and does not grant CORS access for direct MP4/WebM downloads in static browser tools. QUBNEXA does not bypass platform restrictions or DRM. Watch officially on YouTube or download your own uploaded videos via YouTube Studio / Google Takeout.',
         officialLinks: [
           {
             label: 'Watch on YouTube',
@@ -474,7 +474,7 @@ export function getOfficialPlatformRoutes(platformId: PlatformId, normalizedUrl:
       return {
         summary: 'Instagram requires authentication or official export for media saving.',
         explanation:
-          'Instagram does not provide public CORS-enabled direct MP4 URLs for third-party web apps, and Stories or private posts require an authenticated session. Xenova-World does not bypass login gates or private restrictions.',
+          'Instagram does not provide public CORS-enabled direct MP4 URLs for third-party web apps, and Stories or private posts require an authenticated session. QUBNEXA does not bypass login gates or private restrictions.',
         officialLinks: [
           {
             label: 'Open on Instagram',

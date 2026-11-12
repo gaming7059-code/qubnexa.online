@@ -3,10 +3,10 @@ import { usePageSEO, createBreadcrumbSchema } from '../utils/seo'
 
 export const PrivacyPage: React.FC = () => {
   usePageSEO({
-    title: 'Privacy Policy — Client-Side Security & Data Protection | Xenova-World',
-    description: 'Read the Xenova-World privacy policy. Learn how our browser-first architecture safeguards your personal data without logins, tracking, or central databases.',
+    title: 'Privacy Policy — Client-Side Security & Data Protection | QUBNEXA',
+    description: 'Read the QUBNEXA privacy policy. Learn how our browser-first architecture safeguards your personal data without logins, tracking, or central databases.',
     canonicalPath: '/privacy',
-    keywords: 'privacy policy, xenova-world privacy, client-side data protection, no login tools, private calculations',
+    keywords: 'privacy policy, qubnexa privacy, client-side data protection, no login tools, private calculations',
     schema: createBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Privacy Policy', path: '/privacy' },
@@ -32,7 +32,7 @@ export const PrivacyPage: React.FC = () => {
             1. Browser-First Architecture
           </h2>
           <p>
-            At Xenova-World, we believe in privacy by design. Our utilities, calculators, and converters are designed to execute directly within your web browser using client-side JavaScript. This means that numerical inputs, dates, financial figures, and texts you enter into calculators are computed directly on your local device.
+            At QUBNEXA, we believe in privacy by design. Our utilities, calculators, and converters are designed to execute directly within your web browser using client-side JavaScript. This means that numerical inputs, dates, financial figures, and texts you enter into calculators are computed directly on your local device.
           </p>
         </section>
 

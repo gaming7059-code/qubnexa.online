@@ -1,7 +1,7 @@
 import type { Tool } from '../types/tools'
 
 /**
- * Natural user-intent phrases mapped to existing Xenova-World tool IDs.
+ * Natural user-intent phrases mapped to existing QUBNEXA tool IDs.
  * Keeps search grounded exclusively in real registered tools without inventing entries.
  */
 const TOOL_INTENT_PHRASES: Record<string, string[]> = {

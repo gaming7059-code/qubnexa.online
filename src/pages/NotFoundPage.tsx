@@ -5,8 +5,8 @@ import { usePageSEO } from '../utils/seo'
 
 export const NotFoundPage: React.FC = () => {
   usePageSEO({
-    title: '404 — Page Not Found | Xenova-World',
-    description: 'The requested page or tool could not be found on Xenova-World. Explore our free calculators and online tools.',
+    title: '404 — Page Not Found | QUBNEXA',
+    description: 'The requested page or tool could not be found on QUBNEXA. Explore our free calculators and online tools.',
     noindex: true,
   })
 

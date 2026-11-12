@@ -71,12 +71,12 @@ export const QrCodeGeneratorPage: React.FC = () => {
 
   const faqs = [
     {
-      question: 'Do QR codes generated on Xenova-World ever expire?',
+      question: 'Do QR codes generated on QUBNEXA ever expire?',
       answer: 'No. All QR codes generated here are static QR codes. The target website URL, text, Wi-Fi password, or vCard details are encoded directly into the black and white pixel patterns. They function permanently with zero expiration, zero server lookups, and zero scan limits.',
     },
     {
       question: 'Is it safe to generate Wi-Fi passwords and personal contact cards here?',
-      answer: 'Yes, 100% safe. Xenova-World generates all QR codes completely client-side in your web browser. Your Wi-Fi network credentials, phone numbers, and contact names are never transmitted over the internet or logged on any external server.',
+      answer: 'Yes, 100% safe. QUBNEXA generates all QR codes completely client-side in your web browser. Your Wi-Fi network credentials, phone numbers, and contact names are never transmitted over the internet or logged on any external server.',
     },
     {
       question: 'Which format should I download: PNG or SVG?',
@@ -91,7 +91,7 @@ export const QrCodeGeneratorPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free QR Code Generator Online — URL, Wi-Fi, Text & vCard | Xenova-World"
+      seoTitle="Free QR Code Generator Online — URL, Wi-Fi, Text & vCard | QUBNEXA"
       seoDescription="Generate custom QR codes online for free: website links, Wi-Fi passwords, contact vCards, phone numbers and plain text. Download high-res PNG & SVG vectors. 100% client-side & private."
       howToUseSteps={howToUseSteps}
       formulas={formulas}

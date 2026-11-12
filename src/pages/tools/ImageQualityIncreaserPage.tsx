@@ -81,7 +81,7 @@ export const ImageQualityIncreaserPage: React.FC = () => {
     {
       question: 'Is this an AI deep-learning model?',
       answer:
-        'No. In compliance with Xenova-World transparency standards, we clearly label this as a high-precision browser-based algorithmic processor rather than AI. It does not require downloading hundreds of megabytes of heavy AI models or sending data to third-party cloud APIs.',
+        'No. In compliance with QUBNEXA transparency standards, we clearly label this as a high-precision browser-based algorithmic processor rather than AI. It does not require downloading hundreds of megabytes of heavy AI models or sending data to third-party cloud APIs.',
     },
     {
       question: 'Are my pictures stored or sent to the cloud?',
@@ -100,9 +100,9 @@ export const ImageQualityIncreaserPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free Image Quality Increaser — Enhance Photo Clarity & Resolution Online | Xenova-World"
+      seoTitle="Free Image Quality Increaser — Enhance Photo Clarity & Resolution Online | QUBNEXA"
       seoDescription="Enhance image clarity, sharpness, contrast, and upscale resolution up to 4x directly in your browser. 100% private, free, and hardware-accelerated with zero server uploads."
-      keywords="image quality increaser, enhance image quality, increase photo resolution, image sharpener, upscale image online, free photo enhancer, xenova-world"
+      keywords="image quality increaser, enhance image quality, increase photo resolution, image sharpener, upscale image online, free photo enhancer, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

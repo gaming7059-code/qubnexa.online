@@ -1,5 +1,5 @@
 /**
- * Xenova-World — Implemented Tool Modules Index
+ * QUBNEXA — Implemented Tool Modules Index
  * Syncs with all 20 standalone utility tool modules and routes.
  */
 
