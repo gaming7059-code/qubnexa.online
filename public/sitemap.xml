@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core Website Pages -->
   <url>
-    <loc>https://smarttools.in/</loc>
+    <loc>https://smarttools-india-clean.pages.dev/</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/categories</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/popular</loc>
+    <loc>https://smarttools-india-clean.pages.dev/popular</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/new-tools</loc>
+    <loc>https://smarttools-india-clean.pages.dev/new-tools</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -34,73 +34,73 @@
 
   <!-- Dedicated Category Hubs -->
   <url>
-    <loc>https://smarttools.in/categories/calculators</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories/calculators</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/categories/utilities</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories/utilities</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/categories/pdf-documents</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories/pdf-documents</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/categories/audio-tools</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories/audio-tools</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/categories/video-tools</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories/video-tools</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/categories/image-tools</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories/image-tools</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/categories/ai-tools</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories/ai-tools</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/categories/date-time</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories/date-time</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/categories/text-writing</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories/text-writing</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/categories/games</loc>
+    <loc>https://smarttools-india-clean.pages.dev/categories/games</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/games</loc>
+    <loc>https://smarttools-india-clean.pages.dev/games</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/games/hex-drift</loc>
+    <loc>https://smarttools-india-clean.pages.dev/games/hex-drift</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -108,31 +108,31 @@
 
   <!-- Financial Calculators -->
   <url>
-    <loc>https://smarttools.in/tools/emi-calculator</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/emi-calculator</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/gst-calculator</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/gst-calculator</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/salary-calculator</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/salary-calculator</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/discount-calculator</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/discount-calculator</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/profit-loss-calculator</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/profit-loss-calculator</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -140,103 +140,103 @@
 
   <!-- Math & Everyday Tools -->
   <url>
-    <loc>https://smarttools.in/tools/percentage-calculator</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/percentage-calculator</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/age-calculator</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/age-calculator</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/date-difference-calculator</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/date-difference-calculator</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/unit-converter</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/unit-converter</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/word-counter</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/word-counter</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/text-repeater</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/text-repeater</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/text-inverter</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/text-inverter</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/password-checker</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/password-checker</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/password-generator</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/password-generator</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/pdf-editor</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/pdf-editor</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/text-to-speech</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/text-to-speech</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/video-prompt-generator</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/video-prompt-generator</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/audio-studio</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/audio-studio</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/audio-transcriber</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/audio-transcriber</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/jpg-to-pdf</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/jpg-to-pdf</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/image-quality-increaser</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/image-quality-increaser</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/tools/video-downloader</loc>
+    <loc>https://smarttools-india-clean.pages.dev/tools/video-downloader</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -244,25 +244,25 @@
 
   <!-- Informational Pages -->
   <url>
-    <loc>https://smarttools.in/about</loc>
+    <loc>https://smarttools-india-clean.pages.dev/about</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/contact</loc>
+    <loc>https://smarttools-india-clean.pages.dev/contact</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/privacy</loc>
+    <loc>https://smarttools-india-clean.pages.dev/privacy</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://smarttools.in/terms</loc>
+    <loc>https://smarttools-india-clean.pages.dev/terms</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>

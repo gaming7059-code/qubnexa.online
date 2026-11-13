@@ -22,7 +22,7 @@ export interface PageSEOMetadata {
 }
 
 // Configurable base domain template - easy to swap for your production domain
-export const SITE_DOMAIN = import.meta.env.VITE_SITE_URL || 'https://smarttools.in'
+export const SITE_DOMAIN = import.meta.env.VITE_SITE_URL || 'https://smarttools-india-clean.pages.dev'
 
 export function getFullUrl(path: string = '/'): string {
   const normalizedPath = path.startsWith('/') ? path : `/${path}`
