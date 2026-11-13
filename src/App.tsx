@@ -26,6 +26,7 @@ const SalaryCalculatorPage = React.lazy(() => import('./pages/tools/SalaryCalcul
 const DateTimeCalculatorPage = React.lazy(() => import('./pages/tools/DateTimeCalculatorPage').then((m) => ({ default: m.DateTimeCalculatorPage })))
 const QrCodeGeneratorPage = React.lazy(() => import('./pages/tools/QrCodeGeneratorPage').then((m) => ({ default: m.QrCodeGeneratorPage })))
 const PasswordGeneratorPage = React.lazy(() => import('./pages/tools/PasswordGeneratorPage').then((m) => ({ default: m.PasswordGeneratorPage })))
+const PasswordCheckerPage = React.lazy(() => import('./pages/tools/PasswordCheckerPage').then((m) => ({ default: m.PasswordCheckerPage })))
 const UnitConverterPage = React.lazy(() => import('./pages/tools/UnitConverterPage').then((m) => ({ default: m.UnitConverterPage })))
 const WordCounterPage = React.lazy(() => import('./pages/tools/WordCounterPage').then((m) => ({ default: m.WordCounterPage })))
 const TextRepeaterPage = React.lazy(() => import('./pages/tools/TextRepeaterPage').then((m) => ({ default: m.TextRepeaterPage })))
@@ -150,6 +151,14 @@ export const App: React.FC = () => {
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <PasswordGeneratorPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/password-checker"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <PasswordCheckerPage />
                 </Suspense>
               }
             />

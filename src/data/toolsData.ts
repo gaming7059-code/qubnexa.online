@@ -214,6 +214,22 @@ export const ALL_TOOLS: Tool[] = [
     badge: 'Security',
     tags: ['password generator', 'strong password', 'passphrase', 'web crypto entropy'],
   }),
+  createTool({
+    id: 'password-checker',
+    name: 'Smart Password Checker',
+    slug: 'password-checker',
+    route: '/tools/password-checker',
+    description: 'Check your password strength instantly and generate stronger password alternatives privately in your browser.',
+    primaryCategory: 'utilities',
+    secondaryCategories: ['utilities'],
+    icon: 'ShieldCheck',
+    releaseOrder: 28,
+    createdAt: '2026-11-13',
+    isNew: true,
+    isPopular: true,
+    badge: 'Security',
+    tags: ['password checker', 'password strength', 'password security test', 'test password', 'smart password checker', 'strong password generator', 'privacy'],
+  }),
 
   // =========================================================================
   // 4. PDF & DOCUMENT TOOLS (2 primary tools)

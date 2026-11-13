@@ -1,7 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { ShieldCheck, Sparkles } from 'lucide-react'
 import { ScrollReveal } from './ScrollReveal'
+
+const footerNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+  `inline-flex min-h-[32px] items-center rounded-md px-1 -mx-1 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-[#00DFFF] ${
+    isActive
+      ? 'text-blue-600 dark:text-[#00DFFF] font-semibold'
+      : 'hover:text-blue-600 dark:hover:text-[#00DFFF]'
+  }`
 
 export const Footer: React.FC = () => {
   return (
@@ -39,7 +46,7 @@ export const Footer: React.FC = () => {
               </p>
               <div className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300 pt-1">
                 <ShieldCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Client-side execution • No sign-up • 100% Free</span>
+                <span>Browser-first execution • No sign-up • 100% Free</span>
               </div>
             </div>
 
@@ -48,46 +55,46 @@ export const Footer: React.FC = () => {
               <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
                 Categories
               </h4>
-              <ul className="space-y-2.5 text-sm">
+              <ul className="space-y-1.5 text-sm">
                 <li>
-                  <Link to="/categories/calculators" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/categories/calculators" className={footerNavLinkClass}>
                     Calculators &amp; Finance
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/categories/utilities" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/categories/utilities" className={footerNavLinkClass}>
                     Converters &amp; Utilities
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/categories/pdf-documents" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/categories/text-writing" className={footerNavLinkClass}>
+                    Text &amp; Writing
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/categories/pdf-documents" className={footerNavLinkClass}>
                     PDF &amp; Documents
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/categories/audio-tools" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/categories/audio-tools" className={footerNavLinkClass}>
                     Audio &amp; Music Tools
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/categories/video-tools" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/categories/video-tools" className={footerNavLinkClass}>
                     Video Tools
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/categories/ai-tools" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/categories/ai-tools" className={footerNavLinkClass}>
                     AI Tools
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/categories/games" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    Games Arena
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/categories" className="text-blue-600 dark:text-[#00DFFF] font-medium hover:underline inline-block transition-colors duration-200">
-                    All Categories →
-                  </Link>
+                  <NavLink to="/categories" end className={footerNavLinkClass}>
+                    <span className="text-blue-600 dark:text-[#00DFFF] font-medium">All Categories →</span>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -97,60 +104,60 @@ export const Footer: React.FC = () => {
               <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
                 Explore
               </h4>
-              <ul className="space-y-2.5 text-sm">
+              <ul className="space-y-1.5 text-sm">
                 <li>
-                  <Link to="/tools" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/tools" end className={footerNavLinkClass}>
                     All Tools
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/popular" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/popular" end className={footerNavLinkClass}>
                     Popular Tools
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/new-tools" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/new-tools" end className={footerNavLinkClass}>
                     New Tools
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/games" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/games" end className={footerNavLinkClass}>
                     Play Games
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/categories" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/categories" end className={footerNavLinkClass}>
                     Categories
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    About Us
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>
 
             {/* Legal and Support Links */}
-            <div>
+            <div className="col-span-2 sm:col-span-1">
               <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
-                Information
+                Information &amp; Legal
               </h4>
-              <ul className="space-y-2.5 text-sm">
+              <ul className="space-y-1.5 text-sm">
                 <li>
-                  <Link to="/contact" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    Contact
-                  </Link>
+                  <NavLink to="/about" end className={footerNavLinkClass}>
+                    About Us
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/privacy" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
+                  <NavLink to="/contact" end className={footerNavLinkClass}>
+                    Contact Us
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/privacy" end className={footerNavLinkClass}>
                     Privacy Policy
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/terms" className="hover:text-blue-600 dark:hover:text-[#00DFFF] inline-block transition-colors duration-200">
-                    Terms of Service
-                  </Link>
+                  <NavLink to="/terms" end className={footerNavLinkClass}>
+                    Terms &amp; Conditions
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -161,7 +168,7 @@ export const Footer: React.FC = () => {
             <p>© 2026 QUBNEXA. All rights reserved.</p>
             <p className="flex items-center gap-1.5">
               <Sparkles className="h-3.5 w-3.5 text-cyan-500 inline" />
-              <span>Explore. Create. Simplify. • Built for privacy &amp; speed</span>
+              <span>Explore. Create. Simplify. • Browser-first tools</span>
             </p>
           </div>
         </ScrollReveal>

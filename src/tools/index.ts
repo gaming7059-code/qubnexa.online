@@ -20,6 +20,7 @@ export const REGISTERED_TOOL_MODULES = [
   'jpg-to-pdf',
   'qr-code-generator',
   'password-generator',
+  'password-checker',
   'image-quality-increaser',
   'video-downloader',
   'text-to-speech',

@@ -97,7 +97,7 @@ export const PasswordGeneratorPage: React.FC = () => {
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['qr-code-generator', 'word-counter', 'text-to-speech', 'pdf-editor']}
+      relatedSlugs={['password-checker', 'qr-code-generator', 'word-counter', 'text-repeater']}
     >
       <PasswordGenerator />
     </ToolPageLayout>

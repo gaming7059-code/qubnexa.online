@@ -16,6 +16,7 @@ const TOOL_INTENT_PHRASES: Record<string, string[]> = {
   'unit-converter': ['convert units', 'km to miles', 'kg to lbs', 'celsius to fahrenheit', 'length weight converter'],
   'qr-code-generator': ['create qr code', 'make qr', 'wifi qr', 'vcard qr', 'scan code generator'],
   'password-generator': ['strong password', 'random password', 'secure passphrase', 'create password'],
+  'password-checker': ['check password', 'password strength', 'password security test', 'test password', 'smart password checker', 'is my password safe', 'password analyzer'],
   'pdf-editor': ['edit pdf', 'annotate pdf', 'sign pdf', 'draw on pdf', 'highlight pdf', 'write on pdf'],
   'jpg-to-pdf': ['convert pdf', 'convert image to pdf', 'images to pdf', 'photo to pdf', 'merge photos pdf'],
   'image-quality-increaser': ['compress image', 'optimize image', 'enhance image', 'upscale image', 'improve photo quality', 'sharpen image', 'export jpeg'],
