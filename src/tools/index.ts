@@ -27,6 +27,12 @@ export const REGISTERED_TOOL_MODULES = [
   'audio-studio',
   'audio-transcriber',
   'video-prompt-generator',
+  'youtube-thumbnail-downloader',
+  'image-resizer',
+  'fancy-font-generator',
+  'json-formatter',
+  'sip-calculator',
+  'pdf-text-cleaner',
 ] as const
 
 export type RegisteredToolId = typeof REGISTERED_TOOL_MODULES[number]

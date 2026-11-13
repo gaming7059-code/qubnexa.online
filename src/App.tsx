@@ -20,6 +20,7 @@ const PercentageCalculatorPage = React.lazy(() => import('./pages/tools/Percenta
 const AgeCalculatorPage = React.lazy(() => import('./pages/tools/AgeCalculatorPage').then((m) => ({ default: m.AgeCalculatorPage })))
 const DiscountCalculatorPage = React.lazy(() => import('./pages/tools/DiscountCalculatorPage').then((m) => ({ default: m.DiscountCalculatorPage })))
 const EMICalculatorPage = React.lazy(() => import('./pages/tools/EMICalculatorPage').then((m) => ({ default: m.EMICalculatorPage })))
+const SipCalculatorPage = React.lazy(() => import('./pages/tools/SipCalculatorPage').then((m) => ({ default: m.SipCalculatorPage })))
 const GSTCalculatorPage = React.lazy(() => import('./pages/tools/GSTCalculatorPage').then((m) => ({ default: m.GSTCalculatorPage })))
 const ProfitLossCalculatorPage = React.lazy(() => import('./pages/tools/ProfitLossCalculatorPage').then((m) => ({ default: m.ProfitLossCalculatorPage })))
 const SalaryCalculatorPage = React.lazy(() => import('./pages/tools/SalaryCalculatorPage').then((m) => ({ default: m.SalaryCalculatorPage })))
@@ -31,14 +32,19 @@ const UnitConverterPage = React.lazy(() => import('./pages/tools/UnitConverterPa
 const WordCounterPage = React.lazy(() => import('./pages/tools/WordCounterPage').then((m) => ({ default: m.WordCounterPage })))
 const TextRepeaterPage = React.lazy(() => import('./pages/tools/TextRepeaterPage').then((m) => ({ default: m.TextRepeaterPage })))
 const TextInverterPage = React.lazy(() => import('./pages/tools/TextInverterPage').then((m) => ({ default: m.TextInverterPage })))
+const FancyFontGeneratorPage = React.lazy(() => import('./pages/tools/FancyFontGeneratorPage').then((m) => ({ default: m.FancyFontGeneratorPage })))
+const JsonFormatterPage = React.lazy(() => import('./pages/tools/JsonFormatterPage').then((m) => ({ default: m.JsonFormatterPage })))
 const PDFEditorPage = React.lazy(() => import('./pages/tools/PDFEditorPage').then((m) => ({ default: m.PDFEditorPage })))
+const PdfTextCleanerPage = React.lazy(() => import('./pages/tools/PdfTextCleanerPage').then((m) => ({ default: m.PdfTextCleanerPage })))
 const TextToSpeechPage = React.lazy(() => import('./pages/tools/TextToSpeechPage').then((m) => ({ default: m.TextToSpeechPage })))
 const VideoPromptGeneratorPage = React.lazy(() => import('./pages/tools/VideoPromptGeneratorPage').then((m) => ({ default: m.VideoPromptGeneratorPage })))
 const AudioStudioPage = React.lazy(() => import('./pages/tools/AudioStudioPage').then((m) => ({ default: m.AudioStudioPage })))
 const AudioTranscriberPage = React.lazy(() => import('./pages/tools/AudioTranscriberPage').then((m) => ({ default: m.AudioTranscriberPage })))
 const JpgToPdfPage = React.lazy(() => import('./pages/tools/JpgToPdfPage').then((m) => ({ default: m.JpgToPdfPage })))
 const ImageQualityIncreaserPage = React.lazy(() => import('./pages/tools/ImageQualityIncreaserPage').then((m) => ({ default: m.ImageQualityIncreaserPage })))
+const ImageResizerPage = React.lazy(() => import('./pages/tools/ImageResizerPage').then((m) => ({ default: m.ImageResizerPage })))
 const VideoDownloaderPage = React.lazy(() => import('./pages/tools/VideoDownloaderPage').then((m) => ({ default: m.VideoDownloaderPage })))
+const YouTubeThumbnailDownloaderPage = React.lazy(() => import('./pages/tools/YouTubeThumbnailDownloaderPage').then((m) => ({ default: m.YouTubeThumbnailDownloaderPage })))
 const GamesPage = React.lazy(() => import('./pages/GamesPage').then((m) => ({ default: m.GamesPage })))
 const HexDriftPage = React.lazy(() => import('./pages/games/HexDriftPage').then((m) => ({ default: m.HexDriftPage })))
 
@@ -93,6 +99,14 @@ export const App: React.FC = () => {
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <EMICalculatorPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/sip-calculator"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <SipCalculatorPage />
                 </Suspense>
               }
             />
@@ -195,10 +209,34 @@ export const App: React.FC = () => {
               }
             />
             <Route
+              path="tools/fancy-font-generator"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <FancyFontGeneratorPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/json-formatter"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <JsonFormatterPage />
+                </Suspense>
+              }
+            />
+            <Route
               path="tools/pdf-editor"
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <PDFEditorPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/pdf-text-cleaner"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <PdfTextCleanerPage />
                 </Suspense>
               }
             />
@@ -251,10 +289,26 @@ export const App: React.FC = () => {
               }
             />
             <Route
+              path="tools/image-resizer"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <ImageResizerPage />
+                </Suspense>
+              }
+            />
+            <Route
               path="tools/video-downloader"
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <VideoDownloaderPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/youtube-thumbnail-downloader"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <YouTubeThumbnailDownloaderPage />
                 </Suspense>
               }
             />
