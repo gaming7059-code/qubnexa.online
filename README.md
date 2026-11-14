@@ -6,15 +6,15 @@ All-in-one privacy-first platform of online calculators, unit converters, QR & s
 
 ## 🚀 Features & Tools
 
-- **Financial Calculators**: EMI Calculator, GST Calculator, Salary & Take-Home Calculator, Profit & Loss Calculator, Discount Calculator
+- **Financial Calculators**: SIP Calculator, EMI Calculator, GST Calculator, Salary & Take-Home Calculator, Profit & Loss Calculator, Discount Calculator
 - **Math & Date Calculators**: Percentage Calculator, Age Calculator, Date Difference Calculator
-- **Utilities & Productivity**: Unit Converter, Word & Character Counter
-- **Document & PDF Studio**: In-browser PDF Editor (annotation, redaction, watermark, split & merge), JPG to PDF Converter
+- **Utilities & Productivity**: Unit Converter, Word & Character Counter, Fancy Font Generator, JSON Formatter & Validator, Password Generator, Password Strength Checker, QR Code Generator, Text Repeater, Text Inverter
+- **Document & PDF Studio**: In-browser PDF Editor (annotation, redaction, watermark, split & merge), PDF Text Cleaner, JPG to PDF Converter
+- **Media & Image Utilities**: YouTube Thumbnail Downloader, Image Resizer, Image Quality Increaser & Enhancer, Universal Video Downloader
 - **Audio & Speech AI**:
   - Advanced Hybrid Text-to-Speech Engine (browser voices + local Neural Edge-TTS companion)
   - Audio Studio & Voice Recorder
   - Audio Transcriber
-- **Image AI**: Image Quality Increaser & Enhancer
 - **Video Prompt Generator**: AI prompt crafting for video generation models
 - **Arcade Games**: Hex Drift — Neon Void Runner (canvas arcade experience with boss battles, responsive touch/keyboard controls, high scores)
 

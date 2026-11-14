@@ -37,7 +37,7 @@ export const SnakeGame: React.FC = () => {
   const [isMuted, setIsMuted] = useState<boolean>(gameAudio.getMuted())
   const [highScore, setHighScore] = useState<number>(() => {
     try {
-      const saved = localStorage.getItem('smarttools_snake_highscore')
+      const saved = localStorage.getItem('qubnexa_snake_highscore') || localStorage.getItem('smarttools_snake_highscore')
       return saved ? parseInt(saved, 10) : 0
     } catch {
       return 0
@@ -186,7 +186,7 @@ export const SnakeGame: React.FC = () => {
           setScore(newScore)
           if (newScore > highScore) {
             setHighScore(newScore)
-            localStorage.setItem('smarttools_snake_highscore', String(newScore))
+            localStorage.setItem('qubnexa_snake_highscore', String(newScore))
           }
           setFood(getRandomPosition(newSnake))
 
@@ -201,7 +201,7 @@ export const SnakeGame: React.FC = () => {
           setScore(newScore)
           if (newScore > highScore) {
             setHighScore(newScore)
-            localStorage.setItem('smarttools_snake_highscore', String(newScore))
+            localStorage.setItem('qubnexa_snake_highscore', String(newScore))
           }
           setBonusFood(null)
           setBonusTimer(0)

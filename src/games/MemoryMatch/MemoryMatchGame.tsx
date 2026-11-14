@@ -49,7 +49,7 @@ export const MemoryMatchGame: React.FC = () => {
   const [isMuted, setIsMuted] = useState<boolean>(gameAudio.getMuted())
   const [bestMoves, setBestMoves] = useState<number | null>(() => {
     try {
-      const saved = localStorage.getItem('smarttools_memory_best_moves')
+      const saved = localStorage.getItem('qubnexa_memory_best_moves') || localStorage.getItem('smarttools_memory_best_moves')
       return saved ? parseInt(saved, 10) : null
     } catch {
       return null
@@ -143,7 +143,7 @@ export const MemoryMatchGame: React.FC = () => {
             setBestMoves((prev) => {
               const currentMoveCount = moves + 1
               if (prev === null || currentMoveCount < prev) {
-                localStorage.setItem('smarttools_memory_best_moves', String(currentMoveCount))
+                localStorage.setItem('qubnexa_memory_best_moves', String(currentMoveCount))
                 return currentMoveCount
               }
               return prev
@@ -331,6 +331,7 @@ export const MemoryMatchGame: React.FC = () => {
             onClick={() => {
               gameAudio.playClick()
               setBestMoves(null)
+              localStorage.removeItem('qubnexa_memory_best_moves')
               localStorage.removeItem('smarttools_memory_best_moves')
             }}
             className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3 py-2.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors"

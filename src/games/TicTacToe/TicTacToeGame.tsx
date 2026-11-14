@@ -113,7 +113,7 @@ export const TicTacToeGame: React.FC = () => {
   const [isMuted, setIsMuted] = useState<boolean>(gameAudio.getMuted())
   const [stats, setStats] = useState<TTTStats>(() => {
     try {
-      const saved = localStorage.getItem('smarttools_ttt_stats')
+      const saved = localStorage.getItem('qubnexa_ttt_stats') || localStorage.getItem('smarttools_ttt_stats')
       if (saved) return JSON.parse(saved)
     } catch {
       // fallback
@@ -143,7 +143,7 @@ export const TicTacToeGame: React.FC = () => {
           oWins: result.winner === 'O' ? prev.oWins + 1 : prev.oWins,
           draws: result.winner === 'draw' ? prev.draws + 1 : prev.draws,
         }
-        localStorage.setItem('smarttools_ttt_stats', JSON.stringify(next))
+        localStorage.setItem('qubnexa_ttt_stats', JSON.stringify(next))
         return next
       })
 
@@ -182,7 +182,7 @@ export const TicTacToeGame: React.FC = () => {
     gameAudio.playClick()
     const fresh = { xWins: 0, oWins: 0, draws: 0 }
     setStats(fresh)
-    localStorage.setItem('smarttools_ttt_stats', JSON.stringify(fresh))
+    localStorage.setItem('qubnexa_ttt_stats', JSON.stringify(fresh))
   }
 
   const toggleMute = () => {

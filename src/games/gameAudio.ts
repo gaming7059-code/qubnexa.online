@@ -7,7 +7,7 @@ class GameAudioService {
 
   constructor() {
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('smarttools_games_muted')
+      const stored = localStorage.getItem('qubnexa_games_muted') || localStorage.getItem('smarttools_games_muted')
       this.isMuted = stored === 'true'
     }
   }
@@ -33,7 +33,7 @@ class GameAudioService {
   public setMuted(muted: boolean): void {
     this.isMuted = muted
     if (typeof window !== 'undefined') {
-      localStorage.setItem('smarttools_games_muted', String(muted))
+      localStorage.setItem('qubnexa_games_muted', String(muted))
     }
   }
 

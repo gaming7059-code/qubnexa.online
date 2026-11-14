@@ -1,7 +1,8 @@
 {
-  "name": "smarttools-india",
+  "name": "qubnexa",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "QUBNEXA — Explore. Create. Simplify. Your All-in-One Online Tools Platform.",
   "type": "module",
   "scripts": {
     "dev": "vite",

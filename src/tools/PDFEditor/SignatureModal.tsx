@@ -60,7 +60,8 @@ const SIGNATURE_FONTS = [
   },
 ]
 
-const LOCAL_STORAGE_KEY = 'smarttools_saved_signatures'
+const LOCAL_STORAGE_KEY = 'qubnexa_saved_signatures'
+const LEGACY_STORAGE_KEY = 'smarttools_saved_signatures'
 
 // Trims transparent pixels from canvas edges to give a tight, natural bounding box
 function trimCanvas(sourceCanvas: HTMLCanvasElement): HTMLCanvasElement {
@@ -138,7 +139,7 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
   // Saved Signatures state
   const [savedSignatures, setSavedSignatures] = useState<SavedSignature[]>(() => {
     try {
-      const data = localStorage.getItem(LOCAL_STORAGE_KEY)
+      const data = localStorage.getItem(LOCAL_STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY)
       if (data) {
         const parsed = JSON.parse(data)
         if (Array.isArray(parsed)) return parsed
@@ -151,8 +152,8 @@ export const SignatureModal: React.FC<SignatureModalProps> = ({
 
   // Load Google Fonts dynamically for typed signatures
   useEffect(() => {
-    const fontLinkId = 'smarttools-signature-fonts'
-    if (!document.getElementById(fontLinkId)) {
+    const fontLinkId = 'qubnexa-signature-fonts'
+    if (!document.getElementById(fontLinkId) && !document.getElementById('smarttools-signature-fonts')) {
       const link = document.createElement('link')
       link.id = fontLinkId
       link.rel = 'stylesheet'

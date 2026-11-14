@@ -39,7 +39,7 @@ export const RockPaperScissorsGame: React.FC = () => {
   // Best streak from localStorage
   const [bestStreak, setBestStreak] = useState<number>(() => {
     try {
-      const saved = localStorage.getItem('smarttools_rps_best_streak')
+      const saved = localStorage.getItem('qubnexa_rps_best_streak') || localStorage.getItem('smarttools_rps_best_streak')
       return saved ? parseInt(saved, 10) : 0
     } catch {
       return 0
@@ -84,7 +84,7 @@ export const RockPaperScissorsGame: React.FC = () => {
 
         if (nextStreak > bestStreak) {
           setBestStreak(nextStreak)
-          localStorage.setItem('smarttools_rps_best_streak', String(nextStreak))
+          localStorage.setItem('qubnexa_rps_best_streak', String(nextStreak))
         }
 
         if (mode !== 'endless' && nextScore >= targetWins) {

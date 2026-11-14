@@ -16,7 +16,8 @@ import type {
   GeneratedAudioOutput,
 } from '../types'
 
-const LOCAL_STORAGE_KEY = 'smarttools_tts_cloud_config'
+const LOCAL_STORAGE_KEY = 'qubnexa_tts_cloud_config'
+const LEGACY_STORAGE_KEY = 'smarttools_tts_cloud_config'
 
 export interface StoredCloudConfig {
   provider: 'openai' | 'elevenlabs'
@@ -34,7 +35,7 @@ export class CloudNeuralTTSProvider implements TTSProvider {
 
   static getConfig(): StoredCloudConfig | null {
     try {
-      const data = localStorage.getItem(LOCAL_STORAGE_KEY)
+      const data = localStorage.getItem(LOCAL_STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY)
       return data ? JSON.parse(data) : null
     } catch {
       return null

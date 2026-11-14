@@ -126,8 +126,8 @@ export const PrivacyPage: React.FC = () => {
           </p>
           <ul className="list-disc pl-5 space-y-1.5 text-sm">
             <li>
-              <strong>Theme Preference (<code>smarttools_theme</code>):</strong> Stores your light or
-              dark mode selection.
+              <strong>Theme Preference (<code>qubnexa_theme</code>):</strong> Stores your light or
+              dark mode selection (with backward compatibility for <code>smarttools_theme</code>).
             </li>
             <li>
               <strong>Recently Used Tools (<code>xw_recent_tools_v1</code>):</strong> Remembers up
@@ -136,20 +136,21 @@ export const PrivacyPage: React.FC = () => {
               storage settings.
             </li>
             <li>
-              <strong>PDF Editor Signatures (<code>smarttools_saved_signatures</code>):</strong>{' '}
-              Stores drawn or typed signatures you choose to save for reuse inside the PDF Editor.
+              <strong>PDF Editor Signatures (<code>qubnexa_saved_signatures</code>):</strong>{' '}
+              Stores drawn or typed signatures you choose to save for reuse inside the PDF Editor
+              (supports legacy <code>smarttools_saved_signatures</code>).
             </li>
             <li>
-              <strong>Optional Cloud TTS Configuration (<code>smarttools_tts_cloud_config</code>):</strong>{' '}
+              <strong>Optional Cloud TTS Configuration (<code>qubnexa_tts_cloud_config</code>):</strong>{' '}
               Stores an OpenAI or ElevenLabs provider preference and API key only if you enter one
               in Cloud Settings.
             </li>
             <li>
               <strong>Browser Games Storage:</strong> Saves local mute state (
-              <code>smarttools_games_muted</code>) and local mini-game scores/stats (
-              <code>smarttools_snake_highscore</code>, <code>smarttools_memory_best_moves</code>,{' '}
-              <code>smarttools_rps_best_streak</code>, <code>smarttools_ttt_stats</code>,{' '}
-              <code>smarttools_guess_stats</code>).
+              <code>qubnexa_games_muted</code>) and local mini-game scores/stats (
+              <code>qubnexa_snake_highscore</code>, <code>qubnexa_memory_best_moves</code>,{' '}
+              <code>qubnexa_rps_best_streak</code>, <code>qubnexa_ttt_stats</code>,{' '}
+              <code>qubnexa_guess_stats</code>).
             </li>
             <li>
               <strong>Browser Cache Storage:</strong> Stores downloaded ONNX voice model weights
@@ -170,12 +171,14 @@ export const PrivacyPage: React.FC = () => {
           </p>
           <ul className="list-disc pl-5 space-y-1.5 text-sm">
             <li>
-              <strong>Processed Locally in Browser Memory:</strong> Calculators (EMI, GST, Salary,
+              <strong>Processed Locally in Browser Memory:</strong> Calculators (SIP, EMI, GST, Salary,
               Discount, Profit &amp; Loss, Percentage, Age, Date &amp; Time), Unit Converter, Word
               Counter, Text Repeater (unless you click Share to WhatsApp), Text Inverter (unless
-              you click Share to WhatsApp), PDF Editor, JPG to PDF, Image Quality Increaser, Audio
-              Studio DSP cleaning/trimming, QR Code Generator, and Password Generator run locally
-              without uploading your files or text to a QUBNEXA server.
+              you click Share to WhatsApp), Fancy Font Generator, JSON Formatter &amp; Validator,
+              PDF Editor, PDF Text Cleaner, JPG to PDF, Image Quality Increaser, Image Resizer,
+              YouTube Thumbnail Downloader metadata/resolution display, Audio Studio DSP cleaning/trimming,
+              QR Code Generator, Password Strength Checker, and Password Generator run locally without
+              uploading your files or text to a QUBNEXA server.
             </li>
             <li>
               <strong>Features With External or OS/Browser Transmission:</strong> Text-to-Speech

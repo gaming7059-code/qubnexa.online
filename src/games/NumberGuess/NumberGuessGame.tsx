@@ -51,7 +51,7 @@ export const NumberGuessGame: React.FC = () => {
 
   const [stats, setStats] = useState<GuessStats>(() => {
     try {
-      const saved = localStorage.getItem('smarttools_guess_stats')
+      const saved = localStorage.getItem('qubnexa_guess_stats') || localStorage.getItem('smarttools_guess_stats')
       if (saved) return JSON.parse(saved)
     } catch {
       // fallback
@@ -138,7 +138,7 @@ export const NumberGuessGame: React.FC = () => {
         const attemptCount = updatedHistory.length
         const best = prev.bestAttempts === null ? attemptCount : Math.min(prev.bestAttempts, attemptCount)
         const next = { wins: prev.wins + 1, losses: prev.losses, bestAttempts: best }
-        localStorage.setItem('smarttools_guess_stats', JSON.stringify(next))
+        localStorage.setItem('qubnexa_guess_stats', JSON.stringify(next))
         return next
       })
     } else if (updatedHistory.length >= currentConfig.maxAttempts) {
@@ -149,7 +149,7 @@ export const NumberGuessGame: React.FC = () => {
 
       setStats((prev) => {
         const next = { ...prev, losses: prev.losses + 1 }
-        localStorage.setItem('smarttools_guess_stats', JSON.stringify(next))
+        localStorage.setItem('qubnexa_guess_stats', JSON.stringify(next))
         return next
       })
     } else {
@@ -424,7 +424,7 @@ export const NumberGuessGame: React.FC = () => {
             gameAudio.playClick()
             const fresh = { wins: 0, losses: 0, bestAttempts: null }
             setStats(fresh)
-            localStorage.setItem('smarttools_guess_stats', JSON.stringify(fresh))
+            localStorage.setItem('qubnexa_guess_stats', JSON.stringify(fresh))
           }}
           className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] px-3.5 py-2.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors"
         >

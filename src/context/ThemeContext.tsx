@@ -10,13 +10,14 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
-const THEME_STORAGE_KEY = 'smarttools_theme'
+const THEME_STORAGE_KEY = 'qubnexa_theme'
+const LEGACY_THEME_STORAGE_KEY = 'smarttools_theme'
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
     // Default to 'light' for first-time visitors as required
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem(THEME_STORAGE_KEY)
+      const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || localStorage.getItem(LEGACY_THEME_STORAGE_KEY)
       if (savedTheme === 'dark' || savedTheme === 'light') {
         return savedTheme
       }
