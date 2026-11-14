@@ -92,8 +92,8 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
     recordRecentTool(tool.id)
   }, [tool.id])
 
-  // Find related tools from slugs
-  const relatedTools = ALL_TOOLS.filter((t) => relatedSlugs.includes(t.slug))
+  // Find related tools from slugs or IDs for complete cross-compatibility
+  const relatedTools = ALL_TOOLS.filter((t) => relatedSlugs.includes(t.slug) || relatedSlugs.includes(t.id))
 
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">

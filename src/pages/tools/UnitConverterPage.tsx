@@ -105,7 +105,7 @@ export const UnitConverterPage: React.FC = () => {
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['percentage-calculator', 'date-difference-calculator', 'emi-calculator', 'discount-calculator']}
+      relatedSlugs={['percentage-calculator', 'date-time-calculator', 'emi-calculator', 'discount-calculator']}
     >
       <UnitConverter />
     </ToolPageLayout>

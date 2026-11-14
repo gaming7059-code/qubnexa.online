@@ -87,7 +87,7 @@ export const AgeCalculatorPage: React.FC = () => {
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['date-difference-calculator', 'percentage-calculator', 'salary-calculator']}
+      relatedSlugs={['date-time-calculator', 'percentage-calculator', 'salary-calculator']}
     >
       <AgeCalculator />
     </ToolPageLayout>

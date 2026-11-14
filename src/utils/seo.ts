@@ -71,7 +71,25 @@ export function injectStructuredData(schema?: Record<string, unknown> | Array<Re
   const script = document.createElement('script')
   script.id = 'structured-data'
   script.type = 'application/ld+json'
-  script.textContent = JSON.stringify(schema)
+
+  if (Array.isArray(schema)) {
+    const validItems = schema.filter(Boolean)
+    if (validItems.length === 0) return
+    if (validItems.length === 1) {
+      script.textContent = JSON.stringify(validItems[0])
+    } else {
+      script.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': validItems.map((item) => {
+          const { ['@context']: _, ...rest } = item
+          return rest
+        }),
+      })
+    }
+  } else {
+    script.textContent = JSON.stringify(schema)
+  }
+
   document.head.appendChild(script)
 }
 
@@ -149,6 +167,15 @@ export function createWebSiteSchema() {
     url: getFullUrl('/'),
     description: 'Your All-in-One Online Tools Platform. Explore free AI tools, calculators, PDF utilities, image and video tools, audio studio, converters, and browser games on QUBNEXA.',
     inLanguage: 'en',
+    publisher: {
+      '@type': 'Organization',
+      name: 'QUBNEXA',
+      url: getFullUrl('/'),
+      logo: {
+        '@type': 'ImageObject',
+        url: getFullUrl('/branding/qubnexa-logo.png'),
+      },
+    },
     potentialAction: {
       '@type': 'SearchAction',
       target: `${getFullUrl('/tools')}?q={search_term_string}`,
