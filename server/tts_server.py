@@ -38,6 +38,7 @@ app.add_middleware(
         "http://localhost:3000",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:4173",
+        "https://qubnexa.online",
         "https://qubnexa.pages.dev",
         "https://smarttools-india-clean.pages.dev"
     ],
