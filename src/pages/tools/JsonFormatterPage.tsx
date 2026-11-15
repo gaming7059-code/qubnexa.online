@@ -50,72 +50,103 @@ export const JsonFormatterPage: React.FC = () => {
   }
 
   const howToUseSteps = [
-    'Paste or type your raw JSON into the Input Editor, or click "Sample JSON" to load an example payload.',
-    'Inspect the real-time syntax badge: valid JSON is validated instantaneously, while invalid JSON displays the exact line and column numbers.',
-    'Choose your preferred indentation (2 Spaces, 4 Spaces, or Tabs) and optionally enable "Sort Keys" to order object properties alphabetically.',
-    'Click "Format / Pretty" for clean structured indentation, or "Minify" to strip whitespace for compact network payloads.',
-    'Switch to "Tree Explorer" to search keys and collapse/expand nested objects, or click "Copy" or "Download" to save your result as .json.',
+    'Input your JSON data: Paste raw JSON into the editor, type directly, click "Paste" from clipboard, or click "Sample JSON" to test with a rich multi-type API payload.',
+    'Real-time syntax validation: Watch the status badge update live. Valid JSON receives an instant green badge; invalid JSON displays the exact error message with line and column pointers.',
+    'Configure indentation & key sorting: Select your preferred indentation (2 Spaces, 4 Spaces, or Tab) and optionally toggle "Sort Keys" to arrange object properties alphabetically.',
+    'Format or Minify: Click "Format / Pretty" for clean structured indentation, or "Minify" to strip whitespace and compress into a single-line payload.',
+    'Escape or Unescape strings: Use "Escape" to wrap JSON for embedding inside programming strings or shell commands, or "Unescape" to decode serialized JSON strings.',
+    'Explore interactive tree & search: Switch between "Editor View" and "Tree Explorer" with real-time key/value search and collapsible node branches.',
+    'Review structural metrics & export: Inspect total characters, lines, objects, arrays, keys, max depth, and UTF-8 size, then click "Copy", "Copy Minified", or "Download" (data.json).',
   ]
 
   const formulas = [
     {
-      title: 'RFC 8259 & ECMA-404 Conformance',
-      formula: 'JSON = Object | Array | String | Number | Boolean | null',
+      title: 'RFC 8259 & ECMA-404 Specification Conformance',
+      formula: 'JSON-Value = false | true | null | Object | Array | Number | String',
       explanation:
-        'Validates against strict JSON interchange specifications. All keys must be double-quoted strings, unquoted trailing commas are rejected, and numbers conform to standard decimal notation.',
+        'Validates against strict JSON interchange specifications. All keys must be double-quoted strings, unquoted trailing commas are rejected, single quotes and comments (// or /* */) are strictly prohibited, and numbers conform to standard decimal notation without leading zeros or hex notation.',
     },
     {
-      title: 'Accurate Line & Column Syntax Localization',
-      formula: 'Line = \\n count(0, pos) + 1, Column = pos - lastIndexOf(\\n)',
+      title: 'Line & Column Syntax Error Localization Algorithm',
+      formula: 'Line = \\n count(0, pos) + 1 | Column = pos - lastIndexOf(\\n, pos)',
       explanation:
-        'When syntax errors occur, the engine calculates the exact line and column coordinates from character byte offsets so syntax flaws can be pinpointed and repaired in seconds.',
+        'When JSON.parse throws a SyntaxError, the engine captures the character offset (position) and calculates the exact line and column coordinates across V8 and SpiderMonkey error formats, pinpointing missing commas, unclosed brackets, or unquoted identifiers in seconds.',
     },
     {
-      title: 'Alphabetical Object Key Sorting',
-      formula: 'f(Obj) = { sorted(keys(Obj)).map(k => [k, f(Obj[k])]) }, Array Order Invariant',
+      title: 'Recursive Alphabetical Object Key Sorting (Array Invariant)',
+      formula: 'Sort(Obj) = { sorted(keys(Obj)).map(k => [k, Sort(Obj[k])]) } | Sort(Arr) = Arr.map(Sort)',
       explanation:
-        'Recursively sorts dictionary keys to produce deterministic, git-diff friendly JSON while strictly preserving the sequential index order of arrays.',
+        'Recursively sorts dictionary keys alphabetically to produce deterministic, git-diff friendly JSON payloads. Crucially, array element indices are strictly preserved to maintain list order semantics.',
+    },
+    {
+      title: 'Single-Line Whitespace Stripping & Minification Math',
+      formula: 'Minified = JSON.stringify(JSON.parse(rawText))',
+      explanation:
+        'Removes all structural whitespace, tab characters, and carriage returns outside quoted string literals. Reduces network payload weight by 20% to 50% for optimal API transmission throughput.',
+    },
+    {
+      title: 'Hierarchical Tree Traversal & Structural Metrics Algorithm',
+      formula: 'Depth = max(depth(node)), Total Keys = sum(Object.keys(node).length)',
+      explanation:
+        'Recursively traverses the parsed object graph to compute structural statistics: object count, array count, total property keys, maximum nesting depth, and exact UTF-8 byte weight using TextEncoder.',
     },
     {
       title: 'Zero-Telemetry Client-Side Sandbox',
-      formula: 'Data Transfer: Browser Memory (V8 Engine) → Screen (0 HTTP Calls)',
+      formula: 'Data Transfer: Browser Local Memory (V8 Engine) → Screen (0 HTTP Calls)',
       explanation:
-        'Every format, minify, and validation calculation is executed entirely within your browser memory. Sensitive tokens, passwords, and private API responses never leave your device.',
+        'Every format, minify, and validation calculation executes entirely within your browser memory. Sensitive tokens, credentials, and private customer payloads are never transmitted across the network or logged to external servers.',
     },
   ]
 
   const examples = [
     {
-      title: 'REST API Response Formatting',
-      description: 'Unreadable one-line API payloads are formatted into readable indented blocks.',
-      input: '{"status":"success","code":200,"data":{"id":42,"username":"alex_m"}}',
+      title: 'REST API Response Formatting (2-Space Indentation)',
+      description:
+        'Converting an unformatted single-line API response into clean, indented JSON with nested objects.',
+      input:
+        'Raw: {"status":"success","code":200,"data":{"id":42,"name":"QUBNEXA"}}',
       output:
-        '{\n  "status": "success",\n  "code": 200,\n  "data": {\n    "id": 42,\n    "username": "alex_m"\n  }\n}',
+        '{\\n  "status": "success",\\n  "code": 200,\\n  "data": {\\n    "id": 42,\\n    "name": "QUBNEXA"\\n  }\\n} (8 lines, 2 objects, 5 keys)',
     },
     {
       title: 'Payload Minification for Network Transfer',
-      description: 'Removes all optional indentation and newlines to compress file size.',
-      input: '{\n  "mode": "production",\n  "cache": true\n}',
-      output: '{"mode":"production","cache":true}',
+      description:
+        'Compressing indented JSON by stripping all optional whitespace and line breaks for fast API throughput.',
+      input:
+        '{\\n  "mode": "production",\\n  "cache": true,\\n  "retries": 3,\\n  "timeoutMs": 5000\\n}',
+      output:
+        '{"mode":"production","cache":true,"retries":3,"timeoutMs":5000} (Single line, 63 characters, 0 whitespace overhead)',
     },
     {
-      title: 'JSON String Literal Escaping',
-      description: 'Escapes internal quotes and backslashes for insertion into code or shell scripts.',
-      input: '{"message": "Hello \\"World\\""}',
-      output: '"{\\"message\\": \\"Hello \\\\\\"World\\\\\\"\\"}"',
+      title: 'Recursive Object Key Sorting (Deterministic Diffs & Array Invariance)',
+      description:
+        'Alphabetizing object keys alphabetically while strictly preserving the item sequence inside arrays.',
+      input:
+        '{"z":1,"a":2,"items":[{"y":10,"b":20},3,2,1],"m":{"c":1,"b":2}}',
+      output:
+        '{"a":2,"items":[{"b":20,"y":10},3,2,1],"m":{"b":2,"c":1},"z":1} (Keys a, items, m, z sorted; array items 3, 2, 1 order preserved)',
+    },
+    {
+      title: 'Syntax Error Detection with Line & Column Coordinates (Trailing Comma)',
+      description:
+        'Detecting an illegal trailing comma in an object and extracting exact line and column pointers.',
+      input:
+        '{\\n  "name": "QUBNEXA",\\n  "version": 2.0,\\n}',
+      output:
+        'Syntax Error: Line 4, Column 1 (Position 41) — "Expected double-quoted property name in JSON at position 41 (line 4 column 1)"',
     },
   ]
 
   const faqs = [
     {
-      question: 'Is my JSON payload or confidential data sent to external servers?',
+      question: 'What is an online JSON formatter and validator, and why is it used?',
       answer:
-        'No, absolutely not. All parsing, validation, formatting, minification, and tree generation occur strictly inside your web browser using native JavaScript engines. No data is transmitted over the network or stored in external databases.',
+        'A JSON formatter and validator is a developer tool that validates whether a text string adheres strictly to RFC 8259 JSON standards, formats unreadable one-line payloads into neatly indented readable structures (Pretty Print), and compresses formatted JSON by removing unnecessary whitespace (Minify). Developers and QA engineers use it to debug API responses, inspect nested data structures, and verify payload syntax.',
     },
     {
-      question: 'How does the validator calculate line and column numbers for syntax errors?',
+      question: 'How does the validator pinpoint exact line and column numbers for syntax errors?',
       answer:
-        'When JSON.parse encounters invalid syntax, QUBNEXA captures the error offset and maps the character position directly back to input line breaks. This provides exact Line and Column pointers to unclosed quotes, missing commas, or trailing commas.',
+        'When JSON.parse encounters invalid syntax (such as missing commas, unquoted keys, or unclosed brackets), QUBNEXA captures the error offset and maps the character position directly back to input line breaks. This provides exact Line and Column pointers to unclosed quotes, missing commas, or trailing commas.',
     },
     {
       question: 'Does the "Sort Keys" option alter the order of items inside arrays?',
@@ -137,19 +168,34 @@ export const JsonFormatterPage: React.FC = () => {
       answer:
         'The Tree Explorer allows you to search across both object keys and scalar values. As you type into the search bar, branches matching your query highlight automatically and expand so you can find specific properties in deep hierarchies.',
     },
+    {
+      question: 'How do the "Escape" and "Unescape" features work?',
+      answer:
+        'The "Escape" button wraps your JSON into a single valid JSON string literal by escaping internal double quotes (\\") and newlines (\\n), making it ready for insertion into cURL commands, shell environment variables, or programming string variables. "Unescape" reverses this process, converting escaped string literals back into raw JSON.',
+    },
+    {
+      question: 'Does the JSON formatter support or strip comments (// or /* */)?',
+      answer:
+        'No. The official JSON specification (RFC 8259 and ECMA-404) explicitly forbids comments. Native browser JSON parsers reject text containing single-line (//) or multi-line (/* */) comments with a syntax error. QUBNEXA strictly complies with RFC 8259 and does not parse or automatically strip comments. Ensure you remove comments or convert from JSONC/JSON5 before formatting.',
+    },
+    {
+      question: 'Is my JSON data, confidential API payload, or private token sent to any external server?',
+      answer:
+        'Never. QUBNEXA operates 100% client-side in your local web browser. All parsing, validation, formatting, minification, tree exploration, and file downloads execute exclusively within your device’s JavaScript engine. Zero bytes are transmitted to any remote server or stored in any database.',
+    },
   ]
 
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="JSON Formatter & Validator — Format, Minify, Tree View & Validate JSON | QUBNEXA"
-      seoDescription="Format, minify, and validate JSON online with syntax error detection, collapsible tree view, and key sorting. 100% private and instant in your browser."
-      keywords="json formatter, json validator, pretty print json, json minifier, json viewer, json tree view, format json online, validate json, json parser, json lint"
+      seoTitle="JSON Formatter Online — Pretty Print, Minify & Validate | QUBNEXA"
+      seoDescription="Format, minify, and validate JSON online with QUBNEXA. Free JSON formatter with line and column syntax error detection, collapsible tree view, and key sorting."
+      keywords="json formatter, json validator, pretty print json, json minifier, json viewer, json tree view, format json online, validate json, json parser, json lint, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['qr-code-generator', 'word-counter', 'unit-converter', 'password-generator']}
+      relatedSlugs={['text-repeater', 'text-inverter', 'word-counter', 'percentage-calculator', 'unit-converter', 'qr-code-generator']}
     >
       <JsonFormatter />
     </ToolPageLayout>
