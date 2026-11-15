@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
               <Link
                 to="/"
                 className="inline-flex items-center gap-2.5 transition-opacity duration-200 hover:opacity-90"
-                aria-label="QUBNEXA Homepage"
+                aria-label="QUBNEXA"
               >
                 <img
                   src={`${import.meta.env.BASE_URL}branding/qubnexa-icon.png`}
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
                 />
                 <div className="flex flex-col">
                   <span className="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-                    QUB<span className="text-cyan-600 dark:text-[#00DFFF]">NEXA</span>
+                    QUB<span className="text-cyan-700 dark:text-[#00DFFF]">NEXA</span>
                   </span>
                   <span className="text-[11px] font-medium text-slate-500 dark:text-[#00DFFF]/80">
                     Explore. Create. Simplify.
@@ -52,9 +52,9 @@ export const Footer: React.FC = () => {
 
             {/* Category Navigation Links */}
             <div className="col-span-1">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
                 Categories
-              </h4>
+              </h3>
               <ul className="space-y-1.5 text-sm">
                 <li>
                   <NavLink to="/categories/calculators" className={footerNavLinkClass}>
@@ -101,9 +101,9 @@ export const Footer: React.FC = () => {
 
             {/* Quick Navigation Links */}
             <div className="col-span-1">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
                 Explore
-              </h4>
+              </h3>
               <ul className="space-y-1.5 text-sm">
                 <li>
                   <NavLink to="/tools" end className={footerNavLinkClass}>
@@ -135,9 +135,9 @@ export const Footer: React.FC = () => {
 
             {/* Legal and Support Links */}
             <div className="col-span-2 sm:col-span-1">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-3">
                 Information &amp; Legal
-              </h4>
+              </h3>
               <ul className="space-y-1.5 text-sm">
                 <li>
                   <NavLink to="/about" end className={footerNavLinkClass}>

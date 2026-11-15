@@ -5,7 +5,7 @@ import { ThemeProvider } from './context/ThemeContext'
 import { LoadingFallback } from './components/common/LoadingFallback'
 
 // Route-level code splitting using React.lazy()
-const HomePage = React.lazy(() => import('./pages/HomePage').then((m) => ({ default: m.HomePage })))
+import { HomePage } from './pages/HomePage'
 const ToolsPage = React.lazy(() => import('./pages/ToolsPage').then((m) => ({ default: m.ToolsPage })))
 const CategoriesPage = React.lazy(() => import('./pages/CategoriesPage').then((m) => ({ default: m.CategoriesPage })))
 const CategoryDetailPage = React.lazy(() => import('./pages/CategoryDetailPage').then((m) => ({ default: m.CategoryDetailPage })))
@@ -54,14 +54,7 @@ export const App: React.FC = () => {
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route
-              index
-              element={
-                <Suspense fallback={<LoadingFallback />}>
-                  <HomePage />
-                </Suspense>
-              }
-            />
+            <Route index element={<HomePage />} />
             <Route
               path="tools"
               element={

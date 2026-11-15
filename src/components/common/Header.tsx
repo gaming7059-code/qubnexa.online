@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
         <Link 
           to="/" 
           className="group flex items-center gap-2.5 shrink-0 transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
-          aria-label="QUBNEXA Homepage"
+          aria-label="QUBNEXA"
         >
           <img
             src={`${import.meta.env.BASE_URL}branding/qubnexa-icon.png`}
@@ -107,8 +107,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
             title="Search tools (Ctrl+K)"
           >
             <Search className="h-4 w-4 text-slate-500 dark:text-[#00DFFF] transition-colors" />
-            <span className="hidden lg:inline">Search tools...</span>
-            <kbd className="hidden xl:inline-block rounded-md bg-white dark:bg-[#0B1020] px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+            <span className="sr-only lg:not-sr-only">Search tools</span>
+            <kbd aria-hidden="true" className="hidden xl:inline-block rounded-md bg-white dark:bg-[#0B1020] px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
               Ctrl K
             </kbd>
           </button>

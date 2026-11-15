@@ -174,6 +174,7 @@ export const HomePage: React.FC = () => {
                 className="h-16 w-16 sm:h-20 sm:w-20 object-contain rounded-full bg-[#050814]"
                 loading="eager"
                 decoding="async"
+                fetchPriority="high"
               />
             </div>
           </div>
@@ -210,6 +211,9 @@ export const HomePage: React.FC = () => {
               <input
                 ref={heroInputRef}
                 type="text"
+                role="combobox"
+                aria-autocomplete="list"
+                aria-haspopup="listbox"
                 value={heroSearchQuery}
                 onChange={(e) => {
                   setHeroSearchQuery(e.target.value)
@@ -218,7 +222,8 @@ export const HomePage: React.FC = () => {
                 onKeyDown={handleHeroKeyDown}
                 placeholder={`Try "calculate loan", "edit pdf", "download video", or "convert units"...`}
                 aria-label="Global tool search"
-                aria-controls="hero-search-results"
+                aria-expanded={Boolean(searchResults)}
+                aria-controls={searchResults ? 'hero-search-results' : undefined}
                 aria-activedescendant={
                   clampedHeroIndex >= 0 && searchResults?.[clampedHeroIndex]
                     ? `hero-opt-${searchResults[clampedHeroIndex].id}`
