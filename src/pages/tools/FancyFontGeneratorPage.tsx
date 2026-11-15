@@ -142,7 +142,7 @@ export const FancyFontGeneratorPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Fancy Font Generator — 35+ Cool & Aesthetic Unicode Copy-Paste Fonts | QUBNEXA"
-      seoDescription="Convert standard text into 35+ stylish Unicode fonts including Cursive, Gothic, Double Struck, Bubble, Small Caps, and Italic. Copy and paste into Instagram, Discord, and Twitter."
+      seoDescription="Convert text into 35+ stylish Unicode fonts like Cursive, Gothic, Double Struck, and Bubble. Copy and paste stylish fonts directly to Instagram, Discord & X."
       keywords="fancy font generator, aesthetic text generator, cool fonts copy paste, instagram fonts, cursive font generator, small caps generator, bubble text, fraktur font, discord text styles"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

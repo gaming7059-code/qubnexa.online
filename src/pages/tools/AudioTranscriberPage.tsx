@@ -99,7 +99,7 @@ export const AudioTranscriberPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free Audio & Speech Transcriber — Live Voice Dictation & SRT Subtitle Generator"
+      seoTitle="Free Audio & Speech Transcriber — Live Voice Dictation & SRT Subtitles | QUBNEXA"
       seoDescription="Transcribe speech to text in real time with microphone dictation. Supports English, Hindi, Bengali, and Urdu. Slow down audio files and export TXT or SRT subtitles."
       keywords="speech to text free, audio transcriber online, voice dictation hindi, bengali speech to text, srt subtitle generator, transcribe voice to text, creator tools"
       howToUseSteps={howToUseSteps}

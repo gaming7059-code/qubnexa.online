@@ -142,7 +142,7 @@ export const SipCalculatorPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="SIP Calculator — Calculate Mutual Fund SIP Returns & Wealth Growth | QUBNEXA"
-      seoDescription="Calculate mutual fund SIP maturity value, wealth multiplier, and wealth gains online. Includes interactive donut chart, year-wise compounding table, and Indian Rupee formatting."
+      seoDescription="Calculate mutual fund SIP maturity values, compounding growth, and total wealth gains with an interactive chart, year-wise table, and Indian Rupee formatting."
       keywords="sip calculator, mutual fund calculator, systematic investment plan, investment calculator, sip return calculator, wealth calculator, cagr calculator, sip compounding, mutual fund returns"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

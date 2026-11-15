@@ -134,7 +134,7 @@ export const YouTubeThumbnailDownloaderPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="YouTube Thumbnail Downloader — Free HD, 4K & SD Cover Image Grabber | QUBNEXA"
-      seoDescription="Download high-resolution YouTube video thumbnails in Maximum Resolution (1280x720 HD), 640x480, and 480x360 with live preview. Fast, free, and 100% private in your browser."
+      seoDescription="Download high-resolution YouTube video thumbnails in Maximum Resolution (1280x720 HD), 640x480, and 480x360 with live preview. Fast, free, and 100% private."
       keywords="youtube thumbnail downloader, download youtube thumbnail, youtube thumbnail hd, get youtube cover image, 1280x720 youtube thumbnail, save youtube preview image, youtube shorts thumbnail download"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

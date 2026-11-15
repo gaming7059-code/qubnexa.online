@@ -81,7 +81,7 @@ export const AgeCalculatorPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Age Calculator — Calculate Exact Age in Years, Months & Days | QUBNEXA"
-      seoDescription="Find your exact chronological age in years, months, days, hours, and minutes. Check exam age eligibility, leap year milestones, and upcoming birthday countdowns accurately."
+      seoDescription="Calculate your exact chronological age in years, months, days, and hours. Check exam age eligibility, leap years, and upcoming birthday countdowns accurately."
       keywords="age calculator, calculate age from date of birth, exact age in days, chronological age calculator, birthday countdown, exam age eligibility, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

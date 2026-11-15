@@ -101,7 +101,7 @@ export const ImageQualityIncreaserPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Free Image Quality Increaser — Enhance Photo Clarity & Resolution Online | QUBNEXA"
-      seoDescription="Enhance image clarity, sharpness, contrast, and upscale resolution up to 4x directly in your browser. 100% private, free, and hardware-accelerated with zero server uploads."
+      seoDescription="Enhance image clarity, sharpness, and contrast up to 4x directly in your browser. 100% private, free photo enhancer with zero uploads to external servers."
       keywords="image quality increaser, enhance image quality, increase photo resolution, image sharpener, upscale image online, free photo enhancer, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

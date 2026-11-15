@@ -143,7 +143,7 @@ export const JsonFormatterPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="JSON Formatter & Validator — Format, Minify, Tree View & Validate JSON | QUBNEXA"
-      seoDescription="Format, minify, and validate JSON online with syntax error detection (line & column), collapsible tree view, key sorting, and structural statistics. 100% private in-browser."
+      seoDescription="Format, minify, and validate JSON online with syntax error detection, collapsible tree view, and key sorting. 100% private and instant in your browser."
       keywords="json formatter, json validator, pretty print json, json minifier, json viewer, json tree view, format json online, validate json, json parser, json lint"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

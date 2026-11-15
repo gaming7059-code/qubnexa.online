@@ -25,6 +25,7 @@ const GSTCalculatorPage = React.lazy(() => import('./pages/tools/GSTCalculatorPa
 const ProfitLossCalculatorPage = React.lazy(() => import('./pages/tools/ProfitLossCalculatorPage').then((m) => ({ default: m.ProfitLossCalculatorPage })))
 const SalaryCalculatorPage = React.lazy(() => import('./pages/tools/SalaryCalculatorPage').then((m) => ({ default: m.SalaryCalculatorPage })))
 const DateTimeCalculatorPage = React.lazy(() => import('./pages/tools/DateTimeCalculatorPage').then((m) => ({ default: m.DateTimeCalculatorPage })))
+const DateDifferenceCalculatorPage = React.lazy(() => import('./pages/tools/DateDifferenceCalculatorPage').then((m) => ({ default: m.DateDifferenceCalculatorPage })))
 const QrCodeGeneratorPage = React.lazy(() => import('./pages/tools/QrCodeGeneratorPage').then((m) => ({ default: m.QrCodeGeneratorPage })))
 const PasswordGeneratorPage = React.lazy(() => import('./pages/tools/PasswordGeneratorPage').then((m) => ({ default: m.PasswordGeneratorPage })))
 const PasswordCheckerPage = React.lazy(() => import('./pages/tools/PasswordCheckerPage').then((m) => ({ default: m.PasswordCheckerPage })))
@@ -140,7 +141,7 @@ export const App: React.FC = () => {
               path="tools/date-difference-calculator"
               element={
                 <Suspense fallback={<LoadingFallback />}>
-                  <DateTimeCalculatorPage />
+                  <DateDifferenceCalculatorPage />
                 </Suspense>
               }
             />

@@ -92,7 +92,7 @@ export const QrCodeGeneratorPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Free QR Code Generator Online — URL, Wi-Fi, Text & vCard | QUBNEXA"
-      seoDescription="Generate custom QR codes online for free: website links, Wi-Fi passwords, contact vCards, phone numbers and plain text. Download high-res PNG & SVG vectors. 100% client-side & private."
+      seoDescription="Generate custom QR codes for free: website links, Wi-Fi passwords, contact vCards, and text. Download high-res PNG & SVG vectors. 100% client-side & private."
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

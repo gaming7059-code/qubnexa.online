@@ -112,7 +112,7 @@ export const VideoDownloaderPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Free Video Downloader — Direct MP4 & WebM Downloader Online | QUBNEXA"
-      seoDescription="Download videos you own or are authorized to save from direct MP4 and WebM URLs with browser-side progress, Content-Disposition filenames, and honest platform detection. 100% free with zero login."
+      seoDescription="Save videos from direct MP4 and WebM URLs with live download progress, original filenames, and platform detection. 100% free client-side tool with zero logins."
       keywords="video downloader, free video downloader, mp4 downloader, webm downloader, direct video download, online media saver, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

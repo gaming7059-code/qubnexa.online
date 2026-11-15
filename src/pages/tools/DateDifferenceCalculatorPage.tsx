@@ -4,9 +4,7 @@ import { DateDifferenceCalculator } from '../../tools/DateDifferenceCalculator/D
 import { ALL_TOOLS } from '../../data/toolsData'
 
 export const DateDifferenceCalculatorPage: React.FC = () => {
-  const tool = ALL_TOOLS.find(
-    (t) => t.slug === 'date-difference-calculator' || t.slug === 'date-time-calculator',
-  )!
+  const tool = ALL_TOOLS.find((t) => t.slug === 'date-difference-calculator')!
 
   const howToUseSteps = [
     'Select your calculation mode: choose "Difference Between Two Dates" to count days between milestones, or "Add or Subtract Days" to find a future deadline or past event date.',

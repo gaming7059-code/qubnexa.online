@@ -104,7 +104,7 @@ export const PasswordCheckerPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Smart Password Checker Online — Strength & Entropy Analyzer | QUBNEXA"
-      seoDescription="Check your password strength instantly and generate stronger password alternatives privately in your browser. Live entropy, brute force crack time estimation, and zero server storage."
+      seoDescription="Check password strength and entropy in real time with brute force crack time estimation. 100% private in-browser analysis with zero server storage."
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

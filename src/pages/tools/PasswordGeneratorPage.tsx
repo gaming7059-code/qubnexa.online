@@ -92,7 +92,7 @@ export const PasswordGeneratorPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Strong Password Generator Online — Cryptographically Secure | QUBNEXA"
-      seoDescription="Generate strong, secure passwords online using crypto.getRandomValues(). Custom lengths 4–128 chars, symbol choices, entropy meters, and 100% private in-browser generation."
+      seoDescription="Generate strong, secure passwords using crypto.getRandomValues(). Custom lengths 4–128 chars, symbol choices, and 100% private in-browser generation."
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

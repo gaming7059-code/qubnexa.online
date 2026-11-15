@@ -112,7 +112,7 @@ export const ALL_TOOLS: Tool[] = [
   createTool({
     id: 'profit-loss-calculator',
     name: 'Profit & Loss Calculator',
-    slug: 'profit-and-loss-calculator',
+    slug: 'profit-loss-calculator',
     route: '/tools/profit-loss-calculator',
     description: 'Analyze gross profit, net margin, markup ratio, and loss percentages instantly for business and e-commerce pricing.',
     primaryCategory: 'calculators',
@@ -165,6 +165,19 @@ export const ALL_TOOLS: Tool[] = [
     createdAt: '2026-02-05',
     badge: 'Pro',
     tags: ['date calculator', 'date difference calculator', 'business days', 'days between dates', 'add days'],
+  }),
+  createTool({
+    id: 'date-difference-calculator',
+    name: 'Date Difference Calculator',
+    slug: 'date-difference-calculator',
+    route: '/tools/date-difference-calculator',
+    description: 'Calculate exact calendar days, weeks, and months between any two dates or add and subtract days for milestone scheduling.',
+    primaryCategory: 'date-time',
+    secondaryCategories: ['calculators', 'utilities'],
+    icon: 'CalendarRange',
+    releaseOrder: 36,
+    createdAt: '2026-02-10',
+    tags: ['date difference calculator', 'days between dates', 'calculate duration between dates', 'add days to date', 'calendar difference'],
   }),
 
   // =========================================================================
