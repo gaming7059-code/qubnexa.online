@@ -2,82 +2,175 @@ import React from 'react'
 import { ToolPageLayout } from '../../components/layout/ToolPageLayout'
 import { TextRepeater } from '../../tools/TextRepeater/TextRepeater'
 import { ALL_TOOLS } from '../../data/toolsData'
+import type { Tool } from '../../types/tools'
 
 export const TextRepeaterPage: React.FC = () => {
-  const tool = ALL_TOOLS.find((t) => t.slug === 'text-repeater')!
+  const tool: Tool = ALL_TOOLS.find((t) => t.slug === 'text-repeater') || {
+    id: 'text-repeater',
+    name: 'Text Repeater',
+    slug: 'text-repeater',
+    path: '/tools/text-repeater',
+    description:
+      'Repeat any text, word, sentence or message with custom separators, styles, and browser-safe export up to 2M characters.',
+    categoryId: 'text-writing',
+    categoryIds: ['text-writing', 'utilities'],
+    categoryName: 'Text & Writing',
+    icon: 'Repeat',
+    isPopular: true,
+    isNew: true,
+    isFunctional: true,
+    keywords: [
+      'text repeater',
+      'repeat text online',
+      'duplicate text',
+      'copy text multiple times',
+      'text multiplier',
+      'whatsapp repeater',
+    ],
+  }
 
   const howToUseSteps = [
-    'Type, paste from clipboard, or upload a .txt file into the Input Text area.',
-    'Choose how many times to repeat using the -/+ buttons, numeric field, or quick presets (100 to 100,000 times).',
-    'Pick a separator (New Line, Space, Nothing, or Custom) and an optional style transform (Normal, Upside Down, Backwards, Bold, or Glitch).',
-    'Inspect the estimated output size and live output preview underneath.',
-    'Click Copy Result, Download .txt, Select All, Use Result as Input, or share directly on WhatsApp.',
+    'Enter your message: Type, paste text from your clipboard, or upload a plain-text (.txt) file up to 2 MB into the Input Text area.',
+    'Set your repeat count: Use the -/+ stepper buttons, type any integer up to 1,000,000, or choose quick presets (100, 500, 1,000, or 100,000 times).',
+    'Choose your delimiter: Select New Line (each repeat on a new line), Space, Nothing (concatenated), or Custom (such as commas, bullets, or dashes).',
+    'Select a style transform (optional): Transform your repeated message into Bold Unicode, Upside Down, Backwards, or Glitch Zalgo typography.',
+    'Verify estimated output size: Review the pre-computed character count and UTF-8 byte estimate to guarantee browser stability.',
+    'Inspect live output preview: View your repeated text instantaneously in the responsive output workspace (preview capped at 120,000 chars to prevent browser lag).',
+    'Export or share: Click "Copy Result" for complete clipboard copying, "Download .txt" to save locally, "Use Result as Input" for iterative piping, or "Share on WhatsApp".',
   ]
 
   const formulas = [
     {
-      title: 'Output Character Estimation Formula',
-      formula: 'Estimated Chars = (TransformedLen × Count) + (SeparatorLen × (Count - 1))',
-      explanation: 'Pre-computes exact output size before allocating memory so large repeat counts stay safe and responsive.',
+      title: 'Single-Buffer Repetition Math',
+      formula: 'Output = Count === 1 ? Unit : Separator === "" ? Unit.repeat(Count) : (Unit + Separator).repeat(Count - 1) + Unit',
+      explanation:
+        'Uses contiguous native string repetition instead of naive array concatenation. Exactly N - 1 delimiters are placed between N repetitions, completely eliminating awkward trailing separators.',
     },
     {
-      title: 'Single-Buffer Repetition',
-      formula: 'Output = (Unit + Separator).repeat(Count - 1) + Unit',
-      explanation: 'Uses native contiguous string repetition instead of intermediate arrays to avoid memory spikes up to 100,000+ repeats.',
+      title: 'Pre-Allocated Character Estimation Formula',
+      formula: 'Estimated Chars = (Unit Length × Count) + (Separator Length × (Count - 1))',
+      explanation:
+        'Calculates the exact total character count prior to memory allocation. This allows QUBNEXA to enforce browser safety thresholds before creating large string buffers.',
+    },
+    {
+      title: 'UTF-8 Byte Allocation Formula',
+      formula: 'Estimated Bytes = (Unit Bytes × Count) + (Separator Bytes × (Count - 1))',
+      explanation:
+        'Measures memory consumption in real UTF-8 bytes using TextEncoder logic, properly accounting for multi-byte Unicode scripts (Hindi, Bengali) and 4-byte surrogate emojis.',
+    },
+    {
+      title: 'Mathematical Bold Unicode Mapping',
+      formula: 'BoldChar = String.fromCodePoint(0x1D400 + (code - 65)) [A-Z] | 0x1D41A + (code - 97) [a-z] | 0x1D7CE + (code - 48) [0-9]',
+      explanation:
+        'Transforms standard ASCII letters and numbers into Mathematical Bold alphanumeric Unicode glyphs, retaining full cross-platform compatibility on social media and chat apps.',
+    },
+    {
+      title: 'Upside-Down Inversion & Grapheme Reversal',
+      formula: 'Inverted = segmentGraphemes(Text).map(glyph => FlipMap[glyph] || glyph).reverse().join("")',
+      explanation:
+        'Applies deterministic Unicode character substitution paired with grapheme cluster reversal, ensuring inverted phrases flip visually without corrupting surrogate pairs.',
+    },
+    {
+      title: 'Safety Thresholds & Bounded DOM Rendering',
+      formula: 'Max Count: 1,000,000 | Max Chars: 2,000,000 | Max Bytes: 4 MB | Live DOM Cap: 120,000 chars',
+      explanation:
+        'Strict guardrails protect user browser sessions: memory allocation pauses if output exceeds 2 million characters or 4 MB, while live DOM rendering caps preview to 120,000 characters without clipping clipboard or download data.',
     },
   ]
 
   const examples = [
     {
-      title: 'New-Line Message List',
-      description: 'Repeating a reminder or test line 100 times with each repeat on its own line.',
-      input: 'QUBNEXA Launch Day! (Count: 100, Separator: New Line)',
-      output: '100 numbered-ready lines generated instantly (~2.1 KB)',
+      title: 'New Line Repetition with Emojis (Social Media & Reminders)',
+      description:
+        'Repeating an announcement or reminder 5 times with each iteration formatted cleanly on a fresh line.',
+      input:
+        'Text: "QUBNEXA 🚀" • Repeat Count: 5 • Separator: New Line (\\n) • Transform: Normal',
+      output:
+        '54 Characters (UTF-16 code units) • 64 Bytes (UTF-8) • 5 Lines • Output: "QUBNEXA 🚀\\nQUBNEXA 🚀\\nQUBNEXA 🚀\\nQUBNEXA 🚀\\nQUBNEXA 🚀"',
     },
     {
-      title: 'Bold Custom-Delimited Tags',
-      description: 'Formatting bold keyword tags separated by a vertical bar.',
-      input: 'Create (Count: 3, Separator: " | ", Transform: Bold)',
-      output: '𝐂𝐫𝐞𝐚𝐭𝐞 | 𝐂𝐫𝐞𝐚𝐭𝐞 | 𝐂𝐫𝐞𝐚𝐭𝐞',
+      title: 'Mathematical Bold Tags with Custom Bullet Separator',
+      description:
+        'Creating styled social media keyword tags or decorative header badges with custom delimiters.',
+      input:
+        'Text: "Verified" • Repeat Count: 4 • Separator: Custom (" • ") • Transform: Bold',
+      output:
+        '73 Characters (UTF-16 code units) • 143 Bytes (UTF-8) • 4 units (16 code units / 32 bytes each) + 3 separators (3 code units / 5 bytes each) • Output: "𝐕𝐞𝐫𝐢𝐟𝐢𝐞𝐝 • 𝐕𝐞𝐫𝐢𝐟𝐢𝐞𝐝 • 𝐕𝐞𝐫𝐢𝐟𝐢𝐞𝐝 • 𝐕𝐞𝐫𝐢𝐟𝐢𝐞𝐝"',
     },
     {
-      title: 'Multilingual & Emoji Repetition',
-      description: 'Preserving Bengali, Hindi, and emoji clusters accurately across repeats.',
-      input: 'বাংলা টেক্সট 🚀 (Count: 5, Separator: Space)',
-      output: 'বাংলা টেক্সট 🚀 repeated 5 times safely with full UTF-8 support',
+      title: 'Upside-Down Typography with Space Delimiter',
+      description:
+        'Generating stylized flipped text sequences for creative social profiles and playful messaging.',
+      input:
+        'Text: "hello world" • Repeat Count: 3 • Separator: Space (" ") • Transform: Upside Down',
+      output:
+        '35 Characters (UTF-16 code units) • 47 Bytes (UTF-8) • 3 units (11 code units / 15 bytes each) + 2 spaces • Output: "plɹoʍ ollǝɥ plɹoʍ ollǝɥ plɹoʍ ollǝɥ"',
+    },
+    {
+      title: 'High-Volume Comma-Separated Mock Data (10,000 Repeats)',
+      description:
+        'Stress-testing software data pipelines and generating synthetic delimiter-separated testing strings.',
+      input:
+        'Text: "A1" • Repeat Count: 10,000 • Separator: Custom (",") • Transform: Normal',
+      output:
+        '29,999 Characters • 29,999 Bytes (~29.3 KB) • 10,000 repetitions with 9,999 commas • Instant single-buffer allocation in <5ms',
     },
   ]
 
   const faqs = [
     {
+      question: 'What is an online text repeater and what are its common use cases?',
+      answer:
+        'A text repeater is a digital utility that duplicates any word, phrase, sentence, or emoji string multiple times automatically. Popular use cases include stress-testing software forms and database limits, generating dummy mock data, creating repetitive test payloads for QA, creating emphasized social media captions, sending fun repeated messages on WhatsApp, and formatting custom-delimited tags or lists.',
+    },
+    {
       question: 'Can I safely repeat text 100,000 times without freezing my browser?',
-      answer: 'Yes. Text Repeater estimates output character count and byte size before allocation and keeps live DOM previews capped to 120,000 characters while preserving complete output for Copy Result and Download .txt up to the safe browser limit.',
+      answer:
+        'Yes, provided the total generated output stays within the 2,000,000-character and 4 MB safety thresholds. QUBNEXA utilizes a high-efficiency single-buffer repetition algorithm ((Unit + Separator).repeat(Count - 1) + Unit) rather than heavy array allocations. Furthermore, QUBNEXA caps the live visual textarea preview to 120,000 characters, preventing DOM lag. The entire output remains completely available in memory for instantaneous "Copy Result" and "Download .txt" actions.',
     },
     {
-      question: 'What happens if the repeated text exceeds the safety limit?',
-      answer: 'If estimated output exceeds 2,000,000 characters or 4 MB, generation pauses automatically and shows an upfront size warning so your tab never crashes.',
+      question: 'What are the maximum repeat count and output size limits on QUBNEXA?',
+      answer:
+        'You can enter a repeat count up to 1,000,000 times. However, repeat capacity is bounded by a strict browser safety ceiling of 2,000,000 characters (2 MB ASCII) or 4,000,000 UTF-8 bytes (4 MB). Short inputs (e.g. 1–2 characters) can reach hundreds of thousands of repeats, while longer paragraphs reach the 2M-character safety ceiling at lower counts. If your requested combination exceeds these thresholds, QUBNEXA alerts you immediately before allocating memory.',
     },
     {
-      question: 'Is my repeated text sent to any server?',
-      answer: 'No. Everything happens locally inside your browser memory with zero network uploads or tracking.',
+      question: 'How does the separator setting work, and why is there no trailing delimiter?',
+      answer:
+        'QUBNEXA supports four separator modes: New Line (\\n), Space, Nothing (direct continuous concatenation), and Custom (any string up to 50 characters, such as commas, pipes, or bullets). Our algorithm places exactly N - 1 separators between N repeat units, ensuring your repeated output is clean and contains zero trailing separators at the end.',
     },
     {
-      question: 'Does it preserve Bengali, Hindi, and emojis?',
-      answer: 'Yes. All UTF-8 scripts, combining vowel signs, and emojis work reliably across repetition, separators, and exports.',
+      question: 'What text style transforms are available in the Text Repeater?',
+      answer:
+        'Alongside standard repetition, QUBNEXA offers four instant typographical transformations: Bold (Mathematical alphanumeric symbols), Upside Down (flipped Unicode letters), Backwards (grapheme-safe reversed character strings), and Glitch (bounded Zalgo combining diacritics). Style transformations are applied directly before repetition.',
+    },
+    {
+      question: 'Does the text repeater preserve emojis, Hindi, Bengali, and complex Unicode characters?',
+      answer:
+        'Yes. The engine uses modern ECMAScript Unicode grapheme segmentation and TextEncoder byte calculations. Complex multilingual scripts (such as Hindi, Bengali, Tamil, Telugu, and Arabic) and surrogate-pair emojis (such as 🚀, 🔥, and ❤️) are replicated flawlessly without glyph corruption or broken surrogate pairs.',
+    },
+    {
+      question: 'How does the WhatsApp direct share button work?',
+      answer:
+        'The WhatsApp button encodes your repeated text into a valid WhatsApp web/mobile URL (https://wa.me/?text=...). To prevent browser URI character limits from breaking the link, the shared message is safely capped at 1,800 characters using grapheme-cluster slicing, with an ellipsis indicating truncation if applicable.',
+    },
+    {
+      question: 'Is my repeated text private, secure, and processed client-side?',
+      answer:
+        'Absolutely. All string transformations, memory estimations, repetitions, and file downloads execute 100% locally in your client web browser via JavaScript. Zero characters, words, or files are ever sent to remote web servers, external APIs, or cloud databases.',
     },
   ]
 
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Text Repeater — Repeat Text 100x to 100,000x Online Free | QUBNEXA"
-      seoDescription="Repeat any text, word, emoji, or message up to 100,000+ times instantly. Supports custom separators, bold/upside-down/glitch styles, .txt download, and WhatsApp sharing."
-      keywords="text repeater, repeat text online, duplicate text, copy text multiple times, text multiplier, qubnexa"
+      seoTitle="Text Repeater Online — Repeat Text, Words & Emojis | QUBNEXA"
+      seoDescription="Repeat text, words, and emojis online with QUBNEXA. Free text multiplier with custom separators, bold styles, and browser-safe repetition up to 1,000,000 times."
+      keywords="text repeater, repeat text online, duplicate text, copy text multiple times, text multiplier, repeat words online, whatsapp text repeater, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['text-inverter', 'word-counter', 'qr-code-generator', 'password-generator']}
+      relatedSlugs={['text-inverter', 'word-counter', 'percentage-calculator', 'unit-converter', 'qr-code-generator', 'password-generator']}
     >
       <TextRepeater />
     </ToolPageLayout>
