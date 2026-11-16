@@ -16,6 +16,9 @@ import {
   Wrench,
   Award,
   Flame,
+  HelpCircle,
+  Shield,
+  Activity,
 } from 'lucide-react'
 import { GAMES_LIST } from '../../games/types'
 import { GameCard } from '../../games/GameCard'
@@ -81,38 +84,58 @@ export const HexDriftPage: React.FC = () => {
 
   const faqs = [
     {
-      question: 'How does the Boss Fight system work in HEX DRIFT?',
+      question: 'How do I play HEX DRIFT on desktop and mobile?',
       answer:
-        'As you defeat enemies and fill your level progress bar, Level 5 unleashes a massive Dreadnought Boss! The boss has a visible multi-phase health bar, targeted plasma volleys, radial geometric rings, and drone escorts. Defeating the boss awards bonus score, a large crystal coin drop, and unlocks the next difficulty tier.',
+        'On desktop, navigate using WASD or Arrow keys; auto-fire is continuously engaged. On mobile and tablet touchscreens, drag your finger anywhere on the game canvas for 1:1 capacitive steering with scroll-lock protection.',
+    },
+    {
+      question: 'How does the Level 5 Dreadnought Boss fight work?',
+      answer:
+        'As you defeat enemies and fill your sector progression gauge, Level 5 triggers an alert for the Dreadnought VEX-9 Boss. The boss features a multi-phase health bar, targeted plasma volleys, radial 12-point bullet rings, and drone escorts. Defeating the boss grants a +100 crystal coin bounty and unlocks the next sector.',
     },
     {
       question: 'How do I earn and spend in-game energy coins?',
       answer:
-        'Destroying enemies and bosses drops glowing energy crystals (coins). Coins are saved automatically in your browser localStorage. You can spend them in the Star Hangar to unlock 5 unique spaceships (Viper, Phantom, Titan, Pulsar, and Reaver) and upgrade 4 weapon systems.',
+        'Destroying enemy drones, splitters, orbitals, and bosses drops glowing energy crystals (coins). Coins are saved automatically in browser localStorage. You can spend them in the Star Hangar to unlock 5 distinct spaceships and upgrade 4 weapon systems.',
     },
     {
-      question: 'How do Daily Missions and Achievements work?',
+      question: 'What are the 5 unlockable spaceships in the Star Hangar?',
       answer:
-        'Every day at midnight, 4 fresh date-based missions are generated with coin rewards. Additionally, 10 permanent achievements (such as First Blood, Void Hunter, Boss Slayer, and Overclocked) grant instant coin bounties upon completion.',
+        'The Star Hangar features 5 specialized starships: Viper Alpha (Default balanced interceptor), Neon Phantom (150 coins, +20% speed bonus), Aegis Titan (300 coins, +1 extra hull point and prolonged shields), Vortex Pulsar (500 coins, +25% fire rate and high damage), and Void Reaver (1,000 coins, dual plasma cannons and magnetic coin pull).',
     },
     {
-      question: 'Can I play HEX DRIFT on mobile touchscreens without lag?',
+      question: 'What are the 4 weapon and ship upgrade trees?',
       answer:
-        'Yes! HEX DRIFT features fluid 1:1 capacitive touch drag controls with scroll-lock protection. Simply drag your finger anywhere on the canvas to steer your ship. Auto-fire is continuously engaged.',
+        'In the Upgrade Lab, you can spend coins across 5 tiers per system: Laser Capacitor (accelerates cannon firing rate), Plasma Overcharge (boosts bolt velocity and hit damage), Kinetic Barrier Matrix (extends shield pickup duration up to 14 seconds), and Flux Grav-Magnet (expands crystal coin collection radius).',
+    },
+    {
+      question: 'How do Daily Missions and permanent Achievements work?',
+      answer:
+        'Every day at midnight, 4 date-based daily missions generate fresh objectives for bonus coin rewards. In addition, 10 permanent achievements (including First Blood, Void Hunter, Dreadnought Slayer, and Void Legend) award one-time coin bounties upon completing combat and survival milestones.',
+    },
+    {
+      question: 'Where is my game progression and high score saved?',
+      answer:
+        'All game progress—including unlocked spaceships, upgrade levels, energy coin balance, completed achievements, and all-time high scores—is stored locally in your browser localStorage under specific hexdrift keys.',
+    },
+    {
+      question: 'Do sound effects require downloading external audio files?',
+      answer:
+        'No. All sound effects—such as plasma cannon blasts, shield activations, engine hums, and boss explosion rumbles—are synthesized client-side in real time using the browser Web Audio API oscillator nodes.',
     },
   ]
 
   usePageSEO({
-    title: 'HEX DRIFT — Neon Void Runner Online | Boss Fights, Upgrades & Ships | QUBNEXA',
+    title: 'Play HEX DRIFT Online — Neon Space Shooter | QUBNEXA',
     description:
-      'Play HEX DRIFT: Neon Void Runner with Boss Battles, Level Progression, Star Hangar Spaceships, Weapon Upgrades, and Daily Missions on QUBNEXA. 100% free client-side browser arcade game.',
+      'Play free HEX DRIFT online: a neon space shooter with 5 unlockable ships, weapon upgrades, Level 5 Dreadnought boss fights, daily missions, and touch controls.',
     canonicalPath: '/games/hex-drift',
     keywords:
-      'hex drift, neon void runner, boss fight arcade game, spaceship shop game, browser shooter, space runner game, qubnexa games',
+      'hex drift, neon space shooter, play hex drift online, void runner browser game, arcade shooter online, free browser games, qubnexa',
     schema: [
       createWebApplicationSchema(
         'HEX DRIFT — Neon Void Runner',
-        'Enhanced futuristic arcade void runner featuring Dreadnought Boss fights, Level Progression, 5 unlockable spaceships, weapon upgrade trees, daily missions, and local high score tracking.',
+        'Free online neon space shooter arcade game featuring Level 5 Dreadnought boss fights, Star Hangar ships, weapon upgrades, and daily missions.',
         '/games/hex-drift'
       ),
       createBreadcrumbSchema([
@@ -130,11 +153,11 @@ export const HexDriftPage: React.FC = () => {
       <section className="border-b border-slate-200/70 dark:border-slate-800/80 bg-slate-50/80 dark:bg-[#050814]/60 py-4">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-            <Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <Link to="/" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
               Home
             </Link>
             <span>/</span>
-            <Link to="/games" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <Link to="/games" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
               Games
             </Link>
             <span>/</span>
@@ -143,7 +166,7 @@ export const HexDriftPage: React.FC = () => {
 
           <Link
             to="/games"
-            className="inline-flex min-h-[38px] items-center gap-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0B1020] px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-500/60 dark:hover:border-[#00DFFF]/60 hover:text-blue-600 dark:hover:text-[#00DFFF] shadow-2xs transition-colors"
+            className="inline-flex min-h-[38px] items-center gap-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0B1020] px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-cyan-500/60 dark:hover:border-cyan-400/60 hover:text-cyan-600 dark:hover:text-cyan-400 shadow-2xs transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Browser Games</span>
@@ -489,23 +512,88 @@ export const HexDriftPage: React.FC = () => {
         </ScrollReveal>
       </section>
 
-      {/* 4. FREQUENTLY ASKED QUESTIONS */}
+      {/* 4. STRATEGY & PILOT TACTICS */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-10 shadow-sm space-y-6">
-            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-              Frequently Asked Questions
-            </h2>
+            <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100 dark:border-slate-800">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400">
+                <Activity className="h-5 w-5" />
+              </div>
+              <div>
+                <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+                  Combat Strategy &amp; Survival Tactics
+                </h2>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Pro pilot recommendations for surviving high-density void waves and boss battles
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="p-4 rounded-xl bg-slate-50/70 dark:bg-[#050814]/40 border border-slate-100 dark:border-slate-800/80 space-y-1.5">
+                <div className="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
+                  <span>Prioritize Magnet Upgrades</span>
+                </div>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Upgrading the Flux Grav-Magnet early allows you to gather falling energy crystals from afar without putting your ship in the path of incoming enemy plasma.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-slate-50/70 dark:bg-[#050814]/40 border border-slate-100 dark:border-slate-800/80 space-y-1.5">
+                <div className="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <Shield className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
+                  <span>Dreadnought Orbiting Strategy</span>
+                </div>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  During Level 5 boss encounters, stay in the lower quadrant and weave horizontally between radial bullet spreads. Focus fire on the center hull to defeat the boss before escorts overwhelm you.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-slate-50/70 dark:bg-[#050814]/40 border border-slate-100 dark:border-slate-800/80 space-y-1.5">
+                <div className="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <Rocket className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
+                  <span>Save for High-Tier Ships</span>
+                </div>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Saving 300 coins for the Aegis Titan grants an immediate +1 hull buffer, while reaching 1,000 coins unlocks the Void Reaver with built-in magnetic collection.
+                </p>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* 5. FREQUENTLY ASKED QUESTIONS */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1020] p-6 sm:p-10 shadow-sm space-y-6">
+            <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100 dark:border-slate-800">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400">
+                <HelpCircle className="h-5 w-5" />
+              </div>
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Essential pilot information regarding mechanics, boss encounters, and hangar unlocks
+                </p>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {faqs.map((faq, index) => (
                 <div
                   key={index}
                   className="rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/60 dark:bg-[#050814]/30 p-5 space-y-2"
                 >
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <span className="text-cyan-600 dark:text-cyan-400 font-mono text-xs">Q:</span>
                     {faq.question}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pl-5">
                     {faq.answer}
                   </p>
                 </div>
@@ -515,12 +603,12 @@ export const HexDriftPage: React.FC = () => {
         </ScrollReveal>
       </section>
 
-      {/* 5. EXPLORE MORE BROWSER GAMES */}
+      {/* 6. EXPLORE MORE BROWSER GAMES */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
                 More Free Games
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -532,7 +620,7 @@ export const HexDriftPage: React.FC = () => {
             </div>
             <Link
               to="/games"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300"
             >
               <span>View All Games</span>
               <ArrowLeft className="h-3.5 w-3.5 rotate-180" />
@@ -541,10 +629,60 @@ export const HexDriftPage: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {otherGames.map((game) => (
-              <GameCard key={game.id} game={game} />
+              <Link
+                key={game.id}
+                to={
+                  game.id === 'memory-match'
+                    ? '/games/memory-match'
+                    : game.id === 'rock-paper-scissors'
+                    ? '/games/rock-paper-scissors'
+                    : game.id === 'number-guess'
+                    ? '/games/number-guess'
+                    : `/games?play=${game.id}`
+                }
+                className="block h-full"
+              >
+                <GameCard game={game} />
+              </Link>
             ))}
           </div>
         </ScrollReveal>
+      </section>
+
+      {/* 7. POPULAR ONLINE TOOLS */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 border-t border-slate-100 dark:border-slate-800/80 pt-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Featured Online Utilities
+          </span>
+          <Link
+            to="/tools"
+            className="text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:underline"
+          >
+            Explore all 30+ tools →
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+          {[
+            { name: 'Word Counter', path: '/tools/word-counter' },
+            { name: 'Percentage Calculator', path: '/tools/percentage-calculator' },
+            { name: 'QR Code Generator', path: '/tools/qr-code-generator' },
+            { name: 'Password Generator', path: '/tools/password-generator' },
+            { name: 'Video Downloader', path: '/tools/video-downloader' },
+            { name: 'Fancy Font Generator', path: '/tools/fancy-font-generator' },
+          ].map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className="p-3 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-[#0B1020] text-center hover:border-cyan-300 dark:hover:border-cyan-700/60 transition-colors shadow-2xs group"
+            >
+              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors line-clamp-1">
+                {item.name}
+              </span>
+            </Link>
+          ))}
+        </div>
       </section>
     </div>
   )
