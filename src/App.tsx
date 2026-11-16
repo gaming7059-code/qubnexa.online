@@ -48,6 +48,7 @@ const VideoDownloaderPage = React.lazy(() => import('./pages/tools/VideoDownload
 const YouTubeThumbnailDownloaderPage = React.lazy(() => import('./pages/tools/YouTubeThumbnailDownloaderPage').then((m) => ({ default: m.YouTubeThumbnailDownloaderPage })))
 const GamesPage = React.lazy(() => import('./pages/GamesPage').then((m) => ({ default: m.GamesPage })))
 const HexDriftPage = React.lazy(() => import('./pages/games/HexDriftPage').then((m) => ({ default: m.HexDriftPage })))
+const MemoryMatchPage = React.lazy(() => import('./pages/games/MemoryMatchPage').then((m) => ({ default: m.MemoryMatchPage })))
 
 export const App: React.FC = () => {
   return (
@@ -319,6 +320,14 @@ export const App: React.FC = () => {
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <HexDriftPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="games/memory-match"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <MemoryMatchPage />
                 </Suspense>
               }
             />

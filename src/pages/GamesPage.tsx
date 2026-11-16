@@ -186,7 +186,23 @@ export const GamesPage: React.FC = () => {
             )}
             {activeGameId === 'tic-tac-toe' && <TicTacToeGame />}
             {activeGameId === 'snake' && <SnakeGame />}
-            {activeGameId === 'memory-match' && <MemoryMatchGame />}
+            {activeGameId === 'memory-match' && (
+              <div className="space-y-4">
+                <MemoryMatchGame />
+                <div className="flex items-center justify-between flex-wrap gap-3 pt-3 border-t border-slate-100 dark:border-slate-800/80">
+                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                    Flip matching pairs across 3 difficulty tiers • Best moves saved locally
+                  </span>
+                  <Link
+                    to="/games/memory-match"
+                    className="xw-btn-secondary min-h-[36px] px-3.5 py-1.5 text-xs inline-flex items-center gap-1.5"
+                  >
+                    <span>Dedicated Game Page &amp; Strategy</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </div>
+            )}
             {activeGameId === 'rock-paper-scissors' && <RockPaperScissorsGame />}
             {activeGameId === 'number-guess' && <NumberGuessGame />}
           </div>
