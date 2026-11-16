@@ -46,11 +46,11 @@ export const ImageResizerPage: React.FC = () => {
   }
 
   const howToUseSteps = [
-    'Upload your photo by dragging and dropping it into the workspace or clicking "Browse Image" (supports JPG, JPEG, PNG, and WebP up to 50 MB).',
-    'Enter your desired Width and Height in pixels, or click a popular social preset such as Instagram Square (1080×1080), Instagram Portrait (1080×1350), or YouTube Thumbnail (1280×720).',
-    'Toggle "Aspect Locked" if you wish to automatically preserve your original image proportions when adjusting width or height.',
-    'Select your target output format (JPG, PNG, or WebP) and adjust the compression quality slider to balance file size and visual fidelity.',
-    'Click "Download Image" to instantly save your resized graphic locally with zero server uploads.',
+    'Upload Image File: Drag and drop your photo into the workspace or click "Browse Image" (supports JPG, PNG, and WebP up to 50 MB).',
+    'Choose Dimensions or Preset: Enter your target Width and Height in pixels (1 to 8192 px), or click one of the six social media presets (Instagram Square, Instagram Portrait, YouTube Thumbnail, Full HD 1080p, Facebook Post, or X / Twitter Banner).',
+    'Set Aspect Ratio Lock: Toggle the "Aspect Locked" button to automatically preserve original proportions, or unlock it to set custom non-proportional dimensions freely.',
+    'Select Format & Adjust Quality: Choose your target output format (JPG, PNG, or WebP) and adjust the compression quality slider (10% to 100%) to balance file size against visual clarity.',
+    'Download Resized Image: Review the live preview and file size comparison indicator, then click "Download Image" to save the resized graphic directly to your device.',
   ]
 
   const formulas = [
@@ -58,7 +58,7 @@ export const ImageResizerPage: React.FC = () => {
       title: 'Proportional Aspect Ratio Scaling',
       formula: 'Target Height = Math.round(Target Width × (Original Height / Original Width))',
       explanation:
-        'When aspect ratio lock is enabled, modifying either dimension proportionally recalculates the opposing dimension, preventing distortion, squishing, or stretching.',
+        'When aspect ratio lock is enabled, modifying either dimension proportionally recalculates the opposing dimension, preventing visual distortion, squishing, or stretching.',
     },
     {
       title: 'High-Precision Bilinear Canvas Resampling',
@@ -67,35 +67,35 @@ export const ImageResizerPage: React.FC = () => {
         'The browser graphics engine performs hardware-accelerated multi-pass bilinear interpolation to sample and blend pixel values smoothly across resized dimensions.',
     },
     {
-      title: 'Lossy vs. Lossless Output Compression',
-      formula: 'Output Blob = canvas.toBlob(callback, mimeType, quality / 100)',
+      title: 'Dimension Clamping & Size Boundaries',
+      formula: 'Clamped Dimension = Math.min(8192, Math.max(1, Math.round(Value)))',
       explanation:
-        'JPG and WebP leverage discrete cosine transform (DCT) or intra-frame compression with user-tuned quality, whereas PNG maintains bit-for-bit lossless pixel reproduction.',
+        'Input pixel dimensions are clamped between 1 px and 8,192 px to prevent canvas memory allocation overflows, and file uploads are bounded at a maximum of 50 MB.',
     },
     {
-      title: 'Client-Side Memory & Privacy Guard',
-      formula: 'Local Execution = 100% In-Memory Canvas + Object URL Revocation (0 Network Uploads)',
+      title: 'Client-Side Blob Export & Memory Revocation',
+      formula: 'canvas.toBlob(callback, mimeType, quality / 100) → URL.revokeObjectURL()',
       explanation:
-        'Images are decoded and transformed entirely inside client browser memory; all temporary memory allocations are revoked upon file replacement or component unmount.',
+        'Images are decoded and transformed entirely in client memory; object URLs are revoked upon file replacement or component unmount to ensure zero memory leaks.',
     },
   ]
 
   const examples = [
     {
       title: 'Instagram Square Feed Optimization',
-      description: 'Converting a high-resolution 4000×3000 DSLR landscape photo into a crisp 1080×1080 square format.',
+      description: 'Converting a high-resolution 4000×3000 DSLR landscape photo into a crisp 1080×1080 square format with aspect ratio unlock.',
       input: '4000 × 3000 px JPEG (6.4 MB)',
-      output: '1080 × 1080 px WebP / JPEG (approx. 185 KB, -97% file size reduction)',
+      output: '1080 × 1080 px WebP (approx. 185 KB, -97% file size reduction)',
     },
     {
       title: 'YouTube Video Thumbnail Preparation',
-      description: 'Adjusting custom graphic artwork to the standard 1280×720 16:9 thumbnail resolution.',
+      description: 'Adjusting custom graphic artwork to the standard 1280×720 (16:9 widescreen) thumbnail dimension for YouTube.',
       input: '1920 × 1080 px PNG (1.8 MB)',
       output: '1280 × 720 px PNG (approx. 640 KB with lossless clarity)',
     },
     {
-      title: 'Web Compression for Faster Page Loads',
-      description: 'Downscaling large banner assets to 1200×630 for social sharing and web display with 85% WebP quality.',
+      title: 'High-Definition Web Banner Compression',
+      description: 'Downscaling large 4K hero assets to 1200×630 for Facebook link shares and website display using 85% WebP quality.',
       input: '3840 × 2160 px 4K PNG (8.2 MB)',
       output: '1200 × 630 px WebP (approx. 92 KB, ultra-fast load time)',
     },
@@ -103,48 +103,76 @@ export const ImageResizerPage: React.FC = () => {
 
   const faqs = [
     {
-      question: 'Will resizing my image reduce its quality?',
+      question: 'Will resizing my image reduce its visual quality?',
       answer:
-        'Downscaling (reducing dimensions) does not harm visual sharpness and often makes the image appear crisper because pixel density is condensed. Upscaling (increasing dimensions beyond original size) requires the browser to interpolate new pixels, which may result in slight softening. For AI-assisted upscaling without blurriness, use our Image Quality Increaser tool.',
+        'Downscaling (reducing pixel dimensions) condenses existing pixels and generally keeps the image crisp and sharp. Upscaling (increasing dimensions beyond original resolution) requires the browser canvas to interpolate new pixels, which can cause slight softening. For algorithmic image enhancement, consider using our Image Quality Increaser tool.',
     },
     {
-      question: 'What happens when I enable or disable "Maintain Aspect Ratio"?',
+      question: 'How does the aspect ratio lock work when resizing?',
       answer:
-        'When aspect ratio is locked (default), changing the width automatically calculates the appropriate height (and vice versa) to prevent your image from looking squished or stretched. When unlocked, you can enter any custom width and height independently.',
+        'When aspect ratio lock is enabled (the default setting), entering a new width automatically calculates the proportionate height based on the original image ratio, and vice versa. This prevents your photos from appearing squished or stretched. If you want custom non-proportional dimensions, simply click the lock icon to unlock the aspect ratio.',
     },
     {
       question: 'Which output format should I choose: JPG, PNG, or WebP?',
       answer:
-        'Choose JPG for standard photographs and social media compatibility. Choose PNG when you have graphics, text, or logos that require 100% lossless clarity or transparent backgrounds. Choose WebP for the best balance of small file size and high visual quality on modern websites.',
+        'Choose JPG for standard photos and social media compatibility where small file sizes are preferred. Choose PNG when you need bit-for-bit lossless clarity, crisp line art, logos, or transparent backgrounds. Choose WebP for modern websites and web applications, offering superior compression efficiency with high visual quality.',
     },
     {
-      question: 'Are my uploaded photos sent to any server?',
+      question: 'How does the image quality slider affect file size and clarity?',
       answer:
-        'No. QUBNEXA operates 100% in your browser using the HTML5 Canvas API. Your photos never leave your device, ensuring complete privacy for personal documents, private photos, and sensitive graphics.',
+        'The quality slider ranges from 10% to 100% (defaulting to 90%). For lossy formats like JPG and WebP, adjusting this slider controls the compression ratio, allowing you to balance visual clarity against output file size. For PNG exports, compression is always lossless, so the quality slider does not alter PNG pixel data.',
     },
     {
-      question: 'What is the maximum image size I can resize?',
+      question: 'What are the six social media presets and when should I use them?',
       answer:
-        'QUBNEXA supports images up to 50 MB in file size and dimensions up to 8192 × 8192 pixels. This covers almost all modern smartphone photos, DSLR RAW exports, and digital illustrations.',
+        'The tool includes six quick presets: Instagram Square (1080×1080, 1:1), Instagram Portrait (1080×1350, 4:5), YouTube Thumbnail (1280×720, 16:9), Full HD (1920×1080, 16:9), Facebook Post (1200×630, 1.91:1), and X / Twitter Banner (1500×500, 3:1). Clicking any preset instantly populates the exact dimensions.',
     },
     {
-      question: 'Can I convert image formats without changing dimensions?',
+      question: 'What are the maximum file size and dimension limits for uploading images?',
       answer:
-        'Yes! Simply upload your image, leave the width and height unchanged, select your desired output format (JPG, PNG, or WebP), and click Download Image.',
+        'QUBNEXA supports image files up to 50 MB and allows target dimensions between 1 px and 8,192 px. These limits accommodate modern high-resolution smartphone photos, digital camera exports, and detailed design illustrations while keeping browser canvas operations responsive.',
     },
+    {
+      question: 'Can I convert image file formats without changing pixel dimensions?',
+      answer:
+        'Yes. When you load an image, the width and height default to your original image dimensions. To convert formats without resizing, keep the dimensions unchanged, select your target output format (JPG, PNG, or WebP), and click "Download Image".',
+    },
+    {
+      question: 'How does the tool handle browser memory and image cleanup?',
+      answer:
+        'When you upload an image or render a resized preview, the tool creates localized object URLs via URL.createObjectURL(). Whenever you upload a new photo, change settings, or navigate away from the page, the previous object URLs are revoked via URL.revokeObjectURL() to free client system memory.',
+    },
+    {
+      question: 'Are my uploaded photos sent to or stored on QUBNEXA servers?',
+      answer:
+        'No. Image decoding, resizing, and format conversions are performed entirely inside your browser using the HTML5 Canvas API and client-side object URLs. Your photo files are not transmitted to or stored on QUBNEXA backend servers for resizing. Standard website browsing assets and analytics adhere to standard web traffic protocols.',
+    },
+    {
+      question: 'Can I resize transparent PNG graphics or illustrations?',
+      answer:
+        'Yes. When resizing transparent PNG files, selecting PNG or WebP output preserves alpha channel transparency. If you choose JPG output, any transparent background areas will automatically be rendered with a solid background because the JPEG standard does not support transparency.',
+    },
+  ]
+
+  const relatedSlugs = [
+    'image-quality-increaser',
+    'youtube-thumbnail-downloader',
+    'jpg-to-pdf',
+    'qr-code-generator',
+    'fancy-font-generator',
   ]
 
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Image Resizer — Free Online Photo & Image Dimension Converter | QUBNEXA"
-      seoDescription="Resize JPG, PNG, and WebP photos to exact dimensions or social media presets with aspect ratio lock, format conversion, and quality tuning. 100% private in-browser."
-      keywords="image resizer, resize image online, change photo dimensions, instagram square resizer, youtube thumbnail resizer, free image resize, reduce image resolution, convert image format"
+      seoTitle="Image Resizer — Online Photo Dimension Tool | QUBNEXA"
+      seoDescription="Resize JPG, PNG, and WebP images online with custom dimensions, aspect ratio lock, and social presets. Fast, client-side photo resizing on QUBNEXA."
+      keywords="image resizer, resize image online, change photo dimensions, instagram image resizer, youtube thumbnail resizer, free photo resizer, reduce image size, webp image resizer"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['image-quality-increaser', 'youtube-thumbnail-downloader', 'jpg-to-pdf', 'qr-code-generator']}
+      relatedSlugs={relatedSlugs}
     >
       <ImageResizer />
     </ToolPageLayout>
