@@ -203,7 +203,23 @@ export const GamesPage: React.FC = () => {
                 </div>
               </div>
             )}
-            {activeGameId === 'rock-paper-scissors' && <RockPaperScissorsGame />}
+            {activeGameId === 'rock-paper-scissors' && (
+              <div className="space-y-4">
+                <RockPaperScissorsGame />
+                <div className="flex items-center justify-between flex-wrap gap-3 pt-3 border-t border-slate-100 dark:border-slate-800/80">
+                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                    Endless, Best of 3, or Best of 5 modes • Real-time streak tracking
+                  </span>
+                  <Link
+                    to="/games/rock-paper-scissors"
+                    className="xw-btn-secondary min-h-[36px] px-3.5 py-1.5 text-xs inline-flex items-center gap-1.5"
+                  >
+                    <span>Dedicated Game Page &amp; Strategy</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </div>
+            )}
             {activeGameId === 'number-guess' && <NumberGuessGame />}
           </div>
 

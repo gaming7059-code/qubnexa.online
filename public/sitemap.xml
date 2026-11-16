@@ -111,6 +111,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://qubnexa.online/games/rock-paper-scissors</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
   <!-- Financial Calculators -->
   <url>

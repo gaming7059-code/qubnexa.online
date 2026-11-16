@@ -49,6 +49,7 @@ const YouTubeThumbnailDownloaderPage = React.lazy(() => import('./pages/tools/Yo
 const GamesPage = React.lazy(() => import('./pages/GamesPage').then((m) => ({ default: m.GamesPage })))
 const HexDriftPage = React.lazy(() => import('./pages/games/HexDriftPage').then((m) => ({ default: m.HexDriftPage })))
 const MemoryMatchPage = React.lazy(() => import('./pages/games/MemoryMatchPage').then((m) => ({ default: m.MemoryMatchPage })))
+const RockPaperScissorsPage = React.lazy(() => import('./pages/games/RockPaperScissorsPage').then((m) => ({ default: m.RockPaperScissorsPage })))
 
 export const App: React.FC = () => {
   return (
@@ -328,6 +329,14 @@ export const App: React.FC = () => {
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <MemoryMatchPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="games/rock-paper-scissors"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <RockPaperScissorsPage />
                 </Suspense>
               }
             />
