@@ -87,10 +87,10 @@ export const PasswordCheckerPage: React.FC = () => {
         'Calculates an educational heuristic score (0–100) from effective entropy while enforcing hard security caps for known weak passwords and dangerously short lengths. This is a proprietary evaluation heuristic, not an internationally standardized or universal certification score.',
     },
     {
-      title: 'Zero-Telemetry Client-Side Sandbox Guarantee',
-      formula: 'Network I/O: 0 HTTP Requests | Storage: Volatile RAM Only',
+      title: 'Client-Side Execution & In-Memory Evaluation',
+      formula: 'Execution: Browser Thread Only | Storage: Volatile Memory',
       explanation:
-        'All pattern matching, dictionary checks, entropy math, and suggestion generation occur 100% client-side inside your browser thread. No passwords or keystrokes are ever sent across the network or stored in cookies or local storage.',
+        'All pattern matching, dictionary checks, entropy calculations, and suggestion generation run locally within browser memory. Entered values are not stored in cookies or localStorage and are wiped when the component unmounts.',
     },
   ]
 
@@ -146,12 +146,12 @@ export const PasswordCheckerPage: React.FC = () => {
     {
       question: 'Is it safe to test my actual passwords on this online tool?',
       answer:
-        'We strongly recommend testing password patterns, structures, or variations rather than passwords currently protecting your critical accounts (such as banking, primary email, or password managers). Although QUBNEXA operates 100% client-side with zero network requests and zero logging, standard cybersecurity best practice advises never pasting active secrets into any web browser.',
+        'We strongly recommend testing password patterns, structures, or variations rather than passwords currently protecting your critical accounts (such as banking, primary email, or password managers). While password analysis executes locally in your browser without network transmission from the tool, standard cybersecurity best practice advises never pasting active secrets into any web browser.',
     },
     {
       question: 'Does QUBNEXA send my password over the internet or check online breach databases?',
       answer:
-        'No. There are zero HTTP requests, zero background network calls, and zero external database queries. Common weak passwords and leetspeak patterns are evaluated against an in-memory, curated offline list of ~350 common passwords and predictable variations entirely within your device’s JavaScript execution thread.',
+        'No. The password checker makes no HTTP requests, background network calls, or external database queries. Common weak passwords and leetspeak patterns are evaluated against an in-memory, curated offline list of ~350 common passwords and predictable variations entirely within your device\'s JavaScript execution thread.',
     },
     {
       question: 'How are estimated crack times calculated and are they guaranteed?',
@@ -194,7 +194,7 @@ export const PasswordCheckerPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Password Strength Checker — Test & Analyze Passwords | QUBNEXA"
-      seoDescription="Check password strength, Shannon entropy, and estimated crack times online with QUBNEXA. 100% private in-browser analysis with zero logging or server transfer."
+      seoDescription="Check password strength, Shannon entropy, and estimated crack times online with QUBNEXA. Test and analyze passwords privately in your browser in real time."
       keywords="password checker, password strength, password strength test, test password online, password security analyzer, shannon entropy password, brute force crack time, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
