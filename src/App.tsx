@@ -50,6 +50,7 @@ const GamesPage = React.lazy(() => import('./pages/GamesPage').then((m) => ({ de
 const HexDriftPage = React.lazy(() => import('./pages/games/HexDriftPage').then((m) => ({ default: m.HexDriftPage })))
 const MemoryMatchPage = React.lazy(() => import('./pages/games/MemoryMatchPage').then((m) => ({ default: m.MemoryMatchPage })))
 const RockPaperScissorsPage = React.lazy(() => import('./pages/games/RockPaperScissorsPage').then((m) => ({ default: m.RockPaperScissorsPage })))
+const NumberGuessPage = React.lazy(() => import('./pages/games/NumberGuessPage').then((m) => ({ default: m.NumberGuessPage })))
 
 export const App: React.FC = () => {
   return (
@@ -337,6 +338,14 @@ export const App: React.FC = () => {
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <RockPaperScissorsPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="games/number-guess"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <NumberGuessPage />
                 </Suspense>
               }
             />

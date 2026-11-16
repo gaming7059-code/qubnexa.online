@@ -220,7 +220,23 @@ export const GamesPage: React.FC = () => {
                 </div>
               </div>
             )}
-            {activeGameId === 'number-guess' && <NumberGuessGame />}
+            {activeGameId === 'number-guess' && (
+              <div className="space-y-4">
+                <NumberGuessGame />
+                <div className="flex items-center justify-between flex-wrap gap-3 pt-3 border-t border-slate-100 dark:border-slate-800/80">
+                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                    1–50, 1–100, and 1–200 challenge tiers • Dynamic range narrowing &amp; temperature clues
+                  </span>
+                  <Link
+                    to="/games/number-guess"
+                    className="xw-btn-secondary min-h-[36px] px-3.5 py-1.5 text-xs inline-flex items-center gap-1.5"
+                  >
+                    <span>Dedicated Game Page &amp; Strategy</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Game Rules & Instructions */}
