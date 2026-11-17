@@ -46,13 +46,18 @@ export function setMetaTag(selector: string, attribute: string, value: string, c
 }
 
 export function setCanonicalUrl(url: string) {
-  let link = document.querySelector('link[rel="canonical"]')
-  if (!link) {
-    link = document.createElement('link')
-    link.setAttribute('rel', 'canonical')
-    document.head.appendChild(link)
+  const existingLinks = document.querySelectorAll('link[rel="canonical"]')
+  if (existingLinks.length > 0) {
+    existingLinks[0].setAttribute('href', url)
+    for (let i = 1; i < existingLinks.length; i++) {
+      existingLinks[i].remove()
+    }
+    return
   }
+  const link = document.createElement('link')
+  link.setAttribute('rel', 'canonical')
   link.setAttribute('href', url)
+  document.head.appendChild(link)
 }
 
 export function setRobots(noindex: boolean = false) {
