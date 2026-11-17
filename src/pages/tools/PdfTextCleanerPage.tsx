@@ -88,10 +88,10 @@ export const PdfTextCleanerPage: React.FC = () => {
         'Detects and filters out isolated header and footer page numbering artifacts (such as "Page 1 of 5", "- 2 -", "[3]", or standalone numbers) before paragraph reconstruction.',
     },
     {
-      title: 'In-Memory Zero-Upload Sandbox Guarantee',
-      formula: 'Local ArrayBuffer → Web Worker Memory Pipeline → 0 External Network Requests',
+      title: 'In-Memory Client-Side Sandbox Guarantee',
+      formula: 'Local ArrayBuffer → Web Worker Memory Pipeline → 0 Document Data Uploads',
       explanation:
-        'While standard static application assets (HTML/CSS/JS chunks) are loaded from QUBNEXA, all PDF parsing, text extraction, cleaning transformations, and .txt file generation occur strictly in local client memory. Document contents are never sent to external servers.',
+        'While standard static application assets (HTML/CSS/JS chunks) and the PDF.js Web Worker script are loaded from the hosting server, all PDF parsing, text extraction, cleaning transformations, and .txt file generation occur strictly in local client memory. Document contents and extracted text are never sent to external servers.',
     },
   ]
 
@@ -141,7 +141,7 @@ export const PdfTextCleanerPage: React.FC = () => {
     {
       question: 'Are my documents or extracted text uploaded to any server?',
       answer:
-        'No. All extraction, parsing, cleaning, and export happen 100% locally on your computer or mobile device using browser JavaScript and a local Web Worker. While standard static application assets (HTML/JS chunks) are loaded from our CDN, your PDF file, extracted text, and document contents are never transmitted across the network, stored on servers, or tracked.',
+        'No. All extraction, parsing, cleaning, and export happen locally on your computer or mobile device using browser JavaScript and a local Web Worker. While standard static application assets and the PDF.js worker script are loaded from the hosting server, your PDF file, extracted text, and document contents are never transmitted to any backend service or stored on servers.',
     },
     {
       question: 'What is the difference between Basic, Advanced, and Custom cleanup?',
