@@ -149,7 +149,7 @@ export const SipCalculatorPage: React.FC = () => {
     {
       question: 'How does capital gains taxation impact mutual fund SIP returns in India?',
       answer:
-        'In India, equity mutual fund capital gains held for over 12 months are classified as Long-Term Capital Gains (LTCG) and taxed at 12.5% for gains exceeding ₹1.25 lakh in a financial year (effective Finance Act 2024). Gains redeemed within 12 months are Short-Term Capital Gains (STCG) taxed at 20%. Because each monthly SIP installment has its own 12-month holding clock, taxes are applied per installment upon redemption.',
+        'This calculator computes gross investment estimates and does not deduct taxes. In India, equity mutual fund redemptions are subject to capital gains tax based on holding periods (with each monthly installment evaluated individually), where gains over 12 months are treated as long-term and gains under 12 months as short-term under applicable tax law. Because tax rates, exemptions, and fund classifications vary and are subject to legislative change, consult a certified financial or tax advisor for current tax rules applicable to your individual circumstances.',
     },
     {
       question: 'What happens to the calculation if I set the expected return rate to 0%?',
