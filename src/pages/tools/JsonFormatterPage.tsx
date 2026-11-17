@@ -91,10 +91,10 @@ export const JsonFormatterPage: React.FC = () => {
         'Recursively traverses the parsed object graph to compute structural statistics: object count, array count, total property keys, maximum nesting depth, and exact UTF-8 byte weight using TextEncoder.',
     },
     {
-      title: 'Zero-Telemetry Client-Side Sandbox',
-      formula: 'Data Transfer: Browser Local Memory (V8 Engine) → Screen (0 HTTP Calls)',
+      title: 'In-Browser JavaScript Processing Engine',
+      formula: 'Data Flow: Local Input → Browser JavaScript Memory → UI Output (0 API Requests)',
       explanation:
-        'Every format, minify, and validation calculation executes entirely within your browser memory. Sensitive tokens, credentials, and private customer payloads are never transmitted across the network or logged to external servers.',
+        'JSON parsing, validation, and transformations execute directly within your browser JavaScript engine without sending your payload data to external formatting APIs.',
     },
   ]
 
@@ -151,7 +151,7 @@ export const JsonFormatterPage: React.FC = () => {
     {
       question: 'Does the "Sort Keys" option alter the order of items inside arrays?',
       answer:
-        'No. Key sorting operates exclusively on JSON objects (dictionaries). Arrays are sequential lists whose order has semantic meaning, so array item positions remain completely invariant.',
+        'No. Key sorting operates exclusively on JSON objects (dictionaries). Sorting keys alphabetically does not change the order of elements inside arrays.',
     },
     {
       question: 'What is the difference between Pretty Print and Minify?',
@@ -161,7 +161,7 @@ export const JsonFormatterPage: React.FC = () => {
     {
       question: 'Can this tool handle large JSON files or complex schemas?',
       answer:
-        'Yes. Because QUBNEXA uses native browser JSON serialization, payloads up to tens of megabytes are processed quickly without UI blocking.',
+        'QUBNEXA uses native browser JSON parsing, so processing capacity depends on your device and the size and complexity of the input. The validator checks JSON syntax against RFC 8259, but does not perform custom JSON Schema validation.',
     },
     {
       question: 'How does the Tree Explorer search feature work?',
@@ -179,17 +179,22 @@ export const JsonFormatterPage: React.FC = () => {
         'No. The official JSON specification (RFC 8259 and ECMA-404) explicitly forbids comments. Native browser JSON parsers reject text containing single-line (//) or multi-line (/* */) comments with a syntax error. QUBNEXA strictly complies with RFC 8259 and does not parse or automatically strip comments. Ensure you remove comments or convert from JSONC/JSON5 before formatting.',
     },
     {
-      question: 'Is my JSON data, confidential API payload, or private token sent to any external server?',
+      question: 'Is my JSON data sent to an external server when formatting or validating?',
       answer:
-        'Never. QUBNEXA operates 100% client-side in your local web browser. All parsing, validation, formatting, minification, tree exploration, and file downloads execute exclusively within your device’s JavaScript engine. Zero bytes are transmitted to any remote server or stored in any database.',
+        'Parsing, formatting, minification, and tree navigation execute locally in your browser using standard client-side JavaScript APIs. Your entered JSON payload is not transmitted to a backend service to perform these operations. As with any web application, general HTTP traffic to load site assets adheres to standard hosting protocols.',
+    },
+    {
+      question: 'Is it safe to paste confidential API payloads or active secrets into the tool?',
+      answer:
+        'While formatting and validation run entirely in client-side memory without backend processing, we strongly advise against pasting active production credentials, private encryption keys, or unredacted customer secrets into any web browser tool. Always sanitize or replace sensitive keys and tokens with placeholder values before formatting.',
     },
   ]
 
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="JSON Formatter Online — Pretty Print, Minify & Validate | QUBNEXA"
-      seoDescription="Format, minify, and validate JSON online with QUBNEXA. Free JSON formatter with line and column syntax error detection, collapsible tree view, and key sorting."
+      seoTitle="JSON Formatter & Validator — Pretty Print Online | QUBNEXA"
+      seoDescription="Format, validate, and minify JSON online with line and column syntax error detection, key sorting, and interactive tree view. Free developer tool on QUBNEXA."
       keywords="json formatter, json validator, pretty print json, json minifier, json viewer, json tree view, format json online, validate json, json parser, json lint, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
