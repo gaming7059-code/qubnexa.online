@@ -51,11 +51,13 @@ const HexDriftPage = React.lazy(() => import('./pages/games/HexDriftPage').then(
 const MemoryMatchPage = React.lazy(() => import('./pages/games/MemoryMatchPage').then((m) => ({ default: m.MemoryMatchPage })))
 const RockPaperScissorsPage = React.lazy(() => import('./pages/games/RockPaperScissorsPage').then((m) => ({ default: m.RockPaperScissorsPage })))
 const NumberGuessPage = React.lazy(() => import('./pages/games/NumberGuessPage').then((m) => ({ default: m.NumberGuessPage })))
+import { AnalyticsTracker } from './components/common/AnalyticsTracker'
 
 export const App: React.FC = () => {
   return (
     <ThemeProvider>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <AnalyticsTracker />
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
