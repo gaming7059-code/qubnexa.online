@@ -55,16 +55,67 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({
 
   const pageHeading = useMemo(() => {
     if (activeCategory !== 'all') return currentCategoryObj.name
-    if (activeQuickFilter === 'popular') return 'Popular Tools & Utilities'
-    if (activeQuickFilter === 'new') return 'Recently Added Tools'
+    if (activeQuickFilter === 'popular') return 'Popular Tools & Trending Utilities'
+    if (activeQuickFilter === 'new') return 'Recently Added Tools & Latest Releases'
     return 'All Online Tools & Games'
   }, [activeCategory, currentCategoryObj.name, activeQuickFilter])
 
-  const dynamicTitle = `${pageHeading} — Free Online Utilities | QUBNEXA`
-  const dynamicDescription =
-    activeCategory !== 'all'
-      ? `Browse free ${currentCategoryObj.name.toLowerCase()} on QUBNEXA. ${currentCategoryObj.description}`
-      : 'Browse our complete catalog of calculators, converters, PDF tools, audio studio utilities, AI tools, video tools, and arcade games on QUBNEXA.'
+  const dynamicTitle = useMemo(() => {
+    if (activeCategory !== 'all') return `${currentCategoryObj.name} — Free Online Utilities | QUBNEXA`
+    if (activeQuickFilter === 'popular') return 'Most Popular Online Tools & Top Web Utilities | QUBNEXA'
+    if (activeQuickFilter === 'new') return 'Recently Added Tools & Latest Web Utilities | QUBNEXA'
+    return 'All Online Tools & Web Utilities Directory | QUBNEXA'
+  }, [activeCategory, currentCategoryObj.name, activeQuickFilter])
+
+  const dynamicDescription = useMemo(() => {
+    if (activeCategory !== 'all') {
+      return `Browse free ${currentCategoryObj.name.toLowerCase()} on QUBNEXA. ${currentCategoryObj.description}`
+    }
+    if (activeQuickFilter === 'popular') {
+      return 'Discover the most popular online tools on QUBNEXA. Access our community’s highest-rated financial calculators, PDF editors, image tools, and daily productivity utilities.'
+    }
+    if (activeQuickFilter === 'new') {
+      return 'Explore the newest online tools and latest utility releases on QUBNEXA. Discover newly added converters, AI prompt builders, document utilities, and browser games.'
+    }
+    return 'Browse the complete directory of free online calculators, PDF utilities, converters, audio & video tools, image enhancers, and browser games on QUBNEXA.'
+  }, [activeCategory, currentCategoryObj.name, currentCategoryObj.description, activeQuickFilter])
+
+  const dynamicIntro = useMemo(() => {
+    if (activeCategory !== 'all') return currentCategoryObj.description
+    if (activeQuickFilter === 'popular') {
+      return 'Access our community’s most frequently used and trusted utilities — from loan EMI and GST calculators to multi-image PDF converters and secure password tools.'
+    }
+    if (activeQuickFilter === 'new') {
+      return 'Stay up to date with the newest additions to the QUBNEXA suite. Explore newly released format converters, developer utilities, and browser-first tools designed for fast daily workflows.'
+    }
+    return 'Explore our comprehensive catalog of calculators, converters, PDF editors, multimedia utilities, and arcade games — 100% free with privacy-first client-side browser execution.'
+  }, [activeCategory, currentCategoryObj.description, activeQuickFilter])
+
+  const dynamicEyebrow = useMemo(() => {
+    if (activeCategory !== 'all') return 'Tool Category'
+    if (activeQuickFilter === 'popular') return 'Trending & Most-Used'
+    if (activeQuickFilter === 'new') return 'Latest Releases & Updates'
+    return 'QUBNEXA Master Directory'
+  }, [activeCategory, activeQuickFilter])
+
+  const dynamicKeywords = useMemo(() => {
+    if (activeCategory !== 'all') return `${currentCategoryObj.name.toLowerCase()}, free online tools, qubnexa`
+    if (activeQuickFilter === 'popular') return 'popular online tools, trending web utilities, top calculators, best pdf tools, most used online utilities, qubnexa'
+    if (activeQuickFilter === 'new') return 'new online tools, latest web utilities, recently added calculators, new converters, qubnexa updates'
+    return 'all online tools, web utilities directory, free browser tools, calculators, pdf utilities, converters, qubnexa'
+  }, [activeCategory, currentCategoryObj.name, activeQuickFilter])
+
+  const breadcrumbs = useMemo(() => {
+    const items = [{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }]
+    if (activeCategory !== 'all') {
+      items.push({ name: currentCategoryObj.name, path: `/categories/${activeCategory}` })
+    } else if (activeQuickFilter === 'popular') {
+      items.push({ name: 'Popular Tools', path: '/popular' })
+    } else if (activeQuickFilter === 'new') {
+      items.push({ name: 'Recently Added', path: '/new-tools' })
+    }
+    return items
+  }, [activeCategory, currentCategoryObj.name, activeQuickFilter])
 
   const canonicalPath =
     activeQuickFilter === 'popular' && activeCategory === 'all'
@@ -78,15 +129,9 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({
   usePageSEO({
     title: dynamicTitle,
     description: dynamicDescription,
-    keywords: `${pageHeading.toLowerCase()}, free online tools, qubnexa`,
+    keywords: dynamicKeywords,
     canonicalPath,
-    schema: createBreadcrumbSchema([
-      { name: 'Home', path: '/' },
-      { name: 'Tools', path: '/tools' },
-      ...(activeCategory !== 'all'
-        ? [{ name: currentCategoryObj.name, path: `/categories/${activeCategory}` }]
-        : []),
-    ]),
+    schema: createBreadcrumbSchema(breadcrumbs),
   })
 
   const updateParams = (updates: {
@@ -164,7 +209,7 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({
       <div className="animate-fade-in-up">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-[#00DFFF]">
-            {activeCategory === 'all' ? 'QUBNEXA Directory' : 'Tool Category'}
+            {dynamicEyebrow}
           </span>
           <span className="text-slate-300 dark:text-slate-700">•</span>
           <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
@@ -182,9 +227,7 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({
                 {pageHeading}
               </h1>
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
-                {activeCategory !== 'all'
-                  ? currentCategoryObj.description
-                  : 'Explore calculators, converters, PDF tools, audio utilities, image enhancers, AI tools, video tools, and arcade games — free and private in your browser.'}
+                {dynamicIntro}
               </p>
             </div>
           </div>
