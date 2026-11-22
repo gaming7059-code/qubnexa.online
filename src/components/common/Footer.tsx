@@ -87,8 +87,23 @@ export const Footer: React.FC = () => {
                   </NavLink>
                 </li>
                 <li>
+                  <NavLink to="/categories/image-tools" className={footerNavLinkClass}>
+                    Image Tools
+                  </NavLink>
+                </li>
+                <li>
                   <NavLink to="/categories/ai-tools" className={footerNavLinkClass}>
                     AI Tools
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/categories/date-time" className={footerNavLinkClass}>
+                    Date &amp; Time
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/categories/games" className={footerNavLinkClass}>
+                    Games &amp; Entertainment
                   </NavLink>
                 </li>
                 <li>
