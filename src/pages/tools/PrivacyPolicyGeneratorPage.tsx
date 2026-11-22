@@ -92,7 +92,7 @@ export const PrivacyPolicyGeneratorPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Free Privacy Policy & Cookie Compliance Generator | QUBNEXA"
-      seoDescription="Generate customizable, legally informed privacy policy drafts supporting GDPR, CCPA/CPRA, and COPPA standards for websites, SaaS applications, and ecommerce shops."
+      seoDescription="Free privacy policy generator. Create legally informed drafts supporting GDPR, CCPA/CPRA, and COPPA standards for websites, apps, and ecommerce stores."
       keywords="privacy policy generator, gdpr privacy generator, ccpa policy creator, cookie policy draft, terms and privacy, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

@@ -98,7 +98,7 @@ export const GoogleReviewLinkGeneratorPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Google Review Direct Link & QR Code Generator | QUBNEXA"
-      seoDescription="Free 1-click Google review link and QR code generator for local businesses. Generate direct Place ID review links, printable table tent cards, and email signature badges."
+      seoDescription="Free 1-click Google review link & QR code generator. Create direct Place ID review links, printable table tent cards, and email signature badges."
       keywords="google review link generator, google review qr code, direct review link google maps, place id review generator, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

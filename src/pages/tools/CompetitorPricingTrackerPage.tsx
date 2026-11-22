@@ -109,7 +109,7 @@ export const CompetitorPricingTrackerPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Competitor Pricing Tracker & Market Analysis | QUBNEXA"
-      seoDescription="Free competitor pricing comparison workspace. Track market rates, compare price changes, calculate variance against your offerings, and export CSV reports privately in your browser."
+      seoDescription="Free competitor pricing tracker. Monitor competitor prices, calculate price variance against your offers, and export CSV reports in your browser."
       keywords="competitor pricing tracker, pricing comparison tool, market pricing analysis, competitor benchmark, saas price tracker, ecommerce price comparison, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

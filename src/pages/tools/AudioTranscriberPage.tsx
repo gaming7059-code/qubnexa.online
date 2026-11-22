@@ -170,12 +170,10 @@ export const AudioTranscriberPage: React.FC = () => {
   ]
 
   const relatedSlugs = [
-    'text-to-speech',
     'audio-studio',
-    'word-counter',
-    'video-prompt-generator',
-    'text-repeater',
-    'fancy-font-generator',
+    'text-to-speech',
+    'subtitle-cleaner',
+    'podcast-content-repurposer',
   ]
 
   return (

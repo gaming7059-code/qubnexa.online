@@ -175,12 +175,10 @@ export const VideoPromptGeneratorPage: React.FC = () => {
   ]
 
   const relatedSlugs = [
-    'video-downloader',
-    'audio-transcriber',
-    'text-to-speech',
-    'word-counter',
-    'fancy-font-generator',
-    'text-repeater',
+    'social-video-safe-zone-preview',
+    'ai-prompt-injection-scanner',
+    'podcast-content-repurposer',
+    'youtube-thumbnail-downloader',
   ]
 
   return (

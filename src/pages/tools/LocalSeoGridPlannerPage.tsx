@@ -99,7 +99,7 @@ export const LocalSeoGridPlannerPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Local SEO Geo-Grid Rank & Proximity Planner | QUBNEXA"
-      seoDescription="Free local SEO geo-grid rank planner. Simulate and analyze Google Map Pack rankings across geographic radius grids with interactive matrix visualization and CSV export."
+      seoDescription="Free local SEO geo-grid rank planner. Simulate and analyze Google Map Pack rankings across geographic radius grids with interactive matrix visualization."
       keywords="local seo grid planner, geo grid rank tracker, google map pack grid, local proximity seo audit, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

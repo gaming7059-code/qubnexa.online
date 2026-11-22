@@ -170,8 +170,8 @@ export const SocialVideoSafeZonePreviewPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Social Video Safe Zone Preview & Studio — 15+ Platforms (TikTok, Reels, Shorts, X, LinkedIn) | QUBNEXA"
-      seoDescription="Free universal social media safe zone studio. Test vertical videos, stories, posts, and ads with accurate UI overlays for TikTok, Instagram Reels, YouTube Shorts, Facebook, X, LinkedIn, Snapchat, Pinterest, and custom canvases. Export transparent PNG guides."
+      seoTitle="Social Video Safe Zone Studio — TikTok, Reels & Shorts | QUBNEXA"
+      seoDescription="Free universal social media safe zone studio. Test vertical videos, stories, and ads with accurate overlays for TikTok, Reels, Shorts, and X. Export PNGs."
       keywords="social video safe zone, universal safe zone studio, reels safe zone preview, tiktok safe zone overlay, youtube shorts safe margin, instagram story safe zone, facebook reels safe area, linkedin video dimensions, x twitter video safe zone, snapchat safe margin, 9:16 safe zone png, video overlay simulator, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

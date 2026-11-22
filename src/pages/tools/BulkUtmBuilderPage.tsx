@@ -99,7 +99,7 @@ export const BulkUtmBuilderPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Bulk UTM Link Builder & Campaign URL Matrix | QUBNEXA"
-      seoDescription="Free bulk UTM generator and tracking link builder. Generate, sanitize, and export marketing campaign URLs across Google Ads, Meta, LinkedIn, and Email with instant CSV download."
+      seoDescription="Free bulk UTM builder and campaign tracking matrix. Build, sanitize, and export marketing campaign URLs for Google Ads, Meta, and Email to CSV."
       keywords="bulk utm builder, campaign url builder, utm generator, ga4 utm matrix, marketing link tracking, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

@@ -161,11 +161,9 @@ export const VideoDownloaderPage: React.FC = () => {
 
   const relatedSlugs = [
     'youtube-thumbnail-downloader',
-    'video-prompt-generator',
+    'social-video-safe-zone-preview',
     'audio-transcriber',
-    'audio-studio',
-    'text-repeater',
-    'word-counter',
+    'subtitle-cleaner',
   ]
 
   return (

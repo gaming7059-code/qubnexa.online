@@ -150,18 +150,16 @@ export const DateDifferenceCalculatorPage: React.FC = () => {
   const relatedSlugs = [
     'date-time-calculator',
     'age-calculator',
-    'percentage-calculator',
-    'emi-calculator',
     'salary-calculator',
-    'unit-converter',
+    'percentage-calculator',
   ]
 
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Date Difference Calculator — Days Between Dates | QUBNEXA"
-      seoDescription="Calculate calendar days, weeks, and months between two dates, or add and subtract days to find future milestone dates. Date calculations run locally in your browser."
-      keywords="date difference calculator, days between dates, calculate duration between dates, add days to date, subtract days from date, calendar difference, date interval calculator, qubnexa"
+      seoTitle="Days Between Dates Calculator — Exact Date Difference | QUBNEXA"
+      seoDescription="Calculate the exact days, weeks, and months between two dates. Measure elapsed time between dates instantly with this free date difference calculator."
+      keywords="days between dates, date difference calculator, days between two dates, elapsed time calculator, time between dates, calendar duration, date interval, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

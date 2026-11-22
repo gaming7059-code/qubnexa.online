@@ -162,19 +162,17 @@ export const JpgToPdfPage: React.FC = () => {
   ]
 
   const relatedSlugs = [
+    'pkpass-to-pdf',
     'pdf-editor',
-    'image-resizer',
-    'image-quality-increaser',
     'pdf-text-cleaner',
-    'word-counter',
-    'qr-code-generator',
+    'image-resizer',
   ]
 
   return (
     <ToolPageLayout
       tool={tool}
       seoTitle="JPG to PDF Converter — Free Image to PDF Online | QUBNEXA"
-      seoDescription="Convert JPG, PNG, and WebP images to PDF online for free. Combine multiple photos into clean, custom A4, Letter, or Fit-to-Page PDF files with privacy-friendly browser processing."
+      seoDescription="Convert JPG, PNG, and WebP images to clean PDF documents online for free. Merge photos into A4 or Letter PDFs with 100% private in-browser processing."
       keywords="jpg to pdf, convert jpg to pdf, free image to pdf converter, combine photos to pdf, png to pdf, jpeg to pdf online, webp to pdf, convert images to pdf, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

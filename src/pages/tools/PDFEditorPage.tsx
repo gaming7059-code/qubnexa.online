@@ -166,7 +166,12 @@ export const PDFEditorPage: React.FC = () => {
     },
   ]
 
-  const relatedSlugs = ['jpg-to-pdf', 'pdf-text-cleaner', 'word-counter', 'image-resizer', 'qr-code-generator', 'password-checker']
+  const relatedSlugs = [
+    'jpg-to-pdf',
+    'pdf-text-cleaner',
+    'pkpass-to-pdf',
+    'word-counter',
+  ]
 
   return (
     <ToolPageLayout

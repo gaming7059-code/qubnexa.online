@@ -156,10 +156,9 @@ export const ImageResizerPage: React.FC = () => {
 
   const relatedSlugs = [
     'image-quality-increaser',
-    'youtube-thumbnail-downloader',
+    'image-background-extender',
     'jpg-to-pdf',
-    'qr-code-generator',
-    'fancy-font-generator',
+    'youtube-thumbnail-downloader',
   ]
 
   return (

@@ -111,7 +111,7 @@ export const EcommerceVatImportCalculatorPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="Ecommerce Landed Cost & Import Duty VAT Calculator | QUBNEXA"
-      seoDescription="Free cross-border ecommerce landed cost, customs tariff duty, import VAT/GST, and profit margin calculator. Plan international shipments, analyze CIF value, and export CSV reports."
+      seoDescription="Free ecommerce landed cost & import VAT calculator. Compute customs duty, import taxes, CIF value, and profit margins with instant CSV export."
       keywords="ecommerce landed cost calculator, import duty calculator, customs vat calculator, cif value calculator, dropshipping margin calculator, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}

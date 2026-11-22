@@ -183,10 +183,8 @@ export const PdfTextCleanerPage: React.FC = () => {
   const relatedSlugs = [
     'pdf-editor',
     'jpg-to-pdf',
+    'html-content-cleaner',
     'word-counter',
-    'text-to-speech',
-    'text-repeater',
-    'fancy-font-generator',
   ]
 
   return (

@@ -110,7 +110,12 @@ export const TextToSpeechPage: React.FC = () => {
     },
   ]
 
-  const relatedSlugs = ['word-counter', 'pdf-editor', 'unit-converter', 'percentage-calculator']
+  const relatedSlugs = [
+    'audio-studio',
+    'audio-transcriber',
+    'podcast-content-repurposer',
+    'word-counter',
+  ]
 
   return (
     <ToolPageLayout

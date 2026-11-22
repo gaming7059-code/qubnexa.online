@@ -95,12 +95,17 @@ export const ImageQualityIncreaserPage: React.FC = () => {
     },
   ]
 
-  const relatedSlugs = ['video-downloader', 'jpg-to-pdf', 'pdf-editor', 'video-prompt-generator']
+  const relatedSlugs = [
+    'image-resizer',
+    'image-background-extender',
+    'jpg-to-pdf',
+    'social-video-safe-zone-preview',
+  ]
 
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Free Image Quality Increaser — Enhance Photo Clarity & Resolution Online | QUBNEXA"
+      seoTitle="Free Image Quality Increaser — Enhance Photo Clarity | QUBNEXA"
       seoDescription="Enhance image clarity, sharpness, and contrast up to 4x directly in your browser. 100% private, free photo enhancer with zero uploads to external servers."
       keywords="image quality increaser, enhance image quality, increase photo resolution, image sharpener, upscale image online, free photo enhancer, qubnexa"
       howToUseSteps={howToUseSteps}

@@ -159,11 +159,10 @@ export const FancyFontGeneratorPage: React.FC = () => {
   ]
 
   const relatedSlugs = [
-    'word-counter',
     'text-repeater',
     'text-inverter',
-    'image-resizer',
-    'qr-code-generator',
+    'word-counter',
+    'social-video-safe-zone-preview',
   ]
 
   return (

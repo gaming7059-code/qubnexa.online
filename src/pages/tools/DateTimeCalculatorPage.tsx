@@ -21,9 +21,10 @@ export const DateTimeCalculatorPage: React.FC = () => {
     isFunctional: true,
     keywords: [
       'date calculator',
-      'date difference calculator',
-      'days between dates',
       'add days to date',
+      'subtract days from date',
+      'date arithmetic',
+      'calendar date calculator',
       'working days calculator',
       'business days calculator',
       'countdown to date',
@@ -140,9 +141,9 @@ export const DateTimeCalculatorPage: React.FC = () => {
   return (
     <ToolPageLayout
       tool={tool}
-      seoTitle="Date & Time Calculator — Days Between Dates & Add Days | QUBNEXA"
-      seoDescription="Calculate days between dates, add or subtract days, count down to events, and compute working business days online with QUBNEXA. Free, fast, and 100% private."
-      keywords="date calculator, date and time calculator, add days to date, subtract days from date, days between dates, calculate future date, date calculator online, working days calculator, qubnexa"
+      seoTitle="Date Calculator — Add or Subtract Days & Dates | QUBNEXA"
+      seoDescription="Add or subtract days, weeks, and months from any date. Plan future or past calendar dates and calculate working days with this free online date calculator."
+      keywords="date calculator, add days to date, subtract days from date, date arithmetic, calendar date calculator, calculate future date, working days calculator, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
       examples={examples}

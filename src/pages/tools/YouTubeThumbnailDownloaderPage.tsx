@@ -148,12 +148,10 @@ export const YouTubeThumbnailDownloaderPage: React.FC = () => {
   ]
 
   const relatedSlugs = [
+    'social-video-safe-zone-preview',
+    'video-downloader',
     'image-resizer',
     'image-quality-increaser',
-    'video-downloader',
-    'video-prompt-generator',
-    'qr-code-generator',
-    'audio-transcriber',
   ]
 
   return (

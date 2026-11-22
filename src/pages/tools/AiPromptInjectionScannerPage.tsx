@@ -92,7 +92,7 @@ export const AiPromptInjectionScannerPage: React.FC = () => {
     <ToolPageLayout
       tool={tool}
       seoTitle="AI Prompt Injection & Jailbreak Vulnerability Scanner | QUBNEXA"
-      seoDescription="Free AI prompt injection and LLM jailbreak scanner. Audit prompts for direct overrides, DAN jailbreaks, delimiter escapes, and data leakage with instant defensive wrapper generation."
+      seoDescription="Free AI prompt injection scanner. Audit prompts for direct overrides, jailbreaks, delimiter escapes, and data leaks with instant defensive wrappers."
       keywords="ai prompt injection scanner, llm jailbreak detector, prompt security tool, dan prompt scanner, system prompt leak, qubnexa"
       howToUseSteps={howToUseSteps}
       formulas={formulas}
