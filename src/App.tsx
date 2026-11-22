@@ -46,6 +46,7 @@ const ImageQualityIncreaserPage = React.lazy(() => import('./pages/tools/ImageQu
 const ImageResizerPage = React.lazy(() => import('./pages/tools/ImageResizerPage').then((m) => ({ default: m.ImageResizerPage })))
 const VideoDownloaderPage = React.lazy(() => import('./pages/tools/VideoDownloaderPage').then((m) => ({ default: m.VideoDownloaderPage })))
 const YouTubeThumbnailDownloaderPage = React.lazy(() => import('./pages/tools/YouTubeThumbnailDownloaderPage').then((m) => ({ default: m.YouTubeThumbnailDownloaderPage })))
+const SocialVideoSafeZonePreviewPage = React.lazy(() => import('./pages/tools/SocialVideoSafeZonePreviewPage').then((m) => ({ default: m.SocialVideoSafeZonePreviewPage })))
 const GamesPage = React.lazy(() => import('./pages/GamesPage').then((m) => ({ default: m.GamesPage })))
 const HexDriftPage = React.lazy(() => import('./pages/games/HexDriftPage').then((m) => ({ default: m.HexDriftPage })))
 const MemoryMatchPage = React.lazy(() => import('./pages/games/MemoryMatchPage').then((m) => ({ default: m.MemoryMatchPage })))
@@ -308,6 +309,14 @@ export const App: React.FC = () => {
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <YouTubeThumbnailDownloaderPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/social-video-safe-zone-preview"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <SocialVideoSafeZonePreviewPage />
                 </Suspense>
               }
             />
