@@ -47,6 +47,20 @@ const ImageResizerPage = React.lazy(() => import('./pages/tools/ImageResizerPage
 const VideoDownloaderPage = React.lazy(() => import('./pages/tools/VideoDownloaderPage').then((m) => ({ default: m.VideoDownloaderPage })))
 const YouTubeThumbnailDownloaderPage = React.lazy(() => import('./pages/tools/YouTubeThumbnailDownloaderPage').then((m) => ({ default: m.YouTubeThumbnailDownloaderPage })))
 const SocialVideoSafeZonePreviewPage = React.lazy(() => import('./pages/tools/SocialVideoSafeZonePreviewPage').then((m) => ({ default: m.SocialVideoSafeZonePreviewPage })))
+const CompetitorPricingTrackerPage = React.lazy(() => import('./pages/tools/CompetitorPricingTrackerPage').then((m) => ({ default: m.CompetitorPricingTrackerPage })))
+const WebhookToSheetsPlannerPage = React.lazy(() => import('./pages/tools/WebhookToSheetsPlannerPage').then((m) => ({ default: m.WebhookToSheetsPlannerPage })))
+const EcommerceVatImportCalculatorPage = React.lazy(() => import('./pages/tools/EcommerceVatImportCalculatorPage').then((m) => ({ default: m.EcommerceVatImportCalculatorPage })))
+const AiPromptInjectionScannerPage = React.lazy(() => import('./pages/tools/AiPromptInjectionScannerPage').then((m) => ({ default: m.AiPromptInjectionScannerPage })))
+const PrivacyPolicyGeneratorPage = React.lazy(() => import('./pages/tools/PrivacyPolicyGeneratorPage').then((m) => ({ default: m.PrivacyPolicyGeneratorPage })))
+const LocalSeoGridPlannerPage = React.lazy(() => import('./pages/tools/LocalSeoGridPlannerPage').then((m) => ({ default: m.LocalSeoGridPlannerPage })))
+const B2bCaseStudyGeneratorPage = React.lazy(() => import('./pages/tools/B2bCaseStudyGeneratorPage').then((m) => ({ default: m.B2bCaseStudyGeneratorPage })))
+const PodcastContentRepurposerPage = React.lazy(() => import('./pages/tools/PodcastContentRepurposerPage').then((m) => ({ default: m.PodcastContentRepurposerPage })))
+const ImageBackgroundExtenderPage = React.lazy(() => import('./pages/tools/ImageBackgroundExtenderPage').then((m) => ({ default: m.ImageBackgroundExtenderPage })))
+const PkpassToPdfPage = React.lazy(() => import('./pages/tools/PkpassToPdfPage').then((m) => ({ default: m.PkpassToPdfPage })))
+const SubtitleCleanerPage = React.lazy(() => import('./pages/tools/SubtitleCleanerPage').then((m) => ({ default: m.SubtitleCleanerPage })))
+const BulkUtmBuilderPage = React.lazy(() => import('./pages/tools/BulkUtmBuilderPage').then((m) => ({ default: m.BulkUtmBuilderPage })))
+const HtmlContentCleanerPage = React.lazy(() => import('./pages/tools/HtmlContentCleanerPage').then((m) => ({ default: m.HtmlContentCleanerPage })))
+const GoogleReviewLinkGeneratorPage = React.lazy(() => import('./pages/tools/GoogleReviewLinkGeneratorPage').then((m) => ({ default: m.GoogleReviewLinkGeneratorPage })))
 const GamesPage = React.lazy(() => import('./pages/GamesPage').then((m) => ({ default: m.GamesPage })))
 const HexDriftPage = React.lazy(() => import('./pages/games/HexDriftPage').then((m) => ({ default: m.HexDriftPage })))
 const MemoryMatchPage = React.lazy(() => import('./pages/games/MemoryMatchPage').then((m) => ({ default: m.MemoryMatchPage })))
@@ -317,6 +331,118 @@ export const App: React.FC = () => {
               element={
                 <Suspense fallback={<LoadingFallback />}>
                   <SocialVideoSafeZonePreviewPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/competitor-pricing-tracker"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <CompetitorPricingTrackerPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/webhook-to-sheets-planner"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <WebhookToSheetsPlannerPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/ecommerce-vat-import-calculator"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <EcommerceVatImportCalculatorPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/ai-prompt-injection-scanner"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <AiPromptInjectionScannerPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/privacy-policy-generator"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <PrivacyPolicyGeneratorPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/local-seo-grid-planner"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <LocalSeoGridPlannerPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/b2b-case-study-generator"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <B2bCaseStudyGeneratorPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/podcast-content-repurposer"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <PodcastContentRepurposerPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/image-background-extender"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <ImageBackgroundExtenderPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/pkpass-to-pdf"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <PkpassToPdfPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/subtitle-cleaner"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <SubtitleCleanerPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/bulk-utm-builder"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <BulkUtmBuilderPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/html-content-cleaner"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <HtmlContentCleanerPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tools/google-review-link-generator"
+              element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <GoogleReviewLinkGeneratorPage />
                 </Suspense>
               }
             />

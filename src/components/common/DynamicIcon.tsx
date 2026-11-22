@@ -62,6 +62,16 @@ import {
   Download,
   Repeat,
   FlipVertical2,
+  Webhook,
+  Ship,
+  ShieldAlert,
+  Scale,
+  Compass,
+  Ticket,
+  AlignLeft,
+  Link,
+  Code2,
+  Star,
   type LucideProps
 } from 'lucide-react'
 
@@ -128,6 +138,16 @@ const iconMap: Record<string, React.ComponentType<LucideProps>> = {
   Download,
   Repeat,
   FlipVertical2,
+  Webhook,
+  Ship,
+  ShieldAlert,
+  Scale,
+  Compass,
+  Ticket,
+  AlignLeft,
+  Link,
+  Code2,
+  Star,
 }
 
 interface DynamicIconProps extends LucideProps {
