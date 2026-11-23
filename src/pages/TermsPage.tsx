@@ -258,11 +258,19 @@ export const TermsPage: React.FC = () => {
               15. Contact Information
             </h2>
             <p>
-              Questions or feedback regarding these Terms &amp; Conditions can be reviewed via our{' '}
+              Questions, notices, or inquiries regarding these Terms &amp; Conditions should be directed
+              to our official business inbox at{' '}
+              <a
+                href="mailto:qubnexa.official@gmail.com"
+                className="text-blue-600 dark:text-[#00DFFF] underline font-semibold"
+              >
+                qubnexa.official@gmail.com
+              </a>{' '}
+              or submitted via the{' '}
               <Link to="/contact" className="text-blue-600 dark:text-[#00DFFF] underline">
                 Contact Us
               </Link>{' '}
-              page (where direct owner support details will appear once configured).
+              page.
             </p>
           </section>
         </div>

@@ -165,6 +165,15 @@ export const Footer: React.FC = () => {
                   </NavLink>
                 </li>
                 <li>
+                  <a
+                    href="mailto:qubnexa.official@gmail.com"
+                    className="inline-flex min-h-[28px] items-center rounded-md px-1 -mx-1 text-xs text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-[#00DFFF] transition-colors duration-200"
+                    title="Official Business Inquiries"
+                  >
+                    qubnexa.official@gmail.com
+                  </a>
+                </li>
+                <li>
                   <NavLink to="/privacy" end className={footerNavLinkClass}>
                     Privacy Policy
                   </NavLink>

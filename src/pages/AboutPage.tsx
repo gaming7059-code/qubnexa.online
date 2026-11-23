@@ -243,7 +243,11 @@ export const AboutPage: React.FC = () => {
               Questions or Feedback?
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-0.5">
-              Review our Privacy Policy, Terms &amp; Conditions, or check the Contact Us page for current inquiry details.
+              Review our Privacy Policy, Terms &amp; Conditions, or reach our team directly at{' '}
+              <a href="mailto:qubnexa.official@gmail.com" className="text-blue-600 dark:text-[#00DFFF] underline font-medium">
+                qubnexa.official@gmail.com
+              </a>
+              .
             </p>
           </div>
           <div className="flex flex-wrap gap-2.5">

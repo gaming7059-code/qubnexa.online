@@ -18,11 +18,13 @@ interface ContactFormValues {
   email: string
   subject: string
   message: string
+  website?: string
 }
 
 type ContactFormErrors = Partial<Record<keyof ContactFormValues, string>>
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+const OFFICIAL_EMAIL = 'qubnexa.official@gmail.com'
 
 function validateContactForm(values: ContactFormValues): ContactFormErrors {
   const errors: ContactFormErrors = {}
@@ -60,18 +62,18 @@ function validateContactForm(values: ContactFormValues): ContactFormErrors {
 
 export const ContactPage: React.FC = () => {
   usePageSEO({
-    title: 'Contact Us — Feedback & Inquiry Status | QUBNEXA',
+    title: 'Contact Us — Official Business Inquiries | QUBNEXA',
     description:
-      'Contact QUBNEXA using our validated inquiry form. Learn honestly about current client-side form status and how feedback data is handled.',
+      'Contact QUBNEXA for tool requests, feedback, bug reports, and publisher inquiries. Direct email: qubnexa.official@gmail.com.',
     canonicalPath: '/contact',
-    keywords: 'contact qubnexa, feedback, bug report, support status, qubnexa contact',
+    keywords: 'contact qubnexa, qubnexa official email, feedback, bug report, support, business inquiries',
     schema: [
       {
         '@context': 'https://schema.org',
         '@type': 'ContactPage',
         name: 'Contact QUBNEXA',
         description:
-          'QUBNEXA Contact Us page with client-side inquiry validation and transparent transmission status disclosure.',
+          'QUBNEXA Contact Us page. Reach our team directly at qubnexa.official@gmail.com for support, bug reports, and business inquiries.',
       },
       createBreadcrumbSchema([
         { name: 'Home', path: '/' },
@@ -85,9 +87,13 @@ export const ContactPage: React.FC = () => {
     email: '',
     subject: '',
     message: '',
+    website: '',
   })
+  const [formLoadedAt] = useState<number>(() => Date.now())
   const [errors, setErrors] = useState<ContactFormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [deliveryStatus, setDeliveryStatus] = useState<'idle' | 'success' | 'fallback'>('idle')
+  const [statusMessage, setStatusMessage] = useState<string>('')
   const [localResult, setLocalResult] = useState<ContactFormValues | null>(null)
   const [copiedSummary, setCopiedSummary] = useState(false)
 
@@ -107,7 +113,7 @@ export const ContactPage: React.FC = () => {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const validationErrors = validateContactForm(values)
 
@@ -122,24 +128,57 @@ export const ContactPage: React.FC = () => {
 
     setErrors({})
     setIsSubmitting(true)
+    setStatusMessage('')
 
-    // No backend contact API or mail service is configured in this frontend-only build.
-    window.setTimeout(() => {
-      setLocalResult({
-        name: values.name.trim(),
-        email: values.email.trim(),
-        subject: values.subject.trim(),
-        message: values.message.trim(),
+    const payload = {
+      name: values.name.trim(),
+      email: values.email.trim(),
+      subject: values.subject.trim(),
+      message: values.message.trim(),
+      website: values.website?.trim() || '',
+      timestamp: formLoadedAt,
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       })
+
+      const data = await response.json().catch(() => ({}))
+
+      if (response.ok && data.success) {
+        setDeliveryStatus('success')
+        setStatusMessage(
+          data.message || `Your message has been sent successfully to ${OFFICIAL_EMAIL}.`
+        )
+      } else {
+        // Honest fallback: backend not configured or returned error
+        setDeliveryStatus('fallback')
+        setStatusMessage(
+          data.message ||
+            `Direct server delivery is awaiting configuration. Please send your message directly to ${OFFICIAL_EMAIL} or copy the formatted draft below.`
+        )
+        setLocalResult(payload)
+      }
+    } catch {
+      // Network or environment fallback
+      setDeliveryStatus('fallback')
+      setStatusMessage(
+        `Unable to reach backend contact endpoint. Please send your inquiry directly via email to ${OFFICIAL_EMAIL}.`
+      )
+      setLocalResult(payload)
+    } finally {
       setIsSubmitting(false)
-    }, 300)
+    }
   }
 
   const handleCopyFormatted = async () => {
     if (!localResult) return
     const formatted = [
-      `Name: ${localResult.name}`,
-      `Email: ${localResult.email}`,
+      `To: ${OFFICIAL_EMAIL}`,
+      `From: ${localResult.name} <${localResult.email}>`,
       `Subject: ${localResult.subject}`,
       '',
       localResult.message,
@@ -159,7 +198,7 @@ export const ContactPage: React.FC = () => {
     <LegalDocumentLayout
       eyebrow="Support & Inquiries"
       title="Contact Us"
-      subtitle="Validate and prepare feedback, bug reports, or tool requests for QUBNEXA."
+      subtitle="Send inquiries, bug reports, feature suggestions, or publisher questions to QUBNEXA."
       lastUpdated="November 23, 2026"
       breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact Us' }]}
     >
@@ -171,38 +210,63 @@ export const ContactPage: React.FC = () => {
         >
           <Mail className="h-5 w-5 shrink-0 mt-0.5 text-cyan-600 dark:text-[#00DFFF]" />
           <div className="space-y-1">
-            <p className="font-bold">Official Inquiries &amp; Support Channel</p>
+            <p className="font-bold">Official Business &amp; Support Inquiries</p>
             <p className="leading-relaxed">
               For general inquiries, bug reports, tool suggestions, or publisher questions, reach our team directly at{' '}
               <a
-                href="mailto:contact@qubnexa.online"
+                href={`mailto:${OFFICIAL_EMAIL}`}
                 className="font-semibold underline text-cyan-800 dark:text-cyan-300 hover:text-cyan-900"
               >
-                contact@qubnexa.online
+                {OFFICIAL_EMAIL}
               </a>
-              . You can also prepare and format your inquiry using the client-side tool below.
+              . You can also submit your inquiry through the contact form below.
             </p>
           </div>
         </div>
 
-        {/* Form Card or Honest Validated Summary */}
+        {/* Form Card, Confirmed Success, or Honest Validated Fallback */}
         <div className="xw-panel p-6 sm:p-8 shadow-2xs">
-          {localResult ? (
+          {deliveryStatus === 'success' ? (
+            <div className="space-y-5" role="status" aria-live="polite">
+              <div className="flex items-start gap-3 rounded-xl border border-emerald-200 dark:border-emerald-500/30 bg-emerald-50/70 dark:bg-emerald-950/30 p-4">
+                <Check className="h-5 w-5 shrink-0 mt-0.5 text-emerald-600 dark:text-emerald-400" />
+                <div className="space-y-1 text-xs sm:text-sm text-slate-800 dark:text-slate-200">
+                  <p className="font-bold text-emerald-900 dark:text-emerald-200">Message Delivered Successfully</p>
+                  <p className="leading-relaxed text-slate-600 dark:text-slate-300">
+                    {statusMessage ||
+                      `Your message has been sent to our official business inbox at ${OFFICIAL_EMAIL}. We will review your message and reply as soon as possible.`}
+                  </p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setDeliveryStatus('idle')
+                  setLocalResult(null)
+                  setValues({ name: '', email: '', subject: '', message: '', website: '' })
+                }}
+                className="xw-btn-primary text-xs sm:text-sm"
+              >
+                Send Another Message
+              </button>
+            </div>
+          ) : deliveryStatus === 'fallback' && localResult ? (
             <div className="space-y-5" role="status" aria-live="polite">
               <div className="flex items-start gap-3 rounded-xl border border-cyan-200 dark:border-cyan-500/30 bg-cyan-50/70 dark:bg-cyan-950/30 p-4">
                 <Info className="h-5 w-5 shrink-0 mt-0.5 text-cyan-700 dark:text-[#00DFFF]" />
                 <div className="space-y-1 text-xs sm:text-sm text-slate-800 dark:text-slate-200">
-                  <p className="font-bold">Message Not Transmitted — Live Backend Not Configured</p>
+                  <p className="font-bold">Inquiry Formatted &amp; Ready to Send</p>
                   <p className="leading-relaxed text-slate-600 dark:text-slate-300">
-                    Your inquiry passed all validation checks, but because QUBNEXA does not currently
-                    have a live contact server or configured support email address, nothing was sent
-                    or stored remotely. You can copy your formatted draft below so your text is not
-                    lost.
+                    {statusMessage}
                   </p>
                 </div>
               </div>
 
               <div className="xw-surface-muted p-4 space-y-2 text-xs sm:text-sm">
+                <div>
+                  <span className="font-semibold text-slate-500 dark:text-slate-400">To:</span>{' '}
+                  <span className="text-slate-900 dark:text-white font-medium">{OFFICIAL_EMAIL}</span>
+                </div>
                 <div>
                   <span className="font-semibold text-slate-500 dark:text-slate-400">Name:</span>{' '}
                   <span className="text-slate-900 dark:text-white">{localResult.name}</span>
@@ -222,8 +286,8 @@ export const ContactPage: React.FC = () => {
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href={`mailto:contact@qubnexa.online?subject=${encodeURIComponent(localResult.subject)}&body=${encodeURIComponent(
-                    `Name: ${localResult.name}\nEmail: ${localResult.email}\n\n${localResult.message}`
+                  href={`mailto:${OFFICIAL_EMAIL}?subject=${encodeURIComponent(localResult.subject)}&body=${encodeURIComponent(
+                    `From: ${localResult.name} <${localResult.email}>\n\n${localResult.message}`
                   )}`}
                   className="xw-btn-primary text-xs sm:text-sm inline-flex items-center gap-1.5"
                 >
@@ -242,7 +306,9 @@ export const ContactPage: React.FC = () => {
 
                 <button
                   type="button"
-                  onClick={() => setLocalResult(null)}
+                  onClick={() => {
+                    setDeliveryStatus('idle')
+                  }}
                   className="xw-btn-secondary text-xs sm:text-sm"
                 >
                   Edit Message
@@ -251,8 +317,9 @@ export const ContactPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => {
+                    setDeliveryStatus('idle')
                     setLocalResult(null)
-                    setValues({ name: '', email: '', subject: '', message: '' })
+                    setValues({ name: '', email: '', subject: '', message: '', website: '' })
                   }}
                   className="xw-btn-secondary text-xs sm:text-sm"
                 >
@@ -273,6 +340,19 @@ export const ContactPage: React.FC = () => {
                   </span>
                 </div>
               )}
+
+              {/* Anti-Spam Honeypot field (hidden from genuine users) */}
+              <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+                <label htmlFor="contact-website">Website (leave blank)</label>
+                <input
+                  id="contact-website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={values.website || ''}
+                  onChange={(e) => updateField('website', e.target.value)}
+                />
+              </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -348,7 +428,7 @@ export const ContactPage: React.FC = () => {
                   onChange={(e) => updateField('subject', e.target.value)}
                   aria-invalid={Boolean(errors.subject)}
                   aria-describedby={errors.subject ? 'contact-subject-error' : undefined}
-                  placeholder="e.g. Tool Suggestion, Bug Report, or Privacy Question"
+                  placeholder="e.g. Tool Suggestion, Bug Report, or Business Inquiry"
                   className={`xw-input min-h-[44px] ${
                     errors.subject ? 'border-rose-500 dark:border-rose-500' : ''
                   }`}
@@ -376,7 +456,7 @@ export const ContactPage: React.FC = () => {
                   onChange={(e) => updateField('message', e.target.value)}
                   aria-invalid={Boolean(errors.message)}
                   aria-describedby={errors.message ? 'contact-message-error' : undefined}
-                  placeholder="Describe the tool request, issue steps, or question in detail..."
+                  placeholder="Describe your question, issue, or partnership proposal in detail..."
                   className={`xw-input ${errors.message ? 'border-rose-500 dark:border-rose-500' : ''}`}
                 />
                 {errors.message && (
@@ -388,7 +468,7 @@ export const ContactPage: React.FC = () => {
 
               <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
                 <span className="text-xs text-slate-500 dark:text-slate-400">
-                  Validated locally • Zero silent network submission
+                  Protected with anti-spam &amp; SSL encryption
                 </span>
                 <button
                   type="submit"
@@ -398,12 +478,12 @@ export const ContactPage: React.FC = () => {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      <span>Checking &amp; Preparing...</span>
+                      <span>Sending Message...</span>
                     </>
                   ) : (
                     <>
                       <Send className="h-4 w-4" />
-                      <span>Prepare Inquiry</span>
+                      <span>Send Message</span>
                     </>
                   )}
                 </button>
@@ -417,9 +497,9 @@ export const ContactPage: React.FC = () => {
           <div className="xw-surface flex items-start gap-2.5 p-4">
             <MessageSquare className="h-4 w-4 text-blue-600 dark:text-[#00DFFF] shrink-0 mt-0.5" />
             <div>
-              <p className="font-semibold text-slate-900 dark:text-white">Privacy Before Sending</p>
+              <p className="font-semibold text-slate-900 dark:text-white">Privacy Protected</p>
               <p className="mt-0.5 leading-relaxed">
-                Read how QUBNEXA handles browser storage and tool inputs in our{' '}
+                Contact submissions are kept confidential and used solely to reply to you. Learn more in our{' '}
                 <Link to="/privacy" className="text-blue-600 dark:text-[#00DFFF] underline">
                   Privacy Policy
                 </Link>
@@ -431,9 +511,9 @@ export const ContactPage: React.FC = () => {
           <div className="xw-surface flex items-start gap-2.5 p-4">
             <Info className="h-4 w-4 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" />
             <div>
-              <p className="font-semibold text-slate-900 dark:text-white">Usage Guidelines</p>
+              <p className="font-semibold text-slate-900 dark:text-white">Usage &amp; Service Terms</p>
               <p className="mt-0.5 leading-relaxed">
-                Review service scope and disclaimers in our{' '}
+                Review platform usage terms and publisher policies in our{' '}
                 <Link to="/terms" className="text-blue-600 dark:text-[#00DFFF] underline">
                   Terms &amp; Conditions
                 </Link>

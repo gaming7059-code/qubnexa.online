@@ -85,12 +85,13 @@ export const PrivacyPage: React.FC = () => {
               timestamp) to deliver files and protect against abuse.
             </li>
             <li>
-              <strong>Contact Us Form:</strong> As detailed on the{' '}
+              <strong>Contact Us Inquiries:</strong> Messages submitted via our{' '}
               <Link to="/contact" className="text-blue-600 dark:text-[#00DFFF] underline">
                 Contact Us
               </Link>{' '}
-              page, QUBNEXA currently uses a frontend-only validation form with no live backend mail
-              endpoint; entered fields stay in local React state in your tab and are not transmitted.
+              form or sent directly via email are transmitted securely to our official business email
+              address (<code>qubnexa.official@gmail.com</code>) solely to answer your questions, assist
+              with bug reports, or review business inquiries. We never sell or share contact details with advertisers.
             </li>
           </ul>
         </section>
@@ -349,11 +350,19 @@ export const PrivacyPage: React.FC = () => {
             12. Contact Information
           </h2>
           <p>
-            You can review current inquiry and support channel status on the{' '}
+            For questions, feedback, or privacy-related inquiries regarding this policy or QUBNEXA tools,
+            please contact our official business inbox at{' '}
+            <a
+              href="mailto:qubnexa.official@gmail.com"
+              className="text-blue-600 dark:text-[#00DFFF] underline font-semibold"
+            >
+              qubnexa.official@gmail.com
+            </a>{' '}
+            or submit an inquiry through our{' '}
             <Link to="/contact" className="text-blue-600 dark:text-[#00DFFF] underline">
               Contact Us
             </Link>{' '}
-            page. Direct owner email or live messaging details will be published there once configured.
+            page.
           </p>
         </section>
       </div>

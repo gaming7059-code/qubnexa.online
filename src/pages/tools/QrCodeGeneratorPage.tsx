@@ -55,13 +55,13 @@ export const QrCodeGeneratorPage: React.FC = () => {
     {
       title: 'Professional Business Card & Event Badge',
       description: 'Printing a vCard on networking cards or conference badges to exchange phone, email, and company details in seconds.',
-      input: 'Type: vCard • Name: Rohan Sharma • Company: QUBNEXA • Phone: +91 98765 43210 • Email: rohan@qubnexa.online',
+      input: 'Type: vCard • Name: Rohan Sharma • Company: QUBNEXA • Phone: +91 98765 43210 • Email: qubnexa.official@gmail.com',
       output: 'Infinitely scalable SVG vector graphic ready for commercial CMYK offset printing.',
     },
     {
       title: 'Direct Customer Support Email QR',
       description: 'Placing a sticker on product packaging that drafts a pre-filled support ticket in the customer email client.',
-      input: 'Type: Email • To: support@qubnexa.online • Subject: Product Inquiry • Body: Hello Support Team',
+      input: 'Type: Email • To: qubnexa.official@gmail.com • Subject: Product Inquiry • Body: Hello Support Team',
       output: 'Standard mailto URI that opens default mobile and desktop email applications automatically.',
     },
   ]
