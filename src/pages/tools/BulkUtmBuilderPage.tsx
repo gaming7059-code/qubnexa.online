@@ -77,6 +77,34 @@ export const BulkUtmBuilderPage: React.FC = () => {
     },
   ]
 
+  const whoShouldUse = [
+    'Performance Marketers & Paid Media Specialists running omnichannel campaigns across Google Ads, Meta, TikTok, LinkedIn, and X.',
+    'Email Marketers & Lifecycle Growth Managers tagging weekly newsletter links, transactional emails, and automated onboarding drips.',
+    'Affiliate Managers & Influencer Marketing Leads generating unique, attributable tracking links for dozens of creator partners simultaneously.',
+    'E-commerce Merchandisers tracking seasonal promotional campaigns across promotional banners, SMS marketing, and push notifications.',
+  ]
+
+  const problemsSolved = [
+    'Eliminates Google Analytics 4 (GA4) data fragmentation caused by inconsistent casing (e.g. "facebook", "Facebook", and "FB" treated as separate channels).',
+    'Solves the time drain of manual single-link builders by generating 12+ channel variants across multiple landing pages in one click.',
+    'Preserves existing URL query parameters and hashes, preventing broken redirect chains and malformed double-question-mark URLs.',
+    'Outputs clean, standardized CSV matrices ready for immediate import into Google Sheets, Excel, or marketing dashboards.',
+  ]
+
+  const bestPractices = [
+    'Enforce lowercase parameters across all channels to maintain consolidated, clean attribution buckets in GA4.',
+    'Use hyphens (-) to separate multi-word parameter values (e.g. utm_campaign=summer-clearance-2026) for optimal readability.',
+    'Never use UTM parameters on internal website navigation links, as doing so overwrites the original session attribution source.',
+    'Test generated URLs through your tracking redirects in an incognito window to verify that server redirects preserve query strings.',
+  ]
+
+  const commonMistakes = [
+    'Inconsistent capitalization (e.g. "email" vs "Email" vs "Newsletter"), which fragments reporting in analytics platforms.',
+    'Tagging internal site links with UTMs, which resets user session metrics and destroys organic bounce rate tracking.',
+    'Failing to URL-encode special characters or spaces, which can break browser links and destination redirects.',
+    'Relying on server redirects (301/302) that drop query parameters between HTTP and HTTPS or apex and www domains.',
+  ]
+
   const faqs: FAQItem[] = [
     {
       question: 'Why should I generate UTM links in bulk instead of one at a time?',
@@ -84,9 +112,29 @@ export const BulkUtmBuilderPage: React.FC = () => {
         'Manual UTM builders are error-prone and time-consuming. Building links in bulk guarantees standardized naming conventions, prevents typographical errors, avoids duplicate campaign fragments in Google Analytics 4, and lets you export full campaign matrices directly to your team spreadsheets in seconds.',
     },
     {
+      question: 'What is the standard Google Analytics 4 (GA4) UTM hierarchy?',
+      answer:
+        'The standard hierarchy consists of: utm_source (platform identifying where traffic originates, e.g. google, newsletter, linkedin), utm_medium (high-level marketing channel, e.g. cpc, email, paid-social), utm_campaign (individual promotional initiative, e.g. spring_sale_2026), utm_term (search keywords or audience segments), and utm_content (specific ad creative variant or button callout).',
+    },
+    {
+      question: 'Why does inconsistent casing (e.g. Facebook vs. facebook) ruin analytics reports?',
+      answer:
+        'Google Analytics 4 is strictly case-sensitive. If one campaign uses utm_source=Facebook and another uses utm_source=facebook, GA4 treats them as two completely separate traffic channels, making it difficult to calculate true return on ad spend (ROAS) without manual spreadsheet reconciliation.',
+    },
+    {
+      question: 'Should I ever put UTM tracking parameters on internal website links?',
+      answer:
+        'No, never! Placing UTM tags on internal links (such as a homepage banner linking to a product page) immediately overwrites the visitor\'s original acquisition source (such as Google Organic Search) and triggers a new artificial session, corrupting your organic conversion data.',
+    },
+    {
       question: 'Will this tool overwrite pre-existing parameters in my URL?',
       answer:
         'No. The tool parses URLs using standard browser URL APIs. Pre-existing query parameters (such as ?ref=partner or ?locale=en) are preserved, while UTM tags are cleanly merged or updated.',
+    },
+    {
+      question: 'How do 301 and 302 redirects affect UTM campaign tracking?',
+      answer:
+        'If your tagged URL redirects to another page (for example, from http:// to https:// or from example.com/blog to example.com/blog/), ensure your web server is configured with query string appending ($request_uri / QSA). Otherwise, the server may drop the UTM parameters during the redirect.',
     },
     {
       question: 'Are my campaign links sent to external servers or tracking databases?',
@@ -105,6 +153,10 @@ export const BulkUtmBuilderPage: React.FC = () => {
       formulas={formulas}
       examples={examples}
       faqs={faqs}
+      whoShouldUse={whoShouldUse}
+      problemsSolved={problemsSolved}
+      bestPractices={bestPractices}
+      commonMistakes={commonMistakes}
       relatedSlugs={['google-review-link-generator', 'local-seo-grid-planner', 'competitor-pricing-tracker', 'qr-code-generator']}
     >
       <BulkUtmBuilder />

@@ -461,7 +461,7 @@ export const ALL_TOOLS: Tool[] = [
     name: 'Tic-Tac-Toe Game',
     slug: 'tic-tac-toe',
     route: '/games?play=tic-tac-toe',
-    description: 'Challenge an unbeatable AI across 3 difficulty tiers or play local 2-player matches with crisp win tracking.',
+    description: 'Challenge a Minimax-based algorithm with adjustable difficulty across 3 tiers or play local 2-player matches with crisp win tracking.',
     primaryCategory: 'games',
     icon: 'Flame',
     releaseOrder: 16,

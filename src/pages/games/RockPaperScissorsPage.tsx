@@ -85,7 +85,8 @@ export const RockPaperScissorsPage: React.FC = () => {
       ),
       createBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Games', path: '/games' },
+        { name: 'Categories', path: '/categories' },
+        { name: 'Games & Entertainment', path: '/categories/games' },
         { name: 'Rock Paper Scissors', path: '/games/rock-paper-scissors' },
       ]),
       createFAQSchema(faqs) || {},
@@ -102,8 +103,8 @@ export const RockPaperScissorsPage: React.FC = () => {
               Home
             </Link>
             <span>/</span>
-            <Link to="/games" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
-              Games
+            <Link to="/categories/games" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
+              Games &amp; Entertainment
             </Link>
             <span>/</span>
             <span className="font-semibold text-slate-900 dark:text-white">Rock Paper Scissors</span>

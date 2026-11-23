@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useOutletContext } from 'react-router-dom'
-import { ChevronRight, HelpCircle, BookOpen, Calculator, Sparkles, ChevronDown, ArrowLeft, LayoutGrid } from 'lucide-react'
+import {
+  ChevronRight,
+  HelpCircle,
+  BookOpen,
+  Calculator,
+  Sparkles,
+  ChevronDown,
+  ArrowLeft,
+  LayoutGrid,
+  ShieldCheck,
+  CheckCircle2,
+  AlertTriangle,
+  Lightbulb,
+  UserCheck,
+  Target,
+} from 'lucide-react'
 import { ALL_TOOLS } from '../../data/toolsData'
 import { normalizeCategoryId } from '../../data/categoriesData'
 import { recordRecentTool } from '../../utils/recentTools'
@@ -44,6 +59,10 @@ export interface ToolPageLayoutProps {
   faqs: FAQItem[]
   relatedSlugs: string[]
   children: React.ReactNode
+  whoShouldUse?: string[]
+  problemsSolved?: string[]
+  bestPractices?: string[]
+  commonMistakes?: string[]
 }
 
 export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
@@ -57,6 +76,10 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
   faqs,
   relatedSlugs,
   children,
+  whoShouldUse,
+  problemsSolved,
+  bestPractices,
+  commonMistakes,
 }) => {
   const primaryCatId = normalizeCategoryId(tool.primaryCategory || tool.categoryId)
   const categoryPath = primaryCatId !== 'all' ? `/categories/${primaryCatId}` : '/categories'
@@ -94,6 +117,11 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
 
   // Find related tools from slugs or IDs for complete cross-compatibility
   const relatedTools = ALL_TOOLS.filter((t) => relatedSlugs.includes(t.slug) || relatedSlugs.includes(t.id))
+
+  // Accurate processing mode to avoid overclaiming offline capabilities
+  const networkTools = ['video-downloader', 'youtube-thumbnail-downloader', 'google-review-link-generator']
+  const isNetworkDependent = networkTools.includes(tool.slug || tool.id)
+  const privacyBadgeLabel = isNetworkDependent ? 'Direct Browser Processing' : 'Local In-Browser Processing'
 
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">
@@ -153,6 +181,16 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
         <p className="text-sm text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
           {tool.description}
         </p>
+        <div className="flex flex-wrap items-center gap-3 pt-1 text-xs text-slate-500 dark:text-slate-400">
+          <span className="inline-flex items-center gap-1.5 font-medium text-emerald-600 dark:text-emerald-400">
+            <ShieldCheck className="h-4 w-4" />
+            <span>Verified by QUBNEXA Team</span>
+          </span>
+          <span className="text-slate-300 dark:text-slate-700">•</span>
+          <span>{privacyBadgeLabel}</span>
+          <span className="text-slate-300 dark:text-slate-700">•</span>
+          <span>Updated November 2026</span>
+        </div>
       </header>
 
       {/* 3. Main Calculator Area (Calculator + Result Cards) */}
@@ -176,6 +214,47 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
               ))}
             </ol>
           </section>
+        </ScrollReveal>
+      )}
+
+      {/* Audience & Problem Solving */}
+      {((whoShouldUse && whoShouldUse.length > 0) || (problemsSolved && problemsSolved.length > 0)) && (
+        <ScrollReveal delay={50}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {whoShouldUse && whoShouldUse.length > 0 && (
+              <section className="xw-surface p-6 space-y-3.5 shadow-2xs">
+                <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
+                  <UserCheck className="h-5 w-5 text-blue-600 dark:text-[#00DFFF]" />
+                  <h2 className="text-base font-bold">Who Should Use This Tool</h2>
+                </div>
+                <ul className="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                  {whoShouldUse.map((user, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 leading-relaxed">
+                      <span className="h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-[#00DFFF] mt-2 shrink-0" />
+                      <span>{user}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {problemsSolved && problemsSolved.length > 0 && (
+              <section className="xw-surface p-6 space-y-3.5 shadow-2xs">
+                <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
+                  <Target className="h-5 w-5 text-emerald-500" />
+                  <h2 className="text-base font-bold">Problems This Tool Solves</h2>
+                </div>
+                <ul className="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                  {problemsSolved.map((prob, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 leading-relaxed">
+                      <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
+                      <span>{prob}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </div>
         </ScrollReveal>
       )}
 
@@ -226,6 +305,47 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
               ))}
             </div>
           </section>
+        </ScrollReveal>
+      )}
+
+      {/* Best Practices & Common Mistakes */}
+      {((bestPractices && bestPractices.length > 0) || (commonMistakes && commonMistakes.length > 0)) && (
+        <ScrollReveal delay={50}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {bestPractices && bestPractices.length > 0 && (
+              <section className="xw-surface p-6 space-y-3.5 shadow-2xs">
+                <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
+                  <Lightbulb className="h-5 w-5 text-amber-500" />
+                  <h2 className="text-base font-bold">Best Practices &amp; Operational Tips</h2>
+                </div>
+                <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                  {bestPractices.map((tip, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 leading-relaxed">
+                      <span className="h-1.5 w-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
+                      <span>{tip}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {commonMistakes && commonMistakes.length > 0 && (
+              <section className="xw-surface p-6 space-y-3.5 shadow-2xs">
+                <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
+                  <AlertTriangle className="h-5 w-5 text-rose-500" />
+                  <h2 className="text-base font-bold">Common Mistakes to Avoid</h2>
+                </div>
+                <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                  {commonMistakes.map((mistake, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 leading-relaxed">
+                      <span className="h-1.5 w-1.5 rounded-full bg-rose-500 mt-2 shrink-0" />
+                      <span>{mistake}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </div>
         </ScrollReveal>
       )}
 

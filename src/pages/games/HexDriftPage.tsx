@@ -140,7 +140,8 @@ export const HexDriftPage: React.FC = () => {
       ),
       createBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Games', path: '/games' },
+        { name: 'Categories', path: '/categories' },
+        { name: 'Games & Entertainment', path: '/categories/games' },
         { name: 'HEX DRIFT', path: '/games/hex-drift' },
       ]),
       createFAQSchema(faqs) || {},
@@ -157,8 +158,8 @@ export const HexDriftPage: React.FC = () => {
               Home
             </Link>
             <span>/</span>
-            <Link to="/games" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
-              Games
+            <Link to="/categories/games" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+              Games &amp; Entertainment
             </Link>
             <span>/</span>
             <span className="font-semibold text-slate-900 dark:text-white">HEX DRIFT</span>

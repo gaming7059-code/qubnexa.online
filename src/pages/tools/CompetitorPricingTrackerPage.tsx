@@ -82,6 +82,34 @@ export const CompetitorPricingTrackerPage: React.FC = () => {
     },
   ]
 
+  const whoShouldUse = [
+    'B2B SaaS Founders & Product Managers setting tier pricing and packaging for newly launched software solutions.',
+    'E-commerce Merchants & Marketplace Sellers monitoring rival promotional discounts, flash sales, and bundle pricing.',
+    'Agency Owners & IT Consultants benchmarking hourly billable rates and fixed-scope retainers against market competitors.',
+    'Enterprise Sales Reps needing fast competitive benchmark data to defend pricing proposals during procurement negotiations.',
+  ]
+
+  const problemsSolved = [
+    'Centralizes competitor price intelligence into an organized, private local dashboard without expensive market-intel subscription fees.',
+    'Calculates dynamic market baseline averages and percentage price variances instantly as you add or update quotes.',
+    'Provides instant competitive positioning feedback: enter your own price to see exactly how your offer ranks against the market spread.',
+    'Preserves business confidentiality by keeping all competitor intelligence 100% in local browser storage (localStorage) with zero server transmission.',
+  ]
+
+  const bestPractices = [
+    'Track both monthly list prices and effective annual billing rates to understand true competitor cash flow incentives.',
+    'Audit competitors on a consistent schedule (e.g. bi-weekly or monthly) to catch promotional discount tests before they become permanent.',
+    'Look beyond raw dollar figures: note changes in user seat allowances, API call limits, or onboarding support tiers in the notes field.',
+    'Export a CSV backup snapshot before clearing browser cookies or switching computers to maintain your historical pricing records.',
+  ]
+
+  const commonMistakes = [
+    'Engaging in an aggressive "race to the bottom" by slashing prices without considering gross margins and customer support overhead.',
+    'Assuming public website list prices reflect actual enterprise deal terms (large accounts frequently negotiate 20%–40% custom discounts).',
+    'Failing to note currency exchange rate fluctuations when comparing international SaaS competitors against domestic offerings.',
+    'Relying on memory instead of logging baseline prices, making it impossible to calculate true directional price changes over time.',
+  ]
+
   const faqs: FAQItem[] = [
     {
       question: 'Is my competitor pricing data stored on Qubnexa servers or shared with anyone?',
@@ -94,6 +122,16 @@ export const CompetitorPricingTrackerPage: React.FC = () => {
         'No. This tool is an honest, privacy-first manual intelligence workspace designed for product managers, founders, and sales teams to log and analyze mystery shops, quote inquiries, and audit findings. We do not engage in unauthorized bot-scraping or brittle web scrapers.',
     },
     {
+      question: 'How is Market Baseline Average and Price Spread calculated?',
+      answer:
+        'The market average is calculated as the arithmetic mean of all active competitor prices logged for that item. Price spread is the absolute difference between the highest and lowest market prices observed, reflecting market price elasticity.',
+    },
+    {
+      question: 'How does the "My Price" benchmark calculation work?',
+      answer:
+        'When you enter your own selling price, the tracker calculates your dollar and percentage variance relative to the market average and displays your numerical competitive rank (e.g. "Rank 2 of 5 — 14.5% below market average").',
+    },
+    {
       question: 'Can I export my pricing data to Excel or Google Sheets?',
       answer:
         'Yes! Click the "CSV" button in the toolbar to immediately download a standard .csv spreadsheet file containing all competitor names, products, prices, percentage changes, dates, and notes.',
@@ -102,6 +140,11 @@ export const CompetitorPricingTrackerPage: React.FC = () => {
       question: 'Will my saved data disappear when I close or refresh the tab?',
       answer:
         'No. Your data is persisted in your local browser’s localStorage. As long as you use the same browser and device, your records remain intact across page reloads and browser sessions. You can also export to CSV anytime for external backups.',
+    },
+    {
+      question: 'Can I track prices across multiple international currencies?',
+      answer:
+        'Yes. The tracker supports USD ($), EUR (€), GBP (£), INR (₹), CAD ($), and AUD ($). You can filter your view by specific currencies to maintain accurate apples-to-apples comparisons.',
     },
   ]
 
@@ -115,6 +158,10 @@ export const CompetitorPricingTrackerPage: React.FC = () => {
       formulas={formulas}
       examples={examples}
       faqs={faqs}
+      whoShouldUse={whoShouldUse}
+      problemsSolved={problemsSolved}
+      bestPractices={bestPractices}
+      commonMistakes={commonMistakes}
       relatedSlugs={['profit-loss-calculator', 'percentage-calculator', 'discount-calculator', 'gst-calculator']}
     >
       <CompetitorPricingTracker />

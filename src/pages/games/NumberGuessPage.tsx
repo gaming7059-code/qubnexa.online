@@ -86,7 +86,8 @@ export const NumberGuessPage: React.FC = () => {
       ),
       createBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Games', path: '/games' },
+        { name: 'Categories', path: '/categories' },
+        { name: 'Games & Entertainment', path: '/categories/games' },
         { name: 'Number Guessing Game', path: '/games/number-guess' },
       ]),
       createFAQSchema(faqs) || {},
@@ -103,8 +104,8 @@ export const NumberGuessPage: React.FC = () => {
               Home
             </Link>
             <span>/</span>
-            <Link to="/games" className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">
-              Games
+            <Link to="/categories/games" className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">
+              Games &amp; Entertainment
             </Link>
             <span>/</span>
             <span className="font-semibold text-slate-900 dark:text-white">Number Guessing Game</span>

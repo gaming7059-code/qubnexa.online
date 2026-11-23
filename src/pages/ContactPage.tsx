@@ -492,6 +492,47 @@ export const ContactPage: React.FC = () => {
           )}
         </div>
 
+        {/* Support Guidelines & Response SLAs */}
+        <section className="xw-panel p-6 sm:p-8 space-y-5 shadow-2xs">
+          <div className="flex items-center gap-2.5 text-slate-900 dark:text-white font-bold text-lg">
+            <Mail className="h-5 w-5 text-blue-600 dark:text-[#00DFFF]" />
+            <h2>Communication Guidelines &amp; Response SLA</h2>
+          </div>
+          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            We value direct communication with our users. Whether you are reporting an unexpected calculation error, requesting a new utility, or inquiring about advertising and partnerships, every inquiry is reviewed directly by our engineering and administrative team.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+            <div className="xw-surface-muted p-4 space-y-1.5">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Response Time Commitment</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                We strive to respond to all legitimate technical, business, and feedback messages within <strong>24 to 48 business hours</strong> (Monday through Friday). High-priority security reports are escalated immediately.
+              </p>
+            </div>
+
+            <div className="xw-surface-muted p-4 space-y-1.5">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Bug Reports &amp; Mathematical Issues</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                When reporting an issue, please specify the exact tool URL, your browser/device (e.g., Chrome on Windows, Safari on iOS), and the input values that produced the unexpected result.
+              </p>
+            </div>
+
+            <div className="xw-surface-muted p-4 space-y-1.5">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Feature Requests &amp; Tool Suggestions</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Have an idea for a calculator, document utility, or developer helper that would simplify your daily workflow? Let us know the problem it solves and your desired features.
+              </p>
+            </div>
+
+            <div className="xw-surface-muted p-4 space-y-1.5">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Business &amp; Advertising Inquiries</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                For commercial partnerships, AdSense publisher queries, or custom tool licensing, please reach our official email directly at <strong className="text-blue-600 dark:text-[#00DFFF]">{OFFICIAL_EMAIL}</strong>.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Bottom Info Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-600 dark:text-slate-300">
           <div className="xw-surface flex items-start gap-2.5 p-4">

@@ -171,7 +171,7 @@ export const AboutPage: React.FC = () => {
               </div>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 Most calculators, text utilities, PDF edits, and image enhancers run locally in browser
-                memory. Where a tool optionally uses an external endpoint (such as Bring-Your-Own-Key
+                memory via HTML5 Canvas, Web Audio API, and Web Cryptography. Where a tool optionally uses an external endpoint (such as Bring-Your-Own-Key
                 cloud speech or URL inspection), it is documented clearly in our Privacy Policy.
               </p>
             </div>
@@ -184,7 +184,7 @@ export const AboutPage: React.FC = () => {
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 Every page supports light and dark themes, keyboard navigation, smart search
                 shortcuts (<kbd className="px-1 py-0.5 text-[11px] rounded border border-slate-300 dark:border-slate-700">Ctrl K</kbd>),
-                and mobile-friendly layouts.
+                WCAG-compliant contrast ratios, and touch-optimized mobile layouts.
               </p>
             </div>
 
@@ -194,10 +194,67 @@ export const AboutPage: React.FC = () => {
                 <span>Continuously Evolving</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                Tools, algorithms, supported file formats, and interface features are updated over
-                time and may change or expand as web standards evolve.
+                Tools, mathematical algorithms, supported file formats, and interface features are tested and updated over
+                time based on emerging web standards and user community feedback.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Who QUBNEXA Serves */}
+        <section className="xw-panel p-6 sm:p-8 space-y-4 shadow-2xs">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+            Who Benefits From QUBNEXA
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            QUBNEXA is designed for anyone who needs fast, accurate digital utilities without installing bloated software or sharing personal email addresses:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+            <div className="xw-surface-muted p-4 space-y-1.5">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Students &amp; Academics</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Calculate chronological age for government competitive exams, evaluate complex mathematical percentages, convert scientific units, and count words for research essays.
+              </p>
+            </div>
+            <div className="xw-surface-muted p-4 space-y-1.5">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Developers &amp; Engineers</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Format and validate deeply nested JSON, test passwords with cryptographically secure hardware entropy, inspect prompt injection vectors, and plan serverless webhooks.
+              </p>
+            </div>
+            <div className="xw-surface-muted p-4 space-y-1.5">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Creators &amp; Multimedia Editors</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Verify social video safe zones for TikTok and Instagram Reels, clean electrical hum from microphone recordings, enhance photo sharpness, and assemble multi-image PDFs.
+              </p>
+            </div>
+            <div className="xw-surface-muted p-4 space-y-1.5">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Business Owners &amp; Professionals</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Model SIP investment growth, compute home loan EMI schedules, calculate forward/reverse GST liabilities, structure B2B case studies, and generate marketing UTM links.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Approach to Engineering & Quality */}
+        <section className="xw-panel p-6 sm:p-8 space-y-4 shadow-2xs">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+            Our Approach to Engineering &amp; Data Transparency
+          </h2>
+          <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p>
+              We believe online utilities should be fast, honest, and respectful of privacy. Traditional tool portals often require users to upload sensitive files to remote servers, route calculations through opaque backends, or navigate aggressive interstitial advertisements.
+            </p>
+            <p>
+              QUBNEXA adopts an engineering-first philosophy:
+            </p>
+            <ul className="list-disc list-inside space-y-2 pl-1 text-xs sm:text-sm">
+              <li><strong>Zero Mandatory Logins:</strong> Every utility is accessible immediately without creating user accounts or disclosing personal contact details.</li>
+              <li><strong>Mathematical Transparency:</strong> Calculator pages provide exact formula methodologies and step-by-step explanations so users understand how numbers are computed.</li>
+              <li><strong>Volatile Memory Processing:</strong> Data entered into client-side tools remains in browser RAM and is wiped immediately upon tab closure or page reload.</li>
+              <li><strong>Clean, AdSense-Compliant Layouts:</strong> We design clean, readable interfaces that balance sustainable advertising with uncompromised user experience.</li>
+            </ul>
           </div>
         </section>
 
