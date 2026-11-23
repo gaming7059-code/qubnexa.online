@@ -50,7 +50,7 @@ export const TermsPage: React.FC = () => {
       eyebrow="Legal Agreement"
       title="Terms & Conditions"
       subtitle="General terms, permitted usage guidelines, and informational disclaimers governing your access to QUBNEXA."
-      lastUpdated="November 12, 2026"
+      lastUpdated="November 23, 2026"
       breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Terms & Conditions' }]}
       tocItems={TERMS_TOC}
     >
@@ -159,8 +159,8 @@ export const TermsPage: React.FC = () => {
               7. Third-Party Services
             </h2>
             <p>
-              Certain optional features connect directly from your browser to external services or
-              public endpoints (including OpenAI BYOK speech APIs, Hugging Face ONNX model downloads,
+              Certain features and advertising networks connect directly from your browser to external services or
+              public endpoints (including Google AdSense advertising services, OpenAI BYOK speech APIs, Hugging Face ONNX model downloads,
               Google Fonts, browser Web Speech services, external media links, or WhatsApp Web share
               links). QUBNEXA does not endorse, control, or assume responsibility for third-party
               websites, APIs, pricing, or service policies.

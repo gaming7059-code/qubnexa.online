@@ -6,9 +6,9 @@ import {
   Copy,
   Info,
   Loader2,
+  Mail,
   MessageSquare,
   Send,
-  ShieldAlert,
 } from 'lucide-react'
 import { LegalDocumentLayout } from '../components/common/LegalDocumentLayout'
 import { usePageSEO, createBreadcrumbSchema } from '../utils/seo'
@@ -160,23 +160,27 @@ export const ContactPage: React.FC = () => {
       eyebrow="Support & Inquiries"
       title="Contact Us"
       subtitle="Validate and prepare feedback, bug reports, or tool requests for QUBNEXA."
-      lastUpdated="November 12, 2026"
+      lastUpdated="November 23, 2026"
       breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact Us' }]}
     >
       <div className="space-y-6">
-        {/* Upfront Honesty Disclosure Banner */}
+        {/* Direct Email Support & Inquiry Notice */}
         <div
           role="note"
-          className="rounded-2xl border border-amber-200 dark:border-amber-800/70 bg-amber-50/90 dark:bg-amber-950/35 p-4 sm:p-5 flex items-start gap-3 text-xs sm:text-sm text-amber-950 dark:text-amber-200"
+          className="rounded-2xl border border-cyan-200 dark:border-cyan-800/70 bg-cyan-50/70 dark:bg-cyan-950/35 p-4 sm:p-5 flex items-start gap-3 text-xs sm:text-sm text-cyan-950 dark:text-cyan-200"
         >
-          <ShieldAlert className="h-5 w-5 shrink-0 mt-0.5 text-amber-600 dark:text-amber-400" />
+          <Mail className="h-5 w-5 shrink-0 mt-0.5 text-cyan-600 dark:text-[#00DFFF]" />
           <div className="space-y-1">
-            <p className="font-bold">Current Delivery Notice (Frontend-Only Form)</p>
+            <p className="font-bold">Official Inquiries &amp; Support Channel</p>
             <p className="leading-relaxed">
-              QUBNEXA runs as a client-side static web platform and does not yet have an active
-              email server or backend contact endpoint connected. Submitting this form validates your
-              inputs locally in your browser without sending your details over the internet or into
-              an external mailbox.
+              For general inquiries, bug reports, tool suggestions, or publisher questions, reach our team directly at{' '}
+              <a
+                href="mailto:contact@qubnexa.online"
+                className="font-semibold underline text-cyan-800 dark:text-cyan-300 hover:text-cyan-900"
+              >
+                contact@qubnexa.online
+              </a>
+              . You can also prepare and format your inquiry using the client-side tool below.
             </p>
           </div>
         </div>
@@ -217,10 +221,20 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="flex flex-wrap gap-3">
+                <a
+                  href={`mailto:contact@qubnexa.online?subject=${encodeURIComponent(localResult.subject)}&body=${encodeURIComponent(
+                    `Name: ${localResult.name}\nEmail: ${localResult.email}\n\n${localResult.message}`
+                  )}`}
+                  className="xw-btn-primary text-xs sm:text-sm inline-flex items-center gap-1.5"
+                >
+                  <Mail className="h-4 w-4" />
+                  <span>Send via Email Client</span>
+                </a>
+
                 <button
                   type="button"
                   onClick={handleCopyFormatted}
-                  className="xw-btn-primary text-xs sm:text-sm"
+                  className="xw-btn-secondary text-xs sm:text-sm"
                 >
                   {copiedSummary ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                   <span>{copiedSummary ? 'Copied Draft!' : 'Copy Formatted Inquiry'}</span>

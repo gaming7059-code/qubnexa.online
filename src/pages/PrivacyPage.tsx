@@ -46,7 +46,7 @@ export const PrivacyPage: React.FC = () => {
       eyebrow="Legal & Privacy"
       title="Privacy Policy"
       subtitle="A transparent breakdown of how QUBNEXA processes inputs, what stays in your browser, what is stored locally, and which optional features communicate with external services."
-      lastUpdated="November 12, 2026"
+      lastUpdated="November 23, 2026"
       breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Privacy Policy' }]}
       tocItems={PRIVACY_TOC}
     >
@@ -74,9 +74,9 @@ export const PrivacyPage: React.FC = () => {
           </p>
           <ul className="list-disc pl-5 space-y-1.5 text-sm">
             <li>
-              <strong>No Tracking Telemetry by QUBNEXA:</strong> Code inspection confirms there are
-              no Google Analytics, AdSense, advertising pixels, or behavioral tracking scripts
-              embedded inside QUBNEXA.
+              <strong>First-Party Data Minimization:</strong> QUBNEXA does not operate user accounts,
+              first-party user tracking databases, or behavioral profile engines. Inputs processed
+              inside our tools remain strictly in your browser memory.
             </li>
             <li>
               <strong>Hosting Infrastructure Logs:</strong> Like all websites, static hosting or CDN
@@ -114,7 +114,7 @@ export const PrivacyPage: React.FC = () => {
             4. Browser Storage and Cookies
           </h2>
           <p>
-            QUBNEXA application code does <strong>not</strong> set or read browser cookies (
+            QUBNEXA application code does <strong>not</strong> set first-party tracking cookies (
             <code className="text-xs bg-slate-100 dark:bg-[#11182D] px-1.5 py-0.5 rounded">
               document.cookie
             </code>
@@ -122,7 +122,8 @@ export const PrivacyPage: React.FC = () => {
             <code className="text-xs bg-slate-100 dark:bg-[#11182D] px-1.5 py-0.5 rounded">
               localStorage
             </code>{' '}
-            and Cache Storage strictly on your device:
+            and Cache Storage strictly on your device for user preferences. As described in Section 6,
+            third-party advertising partners (including Google) may use cookies or web beacons to serve ads.
           </p>
           <ul className="list-disc pl-5 space-y-1.5 text-sm">
             <li>
@@ -198,6 +199,33 @@ export const PrivacyPage: React.FC = () => {
             directly to third-party services outside QUBNEXA&apos;s control:
           </p>
           <ul className="list-disc pl-5 space-y-1.5 text-sm">
+            <li>
+              <strong>Google AdSense &amp; Advertising Cookies:</strong> QUBNEXA displays advertisements
+              served by Google AdSense. Google, as a third-party vendor, and its certified partners
+              use cookies, device identifiers, and web beacons to serve ads based on a user&apos;s
+              prior visits to this website or other websites across the Internet. Google&apos;s use of
+              advertising cookies enables it and its partners to serve personalized and contextual ads
+              to our users based on their visits to QUBNEXA and other websites. Users may opt out of
+              personalized advertising at any time by visiting{' '}
+              <a
+                href="https://www.google.com/settings/ads"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-[#00DFFF] underline"
+              >
+                Google Ads Settings
+              </a>{' '}
+              or by visiting{' '}
+              <a
+                href="https://www.aboutads.info/choices/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-[#00DFFF] underline"
+              >
+                www.aboutads.info
+              </a>
+              . You may also adjust your browser settings to decline or clear cookies at any time.
+            </li>
             <li>
               <strong>Hugging Face Model Downloads (Browser Neural TTS):</strong> Choosing the
               offline ONNX Text-to-Speech engine downloads voice model weights (
