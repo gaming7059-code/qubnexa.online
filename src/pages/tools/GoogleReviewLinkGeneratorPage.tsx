@@ -104,7 +104,7 @@ export const GoogleReviewLinkGeneratorPage: React.FC = () => {
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['bulk-utm-builder', 'qr-code-generator', 'url-encoder-decoder', 'competitor-pricing-tracker']}
+      relatedSlugs={['bulk-utm-builder', 'local-seo-grid-planner', 'qr-code-generator', 'competitor-pricing-tracker']}
     >
       <GoogleReviewLinkGenerator />
     </ToolPageLayout>

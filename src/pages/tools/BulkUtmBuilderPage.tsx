@@ -105,7 +105,7 @@ export const BulkUtmBuilderPage: React.FC = () => {
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['google-review-link-generator', 'competitor-pricing-tracker', 'qr-code-generator', 'url-encoder-decoder']}
+      relatedSlugs={['google-review-link-generator', 'local-seo-grid-planner', 'competitor-pricing-tracker', 'qr-code-generator']}
     >
       <BulkUtmBuilder />
     </ToolPageLayout>

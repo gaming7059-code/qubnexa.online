@@ -170,7 +170,7 @@ export const TextRepeaterPage: React.FC = () => {
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['text-inverter', 'word-counter', 'percentage-calculator', 'unit-converter', 'qr-code-generator', 'password-generator']}
+      relatedSlugs={['text-inverter', 'fancy-font-generator', 'word-counter', 'unit-converter', 'qr-code-generator', 'password-generator']}
     >
       <TextRepeater />
     </ToolPageLayout>

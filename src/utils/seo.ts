@@ -21,18 +21,55 @@ export interface PageSEOMetadata {
   ogImage?: string
 }
 
-// Configurable base domain template - easy to swap for your production domain
-export const SITE_DOMAIN = import.meta.env.VITE_SITE_URL || 'https://qubnexa.online'
+// Official canonical apex domain
+export const CANONICAL_DOMAIN = 'https://qubnexa.online'
 
-export function getFullUrl(path: string = '/'): string {
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`
-  if (typeof window !== 'undefined' && window.location.origin && !window.location.origin.includes('localhost') && !window.location.origin.includes('127.0.0.1')) {
-    const rawBase = import.meta.env.BASE_URL || '/'
-    const basePrefix = rawBase.endsWith('/') ? rawBase.slice(0, -1) : rawBase
-    const fullPath = normalizedPath.startsWith(basePrefix) ? normalizedPath : `${basePrefix}${normalizedPath}`
-    return `${window.location.origin}${fullPath === '' ? '/' : fullPath}`
+// Configurable base domain template - easy to swap for your production domain
+export const SITE_DOMAIN = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_SITE_URL) || CANONICAL_DOMAIN
+
+/**
+ * Normalizes a path for canonical URLs:
+ * - Strips query parameters and hash fragments
+ * - Collapses consecutive slashes into a single slash
+ * - Ensures a leading slash
+ * - Enforces trailing slash consistency: root is '/', non-root paths have no trailing slash
+ */
+export function normalizeCanonicalPath(path: string = '/'): string {
+  if (!path) return '/'
+  const cleanPath = path.split('?')[0].split('#')[0].trim()
+  const collapsed = cleanPath.replace(/\/+/g, '/')
+  const withLeading = collapsed.startsWith('/') ? collapsed : `/${collapsed}`
+  if (withLeading === '/' || withLeading === '') {
+    return '/'
   }
-  return `${SITE_DOMAIN}${normalizedPath}`
+  return withLeading.endsWith('/') ? withLeading.slice(0, -1) : withLeading
+}
+
+/**
+ * Constructs a fully qualified, deterministic canonical URL using the official apex domain.
+ * Never relies on window.location.origin so previews, alternate hosts, or www requests
+ * always output the authoritative apex canonical URL.
+ */
+export function getFullUrl(path: string = '/'): string {
+  const normalizedPath = normalizeCanonicalPath(path)
+  return normalizedPath === '/'
+    ? `${CANONICAL_DOMAIN}/`
+    : `${CANONICAL_DOMAIN}${normalizedPath}`
+}
+
+// Shared metadata collector for build-time prerendering
+let ssrMetadata: PageSEOMetadata | null = null
+
+export function setSsrMetadata(meta: PageSEOMetadata | null) {
+  ssrMetadata = meta
+}
+
+export function getSsrMetadata(): PageSEOMetadata | null {
+  return ssrMetadata
+}
+
+export function clearSsrMetadata() {
+  ssrMetadata = null
 }
 
 export function setMetaTag(selector: string, attribute: string, value: string, createAttr: Record<string, string>) {
@@ -108,6 +145,20 @@ export function usePageSEO({
   keywords,
   ogImage = '/branding/qubnexa-logo.png',
 }: PageSEOMetadata) {
+  // During SSR / build-time prerendering, capture metadata synchronously
+  if (typeof window === 'undefined') {
+    setSsrMetadata({
+      title,
+      description,
+      canonicalPath,
+      noindex,
+      ogType,
+      schema,
+      keywords,
+      ogImage,
+    })
+  }
+
   useEffect(() => {
     // 1. Title
     document.title = title

@@ -98,7 +98,7 @@ export const AiPromptInjectionScannerPage: React.FC = () => {
       formulas={formulas}
       examples={examples}
       faqs={faqs}
-      relatedSlugs={['html-content-cleaner', 'url-encoder-decoder', 'hash-generator', 'bulk-utm-builder']}
+      relatedSlugs={['html-content-cleaner', 'json-formatter', 'password-checker', 'bulk-utm-builder']}
     >
       <AiPromptInjectionScanner />
     </ToolPageLayout>

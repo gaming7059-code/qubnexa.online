@@ -42,10 +42,11 @@ function getRandomInt(max: number): number {
   const randomBuffer = new Uint32Array(1)
   const maxUint32 = 0xffffffff
   const limit = maxUint32 - (maxUint32 % max)
+  const cryptoObj = typeof window !== 'undefined' ? window.crypto : globalThis.crypto
 
   let randomValue: number
   do {
-    window.crypto.getRandomValues(randomBuffer)
+    cryptoObj.getRandomValues(randomBuffer)
     randomValue = randomBuffer[0]
   } while (randomValue >= limit)
 
